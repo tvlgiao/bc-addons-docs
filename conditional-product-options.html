@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Conditional Product Options - Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Conditional Product Options";
+    var mkdocs_page_input_path = "conditional-product-options.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-241859-16', 'bc-addons-docs.papathemes.com');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="icon icon-home"> Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="index.html">Home</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="conditional-product-options.html">Conditional Product Options</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#conditional-product-options">Conditional Product Options</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#demo">Demo</a></li>
+        
+            <li><a class="toctree-l3" href="#install-the-script-on-your-bigcommerce-store">Install the script on your BigCommerce store</a></li>
+        
+            <li><a class="toctree-l3" href="#customize-the-dependent-options">Customize the dependent options</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Conditional Product Options</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="conditional-product-options">Conditional Product Options<a class="headerlink" href="#conditional-product-options" title="Permanent link">&para;</a></h1>
+<h2 id="demo">Demo<a class="headerlink" href="#demo" title="Permanent link">&para;</a></h2>
+<p><img alt="conditional product options demo" src="img/conditional-product-options.gif" /></p>
+<h2 id="install-the-script-on-your-bigcommerce-store">Install the script on your BigCommerce store<a class="headerlink" href="#install-the-script-on-your-bigcommerce-store" title="Permanent link">&para;</a></h2>
+<p>Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, click <strong>Create a Script</strong>, choose:</p>
+<ul>
+<li><strong>Location on page</strong> = <code>Footer</code></li>
+<li><strong>Select pages where script will be added</strong> = <code>Store pages</code></li>
+<li><strong>Script type</strong> = <code>Script</code></li>
+</ul>
+<p>Enter the script below to <strong>Scripts contents</strong>: </p>
+<pre><code class="html">&lt;script&gt;
+    window.jQueryTheme = window.jQueryTheme || window.chiarajQuery || window.jQuery;
+    window.PapathemesConditionalProductOptionsSettings = {
+        fields: [
+            {
+                title: 'One side design only:',
+                options: [
+                    {
+                        label: 'Front-side design',
+                        showAttributes: [
+                            'SIZES',
+                            'FRONT PHOTO UPLOAD',
+                            'FRONT TEXT'
+                        ]
+                    },
+                    {
+                        label: 'Back-side design',
+                        showAttributes: [
+                            'BACKSIDE STYLE OPTIONS',
+                            'BACK PHOTO UPLOAD'
+                        ]
+                    }
+                ]
+            }
+        ]
+    };
+&lt;/script&gt;
+&lt;script src=&quot;//papathemes.com/content/conditional-product-options/conditional-product-options.public.js&quot; async&gt;&lt;/script&gt;
+</code></pre>
+
+<h2 id="customize-the-dependent-options">Customize the dependent options<a class="headerlink" href="#customize-the-dependent-options" title="Permanent link">&para;</a></h2>
+<p>You can customize the option title and the radio labels by editing:
+- <code>'One side design only:'</code>
+- <code>'Front-side design'</code>
+- <code>'Back-side design'</code></p>
+<p>Check the screenshot below:</p>
+<p><img alt="option group title" src="img/edit-option-group-title.png" /></p>
+<h3 id="configure-the-product-options-depending-on-the-first-choice">Configure the product options depending on the first choice<a class="headerlink" href="#configure-the-product-options-depending-on-the-first-choice" title="Permanent link">&para;</a></h3>
+<p><img alt="first choice dependent options" src="img/first-dependent-options.png" /></p>
+<p><strong>Note:</strong>
+- The product option title entered in the configuration code snippet above must be in uppercase. 
+- This string must be the same or appear at the beginning of your product option title.</p>
+<h3 id="configure-the-product-options-depending-on-the-second-choice">Configure the product options depending on the second choice<a class="headerlink" href="#configure-the-product-options-depending-on-the-second-choice" title="Permanent link">&para;</a></h3>
+<p><img alt="second choice dependent options" src="img/first-dependent-options.png" /></p>
+<p>There is no limited number of choices and dependent product options. You can configure the configuration code to display more.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="https://use.fontawesome.com/540034d990.js" defer></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" defer></script>
+      <script src="js/main.js" defer></script>
+      <script src="search/main.js" defer></script>
+
+</body>
+</html>
