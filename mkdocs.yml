@@ -1,0 +1,26 @@
+site_name: "Documentation"
+nav:
+- Home: index.md
+- Conditional Product Options: conditional-product-options.md
+theme: readthedocs
+use_directory_urls: false
+
+extra_css:
+  - https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css
+  - css/style.css
+
+extra_javascript:
+  - https://use.fontawesome.com/540034d990.js
+  - https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js
+  - https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js
+  - js/main.js
+
+markdown_extensions:
+- toc:
+    permalink: True
+    separator: "-"
+- sane_lists
+- extra
+- fenced_code
+
+google_analytics: ['UA-241859-16', 'bc-addons-docs.papathemes.com']
