@@ -2,6 +2,7 @@ site_name: "Documentation"
 nav:
 - Home: index.md
 - Conditional Product Options: conditional-product-options.md
+- Frequently Bought Together: frequently-bought-together.md
 theme: readthedocs
 use_directory_urls: false
 
