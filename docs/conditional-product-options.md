@@ -9,7 +9,7 @@
 Go to **Storefront** > **Script Manager**, click **Create a Script**, choose:
 
 - **Location on page** = `Footer`
-- **Select pages where script will be added** = `Store pages`
+- **Select pages where script will be added** = `All pages`
 - **Script type** = `Script`
 
 Enter the script below to **Scripts contents**: 
@@ -42,7 +42,7 @@ Enter the script below to **Scripts contents**:
         ]
     };
 </script>
-<script src="//papathemes.com/content/conditional-product-options/conditional-product-options.public.js" async></script>
+<script src="//papathemes.com/content/conditionalproductoptionsaddon/conditional-product-options.public.js" async></script>
 ```
 
 ## Customize the dependent options
