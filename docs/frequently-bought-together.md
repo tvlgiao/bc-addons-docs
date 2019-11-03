@@ -1,5 +1,6 @@
 # Products Frequently Bought Together
 
+![frequently bought together demo](img/frequently-bought-together.gif)
 
 ## Install on your BigCommerce theme
 
