@@ -97,4 +97,18 @@ Example:
 
 - `getScopeWithoutAlsoBought`: Callback function to retrieve the HTML element of the product view scope excluding the element contains the products frequently bought together.
 - `renderAlsoBought`: callback function to print out the product frequently bought together.
-- 
+
+
+## Make products frequently bought together add to cart independently from the main product
+
+```html
+<script>
+    window.jQueryAlsoBought = window.jQueryTheme || window.jQuery;
+    window.AlsoBoughtOptions = {
+        independent: true
+    };
+</script>
+<script src="//papathemes.com/content/alsoboughtaddon/alsobought.YOURDOMAIN.js" async></script>
+```
+
+Set `independent: true` in the script option.
