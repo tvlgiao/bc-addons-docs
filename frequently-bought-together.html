@@ -85,6 +85,8 @@
         
             <li><a class="toctree-l3" href="#advanced-configuration">Advanced configuration</a></li>
         
+            <li><a class="toctree-l3" href="#make-products-frequently-bought-together-add-to-cart-independently-from-the-main-product">Make products frequently bought together add to cart independently from the main product</a></li>
+        
         </ul>
     
 
@@ -204,8 +206,18 @@ $('body').trigger('product-details-init', this);
 <ul>
 <li><code>getScopeWithoutAlsoBought</code>: Callback function to retrieve the HTML element of the product view scope excluding the element contains the products frequently bought together.</li>
 <li><code>renderAlsoBought</code>: callback function to print out the product frequently bought together.</li>
-<li></li>
 </ul>
+<h2 id="make-products-frequently-bought-together-add-to-cart-independently-from-the-main-product">Make products frequently bought together add to cart independently from the main product<a class="headerlink" href="#make-products-frequently-bought-together-add-to-cart-independently-from-the-main-product" title="Permanent link">&para;</a></h2>
+<pre><code class="html">&lt;script&gt;
+    window.jQueryAlsoBought = window.jQueryTheme || window.jQuery;
+    window.AlsoBoughtOptions = {
+        independent: true
+    };
+&lt;/script&gt;
+&lt;script src=&quot;//papathemes.com/content/alsoboughtaddon/alsobought.YOURDOMAIN.js&quot; async&gt;&lt;/script&gt;
+</code></pre>
+
+<p>Set <code>independent: true</code> in the script option.</p>
               
             </div>
           </div>
