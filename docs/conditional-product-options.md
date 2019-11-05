@@ -71,3 +71,70 @@ Check the screenshot below:
 
 There is no limited number of choices and dependent product options. You can configure the configuration code to display more.
 
+### Configure different dependent options for different products
+
+Check below configuration example:
+
+```js
+window.PapathemesConditionalProductOptionsSettings = {
+    fields: [
+        {
+            productIds: [1113, 1114],
+            title: 'One side design only:',
+            options: [
+                {
+                    label: 'Front-side design',
+                    showAttributes: [
+                        'FRONT TEXT'
+                    ]
+                },
+                {
+                    label: 'Back-side design',
+                    showAttributes: [
+                        'BACK TEXT'
+                    ]
+                }
+            ]
+        },
+        {
+            productIds: [1117],
+            title: 'Front & Back design only:',
+            options: [
+                {
+                    label: 'Front-side only design',
+                    showAttributes: [
+                        'SIZES',
+                        'FRONT PHOTO UPLOAD',
+                        'FRONT TEXT'
+                    ]
+                },
+                {
+                    label: 'Front & Back-side design',
+                    showAttributes: [
+                        'SIZES',
+                        'FRONT PHOTO UPLOAD',
+                        'FRONT TEXT',
+                        'BACKSIDE STYLE OPTIONS',
+                        'BACK PHOTO UPLOAD'
+                    ]
+                }
+            ]
+        }
+    ]
+};
+```
+
+- `productIds: [1113, 1114]` indicates that only products with ID = `1113` and `1114` will show `One side design only:` choices.
+- `productIds: [1117]` indicates that only product with ID = `1117` will show `Front & Back design only` choices.
+
+You can configure different dependent options for different products as well. Take a look at `showAttributes` parameters as showing in the example above.
+
+#### Find Product ID
+
+To find the product ID, edit the product in the admin page, look at your browser address bar, the product ID appears in the URL:
+
+![Find product ID](img/find-product-id-in-url.png)
+
+In this screenshot, the product ID is `174`.
+
+
