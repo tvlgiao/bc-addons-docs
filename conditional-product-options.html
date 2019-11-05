@@ -179,6 +179,65 @@
 <h3 id="configure-the-product-options-depending-on-the-second-choice">Configure the product options depending on the second choice<a class="headerlink" href="#configure-the-product-options-depending-on-the-second-choice" title="Permanent link">&para;</a></h3>
 <p><img alt="second choice dependent options" src="img/first-dependent-options.png" /></p>
 <p>There is no limited number of choices and dependent product options. You can configure the configuration code to display more.</p>
+<h3 id="configure-different-dependent-options-for-different-products">Configure different dependent options for different products<a class="headerlink" href="#configure-different-dependent-options-for-different-products" title="Permanent link">&para;</a></h3>
+<p>Check below configuration example:</p>
+<pre><code class="js">window.PapathemesConditionalProductOptionsSettings = {
+    fields: [
+        {
+            productIds: [1113, 1114],
+            title: 'One side design only:',
+            options: [
+                {
+                    label: 'Front-side design',
+                    showAttributes: [
+                        'FRONT TEXT'
+                    ]
+                },
+                {
+                    label: 'Back-side design',
+                    showAttributes: [
+                        'BACK TEXT'
+                    ]
+                }
+            ]
+        },
+        {
+            productIds: [1117],
+            title: 'Front &amp; Back design only:',
+            options: [
+                {
+                    label: 'Front-side only design',
+                    showAttributes: [
+                        'SIZES',
+                        'FRONT PHOTO UPLOAD',
+                        'FRONT TEXT'
+                    ]
+                },
+                {
+                    label: 'Front &amp; Back-side design',
+                    showAttributes: [
+                        'SIZES',
+                        'FRONT PHOTO UPLOAD',
+                        'FRONT TEXT',
+                        'BACKSIDE STYLE OPTIONS',
+                        'BACK PHOTO UPLOAD'
+                    ]
+                }
+            ]
+        }
+    ]
+};
+</code></pre>
+
+<ul>
+<li><code>productIds: [1113, 1114]</code> indicates that only products with ID = <code>1113</code> and <code>1114</code> will show <code>One side design only:</code> choices.</li>
+<li><code>productIds: [1117]</code> indicates that only product with ID = <code>1117</code> will show <code>Front &amp; Back design only</code> choices.</li>
+</ul>
+<p>You can configure different dependent options for different products as well. Take a look at <code>showAttributes</code> parameters as showing in the example above.</p>
+<h4 id="find-product-id">Find Product ID<a class="headerlink" href="#find-product-id" title="Permanent link">&para;</a></h4>
+<p>To find the product ID, edit the product in the admin page, look at your browser address bar, the product ID appears in the URL:</p>
+<p><img alt="Find product ID" src="img/find-product-id-in-url.png" /></p>
+<p>In this screenshot, the product ID is <code>174</code>.</p>
               
             </div>
           </div>
