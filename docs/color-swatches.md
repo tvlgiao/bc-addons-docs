@@ -1,5 +1,7 @@
 # Display color swatches / image swatches on product card items
 
+![card-color-swatches](img/card-color-swatches.gif)
+
 This **product color swatches add-on** allows to display color swatches or product image swatches on product card items on Homepage, category pages, brands pages or any pages where product cards appear. It loads the swatches from your product attributes automatically, no extra input required.
 
 The add-on also supports changing product image and price when a color swatch is selected.
@@ -46,4 +48,4 @@ integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 crossorigin="anonymous">
 <script>if (!window.jQuery) window.jQuery = window.jQuerySupermarket || window.jQueryTheme;</script>
 <script src="https://papathemes.com/content/productswatchesaddon/productswatches.fivebrotherworkwear.com.js" async></script>
-
+```
