@@ -46,6 +46,7 @@ Enter the script below to **Scripts contents**:
 ### Hide country and city:
 
 To hide country and city, set:
+
 - `hideCountry: true`
 - `hideCity: true`
 
