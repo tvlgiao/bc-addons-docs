@@ -5,10 +5,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="None">
+  
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Home - Documentation</title>
+  <title>Display color swatches / image swatches on product card items - Documentation</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="css/theme.css" type="text/css" />
@@ -19,8 +19,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Home";
-    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_name = "Display color swatches / image swatches on product card items";
+    var mkdocs_page_input_path = "color-swatches.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -60,21 +60,9 @@
 	<ul class="current">
 	  
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="index.html">Home</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#documentaton-of-all-bigcommerce-add-ons-developed-by-papathemes">Documentaton of all BigCommerce Add-ons developed by PapaThemes</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l3" href="#table-of-contents">Table of Contents</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="index.html">Home</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -114,7 +102,7 @@
     
       
     
-    <li>Home</li>
+    <li>Display color swatches / image swatches on product card items</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -124,24 +112,46 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="documentaton-of-all-bigcommerce-add-ons-developed-by-papathemes">Documentaton of all BigCommerce Add-ons developed by PapaThemes<a class="headerlink" href="#documentaton-of-all-bigcommerce-add-ons-developed-by-papathemes" title="Permanent link">&para;</a></h1>
-<h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
+                <h1 id="display-color-swatches-image-swatches-on-product-card-items">Display color swatches / image swatches on product card items<a class="headerlink" href="#display-color-swatches-image-swatches-on-product-card-items" title="Permanent link">&para;</a></h1>
+<p>This <strong>product color swatches add-on</strong> allows to display color swatches or product image swatches on product card items on Homepage, category pages, brands pages or any pages where product cards appear. It loads the swatches from your product attributes automatically, no extra input required.</p>
+<p>The add-on also supports changing product image and price when a color swatch is selected.</p>
+<h2 id="install-the-script-on-your-bigcommerce-store">Install the script on your BigCommerce store<a class="headerlink" href="#install-the-script-on-your-bigcommerce-store" title="Permanent link">&para;</a></h2>
+<p>Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, click <strong>Create a Script</strong>, choose:</p>
 <ul>
-<li><a href="conditional-product-options.html">Conditional Product Options</a></li>
-<li><a href="frequently-bought-together.html">Products Frequently Bought Together</a></li>
-<li><a href="shipping-estimator.html">Shipping Estimator on Product Page</a></li>
+<li><strong>Location on page</strong> = <code>Footer</code></li>
+<li><strong>Select pages where script will be added</strong> = <code>All pages</code></li>
+<li><strong>Script type</strong> = <code>Script</code></li>
 </ul>
+<p>Enter the script below to <strong>Scripts contents</strong>: </p>
+<pre><code class="html">&lt;script&gt;if (!window.jQuery) window.jQuery = window.jQuerySupermarket || window.jQueryTheme;&lt;/script&gt;
+&lt;script src=&quot;//papathemes.com/content/productswatchesaddon/productswatches.YOURDOMAIN.js&quot; async&gt;&lt;/script&gt;
+</code></pre>
+
+<p>Replace <code>YOURDOMAIN</code> by your own store domain. Example:</p>
+<pre><code class="html">&lt;script&gt;if (!window.jQuery) window.jQuery = window.jQuerySupermarket || window.jQueryTheme;&lt;/script&gt;
+&lt;script src=&quot;https://papathemes.com/content/productswatchesaddon/productswatches.fivebrotherworkwear.com.js&quot; async&gt;&lt;/script&gt;
+</code></pre>
+
+<h3 id="install-when-your-site-has-no-jquery">Install when your site has no jQuery<a class="headerlink" href="#install-when-your-site-has-no-jquery" title="Permanent link">&para;</a></h3>
+<p>If your site has no jQuery declared globally, add the line below to the top:</p>
+<pre><code class="html">&lt;script
+src=&quot;https://code.jquery.com/jquery-3.4.1.min.js&quot;
+integrity=&quot;sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=&quot;
+crossorigin=&quot;anonymous&quot;&gt;
+</code></pre>
+
+<p>Completed code example:</p>
+<pre><code class="html">&lt;script
+src=&quot;https://code.jquery.com/jquery-3.4.1.min.js&quot;
+integrity=&quot;sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=&quot;
+crossorigin=&quot;anonymous&quot;&gt;
+&lt;script&gt;if (!window.jQuery) window.jQuery = window.jQuerySupermarket || window.jQueryTheme;&lt;/script&gt;
+&lt;script src=&quot;https://papathemes.com/content/productswatchesaddon/productswatches.fivebrotherworkwear.com.js&quot; async&gt;&lt;/script&gt;
+</code></pre>
               
             </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="conditional-product-options.html" class="btn btn-neutral float-right" title="Conditional Product Options">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-    </div>
   
 
   <hr/>
@@ -166,8 +176,6 @@
       
       
       
-        <span style="margin-left: 15px"><a href="conditional-product-options.html" style="color: #fcfcfc">Next &raquo;</a></span>
-      
     </span>
 </div>
     <script>var base_url = '.';</script>
@@ -180,8 +188,3 @@
 
 </body>
 </html>
-
-<!--
-MkDocs version : 1.0.4
-Build Date UTC : 2019-11-06 07:56:54
--->
