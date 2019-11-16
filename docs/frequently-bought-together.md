@@ -33,7 +33,8 @@ Insert the code below under it:
 
 ```js
 // PapaThemes AlsoBought MOD
-$('body').trigger('product-details-init', this);
+$('body').trigger('product-details-init', [this]);
+$('body').one('load.alsobought', callback => callback());
 ```
 
 
