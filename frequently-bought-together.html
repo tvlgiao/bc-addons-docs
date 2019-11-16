@@ -169,7 +169,8 @@ if (!window.jQueryTheme) {
 
 <p>Insert the code below under it:</p>
 <pre><code class="js">// PapaThemes AlsoBought MOD
-$('body').trigger('product-details-init', this);
+$('body').trigger('product-details-init', [this]);
+$('body').one('load.alsobought', callback =&gt; callback());
 </code></pre>
 
 <ol start="4">
