@@ -80,6 +80,8 @@
         
             <li><a class="toctree-l3" href="#customize-the-dependent-options">Customize the dependent options</a></li>
         
+            <li><a class="toctree-l3" href="#an-alternative-solution">An Alternative Solution</a></li>
+        
         </ul>
     
 
@@ -253,6 +255,77 @@
 <p>To find the product ID, edit the product in the admin page, look at your browser address bar, the product ID appears in the URL:</p>
 <p><img alt="Find product ID" src="img/find-product-id-in-url.png" /></p>
 <p>In this screenshot, the product ID is <code>174</code>.</p>
+<h2 id="an-alternative-solution">An Alternative Solution<a class="headerlink" href="#an-alternative-solution" title="Permanent link">&para;</a></h2>
+<h3 id="build-the-script-for-the-alternative-solution">Build the script for the alternative solution<a class="headerlink" href="#build-the-script-for-the-alternative-solution" title="Permanent link">&para;</a></h3>
+<pre><code>npm run build --alternate
+</code></pre>
+
+<h3 id="configure">Configure<a class="headerlink" href="#configure" title="Permanent link">&para;</a></h3>
+<pre><code class="html">&lt;script&gt;
+    window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
+    window.PapathemesConditionalProductOptionsSettings = {
+        fields: [
+            {
+                name: 'Add Embroidered Logo',
+                hide: [
+                    'Logo Position on Garment',
+                    'Logo Upload'
+                ],
+                values: [
+                    {
+                        value: 'Yes',
+                        show: [
+                            'Logo Position on Garment',
+                            'Logo Upload'
+                        ]
+                    }
+                ],
+                productIds: []
+            },
+            {
+                name: 'Embroidered Name',
+                hide: [
+                    'Name Position Garment',
+                    'Enter Custom Text Here',
+                    'Specify Text Colour'
+                ],
+                values: [
+                    {
+                        value: 'Yes',
+                        show: [
+                            'Name Position Garment',
+                            'Enter Custom Text Here',
+                            'Specify Text Colour'
+                        ]
+                    }
+                ],
+                productIds: [123, 456]
+            }
+        ]
+    };
+&lt;/script&gt;
+</code></pre>
+
+<p><strong>Settings:</strong></p>
+<ul>
+<li><code>fields</code>:</li>
+<li><code>name</code>: Is the option name (or label)</li>
+<li><code>hide</code>: Specify the dependent options to hide by default</li>
+<li><code>values</code>:<ul>
+<li><code>value</code>: The option value text (or label) if selected then process the action below.</li>
+<li><code>show</code>: the dependent option to show if the coresponding value is matched.</li>
+</ul>
+</li>
+<li><code>productIds</code>: Specify products to apply. If empty, apply for all products.</li>
+</ul>
+<p><strong>Optional settings:</strong></p>
+<pre><code class="js">{
+  productOptionsSelector: '[data-product-option-change]',
+  optionLabelSelector: 'label:not([data-product-attribute-value])',
+  formFieldSelector: '.form-field[data-product-attribute]',
+  productIdSelector: 'input[name=product_id]',
+}
+</code></pre>
               
             </div>
           </div>
