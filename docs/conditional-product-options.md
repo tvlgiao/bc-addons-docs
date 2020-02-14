@@ -138,3 +138,82 @@ To find the product ID, edit the product in the admin page, look at your browser
 In this screenshot, the product ID is `174`.
 
 
+##  An Alternative Solution
+
+### Build the script for the alternative solution
+
+```
+npm run build --alternate
+```
+
+### Configure
+
+```html
+<script>
+    window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
+    window.PapathemesConditionalProductOptionsSettings = {
+        fields: [
+            {
+                name: 'Add Embroidered Logo',
+                hide: [
+                    'Logo Position on Garment',
+                    'Logo Upload'
+                ],
+                values: [
+                    {
+                        value: 'Yes',
+                        show: [
+                            'Logo Position on Garment',
+                            'Logo Upload'
+                        ]
+                    }
+                ],
+                productIds: []
+            },
+            {
+                name: 'Embroidered Name',
+                hide: [
+                    'Name Position Garment',
+                    'Enter Custom Text Here',
+                    'Specify Text Colour'
+                ],
+                values: [
+                    {
+                        value: 'Yes',
+                        show: [
+                            'Name Position Garment',
+                            'Enter Custom Text Here',
+                            'Specify Text Colour'
+                        ]
+                    }
+                ],
+                productIds: [123, 456]
+            }
+        ]
+    };
+</script>
+```
+
+
+**Settings:**
+
+- `fields`:
+  - `name`: Is the option name (or label)
+  - `hide`: Specify the dependent options to hide by default
+  - `values`:
+    - `value`: The option value text (or label) if selected then process the action below.
+    - `show`: the dependent option to show if the coresponding value is matched.
+  - `productIds`: Specify products to apply. If empty, apply for all products.
+
+
+**Optional settings:**
+
+```js
+{
+  productOptionsSelector: '[data-product-option-change]',
+  optionLabelSelector: 'label:not([data-product-attribute-value])',
+  formFieldSelector: '.form-field[data-product-attribute]',
+  productIdSelector: 'input[name=product_id]',
+}
+```
+
