@@ -6,6 +6,7 @@ nav:
 - Shipping Estimator on Product Page: shipping-estimator.md
 - Display Color Swatches on Product Items: color-swatches.md
 - Mutiple Category Dependent Dropdowns: mutiple-category-dependent-dropdowns.md
+- Mutiple Quantity Product Options: multiple-quantity-product-options.md
 theme: readthedocs
 use_directory_urls: false
 
