@@ -7,3 +7,4 @@
 - [Shipping Estimator on Product Page](shipping-estimator.md)
 - [Display Color Swatches on Product Items](color-swatches.md)
 - [Multiple Category Dependent Dropdowns](mutiple-category-dependent-dropdowns.md)
+- [Multiple Quantity Product Options](mutiple-quantity-product-options.md)
