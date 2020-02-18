@@ -223,6 +223,27 @@ addedToCartMsgTemplate = `
 `,
 addedToCartMsgTitle = 'Added to your cart!',
 </code></pre>
+
+<p><strong>Example script for shoppartsland.com:</strong></p>
+<pre><code class="html">&lt;script&gt;
+    window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
+    window.PapathemesMultiQtyProductOptionsSettings = {
+        fields: [
+            {
+                name: 'Color',
+                productIds: []
+            }
+        ],
+        cartId: '{{cart_id}}'
+    };
+    (function() {
+        var css = document.createElement('style');
+        css.innerHTML = '.mqpo-productsList { font-size: 14px }';
+        document.head.appendChild(css);
+    })();
+&lt;/script&gt;
+&lt;script src=&quot;//papathemes.com/content/multiqtyproductoptions/multi-qty-product-options.shoppartsland.com.js&quot; async&gt;&lt;/script&gt;
+</code></pre>
               
             </div>
           </div>
