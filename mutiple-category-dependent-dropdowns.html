@@ -160,6 +160,7 @@
     window.PapathemesMCDDSettings = {
         renderToSelector: 'body &gt; .body',
         usePrepend: true,
+        rootCategoryId: 0,
         maxDepth: 3,
         lang: {
             heading: 'Find Auto Parts',
@@ -182,6 +183,7 @@
 <li>Replace <code>YOURDOMAIN</code> by your domain name. For example: <code>mydomain.com</code>.</li>
 <li>Update <code>body &gt; .body</code> in <code>renderToSelector: 'body &gt; .body'</code> by the container HTML element selector to render the form.</li>
 <li><code>usePrepend</code> = <code>true</code>: specify the form will be rendered on the top inside of the container HTML element.</li>
+<li><code>rootCategoryId</code> = <code>0</code>: specify the root category to load its subcategories into the first dropdown.</li>
 <li><code>maxDepth</code>: specify the number of dropdowns or categories to display.</li>
 <li>Customize words or languages in <code>lang</code> variable.</li>
 </ul>
@@ -198,6 +200,7 @@
     window.PapathemesMCDDSettings = {
         renderToSelector: '.page-sidebar',
         usePrepend: true,
+        rootCategoryId: 0,
         maxDepth: 5,
         verticalLayout: true,
         lang: {
@@ -237,6 +240,7 @@
     window.PapathemesMCDDSettings = {
         renderToSelector: 'body &gt; .body',
         usePrepend: true,
+        rootCategoryId: 0,
         maxDepth: 3,
         instantload: {{JSONstringify theme_settings.instantload}},
         lang: {
