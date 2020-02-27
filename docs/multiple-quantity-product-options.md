@@ -37,8 +37,8 @@ Replace `YOURDOMAIN` by your domain name, for example: `mystore.com`.
 **Configuration:**
 
 - `fields`:
-  - `name`: is your product option name or label.
-  - `productIds`: array of product IDs to enable MQPO for this product option. Please `[]` to apply for all products.
+  + `name`: is your product option name or label.
+  + `productIds`: array of product IDs to enable MQPO for this product option. Please `[]` to apply for all products.
 - `cartId`: Is your cart object ID, leave it unchanged as above configuration.
 
 
