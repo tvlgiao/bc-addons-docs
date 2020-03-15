@@ -36,6 +36,9 @@ Copy and paste the sample content below:
     'delay': 5,
     'pageType': '',
     'urlMatch': '',
+    'id': 'popup1',
+    'expire', 3600,
+    'disableText': 'Do not show again',
     'swal': {
         'timer': 3000,
         'timerProgressBar': true,
@@ -79,6 +82,9 @@ Take a look of the above code:
     'delay': 5,
     'pageType': '',
     'urlMatch': '',
+    'id': 'popup1',
+    'expire', 3600,
+    'disableText': 'Do not show again',
     'swal': {
         'timer': 3000,
         'timerProgressBar': true,
@@ -94,5 +100,8 @@ Take a look of the above code:
     - = `page`: To display the popup on static web pages.
 - `urlMatch`: Leave it empty to display the popup on all pages.
     - Set an url for example `/all-products/` to display the popup on any page which has URL matches `/all-products/`.
+- `id`: The unique popup name. Required only if `expire` is set.
+- `expire`: A time (in seconds) to not show the popup again.
+- `disableText`: a checkbox label to allow user not showing the popup again. If not set, the default label is "Don't show again".
 - `swal`: Are **SweatAlert2** configuration variables. Check more details here: <https://sweetalert2.github.io/#configuration>
 
