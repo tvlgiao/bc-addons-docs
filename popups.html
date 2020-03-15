@@ -175,6 +175,9 @@
     'delay': 5,
     'pageType': '',
     'urlMatch': '',
+    'id': 'popup1',
+    'expire', 3600,
+    'disableText': 'Do not show again',
     'swal': {
         'timer': 3000,
         'timerProgressBar': true,
@@ -209,6 +212,9 @@
 <pre><code class="js">    'delay': 5,
     'pageType': '',
     'urlMatch': '',
+    'id': 'popup1',
+    'expire', 3600,
+    'disableText': 'Do not show again',
     'swal': {
         'timer': 3000,
         'timerProgressBar': true,
@@ -229,6 +235,9 @@
 <li>Set an url for example <code>/all-products/</code> to display the popup on any page which has URL matches <code>/all-products/</code>.</li>
 </ul>
 </li>
+<li><code>id</code>: The unique popup name. Required only if <code>expire</code> is set.</li>
+<li><code>expire</code>: A time (in seconds) to not show the popup again.</li>
+<li><code>disableText</code>: a checkbox label to allow user not showing the popup again. If not set, the default label is "Don't show again".</li>
 <li><code>swal</code>: Are <strong>SweatAlert2</strong> configuration variables. Check more details here: <a href="https://sweetalert2.github.io/#configuration">https://sweetalert2.github.io/#configuration</a></li>
 </ul>
               
