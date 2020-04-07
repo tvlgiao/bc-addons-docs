@@ -37,7 +37,7 @@ Copy and paste the sample content below:
     'pageType': '',
     'urlMatch': '',
     'id': 'popup1',
-    'expire', 3600,
+    'expire': 3600,
     'disableText': 'Do not show again',
     'swal': {
         'timer': 3000,
