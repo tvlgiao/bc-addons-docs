@@ -9,3 +9,4 @@
 - [Multiple Category Dependent Dropdowns](multiple-category-dependent-dropdowns.md)
 - [Multiple Quantity Product Options](multiple-quantity-product-options.md)
 - [Custom Popups](popups.md)
+- [Automatically Add Additional Product To Cart](add-product-to-cart-automatically.md)
