@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Shipping Estimator on Product Page - Documentation</title>
+  <title>Automatically Add Additional Product To Cart - Documentation</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="css/theme.css" type="text/css" />
@@ -19,8 +19,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Shipping Estimator on Product Page";
-    var mkdocs_page_input_path = "shipping-estimator.md";
+    var mkdocs_page_name = "Automatically Add Additional Product To Cart";
+    var mkdocs_page_input_path = "add-product-to-cart-automatically.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -75,23 +75,9 @@
     <a class="" href="frequently-bought-together.html">Frequently Bought Together</a>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="shipping-estimator.html">Shipping Estimator on Product Page</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#shipping-estimator-on-product-page">Shipping Estimator on Product Page</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l3" href="#install-the-script-on-your-bigcommerce-store">Install the script on your BigCommerce store</a></li>
-        
-            <li><a class="toctree-l3" href="#custom-product-form-element-selector-for-supermarket-and-chiara-themes">Custom product form element selector for Supermarket and Chiara themes</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="shipping-estimator.html">Shipping Estimator on Product Page</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -114,9 +100,21 @@
     <a class="" href="popups.html">Custom Popups</a>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="add-product-to-cart-automatically.html">Automatically Add Additional Product To Cart</a>
+    <a class="current" href="add-product-to-cart-automatically.html">Automatically Add Additional Product To Cart</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#add-additional-product-to-cart-automatically">Add Additional Product To Cart Automatically</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#install-on-your-bigcommerce-store">Install on your BigCommerce Store</a></li>
+        
+        </ul>
+    
+
+    </ul>
 	    </li>
           
         </ul>
@@ -141,7 +139,7 @@
     
       
     
-    <li>Shipping Estimator on Product Page</li>
+    <li>Automatically Add Additional Product To Cart</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -151,12 +149,10 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="shipping-estimator-on-product-page">Shipping Estimator on Product Page<a class="headerlink" href="#shipping-estimator-on-product-page" title="Permanent link">&para;</a></h1>
-<p><strong>Demo 1:</strong> Showing Country, State, City and Zipcode:</p>
-<p><img alt="Shipping estimator demo 1" src="img/estimate-shipping-demo1.gif" /></p>
-<p><strong>Demo 2:</strong> Showing State and Zipcode only:</p>
-<p><img alt="Shipping estimator demo 2" src="img/estimate-shipping-demo2.gif" /></p>
-<h2 id="install-the-script-on-your-bigcommerce-store">Install the script on your BigCommerce store<a class="headerlink" href="#install-the-script-on-your-bigcommerce-store" title="Permanent link">&para;</a></h2>
+                <h1 id="add-additional-product-to-cart-automatically">Add Additional Product To Cart Automatically<a class="headerlink" href="#add-additional-product-to-cart-automatically" title="Permanent link">&para;</a></h1>
+<p>This addon allows to add an additional product to cart when a product is added to cart with a specific product option is selected. The additional product cannot be removed when the main product still exists in the cart.</p>
+<p><img alt="auto-add-product-to-cart-demo" src="img/auto-add-product-to-cart-demo.gif" /></p>
+<h2 id="install-on-your-bigcommerce-store">Install on your BigCommerce Store<a class="headerlink" href="#install-on-your-bigcommerce-store" title="Permanent link">&para;</a></h2>
 <p>Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, click <strong>Create a Script</strong>, choose:</p>
 <ul>
 <li><strong>Location on page</strong> = <code>Footer</code></li>
@@ -164,73 +160,31 @@
 <li><strong>Script type</strong> = <code>Script</code></li>
 </ul>
 <p>Enter the script below to <strong>Scripts contents</strong>: </p>
-<pre><code class="html">
- &lt;script&gt;
-    window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
-    window.PapathemesShippingEstimatorSettings = {
-        defaultCountry: 'Australia'
-    };
-&lt;/script&gt;
-&lt;script src=&quot;//papathemes.com/content/shippingestimatoraddon/shipping-estimator.YOURDOMAIN.js&quot; async&gt;&lt;/script&gt;
-</code></pre>
-
-<p><strong>Note:</strong> replace <code>YOURDOMAIN</code> by your own domain. Example:</p>
 <pre><code class="html">&lt;script&gt;
     window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
-    window.PapathemesShippingEstimatorSettings = {
-        defaultCountry: 'Australia'
+    window.PapathemesAutoAddToCartSettings = {
+        conditions: [
+            {
+                productId: '',
+                optionMatch: '',
+                optionValueMatch: 'Including $400 Refundable Core Charge Deposit.',
+                productIdToAdd: 378,
+            }
+        ],
+        cartId: '{{cart_id}}'
     };
 &lt;/script&gt;
-&lt;script src=&quot;//papathemes.com/content/shippingestimatoraddon/shipping-estimator.sinkwarehouse.com.au.js&quot; async&gt;&lt;/script&gt;
+&lt;script src=&quot;//papathemes.com/content/autoaddtocartaddon/autoaddtocart.YOURDOMAIN.js&quot; async&gt;&lt;/script&gt;
 </code></pre>
 
+<p>Replace <code>YOURDOMAIN</code> by your store's domain name.</p>
+<h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code>defaultCountry</code>: allows to set country selected by default.</li>
+<li><code>productId</code>: Input a product ID if you want to apply for a specific product only.</li>
+<li><code>optionMatch</code>: Input the option name to process only when this option is selected.</li>
+<li><code>optionValueMatch</code>: Input the option value to process only when this option value is selected.</li>
+<li><code>productIdToAdd</code>: Input the additional product ID to add to cart.</li>
 </ul>
-<h3 id="hide-country-and-city">Hide country and city:<a class="headerlink" href="#hide-country-and-city" title="Permanent link">&para;</a></h3>
-<p>To hide country and city, set:</p>
-<ul>
-<li><code>hideCountry: true</code></li>
-<li><code>hideCity: true</code></li>
-</ul>
-<p>See example below:</p>
-<pre><code class="html">&lt;script&gt;
-    window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
-    window.PapathemesShippingEstimatorSettings = {
-        defaultCountry: 'Australia',
-        hideCountry: true,
-        hideCity: true
-    };
-&lt;/script&gt;
-&lt;script src=&quot;//papathemes.com/content/shippingestimatoraddon/shipping-estimator.YOURDOMAIN.js&quot; async&gt;&lt;/script&gt;
-</code></pre>
-
-<h2 id="custom-product-form-element-selector-for-supermarket-and-chiara-themes">Custom product form element selector for Supermarket and Chiara themes<a class="headerlink" href="#custom-product-form-element-selector-for-supermarket-and-chiara-themes" title="Permanent link">&para;</a></h2>
-<p><strong>Supermarket</strong> &amp; <strong>Chiara</strong> themes support <strong>Products Frequently Bought Together</strong> feature built-in. You will need to specify different product form HTML element selector so that the shipping estimator can estimate your main product properly.</p>
-<p>Insert <code>productFormSelector: '[data-also-bought-parent-scope] form[data-cart-item-add]'</code> into the configuration variable.</p>
-<p><strong>Example 1:</strong> Show country, state, city and zipcode:</p>
-<pre><code class="html">&lt;script&gt;
-    window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
-    window.PapathemesShippingEstimatorSettings = {
-        defaultCountry: 'Australia',
-        productFormSelector: '[data-also-bought-parent-scope] form[data-cart-item-add]'
-    };
-&lt;/script&gt;
-&lt;script src=&quot;//papathemes.com/content/shippingestimatoraddon/shipping-estimator.YOURDOMAIN.js&quot; async&gt;&lt;/script&gt;
-</code></pre>
-
-<p><strong>Example 2:</strong> Show country and zipcode only</p>
-<pre><code class="html">&lt;script&gt;
-    window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
-    window.PapathemesShippingEstimatorSettings = {
-        defaultCountry: 'Australia',
-        hideCountry: true,
-        hideCity: true,
-        productFormSelector: '[data-also-bought-parent-scope] form[data-cart-item-add]'
-    };
-&lt;/script&gt;
-&lt;script src=&quot;//papathemes.com/content/shippingestimatoraddon/shipping-estimator.YOURDOMAIN.js&quot; async&gt;&lt;/script&gt;
-</code></pre>
               
             </div>
           </div>
@@ -238,10 +192,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="color-swatches.html" class="btn btn-neutral float-right" title="Display Color Swatches on Product Items">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="frequently-bought-together.html" class="btn btn-neutral" title="Frequently Bought Together"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="popups.html" class="btn btn-neutral" title="Custom Popups"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -267,10 +219,8 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="frequently-bought-together.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="popups.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="color-swatches.html" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
