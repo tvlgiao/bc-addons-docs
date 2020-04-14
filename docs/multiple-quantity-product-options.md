@@ -117,3 +117,28 @@ addedToCartMsgTitle = 'Added to your cart!',
 </script>
 <script src="//papathemes.com/content/multiqtyproductoptions/multi-qty-product-options.shoppartsland.com.js" async></script>
 ```
+
+## Configuration for product options table
+
+![product-options-table](img/product-options-table.jpg)
+
+```html
+<script>
+    window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
+    window.PapathemesMultiQtyProductOptionsSettings = {
+        fields: [
+            {
+                name: ['Colour', 'Size'],
+                productIds: []
+            }
+        ],
+        cartId: '{{cart_id}}'
+    };
+</script>
+<script src="//papathemes.com/content/multiqtyproductoptions/multi-qty-product-options.YOURDOMAIN.js" async></script>
+```
+
+- `name: ['Colour', 'Size']`: is an array of titles of 2 product options.
+- `productIds: []`: is an array of the product IDs which enable this feature.
+
+
