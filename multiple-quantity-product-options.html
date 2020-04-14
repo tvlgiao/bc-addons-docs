@@ -101,6 +101,8 @@
         
             <li><a class="toctree-l3" href="#install-on-your-bigcommerce-store">Install on your BigCommerce store</a></li>
         
+            <li><a class="toctree-l3" href="#configuration-for-product-options-table">Configuration for product options table</a></li>
+        
         </ul>
     
 
@@ -254,6 +256,28 @@ addedToCartMsgTitle = 'Added to your cart!',
 &lt;/script&gt;
 &lt;script src=&quot;//papathemes.com/content/multiqtyproductoptions/multi-qty-product-options.shoppartsland.com.js&quot; async&gt;&lt;/script&gt;
 </code></pre>
+
+<h2 id="configuration-for-product-options-table">Configuration for product options table<a class="headerlink" href="#configuration-for-product-options-table" title="Permanent link">&para;</a></h2>
+<p><img alt="product-options-table" src="img/product-options-table.jpg" /></p>
+<pre><code class="html">&lt;script&gt;
+    window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
+    window.PapathemesMultiQtyProductOptionsSettings = {
+        fields: [
+            {
+                name: ['Colour', 'Size'],
+                productIds: []
+            }
+        ],
+        cartId: '{{cart_id}}'
+    };
+&lt;/script&gt;
+&lt;script src=&quot;//papathemes.com/content/multiqtyproductoptions/multi-qty-product-options.YOURDOMAIN.js&quot; async&gt;&lt;/script&gt;
+</code></pre>
+
+<ul>
+<li><code>name: ['Colour', 'Size']</code>: is an array of titles of 2 product options.</li>
+<li><code>productIds: []</code>: is an array of the product IDs which enable this feature.</li>
+</ul>
               
             </div>
           </div>
