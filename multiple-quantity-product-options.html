@@ -191,26 +191,41 @@
 <li><code>cartId</code>: Is your cart object ID, leave it unchanged as above configuration.</li>
 </ul>
 <p><strong>Other optional configuration:</strong></p>
-<pre><code class="js">productOptionsSelector = '[data-product-option-change]',
-optionLabelSelector = 'label:not([for])',
-formFieldSelector = '.form-field[data-product-attribute]',
-quantityFormFieldSelector = '.form-field--increments',
-productIdSelector = 'input[name=product_id]',
-productOptionsListSelector = '.productOptions-list',
-productListTemplate = `
+<ul>
+<li><code>productOptionsSelector = '[data-product-option-change]'</code>: Product option selector.</li>
+<li><code>optionLabelSelector = 'label'</code>: Product option label selector.</li>
+<li><code>formFieldSelector = '.form-field[data-product-attribute]'</code>: Form field selector.</li>
+<li><code>quantityFormFieldSelector = '.form-field--increments'</code>: Quantity form field selector.</li>
+<li><code>productIdSelector = 'input[name=product_id]'</code>: Product ID input selector.</li>
+<li><code>productViewSelector = '.productView'</code>: productView element selector.</li>
+<li><code>productTitleSelector = '.productView-title'</code>: product title selector.</li>
+<li><code>priceWithTaxSelector = '[data-product-price-with-tax]'</code>: price with tax selector.</li>
+<li><code>priceWithoutTaxSelector = '[data-product-price-without-tax]'</code>: price without tax selector.</li>
+<li><code>productOptionsListSelector = '.productOptions-list'</code>: products pick list selector.</li>
+<li><code>addedToCartMsgTitle = 'Added to your cart!'</code>: Add to Cart popup title.</li>
+<li><code>cartContentFile = 'cart/content'</code>: Cart content template file. Only need for stencil-utils 1.x.</li>
+<li><code>hideMainPrice = false</code>: Hide the main product price.</li>
+<li><code>hideMainQty = false</code>: Hide the main product quantity input box.</li>
+<li><code>useThemeAddToCartForMainProduct = false</code>: Use the theme's add to cart function when adding the main product to cart.</li>
+</ul>
+<pre><code class="js">productListTemplate = `
     &lt;div class=&quot;mqpo-productsList&quot;&gt;
         &lt;%#list%&gt;
         &lt;div class=&quot;_item&quot; data-mqpo-attribute-item&gt;
             &lt;%#imgTag%&gt;&lt;div class=&quot;_img&quot; data-img&gt;&lt;%&amp;.%&gt;&lt;/div&gt;&lt;%/imgTag%&gt;
             &lt;div class=&quot;_title&quot; data-name&gt;&lt;%name%&gt;&lt;/div&gt;
-            &lt;div class=&quot;_price&quot;&gt;&lt;span class=&quot;price price--withTax&quot; data-mqpo-price-with-tax&gt;&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;_props&quot;&gt;
+                &lt;span class=&quot;_sku-label&quot; data-mqpo-sku-label style=&quot;display:none&quot;&gt;SKU:&lt;/span&gt; &lt;span class=&quot;_sku-value&quot; data-mqpo-sku style=&quot;display:none&quot;&gt;&lt;/span&gt;
+                &lt;span class=&quot;price price--withTax&quot; data-mqpo-price-with-tax style=&quot;display:none&quot;&gt;&lt;/span&gt; &lt;span class=&quot;_price-label&quot; data-mqpo-price-with-tax-label style=&quot;display:none&quot;&gt;(Incl. &lt;span data-mqpo-tax-label&gt;&lt;/span&gt;)&lt;/span&gt;
+                &lt;span class=&quot;price price--withoutTax&quot; data-mqpo-price-without-tax style=&quot;display:none&quot;&gt;&lt;/span&gt; &lt;span class=&quot;_price-label&quot; data-mqpo-price-without-tax-label style=&quot;display:none&quot;&gt;(Excl. &lt;span data-mqpo-tax-label&gt;&lt;/span&gt;)&lt;/span&gt;
+            &lt;/div&gt;
             &lt;div class=&quot;_qty&quot;&gt;
                 &lt;div class=&quot;form-increment&quot; data-mqpo-quantity-change&gt;
                     &lt;button class=&quot;button button--icon&quot; data-action=&quot;dec&quot;&gt;
                         &lt;span class=&quot;is-srOnly&quot;&gt;Decrease Quantity:&lt;/span&gt;
                         &lt;i class=&quot;icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;svg&gt;&lt;use xlink:href=&quot;#icon-keyboard-arrow-down&quot;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/i&gt;
                     &lt;/button&gt;
-                    &lt;input class=&quot;form-input form-input--incrementTotal&quot; id=&quot;qty_&lt;%id%&gt;&quot; data-mqpo-attribute-id=&quot;&lt;%attrId%&gt;&quot; data-mqpo-attribute-value=&quot;&lt;%attrVal%&gt;&quot; type=&quot;tel&quot; value=&quot;0&quot; data-quantity-min=&quot;0&quot; data-quantity-max=&quot;0&quot; min=&quot;0&quot; pattern=&quot;[0-9]*&quot; aria-live=&quot;polite&quot;&gt;
+                    &lt;input class=&quot;form-input form-input--incrementTotal&quot; id=&quot;qty_&lt;%id%&gt;&quot; data-mqpo-attribute-id=&quot;&lt;%attrId%&gt;&quot; data-mqpo-attribute-value=&quot;&lt;%attrVal%&gt;&quot; type=&quot;tel&quot; value=&quot;0&quot; data-quantity-min=&quot;&lt;%min%&gt;&quot; data-quantity-max=&quot;&lt;%max%&gt;&quot; min=&quot;0&quot; pattern=&quot;[0-9]*&quot; aria-live=&quot;polite&quot;&gt;
                     &lt;button class=&quot;button button--icon&quot; data-action=&quot;inc&quot;&gt;
                         &lt;span class=&quot;is-srOnly&quot;&gt;Increase Quantity:&lt;/span&gt;
                         &lt;i class=&quot;icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;svg&gt;&lt;use xlink:href=&quot;#icon-keyboard-arrow-up&quot;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/i&gt;
@@ -220,14 +235,53 @@ productListTemplate = `
         &lt;/div&gt;
         &lt;%/list%&gt;
     &lt;/div&gt;`,
-addedToCartMsgTemplate = `
+</code></pre>
+
+<p>Products List template.</p>
+<pre><code class="js">productTableTemplate = `
+    &lt;div class=&quot;mqpo-productsTable&quot;&gt;
+        &lt;div class=&quot;_row&quot;&gt;
+            &lt;%#columnNames%&gt;
+                &lt;div class=&quot;_col&quot;&gt;&lt;%&amp;.%&gt;&lt;/div&gt;
+            &lt;%/columnNames%&gt;
+        &lt;/div&gt;
+        &lt;%#rows%&gt;
+            &lt;div class=&quot;_row&quot;&gt;
+                &lt;div class=&quot;_col&quot;&gt;&lt;span class=&quot;_name&quot;&gt;&lt;%&amp;name%&gt;&lt;/span&gt;&lt;/div&gt;
+                &lt;%#columns%&gt;
+                    &lt;div class=&quot;_col&quot; data-mqpo-attribute-item&gt;
+                        &lt;span style=&quot;display:none&quot; data-name&gt;&lt;%fullName%&gt;&lt;/span&gt;
+                        &lt;span class=&quot;_name&quot;&gt;&lt;%&amp;name%&gt;&lt;/span&gt;
+                        &lt;span class=&quot;price price--withTax&quot; data-mqpo-price-with-tax style=&quot;display:none&quot;&gt;&lt;/span&gt; &lt;span class=&quot;_price-label&quot; data-mqpo-price-with-tax-label style=&quot;display:none&quot;&gt;(Incl. &lt;span data-mqpo-tax-label&gt;&lt;/span&gt;)&lt;/span&gt;
+                        &lt;span class=&quot;price price--withoutTax&quot; data-mqpo-price-without-tax style=&quot;display:none&quot;&gt;&lt;/span&gt; &lt;span class=&quot;_price-label&quot; data-mqpo-price-without-tax-label style=&quot;display:none&quot;&gt;(Excl. &lt;span data-mqpo-tax-label&gt;&lt;/span&gt;)&lt;/span&gt;
+                        &lt;div class=&quot;form-increment&quot; data-mqpo-quantity-change&gt;
+                            &lt;button class=&quot;button button--icon&quot; data-action=&quot;dec&quot;&gt;
+                                &lt;span class=&quot;is-srOnly&quot;&gt;Decrease Quantity:&lt;/span&gt;
+                                &lt;i class=&quot;icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;svg&gt;&lt;use xlink:href=&quot;#icon-keyboard-arrow-down&quot;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/i&gt;
+                            &lt;/button&gt;
+                            &lt;input class=&quot;form-input form-input--incrementTotal&quot; id=&quot;qty_&lt;%id%&gt;&quot; data-mqpo-attribute-id=&quot;&lt;%attrId%&gt;&quot; data-mqpo-attribute-value=&quot;&lt;%attrVal%&gt;&quot; type=&quot;number&quot; value=&quot;&quot; data-quantity-min=&quot;&lt;%min%&gt;&quot; data-quantity-max=&quot;&lt;%max%&gt;&quot; min=&quot;0&quot; pattern=&quot;[0-9]*&quot; aria-live=&quot;polite&quot;&gt;
+                            &lt;button class=&quot;button button--icon&quot; data-action=&quot;inc&quot;&gt;
+                                &lt;span class=&quot;is-srOnly&quot;&gt;Increase Quantity:&lt;/span&gt;
+                                &lt;i class=&quot;icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;svg&gt;&lt;use xlink:href=&quot;#icon-keyboard-arrow-up&quot;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/i&gt;
+                            &lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;%/columns%&gt;
+            &lt;/div&gt;
+        &lt;%/rows%&gt;
+    &lt;/div&gt;
+`,
+</code></pre>
+
+<p>Product Table template.</p>
+<pre><code class="js">addedToCartMsgTemplate = `
     &lt;div class=&quot;mqpo-addedToCartMsg-content&quot;&gt;
         &lt;div class=&quot;_msg&quot;&gt;&lt;%msg%&gt;&lt;/div&gt;
         &lt;ul class=&quot;_list&quot;&gt;
             &lt;%#list%&gt;
                 &lt;li class=&quot;_item&quot;&gt;
                     &lt;%#imgTag%&gt;&lt;div class=&quot;_img&quot;&gt;&lt;%&amp;.%&gt;&lt;/div&gt;&lt;%/imgTag%&gt;
-                    &lt;div class=&quot;_title&quot;&gt;&lt;%name%&gt;&lt;/div&gt;
+                    &lt;div class=&quot;_title&quot;&gt;&lt;%&amp;name%&gt;&lt;/div&gt;
                     &lt;div class=&quot;_qty&quot;&gt;&lt;%qty%&gt;&lt;/div&gt;
                 &lt;/li&gt;
             &lt;%/list%&gt;
@@ -238,9 +292,9 @@ addedToCartMsgTemplate = `
         &lt;/div&gt;
     &lt;/div&gt;
 `,
-addedToCartMsgTitle = 'Added to your cart!',
 </code></pre>
 
+<p>Add to Cart sucessful message template.</p>
 <p><strong>Example script for shoppartsland.com:</strong></p>
 <pre><code class="html">&lt;script&gt;
     window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
