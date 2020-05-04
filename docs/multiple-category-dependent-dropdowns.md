@@ -37,6 +37,7 @@ Enter the script below to **Scripts contents**:
         usePrepend: true,
         rootCategoryId: 0,
         maxDepth: 3,
+        showOnAllPages: true,
         lang: {
             heading: 'Find Auto Parts',
             category_label_0: 'Make:',
@@ -50,6 +51,7 @@ Enter the script below to **Scripts contents**:
     };
 </script>
 <script type="application/json" id="PAPATHEMESMCDD_breadcrumbs" data-instantload-body-dynamic>{{{JSONstringify breadcrumbs}}}</script>
+<script type="application/json" id="PAPATHEMESMCDD_category" data-instantload-body-dynamic>{ "name": {{{JSONstringify category.name}}}, "id": {{{JSONstringify category.id}}}, "url": {{{JSONstringify category.url}}} }</script>
 <script type="application/json" id="PAPATHEMESMCDD_subcategories" data-instantload-body-dynamic>[{{#each category.subcategories}}{ "name": {{{JSONstringify name}}}, "id": {{{JSONstringify id}}}, "url": {{{JSONstringify url}}} }{{#unless @last}},{{/unless}}{{/each}}]</script>
 <script src="//papathemes.com/content/mcdd/mcdd.YOURDOMAIN.js" async></script>
 ```
@@ -59,6 +61,7 @@ Enter the script below to **Scripts contents**:
 - `usePrepend` = `true`: specify the form will be rendered on the top inside of the container HTML element.
 - `rootCategoryId` = `0`: specify the root category to load its subcategories into the first dropdown.
 - `maxDepth`: specify the number of dropdowns or categories to display.
+- `showOnAllPages` = `true`: Show on all pages or only on the coresponding category, descendant cateories and products.
 - Customize words or languages in `lang` variable.
 
 
@@ -81,6 +84,7 @@ Enter the script below to **Scripts contents**:
         usePrepend: true,
         rootCategoryId: 0,
         maxDepth: 5,
+        showOnAllPages: true,
         verticalLayout: true,
         lang: {
             heading: 'Find Auto Parts',
@@ -95,6 +99,7 @@ Enter the script below to **Scripts contents**:
     };
 </script>
 <script type="application/json" id="PAPATHEMESMCDD_breadcrumbs" data-instantload-body-dynamic>{{{JSONstringify breadcrumbs}}}</script>
+<script type="application/json" id="PAPATHEMESMCDD_category" data-instantload-body-dynamic>{ "name": {{{JSONstringify category.name}}}, "id": {{{JSONstringify category.id}}}, "url": {{{JSONstringify category.url}}} }</script>
 <script type="application/json" id="PAPATHEMESMCDD_subcategories" data-instantload-body-dynamic>[{{#each category.subcategories}}{ "name": {{{JSONstringify name}}}, "id": {{{JSONstringify id}}}, "url": {{{JSONstringify url}}} }{{#unless @last}},{{/unless}}{{/each}}]</script>
 <script src="//papathemes.com/content/mcdd/mcdd.YOURDOMAIN.js" async></script>
 ```
@@ -137,6 +142,7 @@ Enter the script below to **Scripts contents**:
     };
 </script>
 <script type="application/json" id="PAPATHEMESMCDD_breadcrumbs" data-instantload-body-dynamic>{{{JSONstringify breadcrumbs}}}</script>
+<script type="application/json" id="PAPATHEMESMCDD_category" data-instantload-body-dynamic>{ "name": {{{JSONstringify category.name}}}, "id": {{{JSONstringify category.id}}}, "url": {{{JSONstringify category.url}}} }</script>
 <script type="application/json" id="PAPATHEMESMCDD_subcategories" data-instantload-body-dynamic>[{{#each category.subcategories}}{ "name": {{{JSONstringify name}}}, "id": {{{JSONstringify id}}}, "url": {{{JSONstringify url}}} }{{#unless @last}},{{/unless}}{{/each}}]</script>
 <script src="//papathemes.com/content/mcdd/mcdd.supermarket.js" async></script>
 ```
