@@ -177,6 +177,7 @@
         usePrepend: true,
         rootCategoryId: 0,
         maxDepth: 3,
+        showOnAllPages: true,
         lang: {
             heading: 'Find Auto Parts',
             category_label_0: 'Make:',
@@ -190,6 +191,7 @@
     };
 &lt;/script&gt;
 &lt;script type=&quot;application/json&quot; id=&quot;PAPATHEMESMCDD_breadcrumbs&quot; data-instantload-body-dynamic&gt;{{{JSONstringify breadcrumbs}}}&lt;/script&gt;
+&lt;script type=&quot;application/json&quot; id=&quot;PAPATHEMESMCDD_category&quot; data-instantload-body-dynamic&gt;{ &quot;name&quot;: {{{JSONstringify category.name}}}, &quot;id&quot;: {{{JSONstringify category.id}}}, &quot;url&quot;: {{{JSONstringify category.url}}} }&lt;/script&gt;
 &lt;script type=&quot;application/json&quot; id=&quot;PAPATHEMESMCDD_subcategories&quot; data-instantload-body-dynamic&gt;[{{#each category.subcategories}}{ &quot;name&quot;: {{{JSONstringify name}}}, &quot;id&quot;: {{{JSONstringify id}}}, &quot;url&quot;: {{{JSONstringify url}}} }{{#unless @last}},{{/unless}}{{/each}}]&lt;/script&gt;
 &lt;script src=&quot;//papathemes.com/content/mcdd/mcdd.YOURDOMAIN.js&quot; async&gt;&lt;/script&gt;
 </code></pre>
@@ -200,6 +202,7 @@
 <li><code>usePrepend</code> = <code>true</code>: specify the form will be rendered on the top inside of the container HTML element.</li>
 <li><code>rootCategoryId</code> = <code>0</code>: specify the root category to load its subcategories into the first dropdown.</li>
 <li><code>maxDepth</code>: specify the number of dropdowns or categories to display.</li>
+<li><code>showOnAllPages</code> = <code>true</code>: Show on all pages or only on the coresponding category, descendant cateories and products.</li>
 <li>Customize words or languages in <code>lang</code> variable.</li>
 </ul>
 <h3 id="vertical-layout">Vertical layout<a class="headerlink" href="#vertical-layout" title="Permanent link">&para;</a></h3>
@@ -217,6 +220,7 @@
         usePrepend: true,
         rootCategoryId: 0,
         maxDepth: 5,
+        showOnAllPages: true,
         verticalLayout: true,
         lang: {
             heading: 'Find Auto Parts',
@@ -231,6 +235,7 @@
     };
 &lt;/script&gt;
 &lt;script type=&quot;application/json&quot; id=&quot;PAPATHEMESMCDD_breadcrumbs&quot; data-instantload-body-dynamic&gt;{{{JSONstringify breadcrumbs}}}&lt;/script&gt;
+&lt;script type=&quot;application/json&quot; id=&quot;PAPATHEMESMCDD_category&quot; data-instantload-body-dynamic&gt;{ &quot;name&quot;: {{{JSONstringify category.name}}}, &quot;id&quot;: {{{JSONstringify category.id}}}, &quot;url&quot;: {{{JSONstringify category.url}}} }&lt;/script&gt;
 &lt;script type=&quot;application/json&quot; id=&quot;PAPATHEMESMCDD_subcategories&quot; data-instantload-body-dynamic&gt;[{{#each category.subcategories}}{ &quot;name&quot;: {{{JSONstringify name}}}, &quot;id&quot;: {{{JSONstringify id}}}, &quot;url&quot;: {{{JSONstringify url}}} }{{#unless @last}},{{/unless}}{{/each}}]&lt;/script&gt;
 &lt;script src=&quot;//papathemes.com/content/mcdd/mcdd.YOURDOMAIN.js&quot; async&gt;&lt;/script&gt;
 </code></pre>
@@ -271,6 +276,7 @@
     };
 &lt;/script&gt;
 &lt;script type=&quot;application/json&quot; id=&quot;PAPATHEMESMCDD_breadcrumbs&quot; data-instantload-body-dynamic&gt;{{{JSONstringify breadcrumbs}}}&lt;/script&gt;
+&lt;script type=&quot;application/json&quot; id=&quot;PAPATHEMESMCDD_category&quot; data-instantload-body-dynamic&gt;{ &quot;name&quot;: {{{JSONstringify category.name}}}, &quot;id&quot;: {{{JSONstringify category.id}}}, &quot;url&quot;: {{{JSONstringify category.url}}} }&lt;/script&gt;
 &lt;script type=&quot;application/json&quot; id=&quot;PAPATHEMESMCDD_subcategories&quot; data-instantload-body-dynamic&gt;[{{#each category.subcategories}}{ &quot;name&quot;: {{{JSONstringify name}}}, &quot;id&quot;: {{{JSONstringify id}}}, &quot;url&quot;: {{{JSONstringify url}}} }{{#unless @last}},{{/unless}}{{/each}}]&lt;/script&gt;
 &lt;script src=&quot;//papathemes.com/content/mcdd/mcdd.supermarket.js&quot; async&gt;&lt;/script&gt;
 </code></pre>
