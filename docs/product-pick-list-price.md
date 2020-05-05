@@ -17,7 +17,6 @@ Enter the script below to **Scripts contents**:
     window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
     window.window.PapathemesProductPickListPriceSettings = {};
 </script>
-<script>
 <script src="//papathemes.com/content/productpicklistprice/product-pick-list-price.YOURDOMAIN.js" async></script>
 ```
 
