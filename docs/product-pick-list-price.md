@@ -58,3 +58,28 @@ window.window.PapathemesProductPickListPriceSettings = {
 };
 ```
 
+## Installation example for atlastsolutions
+
+
+```html
+<script>
+    (function() {
+        window.PapathemesProductPickListPriceSettings = {
+            list: [{
+                name: '',
+                productIds: [480]
+            }],
+            template: '<div class="pplp__item" data-pplp-item>'
+                + '<span class="price price--withTax" data-pplp-price-with-tax style="display:none"></span>'
+                + '</div>',
+            selectOptionTemplate: '<div data-pplp-item>'
+                + '<span data-pplp-price-with-tax></span>'
+                + '</div>'
+        };
+        var style = document.createElement('style');
+        style.innerHTML = '.pplp__item { display: inline; margin-left: .5rem }';
+        document.head.appendChild(style);
+    })();
+</script>
+<script src="//papathemes.com/content/productpicklistprice/product-pick-list-price.atlastsolutions.com.js" async></script>
+```

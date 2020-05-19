@@ -202,3 +202,11 @@ Add to Cart sucessful message template.
 - `productIds: []`: is an array of the product IDs which enable this feature.
 
 
+## Install for Supermarket theme
+
+Add below options:
+
+```js
+priceWithTaxSelector: '[data-also-bought-parent-scope] [data-product-price-with-tax]',
+priceWithoutTaxSelector: '[data-also-bought-parent-scope] [data-product-price-without-tax]',
+```
