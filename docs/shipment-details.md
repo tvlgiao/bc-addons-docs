@@ -11,14 +11,16 @@ Edit your theme file `templates/layout/base.html`, insert the code below before 
 
 ```html
 <script>
+    {{#if shipments}}
     window.PAPATHEMES_SHIPMENT_DETAILS_SETTINGS = {
         storeDomain: 'supermarket-yellow-demo.mybigcommerce.com',
         customerId: '{{customer.id}}',
         currencySetting: {{{JSONstringify settings.money}}},
         storefrontShipments: {{{JSONstringify shipments}}},
     };
+    {{/if}}
 </script>
-<script {{#if page_type '===' 'account_order'}}src="//papathemes.com/content/supermarket/addon.shipment-details.js"{{/if}} async></script>
+<script {{#if shipments}}src="//papathemes.com/content/supermarket/addon.shipment-details.js"{{/if}} async></script>
 ```
 
 Replace `supermarket-yellow-demo.mybigcommerce.com` by your store domain.
