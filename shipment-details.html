@@ -168,15 +168,16 @@
 <p>This app allows to display detailed shipments include shipped products, billing address, shipping address and tracking details on customer's order page.</p>
 <p><img alt="shipment-details" src="img/shipment-details.png" /></p>
 <h2 id="install-on-your-bigcommerce-store">Install on your BigCommerce store<a class="headerlink" href="#install-on-your-bigcommerce-store" title="Permanent link">&para;</a></h2>
-<p>In your BigCommerce store admin page, go to <strong>Advanced Settings</strong> &gt; <strong>Web Analytics</strong> &gt; Tick on <strong>Site Verification Tags</strong>. Then click <strong>Save</strong> button. Open <strong>Site Verification Tags</strong>, enter the script below to <strong>Site Verification Header Scripts</strong>:</p>
+<p>Edit your theme file <code>templates/layout/base.html</code>, insert the code below before <code>&lt;/body&gt;</code> tag:</p>
 <pre><code class="html">&lt;script&gt;
     window.PAPATHEMES_SHIPMENT_DETAILS_SETTINGS = {
         storeDomain: 'supermarket-yellow-demo.mybigcommerce.com',
         customerId: '{{customer.id}}',
         currencySetting: {{{JSONstringify settings.money}}},
+        storefrontShipments: {{{JSONstringify shipments}}},
     };
 &lt;/script&gt;
-&lt;script src=&quot;{{cdn 'assets/dist/addon.shipment-details.js'}}&quot; defer&gt;&lt;/script&gt;
+&lt;script {{#if page_type '===' 'account_order'}}src=&quot;//papathemes.com/content/supermarket/addon.shipment-details.js&quot;{{/if}} async&gt;&lt;/script&gt;
 </code></pre>
 
 <p>Replace <code>supermarket-yellow-demo.mybigcommerce.com</code> by your store domain.</p>
