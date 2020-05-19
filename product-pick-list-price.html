@@ -108,6 +108,8 @@
         
             <li><a class="toctree-l3" href="#configuration">Configuration</a></li>
         
+            <li><a class="toctree-l3" href="#installation-example-for-atlastsolutions">Installation example for atlastsolutions</a></li>
+        
         </ul>
     
 
@@ -127,6 +129,11 @@
             <li class="toctree-l1">
 		
     <a class="" href="sell-by-pack.html">Sell By Pack</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="shipment-details.html">Shipment Details</a>
 	    </li>
           
         </ul>
@@ -210,6 +217,29 @@
         return $el.find('[data-pplp-item]');
     }
 };
+</code></pre>
+
+<h2 id="installation-example-for-atlastsolutions">Installation example for atlastsolutions<a class="headerlink" href="#installation-example-for-atlastsolutions" title="Permanent link">&para;</a></h2>
+<pre><code class="html">&lt;script&gt;
+    (function() {
+        window.PapathemesProductPickListPriceSettings = {
+            list: [{
+                name: '',
+                productIds: [480]
+            }],
+            template: '&lt;div class=&quot;pplp__item&quot; data-pplp-item&gt;'
+                + '&lt;span class=&quot;price price--withTax&quot; data-pplp-price-with-tax style=&quot;display:none&quot;&gt;&lt;/span&gt;'
+                + '&lt;/div&gt;',
+            selectOptionTemplate: '&lt;div data-pplp-item&gt;'
+                + '&lt;span data-pplp-price-with-tax&gt;&lt;/span&gt;'
+                + '&lt;/div&gt;'
+        };
+        var style = document.createElement('style');
+        style.innerHTML = '.pplp__item { display: inline; margin-left: .5rem }';
+        document.head.appendChild(style);
+    })();
+&lt;/script&gt;
+&lt;script src=&quot;//papathemes.com/content/productpicklistprice/product-pick-list-price.atlastsolutions.com.js&quot; async&gt;&lt;/script&gt;
 </code></pre>
               
             </div>

@@ -103,6 +103,8 @@
         
             <li><a class="toctree-l3" href="#configuration-for-product-options-table">Configuration for product options table</a></li>
         
+            <li><a class="toctree-l3" href="#install-for-supermarket-theme">Install for Supermarket theme</a></li>
+        
         </ul>
     
 
@@ -127,6 +129,11 @@
             <li class="toctree-l1">
 		
     <a class="" href="sell-by-pack.html">Sell By Pack</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="shipment-details.html">Shipment Details</a>
 	    </li>
           
         </ul>
@@ -342,6 +349,11 @@
 <li><code>name: ['Colour', 'Size']</code>: is an array of titles of 2 product options.</li>
 <li><code>productIds: []</code>: is an array of the product IDs which enable this feature.</li>
 </ul>
+<h2 id="install-for-supermarket-theme">Install for Supermarket theme<a class="headerlink" href="#install-for-supermarket-theme" title="Permanent link">&para;</a></h2>
+<p>Add below options:</p>
+<pre><code class="js">priceWithTaxSelector: '[data-also-bought-parent-scope] [data-product-price-with-tax]',
+priceWithoutTaxSelector: '[data-also-bought-parent-scope] [data-product-price-without-tax]',
+</code></pre>
               
             </div>
           </div>
