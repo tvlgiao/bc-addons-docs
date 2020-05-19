@@ -7,7 +7,7 @@ This app allows to display detailed shipments include shipped products, billing 
 
 ## Install on your BigCommerce store
 
-In your BigCommerce store admin page, go to **Advanced Settings** > **Web Analytics** > Tick on **Site Verification Tags**. Then click **Save** button. Open **Site Verification Tags**, enter the script below to **Site Verification Header Scripts**:
+Edit your theme file `templates/layout/base.html`, insert the code below before `</body>` tag:
 
 ```html
 <script>
@@ -15,9 +15,10 @@ In your BigCommerce store admin page, go to **Advanced Settings** > **Web Analyt
         storeDomain: 'supermarket-yellow-demo.mybigcommerce.com',
         customerId: '{{customer.id}}',
         currencySetting: {{{JSONstringify settings.money}}},
+        storefrontShipments: {{{JSONstringify shipments}}},
     };
 </script>
-<script src="{{cdn 'assets/dist/addon.shipment-details.js'}}" defer></script>
+<script {{#if page_type '===' 'account_order'}}src="//papathemes.com/content/supermarket/addon.shipment-details.js"{{/if}} async></script>
 ```
 
 Replace `supermarket-yellow-demo.mybigcommerce.com` by your store domain.
