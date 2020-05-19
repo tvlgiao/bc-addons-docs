@@ -170,14 +170,16 @@
 <h2 id="install-on-your-bigcommerce-store">Install on your BigCommerce store<a class="headerlink" href="#install-on-your-bigcommerce-store" title="Permanent link">&para;</a></h2>
 <p>Edit your theme file <code>templates/layout/base.html</code>, insert the code below before <code>&lt;/body&gt;</code> tag:</p>
 <pre><code class="html">&lt;script&gt;
+    {{#if shipments}}
     window.PAPATHEMES_SHIPMENT_DETAILS_SETTINGS = {
         storeDomain: 'supermarket-yellow-demo.mybigcommerce.com',
         customerId: '{{customer.id}}',
         currencySetting: {{{JSONstringify settings.money}}},
         storefrontShipments: {{{JSONstringify shipments}}},
     };
+    {{/if}}
 &lt;/script&gt;
-&lt;script {{#if page_type '===' 'account_order'}}src=&quot;//papathemes.com/content/supermarket/addon.shipment-details.js&quot;{{/if}} async&gt;&lt;/script&gt;
+&lt;script {{#if shipments}}src=&quot;//papathemes.com/content/supermarket/addon.shipment-details.js&quot;{{/if}} async&gt;&lt;/script&gt;
 </code></pre>
 
 <p>Replace <code>supermarket-yellow-demo.mybigcommerce.com</code> by your store domain.</p>
