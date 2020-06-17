@@ -13,3 +13,5 @@
 - [Automatically Add Additional Product To Cart](add-product-to-cart-automatically.md)
 - [Sell By Pack](sell-by-pack.md)
 - [Shipment Details](shipment-details.md)
+- [Limit Countries & States](limit-countries.md)
+- [Quantity In Cart](quantity-in-cart.md)

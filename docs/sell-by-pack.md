@@ -19,7 +19,7 @@ Enter the script below to **Scripts contents**:
     window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.chiarajQuery || window.jQuery || window.$;
     window.PapathemesSellByPackSettings = {
         // Add the addon settings here:
-        customFieldName: 'Pack',
+        stepCustomFieldName: 'Step',
 
         // End.
         cartId: '{{card_id}}'
@@ -41,7 +41,7 @@ Below are available configuration variables and the default values:
 
 **Basic Settings:**
 
-- `customFieldName = 'Pack'`: Input the custom field name which has custom field value is quantity step. For example, custom field is `Pack` and value = `10` to sell the product every 10 pcs.
+- `stepCustomFieldName = 'Step'`: Input the custom field name which has custom field value is quantity step. For example, custom field is `Step` and value = `10` to sell the product every 10 pcs.
 
 **Advanced Settings for custom themes:**
 
