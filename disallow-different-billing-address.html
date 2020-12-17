@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Product Pick List Price - Documentation</title>
+  <title>Disallow Different Billing Address - Documentation</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="css/theme.css" type="text/css" />
@@ -19,8 +19,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Product Pick List Price";
-    var mkdocs_page_input_path = "product-pick-list-price.md";
+    var mkdocs_page_name = "Disallow Different Billing Address";
+    var mkdocs_page_input_path = "disallow-different-billing-address.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -95,25 +95,9 @@
     <a class="" href="multiple-quantity-product-options.html">Mutiple Quantity Product Options</a>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="product-pick-list-price.html">Product Pick List Price</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#product-pick-list-price">Product Pick List Price</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l3" href="#install-on-your-bigcommerce-store">Install on your BigCommerce store</a></li>
-        
-            <li><a class="toctree-l3" href="#configuration">Configuration</a></li>
-        
-            <li><a class="toctree-l3" href="#installation-example-for-atlastsolutions">Installation example for atlastsolutions</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="product-pick-list-price.html">Product Pick List Price</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -151,9 +135,21 @@
     <a class="" href="limit-shipping-options.html">Limit Shipping Options</a>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="disallow-different-billing-address.html">Disallow Different Billing Address</a>
+    <a class="current" href="disallow-different-billing-address.html">Disallow Different Billing Address</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#disallow-billing-address-not-match-shipping-address">Disallow billing address not match shipping address</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#install-on-your-bigcommerce-store">Install on your BigCommerce store</a></li>
+        
+        </ul>
+    
+
+    </ul>
 	    </li>
           
             <li class="toctree-l1">
@@ -193,7 +189,7 @@
     
       
     
-    <li>Product Pick List Price</li>
+    <li>Disallow Different Billing Address</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -203,78 +199,21 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="product-pick-list-price">Product Pick List Price<a class="headerlink" href="#product-pick-list-price" title="Permanent link">&para;</a></h1>
-<p>This addon shows price, SKU, stock number and stock message on every product pick list item on product details page.</p>
+                <h1 id="disallow-billing-address-not-match-shipping-address">Disallow billing address not match shipping address<a class="headerlink" href="#disallow-billing-address-not-match-shipping-address" title="Permanent link">&para;</a></h1>
 <h2 id="install-on-your-bigcommerce-store">Install on your BigCommerce store<a class="headerlink" href="#install-on-your-bigcommerce-store" title="Permanent link">&para;</a></h2>
 <p>Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, click <strong>Create a Script</strong>, choose:</p>
 <ul>
 <li><strong>Location on page</strong> = <code>Footer</code></li>
-<li><strong>Select pages where script will be added</strong> = <code>All pages</code></li>
+<li><strong>Select pages where script will be added</strong> = <code>Checkout</code></li>
 <li><strong>Script type</strong> = <code>Script</code></li>
 </ul>
 <p>Enter the script below to <strong>Scripts contents</strong>: </p>
 <pre><code class="html">&lt;script&gt;
-    window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
-    window.window.PapathemesProductPickListPriceSettings = {};
+    window.PAPATHEMES_DDBA = {
+        cartId: {{{JSONstringify cart_id}}}
+    };
 &lt;/script&gt;
-&lt;script src=&quot;//papathemes.com/content/productpicklistprice/product-pick-list-price.YOURDOMAIN.js&quot; async&gt;&lt;/script&gt;
-</code></pre>
-
-<p>Replace <code>YOURDOMAIN</code> by your domain name, for example: <code>mystore.com</code>.</p>
-<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
-<pre><code class="js">window.window.PapathemesProductPickListPriceSettings = {
-    addToCartFormSelector: 'form[data-cart-item-add]',
-    productOptionsSelector: '[data-product-option-change]',
-    productPickListOptionsSelector: '[data-product-attribute=&quot;product-list&quot;]',
-    labelSelector: 'label',
-    productIdSelector: 'input[name=&quot;product_id&quot;]',
-    parallelRequests: 3,
-    list: [
-        {
-            name: '',
-            productIds: []
-        }
-    ],
-    template = `
-        &lt;div class=&quot;pplp__item&quot; data-pplp-item&gt;
-            &lt;span class=&quot;price price--withTax&quot; data-pplp-price-with-tax style=&quot;display:none&quot;&gt;&lt;/span&gt; &lt;span class=&quot;_price-label&quot; data-pplp-price-with-tax-label style=&quot;display:none&quot;&gt;(Incl. &lt;span data-pplp-tax-label&gt;&lt;/span&gt;)&lt;/span&gt;
-            &lt;span class=&quot;price price--withoutTax&quot; data-pplp-price-without-tax style=&quot;display:none&quot;&gt;&lt;/span&gt; &lt;span class=&quot;_price-label&quot; data-pplp-price-without-tax-label style=&quot;display:none&quot;&gt;(Excl. &lt;span data-pplp-tax-label&gt;&lt;/span&gt;)&lt;/span&gt;
-            &lt;span class=&quot;_sku-label&quot; data-pplp-sku-label style=&quot;display:none&quot;&gt;SKU:&lt;/span&gt; &lt;span class=&quot;_sku-value&quot; data-pplp-sku style=&quot;display:none&quot;&gt;&lt;/span&gt;
-            &lt;span class=&quot;_stock-label&quot; data-pplp-stock-label style=&quot;display:none&quot;&gt;Stock:&lt;/span&gt; &lt;span class=&quot;_stock-value&quot; data-pplp-stock style=&quot;display:none&quot;&gt;&lt;/span&gt;
-            &lt;span class=&quot;_stock-msg&quot; data-pplp-stock-message style=&quot;display:none&quot;&gt;&lt;/span&gt;
-        &lt;/div&gt;
-    `,
-    renderFunc: ($input, _template) =&gt; {
-        const $el = $input.parent();
-        if ($el.find('[data-pplp-item]').length === 0) {
-            $el.append(_template);
-        }
-        return $el.find('[data-pplp-item]');
-    }
-};
-</code></pre>
-
-<h2 id="installation-example-for-atlastsolutions">Installation example for atlastsolutions<a class="headerlink" href="#installation-example-for-atlastsolutions" title="Permanent link">&para;</a></h2>
-<pre><code class="html">&lt;script&gt;
-    (function() {
-        window.PapathemesProductPickListPriceSettings = {
-            list: [{
-                name: '',
-                productIds: [480]
-            }],
-            template: '&lt;div class=&quot;pplp__item&quot; data-pplp-item&gt;'
-                + '&lt;span class=&quot;price price--withTax&quot; data-pplp-price-with-tax style=&quot;display:none&quot;&gt;&lt;/span&gt;'
-                + '&lt;/div&gt;',
-            selectOptionTemplate: '&lt;div data-pplp-item&gt;'
-                + '&lt;span data-pplp-price-with-tax&gt;&lt;/span&gt;'
-                + '&lt;/div&gt;'
-        };
-        var style = document.createElement('style');
-        style.innerHTML = '.pplp__item { display: inline; margin-left: .5rem }';
-        document.head.appendChild(style);
-    })();
-&lt;/script&gt;
-&lt;script src=&quot;//papathemes.com/content/productpicklistprice/product-pick-list-price.atlastsolutions.com.js&quot; async&gt;&lt;/script&gt;
+&lt;script src=&quot;//papathemes.com/content/supermarket/addon.disallow-different-billing-address.js&quot; async&gt;&lt;/script&gt;
 </code></pre>
               
             </div>
@@ -283,10 +222,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="popups.html" class="btn btn-neutral float-right" title="Custom Popups">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="free-shipping-badges.html" class="btn btn-neutral float-right" title="Display Free Shipping Badges">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="multiple-quantity-product-options.html" class="btn btn-neutral" title="Mutiple Quantity Product Options"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="limit-shipping-options.html" class="btn btn-neutral" title="Limit Shipping Options"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -312,10 +251,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="multiple-quantity-product-options.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="limit-shipping-options.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="popups.html" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="free-shipping-badges.html" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

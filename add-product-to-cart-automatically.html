@@ -142,6 +142,31 @@
     <a class="" href="quantity-in-cart.html">Quantity In Cart</a>
 	    </li>
           
+            <li class="toctree-l1">
+		
+    <a class="" href="limit-shipping-options.html">Limit Shipping Options</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="disallow-different-billing-address.html">Disallow Different Billing Address</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="free-shipping-badges.html">Display Free Shipping Badges</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="customer-account-shipping-option.html">Add Shipping Option Your Customer's Shipping Account</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="better-reorder.html">Better Product Reorder</a>
+	    </li>
+          
         </ul>
       </div>
       &nbsp;
@@ -210,6 +235,33 @@
 <li><code>optionValueMatch</code>: Input the option value to process only when this option value is selected.</li>
 <li><code>productIdToAdd</code>: Input the additional product ID to add to cart.</li>
 </ul>
+<h3 id="custom-fields-template-file">Custom Fields template file<a class="headerlink" href="#custom-fields-template-file" title="Permanent link">&para;</a></h3>
+<p>Create file <code>components/products/custom-fields.html</code> with content below:</p>
+<pre><code class="html">&lt;ul&gt;
+    {{#each product.custom_fields}}
+        &lt;li class=&quot;custom-field custom-field--{{pascalcase name}}&quot;&gt;
+            &lt;span class=&quot;custom-field-name&quot;&gt;{{name}}&lt;/span&gt;
+            &lt;span class=&quot;custom-field-value&quot;&gt;{{{value}}}&lt;/span&gt;
+        &lt;/li&gt;
+    {{/each}}
+&lt;/ul&gt;
+</code></pre>
+
+<h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
+<p>Configuration for fordiesels.com</p>
+<pre><code class="html">&lt;script&gt;
+    window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
+    window.PapathemesAutoAddToCartSettings = {
+        cartId: '{{cart_id}}',
+        conditions: [{
+            checkProductCustomField: '__core_charge_product_id',
+            optionMatch: 'Accept Core Deposit',
+            optionValueMatch: 'Yes'
+        }]
+    };
+&lt;/script&gt;
+&lt;script src=&quot;//papathemes.com/content/autoaddtocartaddon/autoaddtocart.fordiesels.com.js&quot; async&gt;&lt;/script&gt;
+</code></pre>
               
             </div>
           </div>

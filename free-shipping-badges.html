@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Display Free Shipping Badges - Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Display Free Shipping Badges";
+    var mkdocs_page_input_path = "free-shipping-badges.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-241859-16', 'bc-addons-docs.papathemes.com');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="icon icon-home"> Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="index.html">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="conditional-product-options.html">Conditional Product Options</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="frequently-bought-together.html">Frequently Bought Together</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="shipping-estimator.html">Shipping Estimator on Product Page</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="color-swatches.html">Display Color Swatches on Product Items</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="multiple-category-dependent-dropdowns.html">Mutiple Category Dependent Dropdowns</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="multiple-quantity-product-options.html">Mutiple Quantity Product Options</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="product-pick-list-price.html">Product Pick List Price</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="popups.html">Custom Popups</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="add-product-to-cart-automatically.html">Automatically Add Additional Product To Cart</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="sell-by-pack.html">Sell By Pack</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="shipment-details.html">Shipment Details</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="limit-countries.html">Limit Countries / States</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="quantity-in-cart.html">Quantity In Cart</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="limit-shipping-options.html">Limit Shipping Options</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="disallow-different-billing-address.html">Disallow Different Billing Address</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="free-shipping-badges.html">Display Free Shipping Badges</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#display-free-shipping-badges-on-product-cards">Display Free Shipping Badges On Product Cards</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#install-to-your-store">Install to your store</a></li>
+        
+            <li><a class="toctree-l3" href="#developers-resource">Developer's Resource</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="customer-account-shipping-option.html">Add Shipping Option Your Customer's Shipping Account</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="better-reorder.html">Better Product Reorder</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Display Free Shipping Badges</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="display-free-shipping-badges-on-product-cards">Display Free Shipping Badges On Product Cards<a class="headerlink" href="#display-free-shipping-badges-on-product-cards" title="Permanent link">&para;</a></h1>
+<h2 id="install-to-your-store">Install to your store<a class="headerlink" href="#install-to-your-store" title="Permanent link">&para;</a></h2>
+<p><img alt="Free Shipping Badge" src="img/free-shipping-badges.jpg" /></p>
+<p>Create a script in Storefront &gt; Script Manager:</p>
+<ul>
+<li>Location: Footer</li>
+<li>Display on Page: Store Pages</li>
+<li>Script Content:</li>
+</ul>
+<pre><code class="html">&lt;script type=&quot;text/plain&quot; id=&quot;papathemes_freeshippingbadge_custom_css&quot;&gt;
+    .card-figure { padding-top: 30px; }
+    .sale-flag-side {
+        left: 0;
+        right: auto;
+    }
+    .sale-flag-side--freeShipping {
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAACwCAMAAAABvQ+cAAAAh1BMVEX////9/f3n5+f29vby8vL39/fo6OiPtmhTj9Tp6elmqiLx9uzMACLu7u7v7+/5+fn6+vrs7Oz19fX7+/v+/v7r6+vw8PD8/Pz09PTq6urx8fHt7e2hFSx8m7+5UWJPeKnm5uZlmjDv8/eZABlXkR3H2rTAz+Ddq7PcqLG9zd/G2rP36uw/bKF169q0AAAAoUlEQVR4XuXRRQ4DMRiD0T8ZKDMzc+9/vo5sKd7MBZJ69aRvaeuG/Quf2wvnzT57srRqD4RWJQaSYQUgzCxsJG7EvjgX12IuLsWxmImFOBCH4kRciK6WU2uGpcfX4ct5s/OOxLF3BLyJQDLgWIaoj83DYmZWHjlv5nokLiwQ8BsCyYALGaK+sH7tsPT4Pl05b9ZpkLj7hoCPEUgG3M2Q3t0/Lh8w5rk+07gAAAAASUVORK5CYII=') !important;
+        background-color: transparent !important;
+        background-repeat: no-repeat !important;
+        background-position: top left !important;
+        padding: 0;
+        height: 30px;
+    }
+    .sale-flag-side--freeShipping span {
+        background-color: #c02;
+        color: #fff;
+        display: inline-block;
+        height: 22px;
+        line-height: 22px;
+        padding: 0 10px;
+    }
+&lt;/script&gt;
+&lt;script&gt;
+    (function() {
+        var FREESHIPPING_BADGE = 'Killer Deals';
+        // var API_URL = 'http://localhost:5000/api/supermarket-yellow-demo.mybigcommerce.com';
+        var API_URL = 'https://mgdrbagut7.execute-api.us-east-1.amazonaws.com/latest/api/supermarket-yellow-demo.mybigcommerce.com';
+
+        function debounce(n,t,u){var e;return function(){var i=this,o=arguments,a=u&amp;&amp;!e;clearTimeout(e),e=setTimeout(function(){e=null,u||n.apply(i,o)},t),a&amp;&amp;n.apply(i,o)}}
+
+        function css() {
+            var style = document.createElement('style');
+            style.innerHTML = document.getElementById('papathemes_freeshippingbadge_custom_css').innerHTML;
+            document.head.appendChild(style);
+        }
+
+        function main() {
+            var $ = window.jQuerySupermarket || window.jQuery;
+
+            function observe() {
+                var productIds = [];
+                var $cardById = {};
+                $('.card').not('._free-shipping-badge-loaded').each(function(i, el) {
+                    var $el = $(el);
+                    var id = $el.find('[data-product-id]').first().data('productId');
+                    $el.addClass('_free-shipping-badge-loaded');
+                    if (id) {
+                        productIds.push(id);
+                        $cardById[id] = $el;
+                    }
+                });
+                if (productIds.length &gt; 0) {
+                    $.get(`${API_URL}/products/shipping-cost?ids=${productIds.join(',')}`, function(resp) {
+                        resp.map(function(product) {
+                            if (product.is_free_shipping) {
+                                var $el = $cardById[product.id];
+                                if ($el &amp;&amp; $el.find('.sale-flag-side--freeShipping').length === 0) {
+                                    $el.find('.card-figure').prepend(
+                                        '&lt;div class=&quot;sale-flag-side sale-flag-side--freeShipping&quot;&gt;&lt;span class=&quot;sale-text&quot;&gt;'
+                                        .concat(FREESHIPPING_BADGE)
+                                        .concat('&lt;/span&gt;&lt;/div&gt;')
+                                    );
+                                }
+                            }
+                        })
+                    });
+                }
+            }
+
+            var mo = new MutationObserver(debounce(observe, 300));
+            mo.observe(document.body, { childList: true, subtree: true });
+            observe();
+        }
+
+        css();
+        if (!window.jQuerySupermarket &amp;&amp; !window.jQuery) {
+            var script = document.createElement('script');
+            script.src = 'https://code.jquery.com/jquery-3.5.1.js';
+            script.integrity = 'sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=';
+            script.crossOrigin = 'anonymous';
+            script.onload = main;
+            document.head.appendChild(script);
+        } else {
+            main();
+        }
+    })();
+&lt;/script&gt;
+</code></pre>
+
+<p>Edit the variables to change the badge label and the API URL to match your store:</p>
+<pre><code class="js">var FREESHIPPING_BADGE = 'Killer Deals';
+var API_URL = 'https://mgdrbagut7.execute-api.us-east-1.amazonaws.com/latest/api/supermarket-yellow-demo.mybigcommerce.com';
+</code></pre>
+
+<h2 id="developers-resource">Developer's Resource<a class="headerlink" href="#developers-resource" title="Permanent link">&para;</a></h2>
+<ul>
+<li>https://github.com/tvlgiao/bc-productshippingcost-app</li>
+<li>https://github.com/tvlgiao/bc-supermarket-dev/tree/addons-dev</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="customer-account-shipping-option.html" class="btn btn-neutral float-right" title="Add Shipping Option Your Customer's Shipping Account">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="disallow-different-billing-address.html" class="btn btn-neutral" title="Disallow Different Billing Address"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="disallow-different-billing-address.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="customer-account-shipping-option.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="https://use.fontawesome.com/540034d990.js" defer></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" defer></script>
+      <script src="js/main.js" defer></script>
+      <script src="search/main.js" defer></script>
+
+</body>
+</html>
