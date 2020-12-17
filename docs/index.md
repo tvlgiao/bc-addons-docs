@@ -15,3 +15,8 @@
 - [Shipment Details](shipment-details.md)
 - [Limit Countries & States](limit-countries.md)
 - [Quantity In Cart](quantity-in-cart.md)
+- [Limit Shipping Options](limit-shipping-options.md)
+- [Disallow Different Billing Address](disallow-different-billing-address.md)
+- [Display Free Shipping Badges](free-shipping-badges.md)
+- [Add Shipping Option: Your Customer's Shipping Account](customer-account-shipping-option.md)
+- [Better Product Reorder](better-reorder.md)

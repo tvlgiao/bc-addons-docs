@@ -45,3 +45,35 @@ Replace `YOURDOMAIN` by your store's domain name.
 - `optionValueMatch`: Input the option value to process only when this option value is selected.
 - `productIdToAdd`: Input the additional product ID to add to cart.
 
+### Custom Fields template file
+
+Create file `components/products/custom-fields.html` with content below:
+
+```html
+<ul>
+    {{#each product.custom_fields}}
+        <li class="custom-field custom-field--{{pascalcase name}}">
+            <span class="custom-field-name">{{name}}</span>
+            <span class="custom-field-value">{{{value}}}</span>
+        </li>
+    {{/each}}
+</ul>
+```
+
+### Examples
+
+Configuration for fordiesels.com
+```html
+<script>
+    window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
+    window.PapathemesAutoAddToCartSettings = {
+        cartId: '{{cart_id}}',
+        conditions: [{
+            checkProductCustomField: '__core_charge_product_id',
+            optionMatch: 'Accept Core Deposit',
+            optionValueMatch: 'Yes'
+        }]
+    };
+</script>
+<script src="//papathemes.com/content/autoaddtocartaddon/autoaddtocart.fordiesels.com.js" async></script>
+```
