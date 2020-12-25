@@ -21,4 +21,4 @@
 - [Add Shipping Option: Your Customer's Shipping Account](customer-account-shipping-option.md)
 - [Better Product Reorder](better-reorder.md)
 - [Add File Upload Field on Registration Page](file-upload.md)
-- [Select product variants by SKU](shop-by-child-sku.html)
+- [Select product variants by SKU](shop-by-child-sku.md)
