@@ -28,6 +28,40 @@ Replace `YOURDOMAIN` by your own store domain. Example:
 <script src="https://papathemes.com/content/productswatchesaddon/productswatches.fivebrotherworkwear.com.js" async></script>
 ```
 
+Example with custom CSS and using GraphQL for faster performance:
+
+```html
+<script>
+    window.PAPATHEMES_PRODUCTSWATCHESADDON = {
+        productIdSelector: '.quickview, .quickview-alt, [data-product-id]',
+        graphQLToken: '{{settings.storefront_api.token}}'
+    };
+</script>
+<script type="text/plain" id="papathemes_productswatchesaddon_css">
+	.productSwatches-attributes { -webkit-overflow-scrolling: touch; overflow: auto }
+	.productSwatches-attributes::-webkit-scrollbar { display: none; }
+    .productSwatches-swatches { display: inline-flex; flex-wrap: nowrap; justify-content: flex-start; margin: 0 auto; }
+	@media (max-width: 800px) {
+    	.productSwatches-attributes { height: 26px; }
+    }
+	@media (min-width: 801px) {
+    	.productSwatches-attributes { height: 16px; }
+        .productSwatches-swatches-item .form-option-variant--color,
+        .productSwatches-swatches-item .form-option-variant--pattern { width: 12px; height: 12px; }
+    }
+</script>
+<script>
+    (function() {
+        var style = document.createElement('style');
+        style.innerHTML = document.getElementById('papathemes_productswatchesaddon_css').innerHTML;
+        document.head.appendChild(style);
+    })();
+</script>
+<script>if (!window.jQuery) window.jQuery = window.jQuerySupermarket || window.jQueryTheme;</script>
+<script src="https://papathemes.com/content/productswatchesaddon/productswatches.solartown.com.js" async></script>
+```
+
+
 ### Install when your site has no jQuery
 
 If your site has no jQuery declared globally, add the line below to the top:
