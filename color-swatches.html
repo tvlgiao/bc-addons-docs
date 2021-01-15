@@ -230,6 +230,37 @@
 &lt;script src=&quot;https://papathemes.com/content/productswatchesaddon/productswatches.fivebrotherworkwear.com.js&quot; async&gt;&lt;/script&gt;
 </code></pre>
 
+<p>Example with custom CSS and using GraphQL for faster performance:</p>
+<pre><code class="html">&lt;script&gt;
+    window.PAPATHEMES_PRODUCTSWATCHESADDON = {
+        productIdSelector: '.quickview, .quickview-alt, [data-product-id]',
+        graphQLToken: '{{settings.storefront_api.token}}'
+    };
+&lt;/script&gt;
+&lt;script type=&quot;text/plain&quot; id=&quot;papathemes_productswatchesaddon_css&quot;&gt;
+    .productSwatches-attributes { -webkit-overflow-scrolling: touch; overflow: auto }
+    .productSwatches-attributes::-webkit-scrollbar { display: none; }
+    .productSwatches-swatches { display: inline-flex; flex-wrap: nowrap; justify-content: flex-start; margin: 0 auto; }
+    @media (max-width: 800px) {
+        .productSwatches-attributes { height: 26px; }
+    }
+    @media (min-width: 801px) {
+        .productSwatches-attributes { height: 16px; }
+        .productSwatches-swatches-item .form-option-variant--color,
+        .productSwatches-swatches-item .form-option-variant--pattern { width: 12px; height: 12px; }
+    }
+&lt;/script&gt;
+&lt;script&gt;
+    (function() {
+        var style = document.createElement('style');
+        style.innerHTML = document.getElementById('papathemes_productswatchesaddon_css').innerHTML;
+        document.head.appendChild(style);
+    })();
+&lt;/script&gt;
+&lt;script&gt;if (!window.jQuery) window.jQuery = window.jQuerySupermarket || window.jQueryTheme;&lt;/script&gt;
+&lt;script src=&quot;https://papathemes.com/content/productswatchesaddon/productswatches.solartown.com.js&quot; async&gt;&lt;/script&gt;
+</code></pre>
+
 <h3 id="install-when-your-site-has-no-jquery">Install when your site has no jQuery<a class="headerlink" href="#install-when-your-site-has-no-jquery" title="Permanent link">&para;</a></h3>
 <p>If your site has no jQuery declared globally, add the line below to the top:</p>
 <pre><code class="html">&lt;script
