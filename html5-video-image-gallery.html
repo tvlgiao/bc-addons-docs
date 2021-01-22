@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Other Scripts - Documentation</title>
+  <title>HTML5 Video Image Gallery - Documentation</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="css/theme.css" type="text/css" />
@@ -19,8 +19,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Other Scripts";
-    var mkdocs_page_input_path = "others.md";
+    var mkdocs_page_name = "HTML5 Video Image Gallery";
+    var mkdocs_page_input_path = "html5-video-image-gallery.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -165,9 +165,21 @@
     <a class="" href="shop-by-child-sku.html">Select product variants by SKU</a>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="html5-video-image-gallery.html">HTML5 Video Image Gallery</a>
+    <a class="current" href="html5-video-image-gallery.html">HTML5 Video Image Gallery</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#display-html5-or-vimeo-videos-on-product-image-gallery">Display HTML5 or Vimeo videos on product image gallery</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#display-vimeo-videos">Display Vimeo videos</a></li>
+        
+        </ul>
+    
+
+    </ul>
 	    </li>
           
         </ul>
@@ -192,7 +204,7 @@
     
       
     
-    <li>Other Scripts</li>
+    <li>HTML5 Video Image Gallery</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -202,54 +214,22 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="other-scripts">Other Scripts<a class="headerlink" href="#other-scripts" title="Permanent link">&para;</a></h1>
-<h2 id="unfinshed-hide-add-to-cart-when-product-is-low-stock">(UNFINSHED !!!) Hide Add to Cart when product is low stock<a class="headerlink" href="#unfinshed-hide-add-to-cart-when-product-is-low-stock" title="Permanent link">&para;</a></h2>
-<p>Display Out of Stock message and hide Add to Cart button when product is low stock.</p>
-<p>Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, click <strong>Create a Script</strong>, choose:</p>
-<ul>
-<li><strong>Location on page</strong> = <code>Footer</code></li>
-<li><strong>Select pages where script will be added</strong> = <code>All Pages</code></li>
-<li><strong>Script type</strong> = <code>Script</code></li>
-</ul>
-<p>Enter the script below to <strong>Scripts contents</strong>:</p>
-<pre><code class="html">&lt;script&gt;
-(function($) {
-    /** debounce(func, wait, immediate) */
-    function debounce(n,t,u){var e;return function(){var i=this,o=arguments,a=u&amp;&amp;!e;clearTimeout(e),e=setTimeout(function(){e=null,u||n.apply(i,o)},t),a&amp;&amp;n.apply(i,o)}}
-
-    function css() {
-        var style = document.createElement('style');
-        style.innerHTML = '#form-action-addToCart:not(.show) { display: none }';
-        document.head.appendChild(style);
-    }
-
-    function main() {
-        $('#form-action-addToCart').addClass('show');
-
-        $('[data-product-stock]').each(function(i, el) {
-            var $el = $(el);
-            var $form = $el.closest('form');
-            var $btn = $form.find('#form-action-addToCart').hide();
-
-            $btn.parent().append('&lt;div class=&quot;alertBox&quot;&gt;Out of Stock&lt;/div&gt;');
-            $btn.remove();
-            $form.attr('action', '').off('submit');
-            $el.closest('.form-field--stock').remove();
-        });
-    }
-
-    $(document).ready(function() {
-        css();
-        main();
-        (new MutationObserver(debounce(main, 300))).observe(document.body, { subtree: true, childList: true });
-    })
-})(window.chiarajQuery);
-&lt;/script&gt;
-</code></pre>
+                <h1 id="display-html5-or-vimeo-videos-on-product-image-gallery">Display HTML5 or Vimeo videos on product image gallery<a class="headerlink" href="#display-html5-or-vimeo-videos-on-product-image-gallery" title="Permanent link">&para;</a></h1>
+<h2 id="display-vimeo-videos">Display Vimeo videos<a class="headerlink" href="#display-vimeo-videos" title="Permanent link">&para;</a></h2>
+<p>Edit your product, add one or more custom field as below screenshot:</p>
+<p><img alt="vimeo-custom-field" src="img/vimeo-custom-field.png" /></p>
+<p>Enter the <strong>video ID</strong> to the custom field value. For example, Your Vimeo video iframe code is: <code>&lt;iframe src="https://player.vimeo.com/video/76979871?autoplay=1" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen&gt;&lt;/iframe&gt;</code>, enter the video ID <strong>76979871</strong>.</p>
               
             </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="shop-by-child-sku.html" class="btn btn-neutral" title="Select product variants by SKU"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -272,6 +252,8 @@
   <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
+      
+        <span><a href="shop-by-child-sku.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
     </span>
