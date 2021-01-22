@@ -22,3 +22,4 @@
 - [Better Product Reorder](better-reorder.md)
 - [Add File Upload Field on Registration Page](file-upload.md)
 - [Select product variants by SKU](shop-by-child-sku.md)
+- [HTML5 Video Image Gallery](html5-video-image-gallery.md)
