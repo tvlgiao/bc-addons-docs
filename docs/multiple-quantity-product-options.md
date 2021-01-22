@@ -202,6 +202,88 @@ Add to Cart sucessful message template.
 - `productIds: []`: is an array of the product IDs which enable this feature.
 
 
+### Alternative style CSS
+
+![mqpo-alt-style](img/mqpo-alt-style.png)
+
+```css
+html .mqpo-productsTable {
+    display: block;
+    max-height: 300px;
+    overflow: auto;
+    margin-bottom: 1.5rem
+}
+
+@media (min-width: 801px) {
+    html .mqpo-productsTable ._row ._col {
+        width:40px
+    }
+
+    html .mqpo-productsTable ._row ._col .form-increment .form-input[type=number] {
+        width: 35px
+    }
+
+    html .mqpo-productsTable ._row ._col:first-child {
+        width: 120px
+    }
+
+    html .mqpo-productsTable ._row ._col:first-child ._name {
+        text-align: left
+    }
+
+    html .mqpo-productsTable ._row ._col:first-child ._name>* {
+        vertical-align: middle
+    }
+
+    html .mqpo-productsTable ._row ._col:first-child ._name ._ow_label {
+        margin-left: .375rem
+    }
+
+    html .mqpo-productsTable ._row ._col ._name {
+        display: block;
+        text-align: center
+    }
+
+    html .mqpo-productsTable ._row:first-child {
+        display: none
+    }
+
+    html .mqpo-productsTable ._row+._row {
+        border-bottom: 1px solid #e5e5e5;
+        padding-bottom: .8125rem
+    }
+
+    html .mqpo-productsTable ._row+._row ._col:first-child {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: end;
+        align-items: flex-end;
+        padding-bottom: .375rem
+    }
+}
+
+html .mqpo-productsTable::-webkit-scrollbar {
+    width: 10px;
+    height: 10px
+}
+
+html .mqpo-productsTable::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,.3);
+    border-radius: 10px
+}
+
+html .mqpo-productsTable::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(255,0,0,.8);
+    -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,.5)
+}
+
+html .mqpo-productsTable::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(255,0,0,.4)
+}
+```
+
+
 ## Install for Supermarket theme
 
 Add below options:
@@ -210,3 +292,4 @@ Add below options:
 priceWithTaxSelector: '[data-also-bought-parent-scope] [data-product-price-with-tax]',
 priceWithoutTaxSelector: '[data-also-bought-parent-scope] [data-product-price-without-tax]',
 ```
+
