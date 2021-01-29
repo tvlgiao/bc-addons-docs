@@ -152,3 +152,20 @@ Enter the script below to **Scripts contents**:
 - `maxDepth`: specify the number of dropdowns or categories to display.
 - Customize words or languages in `lang` variable.
 
+
+## Usage
+
+1. Create the hierachy categories as below screenshot for example:
+
+![hierarchy categories](img/mcdd-hierarchy-categories.png)
+
+2. Assign products to the appropriate categories.
+
+3. Edit the root filter category ID, you will find the category ID in the address bar:
+
+![mcdd-find-category-id](img/mcdd-find-category-id.png)
+
+4. Edit the theme file or the script in Script Manager, enter the category ID as below screenshot:
+
+![mcdd-root-category-id-config](img/mcdd-root-category-id-config.png)
+
