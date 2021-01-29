@@ -7,15 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
+  
   <link rel="shortcut icon" href="img/favicon.ico">
   <title>Shipping Estimator on Product Page - Documentation</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  <link rel="stylesheet" href="css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
   
   <script>
     // Current page data
@@ -26,7 +27,7 @@
   
   <script src="js/jquery-2.1.1.min.js" defer></script>
   <script src="js/modernizr-2.8.3.min.js" defer></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
   <script>
@@ -47,8 +48,9 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-        <a href="index.html" class="icon icon-home"> Documentation</a>
+        <a href="." class="icon icon-home"> Documentation</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -57,136 +59,106 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-	<ul class="current">
-	  
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="index.html">Home</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="conditional-product-options.html">Conditional Product Options</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="frequently-bought-together.html">Frequently Bought Together</a>
-	    </li>
-          
-            <li class="toctree-l1 current">
-		
-    <a class="current" href="shipping-estimator.html">Shipping Estimator on Product Page</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#shipping-estimator-on-product-page">Shipping Estimator on Product Page</a></li>
-    
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="index.html">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="conditional-product-options.html">Conditional Product Options</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="frequently-bought-together.html">Frequently Bought Together</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="shipping-estimator.html">Shipping Estimator on Product Page</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#install-the-script-on-your-bigcommerce-store">Install the script on your BigCommerce store</a>
         <ul>
-        
-            <li><a class="toctree-l3" href="#install-the-script-on-your-bigcommerce-store">Install the script on your BigCommerce store</a></li>
-        
-            <li><a class="toctree-l3" href="#custom-product-form-element-selector-for-supermarket-and-chiara-themes">Custom product form element selector for Supermarket and Chiara themes</a></li>
-        
+    <li class="toctree-l3"><a class="reference internal" href="#hide-country-and-city">Hide country and city:</a>
+    </li>
         </ul>
-    
-
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#custom-product-form-element-selector-for-supermarket-and-chiara-themes">Custom product form element selector for Supermarket and Chiara themes</a>
+    </li>
     </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="color-swatches.html">Display Color Swatches on Product Items</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="multiple-category-dependent-dropdowns.html">Mutiple Category Dependent Dropdowns</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="multiple-quantity-product-options.html">Mutiple Quantity Product Options</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="product-pick-list-price.html">Product Pick List Price</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="popups.html">Custom Popups</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="add-product-to-cart-automatically.html">Automatically Add Additional Product To Cart</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="sell-by-pack.html">Sell By Pack</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="shipment-details.html">Shipment Details</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="limit-countries.html">Limit Countries / States</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="quantity-in-cart.html">Quantity In Cart</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="limit-shipping-options.html">Limit Shipping Options</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="disallow-different-billing-address.html">Disallow Different Billing Address</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="free-shipping-badges.html">Display Free Shipping Badges</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="customer-account-shipping-option.html">Add Shipping Option Your Customer's Shipping Account</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="better-reorder.html">Better Product Reorder</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="file-upload.html">Add File Upload Field on Registration Page</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="shop-by-child-sku.html">Select product variants by SKU</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="html5-video-image-gallery.html">HTML5 Video Image Gallery</a>
-	    </li>
-          
-        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="color-swatches.html">Display Color Swatches on Product Items</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="multiple-category-dependent-dropdowns.html">Mutiple Category Dependent Dropdowns</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="multiple-quantity-product-options.html">Mutiple Quantity Product Options</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="product-pick-list-price.html">Product Pick List Price</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="popups.html">Custom Popups</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="add-product-to-cart-automatically.html">Automatically Add Additional Product To Cart</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="sell-by-pack.html">Sell By Pack</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="shipment-details.html">Shipment Details</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="limit-countries.html">Limit Countries / States</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="quantity-in-cart.html">Quantity In Cart</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="limit-shipping-options.html">Limit Shipping Options</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="disallow-different-billing-address.html">Disallow Different Billing Address</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="free-shipping-badges.html">Display Free Shipping Badges</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="customer-account-shipping-option.html">Add Shipping Option Your Customer's Shipping Account</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="better-reorder.html">Better Product Reorder</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="file-upload.html">Add File Upload Field on Registration Page</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="shop-by-child-sku.html">Select product variants by SKU</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="html5-video-image-gallery.html">HTML5 Video Image Gallery</a>
+                    </li>
+                </ul>
       </div>
-      &nbsp;
+    </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -194,7 +166,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">Documentation</a>
+        <a href=".">Documentation</a>
       </nav>
 
       
@@ -202,7 +174,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
+    <li><a href=".">Docs</a> &raquo;</li>
     
       
     
@@ -211,6 +183,7 @@
       
     </li>
   </ul>
+  
   <hr/>
 </div>
           <div role="main">
@@ -229,7 +202,7 @@
 <li><strong>Script type</strong> = <code>Script</code></li>
 </ul>
 <p>Enter the script below to <strong>Scripts contents</strong>: </p>
-<pre><code class="html">
+<pre><code class="language-html">
  &lt;script&gt;
     window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
     window.PapathemesShippingEstimatorSettings = {
@@ -238,9 +211,8 @@
 &lt;/script&gt;
 &lt;script src=&quot;//papathemes.com/content/shippingestimatoraddon/shipping-estimator.YOURDOMAIN.js&quot; async&gt;&lt;/script&gt;
 </code></pre>
-
 <p><strong>Note:</strong> replace <code>YOURDOMAIN</code> by your own domain. Example:</p>
-<pre><code class="html">&lt;script&gt;
+<pre><code class="language-html">&lt;script&gt;
     window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
     window.PapathemesShippingEstimatorSettings = {
         defaultCountry: 'Australia'
@@ -248,7 +220,6 @@
 &lt;/script&gt;
 &lt;script src=&quot;//papathemes.com/content/shippingestimatoraddon/shipping-estimator.sinkwarehouse.com.au.js&quot; async&gt;&lt;/script&gt;
 </code></pre>
-
 <ul>
 <li><code>defaultCountry</code>: allows to set country selected by default.</li>
 </ul>
@@ -259,7 +230,7 @@
 <li><code>hideCity: true</code></li>
 </ul>
 <p>See example below:</p>
-<pre><code class="html">&lt;script&gt;
+<pre><code class="language-html">&lt;script&gt;
     window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
     window.PapathemesShippingEstimatorSettings = {
         defaultCountry: 'Australia',
@@ -269,12 +240,11 @@
 &lt;/script&gt;
 &lt;script src=&quot;//papathemes.com/content/shippingestimatoraddon/shipping-estimator.YOURDOMAIN.js&quot; async&gt;&lt;/script&gt;
 </code></pre>
-
 <h2 id="custom-product-form-element-selector-for-supermarket-and-chiara-themes">Custom product form element selector for Supermarket and Chiara themes<a class="headerlink" href="#custom-product-form-element-selector-for-supermarket-and-chiara-themes" title="Permanent link">&para;</a></h2>
 <p><strong>Supermarket</strong> &amp; <strong>Chiara</strong> themes support <strong>Products Frequently Bought Together</strong> feature built-in. You will need to specify different product form HTML element selector so that the shipping estimator can estimate your main product properly.</p>
 <p>Insert <code>productFormSelector: '[data-also-bought-parent-scope] form[data-cart-item-add]'</code> into the configuration variable.</p>
 <p><strong>Example 1:</strong> Show country, state, city and zipcode:</p>
-<pre><code class="html">&lt;script&gt;
+<pre><code class="language-html">&lt;script&gt;
     window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
     window.PapathemesShippingEstimatorSettings = {
         defaultCountry: 'Australia',
@@ -283,9 +253,8 @@
 &lt;/script&gt;
 &lt;script src=&quot;//papathemes.com/content/shippingestimatoraddon/shipping-estimator.YOURDOMAIN.js&quot; async&gt;&lt;/script&gt;
 </code></pre>
-
 <p><strong>Example 2:</strong> Show country and zipcode only</p>
-<pre><code class="html">&lt;script&gt;
+<pre><code class="language-html">&lt;script&gt;
     window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
     window.PapathemesShippingEstimatorSettings = {
         defaultCountry: 'Australia',
@@ -318,7 +287,7 @@
     
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
       
         </div>
@@ -328,7 +297,7 @@
 
   </div>
 
-  <div class="rst-versions" role="note" style="cursor: pointer">
+  <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
@@ -346,6 +315,11 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" defer></script>
       <script src="js/main.js" defer></script>
       <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
 
 </body>
 </html>
