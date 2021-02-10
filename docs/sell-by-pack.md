@@ -62,3 +62,7 @@ Below are available configuration variables and the default values:
 - `productViewTemplate = 'products/product-view'`: Product view template file.
 
 
+## Misc
+
+- Mod for Camden theme: https://github.com/tvlgiao/bc-sellbypack-ilighting-camden-theme
+

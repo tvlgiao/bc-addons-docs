@@ -178,6 +178,62 @@ Add to Cart sucessful message template.
 <script src="//papathemes.com/content/multiqtyproductoptions/multi-qty-product-options.shoppartsland.com.js" async></script>
 ```
 
+### Vertical style
+
+![mqpo-vertical-style](img/mqpo-vertical-style.png)
+
+```html
+<style>
+html .mqpo-productsList {
+    display: flex;
+    flex-wrap: wrap;
+    border: 0;
+    margin: 0 -.25rem;
+}
+html .mqpo-productsList._set-rectangle ._item {
+    display: block;
+    width: 5rem;
+}
+html .mqpo-productsList ._item + ._item {
+    border-top: 0;
+}
+html .mqpo-productsList ._item ._title {
+    text-align: center;
+    padding: .25rem;
+    border: 1px solid #ddd;
+    margin-bottom: 2px;
+}
+html .mqpo-productsList ._item ._props {
+    display: none;
+}
+html .mqpo-productsList ._item ._qty {
+    display: block;
+}
+html .mqpo-productsList ._item ._qty .form-increment {
+    display: block;
+    border: 0;
+}
+html .mqpo-productsList ._item ._qty .form-increment .button {
+    display: none;
+}
+html .mqpo-productsList ._item ._qty .form-increment .form-input {
+    display: block;
+    width: 100%;
+    height: 2rem;
+    padding: .25rem;
+    text-align: center;
+    border: 0;
+    border-radius: 0;
+    background-color: #ddd;
+    font-weight: 700;
+}
+html .mqpo-productsList ._item ._qty .form-increment .form-input:hover,
+html .mqpo-productsList ._item ._qty .form-increment .form-input:focus {
+    background-color: #eee;
+}
+</style>
+```
+
 ## Configuration for product options table
 
 ![product-options-table](img/product-options-table.jpg)

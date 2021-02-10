@@ -100,3 +100,24 @@ Insert `productFormSelector: '[data-also-bought-parent-scope] form[data-cart-ite
 ```
 
 
+**Example 3:** Install to Supermarket theme below Frequently Bought Together module on phragos.com:
+
+```html
+<script>
+    window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
+    window.PapathemesShippingEstimatorSettings = {
+        productFormSelector: '[data-also-bought-parent-scope] form[data-cart-item-add]',
+        renderToSelector: '.productView-detailsWrapper',
+        defaultCountry: 'United States',
+        hideCity: true
+    };
+    (function() {
+        var css = document.createElement('style');
+        css.innerHTML = '@media (min-width: 801px) {'
+        	+ 'div.PASE-shipping-estimator { float: right; clear: right; width: 50% }'
+        	+ '}';
+        document.head.appendChild(css);
+    })();
+</script>
+<script src="//papathemes.com/content/shippingestimatoraddon/shipping-estimator.phragos.com.js" async></script>
+```

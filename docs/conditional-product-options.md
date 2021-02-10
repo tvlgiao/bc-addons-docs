@@ -1,5 +1,21 @@
 # Conditional Product Options
 
+Merchant add all product options as usual in the BC admin panel. Our extension uses javascript to show/hide dependent options. For example this [T-Shirt](https://www.onlineworkwear.com.au/e-pgl-1-mens-eclipse-pique-l-s-polo/) has options:
+
+- Add Embroidery
+- Select Logo Options
+- Select Logo Position
+- Select Name/Text Position on Garment
+- Text Name/Text Here  
+
+At initial, only **Add Embroidery** option is displayed:
+
+- If the option value "**Logo**" is selected, **Select Logo Options** and **Select Logo Positions** will be displayed.
+- If the option value "**Name**" is selected, **Select Name/Text Position on Garment** and **Text Name/Text Here** will be displayed.
+
+We configure the extension script according to the merchant's specific requirements, for each product or for any product. 
+
+
 ## Demo
 
 ![conditional product options demo](img/conditional-product-options.gif)
@@ -216,4 +232,3 @@ npm run build --alternate
   productIdSelector: 'input[name=product_id]',
 }
 ```
-

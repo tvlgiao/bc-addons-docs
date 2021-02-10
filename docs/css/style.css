@@ -85,4 +85,20 @@ pre code {
 	.rst-versions {
 		width: 400px;
 	}
+
+	.wy-side-scroll {
+		width: 400px;
+	}
+
+	.wy-side-nav-search {
+		width: 380px;
+	}
+
+	.wy-menu-vertical {
+		width: 400px;
+	}
+
+	.wy-menu-vertical {
+		width: 380px;
+	}
 }
