@@ -265,6 +265,25 @@
 &lt;/script&gt;
 &lt;script src=&quot;//papathemes.com/content/shippingestimatoraddon/shipping-estimator.YOURDOMAIN.js&quot; async&gt;&lt;/script&gt;
 </code></pre>
+<p><strong>Example 3:</strong> Install to Supermarket theme below Frequently Bought Together module on phragos.com:</p>
+<pre><code class="language-html">&lt;script&gt;
+    window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
+    window.PapathemesShippingEstimatorSettings = {
+        productFormSelector: '[data-also-bought-parent-scope] form[data-cart-item-add]',
+        renderToSelector: '.productView-detailsWrapper',
+        defaultCountry: 'United States',
+        hideCity: true
+    };
+    (function() {
+        var css = document.createElement('style');
+        css.innerHTML = '@media (min-width: 801px) {'
+            + 'div.PASE-shipping-estimator { float: right; clear: right; width: 50% }'
+            + '}';
+        document.head.appendChild(css);
+    })();
+&lt;/script&gt;
+&lt;script src=&quot;//papathemes.com/content/shippingestimatoraddon/shipping-estimator.phragos.com.js&quot; async&gt;&lt;/script&gt;
+</code></pre>
               
             </div>
           </div>
