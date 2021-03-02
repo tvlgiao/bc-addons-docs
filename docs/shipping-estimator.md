@@ -121,3 +121,28 @@ Insert `productFormSelector: '[data-also-bought-parent-scope] form[data-cart-ite
 </script>
 <script src="//papathemes.com/content/shippingestimatoraddon/shipping-estimator.phragos.com.js" async></script>
 ```
+
+**Example 4:** Use custom quotes template:
+
+![estimate-shipping-custom-quotes-template](img/estimate-shipping-custom-quotes-template.png)
+
+```html
+<script>
+    window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
+    window.PapathemesShippingEstimatorSettings = {
+        defaultCountry: 'United Kingdom',
+        hideCountry: true,
+        hideCity: true,
+        hideState: true,
+        renderToSelector: 'div.productView-options',
+        useCustomQuotesTemplate: true
+    };
+    (function() {
+    	var style = document.createElement('style');
+        style.innerHTML = '.PASE-shipping-estimator .estimator-form-row--total { padding-top: .75rem; border-top: 1px solid #ddd }';
+        document.head.appendChild(style);
+    })();
+</script>
+<script src="//papathemes.com/content/shippingestimatoraddon/shipping-estimator.central-uk.mybigcommerce.com.js?1" async></script>
+```
+
