@@ -284,6 +284,26 @@
 &lt;/script&gt;
 &lt;script src=&quot;//papathemes.com/content/shippingestimatoraddon/shipping-estimator.phragos.com.js&quot; async&gt;&lt;/script&gt;
 </code></pre>
+<p><strong>Example 4:</strong> Use custom quotes template:</p>
+<p><img alt="estimate-shipping-custom-quotes-template" src="img/estimate-shipping-custom-quotes-template.png" /></p>
+<pre><code class="language-html">&lt;script&gt;
+    window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
+    window.PapathemesShippingEstimatorSettings = {
+        defaultCountry: 'United Kingdom',
+        hideCountry: true,
+        hideCity: true,
+        hideState: true,
+        renderToSelector: 'div.productView-options',
+        useCustomQuotesTemplate: true
+    };
+    (function() {
+        var style = document.createElement('style');
+        style.innerHTML = '.PASE-shipping-estimator .estimator-form-row--total { padding-top: .75rem; border-top: 1px solid #ddd }';
+        document.head.appendChild(style);
+    })();
+&lt;/script&gt;
+&lt;script src=&quot;//papathemes.com/content/shippingestimatoraddon/shipping-estimator.central-uk.mybigcommerce.com.js?1&quot; async&gt;&lt;/script&gt;
+</code></pre>
               
             </div>
           </div>
