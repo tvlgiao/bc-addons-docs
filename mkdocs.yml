@@ -22,6 +22,8 @@ nav:
 - Add File Upload Field on Registration Page: file-upload.md
 - Select product variants by SKU: shop-by-child-sku.md
 - HTML5 Video Image Gallery: html5-video-image-gallery.md
+- Display Product Weight on Cart Page: cart-weight.md
+- Order Multiple SKUs: order-multiple-skus.md
 theme: readthedocs
 use_directory_urls: false
 
