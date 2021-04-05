@@ -6,7 +6,7 @@ This addon allows to sell products per pack, suitable wholesale purchases.
 
 ## Install on your BigCommerce Store
 
-1. Go to **Storefront** > **Script Manager**, click **Create a Script**, choose:
+Go to **Storefront** > **Script Manager**, click **Create a Script**, choose:
 
 - **Location on page** = `Footer`
 - **Select pages where script will be added** = `All pages`
@@ -30,14 +30,18 @@ Enter the script below to **Scripts contents**:
 
 Replace `YOURDOMAIN` by your store's domain name.
 
-2. Edit your product, add a custom field with name = **Pack** and value is the number of pieces you sell per pack:
+## Edit product
+
+Edit your product, add a custom field with name = **Step** and value is the number of items sell per pack:
 
 ![edit-custom-field-sell-by-pack](img/edit-custom-field-sell-by-pack.png)
 
+Update **Minimum Purchase Quantity** to be equal the number of items sell per pack.
 
-## Configuration
 
-Below are available configuration variables and the default values:
+## Settings
+
+Available settings and default values are listed below:
 
 **Basic Settings:**
 
