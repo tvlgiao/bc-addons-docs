@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Shipping Estimator on Product Page - Documentation</title>
+  <title>Order Multiple SKUs - Documentation</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="css/theme.css" />
@@ -20,8 +20,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Shipping Estimator on Product Page";
-    var mkdocs_page_input_path = "shipping-estimator.md";
+    var mkdocs_page_name = "Order Multiple SKUs";
+    var mkdocs_page_input_path = "order-multiple-skus.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -71,18 +71,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="frequently-bought-together.html">Frequently Bought Together</a>
                     </li>
                 </ul>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="shipping-estimator.html">Shipping Estimator on Product Page</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#install-the-script-on-your-bigcommerce-store">Install the script on your BigCommerce store</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#hide-country-and-city">Hide country and city:</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#custom-product-form-element-selector-for-supermarket-and-chiara-themes">Custom product form element selector for Supermarket and Chiara themes</a>
-    </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="shipping-estimator.html">Shipping Estimator on Product Page</a>
                     </li>
                 </ul>
                 <ul>
@@ -161,8 +151,30 @@
                     <li class="toctree-l1"><a class="reference internal" href="cart-weight.html">Display Product Weight on Cart Page</a>
                     </li>
                 </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="order-multiple-skus.html">Order Multiple SKUs</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="order-multiple-skus.html">Order Multiple SKUs</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#install-the-script-on-your-bigcommerce-store">Install the script on your BigCommerce store</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#step-1-install-the-script">Step 1: Install the script</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-2-create-order-multiple-skus-web-page">Step 2: Create "Order Multiple SKUs" web page</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#settings">Settings</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#rendertoselector">renderToSelector</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#csvskucolumn">csvSkuColumn</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#csvqtycolumn">csvQtyColumn</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#cartqtyselector">cartQtySelector</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                     </li>
                 </ul>
                 <ul>
@@ -190,7 +202,7 @@
     
       
     
-    <li>Shipping Estimator on Product Page</li>
+    <li>Order Multiple SKUs</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -201,121 +213,51 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="shipping-estimator-on-product-page">Shipping Estimator on Product Page<a class="headerlink" href="#shipping-estimator-on-product-page" title="Permanent link">&para;</a></h1>
-<p><strong>Demo 1:</strong> Showing Country, State, City and Zipcode:</p>
-<p><img alt="Shipping estimator demo 1" src="img/estimate-shipping-demo1.gif" /></p>
-<p><strong>Demo 2:</strong> Showing State and Zipcode only:</p>
-<p><img alt="Shipping estimator demo 2" src="img/estimate-shipping-demo2.gif" /></p>
+                <h1 id="order-multiple-skus">Order Multiple SKUs<a class="headerlink" href="#order-multiple-skus" title="Permanent link">&para;</a></h1>
+<p><img alt="order-multiple-skus" src="img/order-multiple-skus.png" /></p>
+<p>This extension allows to order multiple products by inputing product SKUs. Supports uploading CSV file for batch adding to cart. </p>
+<p>The order table can be displayed on any pages, any widget regions you want.</p>
+<p>Does not require editing of your theme files. Works with all Stencil / Cornerstone based themes. The code is optimized, asynchronously loaded (parallel loaded), works fast and doesn't affect the speed of your website.</p>
+<p>Demo: https://theme-demo-01.mybigcommerce.com/order-multiple-skus/</p>
 <h2 id="install-the-script-on-your-bigcommerce-store">Install the script on your BigCommerce store<a class="headerlink" href="#install-the-script-on-your-bigcommerce-store" title="Permanent link">&para;</a></h2>
+<h3 id="step-1-install-the-script">Step 1: Install the script<a class="headerlink" href="#step-1-install-the-script" title="Permanent link">&para;</a></h3>
 <p>Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, click <strong>Create a Script</strong>, choose:</p>
 <ul>
 <li><strong>Location on page</strong> = <code>Footer</code></li>
-<li><strong>Select pages where script will be added</strong> = <code>All pages</code></li>
+<li><strong>Select pages where script will be added</strong> = <code>Store Pages</code></li>
 <li><strong>Script type</strong> = <code>Script</code></li>
 </ul>
 <p>Enter the script below to <strong>Scripts contents</strong>: </p>
-<pre><code class="language-html">
- &lt;script&gt;
-    window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
-    window.PapathemesShippingEstimatorSettings = {
-        defaultCountry: 'Australia'
-    };
-&lt;/script&gt;
-&lt;script src=&quot;//papathemes.com/content/shippingestimatoraddon/shipping-estimator.YOURDOMAIN.js&quot; async&gt;&lt;/script&gt;
-</code></pre>
-<p><strong>Note:</strong> replace <code>YOURDOMAIN</code> by your own domain. Example:</p>
 <pre><code class="language-html">&lt;script&gt;
-    window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
-    window.PapathemesShippingEstimatorSettings = {
-        defaultCountry: 'Australia'
+    if (!window.jQueryTheme) window.jQueryTheme = window.chiarajQuery || window.jQuerySupermarket;
+    window.PapathemesOrderMultiSKUsSettings = {
+        renderToSelector: '#papathemes_ordermultiskus_app',
+        csvSkuColumn: 'SKU',
+        csvQtyColumn: 'QUANTITY',
+        cartQtySelector: '.cart-quantity'
     };
 &lt;/script&gt;
-&lt;script src=&quot;//papathemes.com/content/shippingestimatoraddon/shipping-estimator.sinkwarehouse.com.au.js&quot; async&gt;&lt;/script&gt;
+&lt;script src=&quot;//papathemes.com/content/ordermultiskus/ordermultiskus.YOURDOMAIN.js&quot; defer async&gt;&lt;/script&gt;
 </code></pre>
-<ul>
-<li><code>defaultCountry</code>: allows to set country selected by default.</li>
-</ul>
-<h3 id="hide-country-and-city">Hide country and city:<a class="headerlink" href="#hide-country-and-city" title="Permanent link">&para;</a></h3>
-<p>To hide country and city, set:</p>
-<ul>
-<li><code>hideCountry: true</code></li>
-<li><code>hideCity: true</code></li>
-</ul>
-<p>See example below:</p>
-<pre><code class="language-html">&lt;script&gt;
-    window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
-    window.PapathemesShippingEstimatorSettings = {
-        defaultCountry: 'Australia',
-        hideCountry: true,
-        hideCity: true
-    };
-&lt;/script&gt;
-&lt;script src=&quot;//papathemes.com/content/shippingestimatoraddon/shipping-estimator.YOURDOMAIN.js&quot; async&gt;&lt;/script&gt;
+<p>Replace <code>YOURDOMAIN</code> by your own store domain. Example:</p>
+<pre><code class="language-html">&lt;script&gt;if (!window.jQuery) window.jQuery = window.jQuerySupermarket || window.jQueryTheme;&lt;/script&gt;
+&lt;script src=&quot;https://papathemes.com/content/productswatchesaddon/productswatches.mydomain.com.js&quot; async&gt;&lt;/script&gt;
 </code></pre>
-<h2 id="custom-product-form-element-selector-for-supermarket-and-chiara-themes">Custom product form element selector for Supermarket and Chiara themes<a class="headerlink" href="#custom-product-form-element-selector-for-supermarket-and-chiara-themes" title="Permanent link">&para;</a></h2>
-<p><strong>Supermarket</strong> &amp; <strong>Chiara</strong> themes support <strong>Products Frequently Bought Together</strong> feature built-in. You will need to specify different product form HTML element selector so that the shipping estimator can estimate your main product properly.</p>
-<p>Insert <code>productFormSelector: '[data-also-bought-parent-scope] form[data-cart-item-add]'</code> into the configuration variable.</p>
-<p><strong>Example 1:</strong> Show country, state, city and zipcode:</p>
-<pre><code class="language-html">&lt;script&gt;
-    window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
-    window.PapathemesShippingEstimatorSettings = {
-        defaultCountry: 'Australia',
-        productFormSelector: '[data-also-bought-parent-scope] form[data-cart-item-add]'
-    };
-&lt;/script&gt;
-&lt;script src=&quot;//papathemes.com/content/shippingestimatoraddon/shipping-estimator.YOURDOMAIN.js&quot; async&gt;&lt;/script&gt;
+<h3 id="step-2-create-order-multiple-skus-web-page">Step 2: Create "Order Multiple SKUs" web page<a class="headerlink" href="#step-2-create-order-multiple-skus-web-page" title="Permanent link">&para;</a></h3>
+<p>Create a Web Page in <strong>Storefront</strong> &gt; <strong>Web Pages</strong>. View the created page in Page Builder, add the HTML widget to any position you want to display <strong>Order Multiple SKUs</strong> table. Enter the code below to the HTML widget's content:</p>
+<pre><code class="language-html">&lt;div id=&quot;papathemes_ordermultiskus_app&quot;&gt;&lt;/div&gt;
 </code></pre>
-<p><strong>Example 2:</strong> Show country and zipcode only</p>
-<pre><code class="language-html">&lt;script&gt;
-    window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
-    window.PapathemesShippingEstimatorSettings = {
-        defaultCountry: 'Australia',
-        hideCountry: true,
-        hideCity: true,
-        productFormSelector: '[data-also-bought-parent-scope] form[data-cart-item-add]'
-    };
-&lt;/script&gt;
-&lt;script src=&quot;//papathemes.com/content/shippingestimatoraddon/shipping-estimator.YOURDOMAIN.js&quot; async&gt;&lt;/script&gt;
-</code></pre>
-<p><strong>Example 3:</strong> Install to Supermarket theme below Frequently Bought Together module on phragos.com:</p>
-<pre><code class="language-html">&lt;script&gt;
-    window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
-    window.PapathemesShippingEstimatorSettings = {
-        productFormSelector: '[data-also-bought-parent-scope] form[data-cart-item-add]',
-        renderToSelector: '.productView-detailsWrapper',
-        defaultCountry: 'United States',
-        hideCity: true
-    };
-    (function() {
-        var css = document.createElement('style');
-        css.innerHTML = '@media (min-width: 801px) {'
-            + 'div.PASE-shipping-estimator { float: right; clear: right; width: 50% }'
-            + '}';
-        document.head.appendChild(css);
-    })();
-&lt;/script&gt;
-&lt;script src=&quot;//papathemes.com/content/shippingestimatoraddon/shipping-estimator.phragos.com.js&quot; async&gt;&lt;/script&gt;
-</code></pre>
-<p><strong>Example 4:</strong> Use custom quotes template:</p>
-<p><img alt="estimate-shipping-custom-quotes-template" src="img/estimate-shipping-custom-quotes-template.png" /></p>
-<pre><code class="language-html">&lt;script&gt;
-    window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
-    window.PapathemesShippingEstimatorSettings = {
-        defaultCountry: 'United Kingdom',
-        hideCountry: true,
-        hideCity: true,
-        hideState: true,
-        renderToSelector: 'div.productView-options',
-        useCustomQuotesTemplate: true
-    };
-    (function() {
-        var style = document.createElement('style');
-        style.innerHTML = '.PASE-shipping-estimator .estimator-form-row--total { padding-top: .75rem; border-top: 1px solid #ddd }';
-        document.head.appendChild(style);
-    })();
-&lt;/script&gt;
-&lt;script src=&quot;//papathemes.com/content/shippingestimatoraddon/shipping-estimator.central-uk.mybigcommerce.com.js?1&quot; async&gt;&lt;/script&gt;
-</code></pre>
+<p>Access the page from your storefront, you should see the "Order Multiple SKUs" table displayed.</p>
+<h2 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">&para;</a></h2>
+<p>All these options are optional.</p>
+<h3 id="rendertoselector">renderToSelector<a class="headerlink" href="#rendertoselector" title="Permanent link">&para;</a></h3>
+<p>Specifies the element selector Order Multiple SKUs table should be rendered to. Default is <code>#papathemes_ordermultiskus_app</code>.</p>
+<h3 id="csvskucolumn">csvSkuColumn<a class="headerlink" href="#csvskucolumn" title="Permanent link">&para;</a></h3>
+<p>The column name that contains product SKU to order when using CSV file upload. Default is <code>SKU</code>.</p>
+<h3 id="csvqtycolumn">csvQtyColumn<a class="headerlink" href="#csvqtycolumn" title="Permanent link">&para;</a></h3>
+<p>The column name that contains product quantity to order when using CSV file upload. Default is <code>QUANTITY</code>.</p>
+<h3 id="cartqtyselector">cartQtySelector<a class="headerlink" href="#cartqtyselector" title="Permanent link">&para;</a></h3>
+<p>Specifies the element selector to update cart quantity after added products to your cart. Default is <code>.cart-quantity</code> that should work for any Sencil themes built based on Cornerstone theme.</p>
               
             </div>
           </div>
@@ -323,10 +265,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="color-swatches.html" class="btn btn-neutral float-right" title="Display Color Swatches on Product Items">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="delete-cart.html" class="btn btn-neutral float-right" title="Delete Cart">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="frequently-bought-together.html" class="btn btn-neutral" title="Frequently Bought Together"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="cart-weight.html" class="btn btn-neutral" title="Display Product Weight on Cart Page"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -352,10 +294,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="frequently-bought-together.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="cart-weight.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="color-swatches.html" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="delete-cart.html" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
