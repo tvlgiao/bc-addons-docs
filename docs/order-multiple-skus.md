@@ -8,6 +8,8 @@ The order table can be displayed on any pages, any widget regions you want.
 
 Does not require editing of your theme files. Works with all Stencil / Cornerstone based themes. The code is optimized, asynchronously loaded (parallel loaded), works fast and doesn't affect the speed of your website.
 
+Demo: https://theme-demo-01.mybigcommerce.com/order-multiple-skus/
+
 ## Install the script on your BigCommerce store
 
 ### Step 1: Install the script
@@ -22,7 +24,7 @@ Enter the script below to **Scripts contents**:
 
 ```html
 <script>
-    if (!window.jQuery) window.jQuery = window.jQuerySupermarket || window.jQueryTheme;
+    if (!window.jQueryTheme) window.jQueryTheme = window.chiarajQuery || window.jQuerySupermarket;
     window.PapathemesOrderMultiSKUsSettings = {
         renderToSelector: '#papathemes_ordermultiskus_app',
         csvSkuColumn: 'SKU',
@@ -30,7 +32,7 @@ Enter the script below to **Scripts contents**:
         cartQtySelector: '.cart-quantity'
     };
 </script>
-<script src="//papathemes.com/content/ordermultiskus/ordermultiskus.YOURDOMAIN.js" async></script>
+<script src="//papathemes.com/content/ordermultiskus/ordermultiskus.YOURDOMAIN.js" defer async></script>
 ```
 
 Replace `YOURDOMAIN` by your own store domain. Example:
@@ -42,7 +44,7 @@ Replace `YOURDOMAIN` by your own store domain. Example:
 
 ### Step 2: Create "Order Multiple SKUs" web page
 
-Create a Web Page in **Storefront** > **Web Pages**. View the created page in Page Builder, add the HTML widget to and position you want to display **Order Multiple SKUs** tab. Enter the code below to the HTML widget's content:
+Create a Web Page in **Storefront** > **Web Pages**. View the created page in Page Builder, add the HTML widget to any position you want to display **Order Multiple SKUs** table. Enter the code below to the HTML widget's content:
 
 ```html
 <div id="papathemes_ordermultiskus_app"></div>

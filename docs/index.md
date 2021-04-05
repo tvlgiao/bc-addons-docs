@@ -25,3 +25,4 @@
 - [HTML5 Video Image Gallery](html5-video-image-gallery.md)
 - [Display Product Weight on Cart Page](cart-weight.md)
 - [Order Multiple SKUs](order-multiple-skus.md)
+- [Delete Cart](delete-cart.md)
