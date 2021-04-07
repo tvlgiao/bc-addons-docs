@@ -188,6 +188,8 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#edit-product">Edit Product</a>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -224,6 +226,7 @@
             <div class="section">
               
                 <h1 id="restrict-shipping-countries-on-specific-products">Restrict Shipping Countries on Specific Products<a class="headerlink" href="#restrict-shipping-countries-on-specific-products" title="Permanent link">&para;</a></h1>
+<p><img alt="products-restrict-shipping-countries" src="img/products-restrict-shipping-countries.png" /></p>
 <p>This extension allows to restrict shipping countries on specific products. It also displays the shipping countries info on the product details page. It stops customer complete the checkout payment step if products cannot be shipped to the specific countries. You can configure the shipping countries per product level in product custom fields.</p>
 <p>Does not require editing of your theme files. Works with all Stencil / Cornerstone based themes. The code is optimized, asynchronously loaded (parallel loaded), works fast and doesn't affect the speed of your website.</p>
 <p>Demo: https://theme-demo-01.mybigcommerce.com/</p>
@@ -298,6 +301,9 @@
 <li>Error message on checkout page.</li>
 <li>Default: <code>&lt;strong&gt;{name}&lt;/strong&gt; cannot ship to &lt;strong&gt;{country}&lt;/strong&gt;</code></li>
 </ul>
+<h2 id="edit-product">Edit Product<a class="headerlink" href="#edit-product" title="Permanent link">&para;</a></h2>
+<p>Edit your product, add a custom field with name = <code>__purchasable_countries</code>, value contains the shipping countries ISO 2-letters code, separated by commas. For example: <code>US,VN</code></p>
+<p><img alt="products-restrict-shipping-countries-custom-fields" src="img/products-restrict-shipping-countries-custom-fields.png" /></p>
               
             </div>
           </div>
