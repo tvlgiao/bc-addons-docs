@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Display Product Weight on Cart Page - Documentation</title>
+  <title>Restrict Shipping Countries on Specific Products - Documentation</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="css/theme.css" />
@@ -20,8 +20,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Display Product Weight on Cart Page";
-    var mkdocs_page_input_path = "cart-weight.md";
+    var mkdocs_page_name = "Restrict Shipping Countries on Specific Products";
+    var mkdocs_page_input_path = "restrict-shipping-countries-on-specific-products.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -147,12 +147,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="html5-video-image-gallery.html">HTML5 Video Image Gallery</a>
                     </li>
                 </ul>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="cart-weight.html">Display Product Weight on Cart Page</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#resources">Resources</a>
-    </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="cart-weight.html">Display Product Weight on Cart Page</a>
                     </li>
                 </ul>
                 <ul>
@@ -163,8 +159,36 @@
                     <li class="toctree-l1"><a class="reference internal" href="delete-cart.html">Delete Cart</a>
                     </li>
                 </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="restrict-shipping-countries-on-specific-products.html">Restrict Shipping Countries on Specific Products</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="restrict-shipping-countries-on-specific-products.html">Restrict Shipping Countries on Specific Products</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#install-the-script-on-your-bigcommerce-store">Install the script on your BigCommerce store</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#step-1-install-the-script">Step 1: Install the script</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#settings">Settings</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#cartid">cartId</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#productcustomfield">productCustomField</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#graphqltoken">graphQLToken</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#limitproductsperquery">limitProductsPerQuery</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#flagimg">flagImg</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dropdowntemplate">dropdownTemplate</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#renderdropdownfunc">renderDropdownFunc</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#txtunavailableshippingcountry">txtUnavailableShippingCountry</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                     </li>
                 </ul>
       </div>
@@ -188,7 +212,7 @@
     
       
     
-    <li>Display Product Weight on Cart Page</li>
+    <li>Restrict Shipping Countries on Specific Products</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -199,18 +223,80 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="display-product-weight-on-cart-page">Display product weight on cart page<a class="headerlink" href="#display-product-weight-on-cart-page" title="Permanent link">&para;</a></h1>
-<p><img alt="cart-weight" src="img/cart-weight.png" /></p>
+                <h1 id="restrict-shipping-countries-on-specific-products">Restrict Shipping Countries on Specific Products<a class="headerlink" href="#restrict-shipping-countries-on-specific-products" title="Permanent link">&para;</a></h1>
+<p>This extension allows to restrict shipping countries on specific products. It also displays the shipping countries info on the product details page. It stops customer complete the checkout payment step if products cannot be shipped to the specific countries. You can configure the shipping countries per product level in product custom fields.</p>
+<p>Does not require editing of your theme files. Works with all Stencil / Cornerstone based themes. The code is optimized, asynchronously loaded (parallel loaded), works fast and doesn't affect the speed of your website.</p>
+<p>Demo: https://theme-demo-01.mybigcommerce.com/</p>
+<h2 id="install-the-script-on-your-bigcommerce-store">Install the script on your BigCommerce store<a class="headerlink" href="#install-the-script-on-your-bigcommerce-store" title="Permanent link">&para;</a></h2>
+<h3 id="step-1-install-the-script">Step 1: Install the script<a class="headerlink" href="#step-1-install-the-script" title="Permanent link">&para;</a></h3>
+<p>Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, click <strong>Create a Script</strong>, choose:</p>
+<ul>
+<li><strong>Location on page</strong> = <code>Footer</code></li>
+<li><strong>Select pages where script will be added</strong> = <code>All Pages</code></li>
+<li><strong>Script type</strong> = <code>Script</code></li>
+</ul>
+<p>Enter the script below to <strong>Scripts contents</strong>: </p>
 <pre><code class="language-html">&lt;script&gt;
-    window.PapathemesCartWeightSettings = {
+    if (!window.jQueryTheme) window.jQueryTheme = window.chiarajQuery || window.jQuerySupermarket;
+    window.PAPATHEMES_RESTRICT_PRODUCT_PURCHASE_BY_COUNTRY = {
+        cartId: '{{cart_id}}',
         graphQLToken: '{{settings.storefront_api.token}}'
     };
 &lt;/script&gt;
-&lt;script src=&quot;//papathemes.com/content/cartweight/cart-weight.YOURDOMAIN.js&quot; async defer&gt;&lt;/script&gt;
+&lt;script src=&quot;https://papathemes.com/content/supermarket/addon.restrict-product-purchase-by-country.js&quot; async defer&gt;&lt;/script&gt;
 </code></pre>
-<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
+<h2 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">&para;</a></h2>
+<h3 id="cartid">cartId<a class="headerlink" href="#cartid" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Github: https://github.com/tvlgiao/bc-cartweight-dev</li>
+<li>The cart ID.</li>
+<li>Value must be: <code>{{cart_id}}</code></li>
+</ul>
+<h3 id="productcustomfield">productCustomField<a class="headerlink" href="#productcustomfield" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The custom field to read shipping countries. Field value contains country ISO 2-letters code, seperated by commas.</li>
+<li>Default: <code>__purchasable_countries</code></li>
+<li>Example: Field name = <code>__purchasable_countries</code>, Field value = <code>US,VN</code></li>
+</ul>
+<h3 id="graphqltoken">graphQLToken<a class="headerlink" href="#graphqltoken" title="Permanent link">&para;</a></h3>
+<ul>
+<li>GraphQL token string.</li>
+<li>Value must be: <code>{{settings.storefront_api.token}}</code></li>
+</ul>
+<h3 id="limitproductsperquery">limitProductsPerQuery<a class="headerlink" href="#limitproductsperquery" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Limit number of products per graphQL request.</li>
+<li>Default: <code>50</code></li>
+</ul>
+<h3 id="flagimg">flagImg<a class="headerlink" href="#flagimg" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Function to return country flag image URL.</li>
+<li>Default: <code>code =&gt; ``https://cdn11.bigcommerce.com/s-2tqgeqo45u/lib/flags/${code.toLowerCase()}.gif``</code></li>
+</ul>
+<h3 id="dropdowntemplate">dropdownTemplate<a class="headerlink" href="#dropdowntemplate" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The countries dropdown template to display on the PDP.</li>
+<li>Default:</li>
+</ul>
+<pre><code class="language-html">&lt;div class=&quot;rppbc__shippingDropdown&quot;&gt;
+    &lt;button type=&quot;button&quot; class=&quot;_handler&quot; data-rppbc-dropdown-toggle&gt;This product ship to&lt;/button&gt;
+    &lt;div class=&quot;_dropdown&quot; data-rppbc-dropdown&gt;
+        &lt;ul&gt;
+            &lt;%#countries%&gt;
+                &lt;li&gt;&lt;img src=&quot;&lt;%flag%&gt;&quot; alt=&quot;&lt;%name%&gt;&quot;&gt;&lt;%name%&gt;&lt;/li&gt;
+            &lt;%/countries%&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="renderdropdownfunc">renderDropdownFunc<a class="headerlink" href="#renderdropdownfunc" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The countries dropdown render function.</li>
+<li>Default: <code>($form, $dropdown) =&gt; $form.append($dropdown)</code></li>
+</ul>
+<h3 id="txtunavailableshippingcountry">txtUnavailableShippingCountry<a class="headerlink" href="#txtunavailableshippingcountry" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Error message on checkout page.</li>
+<li>Default: <code>&lt;strong&gt;{name}&lt;/strong&gt; cannot ship to &lt;strong&gt;{country}&lt;/strong&gt;</code></li>
 </ul>
               
             </div>
@@ -219,10 +305,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="order-multiple-skus.html" class="btn btn-neutral float-right" title="Order Multiple SKUs">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="html5-video-image-gallery.html" class="btn btn-neutral" title="HTML5 Video Image Gallery"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="delete-cart.html" class="btn btn-neutral" title="Delete Cart"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -248,10 +332,8 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="html5-video-image-gallery.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="delete-cart.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="order-multiple-skus.html" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
