@@ -26,3 +26,5 @@
 - [Display Product Weight on Cart Page](cart-weight.md)
 - [Order Multiple SKUs](order-multiple-skus.md)
 - [Delete Cart](delete-cart.md)
+- [Restrict Shipping Countries on Specific Products](restrict-shipping-countries-on-specific-products.md)
+
