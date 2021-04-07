@@ -1,5 +1,6 @@
 # Restrict Shipping Countries on Specific Products
 
+![products-restrict-shipping-countries](img/products-restrict-shipping-countries.png)
 
 This extension allows to restrict shipping countries on specific products. It also displays the shipping countries info on the product details page. It stops customer complete the checkout payment step if products cannot be shipped to the specific countries. You can configure the shipping countries per product level in product custom fields.
 
@@ -85,3 +86,11 @@ Enter the script below to **Scripts contents**:
 
 - Error message on checkout page.
 - Default: `<strong>{name}</strong> cannot ship to <strong>{country}</strong>`
+
+
+## Edit Product
+
+Edit your product, add a custom field with name = `__purchasable_countries`, value contains the shipping countries ISO 2-letters code, separated by commas. For example: `US,VN`
+
+![products-restrict-shipping-countries-custom-fields](img/products-restrict-shipping-countries-custom-fields.png)
+
