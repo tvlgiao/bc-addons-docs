@@ -28,4 +28,4 @@
 - [Delete Cart](delete-cart.md)
 - [Restrict Shipping Countries on Specific Products](restrict-shipping-countries-on-specific-products.md)
 - [Checkout Payment Method Customizations](checkout-payment-method-customizations.md)
-
+- [Display Brand Logo on PDP](brand-logo-on-pdp.md)
