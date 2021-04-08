@@ -27,4 +27,5 @@
 - [Order Multiple SKUs](order-multiple-skus.md)
 - [Delete Cart](delete-cart.md)
 - [Restrict Shipping Countries on Specific Products](restrict-shipping-countries-on-specific-products.md)
+- [Checkout Payment Method Customizations](checkout-payment-method-customizations.md)
 
