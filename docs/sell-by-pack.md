@@ -18,11 +18,8 @@ Enter the script below to **Scripts contents**:
 <script>
     window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.chiarajQuery || window.jQuery || window.$;
     window.PapathemesSellByPackSettings = {
-        // Add the addon settings here:
         stepCustomFieldName: 'Step',
-
-        // End.
-        cartId: '{{card_id}}'
+        graphQLToken: '{{settings.storefront_api.token}}'
     };
 </script>
 <script src="//papathemes.com/content/sellbypackaddon/sellbypack.YOURDOMAIN.js" async></script>
@@ -38,6 +35,15 @@ Edit your product, add a custom field with name = **Step** and value is the numb
 
 Update **Minimum Purchase Quantity** to be equal the number of items sell per pack.
 
+### Configure quantity per variant SKUs
+
+
+Enter the custom field value, for example: `200,SKU-E23036E2:100,SKU-62C208F5:125,SKU-65D30EBC:150`
+
+- First value is the default number of items per pack (`200`)
+- Variant SKU (`SKU-E23036E2`) and the coresponding number of items per pack (`100`) separated by colon (`:`).
+- Each variant/pack is separated by a commas (`,`).
+
 
 ## Settings
 
@@ -46,6 +52,8 @@ Available settings and default values are listed below:
 **Basic Settings:**
 
 - `stepCustomFieldName = 'Step'`: Input the custom field name which has custom field value is quantity step. For example, custom field is `Step` and value = `10` to sell the product every 10 pcs.
+- `minQtyIsStep = true`: Specify minimum quantity  equal the step value.
+- `graphQLToken = '{{settings.storefront_api.token}}'`
 
 **Advanced Settings for custom themes:**
 
