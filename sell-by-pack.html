@@ -105,6 +105,10 @@
     <li class="toctree-l2"><a class="reference internal" href="#install-on-your-bigcommerce-store">Install on your BigCommerce Store</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#edit-product">Edit product</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#configure-quantity-per-variant-skus">Configure quantity per variant SKUs</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#settings">Settings</a>
     </li>
@@ -227,11 +231,8 @@
 <pre><code class="language-html">&lt;script&gt;
     window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.chiarajQuery || window.jQuery || window.$;
     window.PapathemesSellByPackSettings = {
-        // Add the addon settings here:
         stepCustomFieldName: 'Step',
-
-        // End.
-        cartId: '{{card_id}}'
+        graphQLToken: '{{settings.storefront_api.token}}'
     };
 &lt;/script&gt;
 &lt;script src=&quot;//papathemes.com/content/sellbypackaddon/sellbypack.YOURDOMAIN.js&quot; async&gt;&lt;/script&gt;
@@ -241,11 +242,20 @@
 <p>Edit your product, add a custom field with name = <strong>Step</strong> and value is the number of items sell per pack:</p>
 <p><img alt="edit-custom-field-sell-by-pack" src="img/edit-custom-field-sell-by-pack.png" /></p>
 <p>Update <strong>Minimum Purchase Quantity</strong> to be equal the number of items sell per pack.</p>
+<h3 id="configure-quantity-per-variant-skus">Configure quantity per variant SKUs<a class="headerlink" href="#configure-quantity-per-variant-skus" title="Permanent link">&para;</a></h3>
+<p>Enter the custom field value, for example: <code>200,SKU-E23036E2:100,SKU-62C208F5:125,SKU-65D30EBC:150</code></p>
+<ul>
+<li>First value is the default number of items per pack (<code>200</code>)</li>
+<li>Variant SKU (<code>SKU-E23036E2</code>) and the coresponding number of items per pack (<code>100</code>) separated by colon (<code>:</code>).</li>
+<li>Each variant/pack is separated by a commas (<code>,</code>).</li>
+</ul>
 <h2 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">&para;</a></h2>
 <p>Available settings and default values are listed below:</p>
 <p><strong>Basic Settings:</strong></p>
 <ul>
 <li><code>stepCustomFieldName = 'Step'</code>: Input the custom field name which has custom field value is quantity step. For example, custom field is <code>Step</code> and value = <code>10</code> to sell the product every 10 pcs.</li>
+<li><code>minQtyIsStep = true</code>: Specify minimum quantity  equal the step value.</li>
+<li><code>graphQLToken = '{{settings.storefront_api.token}}'</code></li>
 </ul>
 <p><strong>Advanced Settings for custom themes:</strong></p>
 <ul>
