@@ -29,3 +29,5 @@
 - [Restrict Shipping Countries on Specific Products](restrict-shipping-countries-on-specific-products.md)
 - [Checkout Payment Method Customizations](checkout-payment-method-customizations.md)
 - [Display Brand Logo on PDP](brand-logo-on-pdp.md)
+- [Tooltips for Product Options](product-option-tooltip.md)
+- [Image Gallery for Product Options](variant-image-gallery.md)
