@@ -29,7 +29,7 @@ Replace `YOURDOMAIN` by your store's domain name, for example `lockertown.com`. 
 
 Upload all images for the product options in Product Images. Edit the product images, append `|` and the option value to the description field of each product images, For example: `| Red`
 
-![edit-product-image-variant](img/edit-product-image-variant)
+![edit-product-image-variant](img/edit-product-image-variant.jpg)
 
 
 <!--

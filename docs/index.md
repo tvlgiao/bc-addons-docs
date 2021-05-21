@@ -31,3 +31,4 @@
 - [Display Brand Logo on PDP](brand-logo-on-pdp.md)
 - [Tooltips for Product Options](product-option-tooltip.md)
 - [Image Gallery for Product Options](variant-image-gallery.md)
+- [Product Review Images](product-review-images.md)
