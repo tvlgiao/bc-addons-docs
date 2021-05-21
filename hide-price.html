@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Image Gallery for Product Options - Documentation</title>
+  <title>Hide Price for Non-Logged In Customers - Documentation</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="css/theme.css" />
@@ -20,8 +20,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Image Gallery for Product Options";
-    var mkdocs_page_input_path = "variant-image-gallery.md";
+    var mkdocs_page_name = "Hide Price for Non-Logged In Customers";
+    var mkdocs_page_input_path = "hide-price.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -175,22 +175,20 @@
                     <li class="toctree-l1"><a class="reference internal" href="product-option-tooltip.html">Tooltips for Product Options</a>
                     </li>
                 </ul>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="variant-image-gallery.html">Image Gallery for Product Options</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#install-on-your-bigcommerce-store">Install on your BigCommerce Store</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#edit-product-images">Edit product images</a>
-    </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="variant-image-gallery.html">Image Gallery for Product Options</a>
                     </li>
                 </ul>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="product-review-images.html">Product Review Images</a>
                     </li>
                 </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="hide-price.html">Hide Price for Non-Logged In Customers</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="hide-price.html">Hide Price for Non-Logged In Customers</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#install-on-your-bigcommerce-store">Install on your BigCommerce Store</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
       </div>
@@ -214,7 +212,7 @@
     
       
     
-    <li>Image Gallery for Product Options</li>
+    <li>Hide Price for Non-Logged In Customers</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -225,30 +223,26 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="image-gallery-for-product-options">Image Gallery for Product Options<a class="headerlink" href="#image-gallery-for-product-options" title="Permanent link">&para;</a></h1>
+                <h1 id="hide-price-for-non-logged-in-customers">Hide Price for Non-Logged In Customers<a class="headerlink" href="#hide-price-for-non-logged-in-customers" title="Permanent link">&para;</a></h1>
 <h2 id="install-on-your-bigcommerce-store">Install on your BigCommerce Store<a class="headerlink" href="#install-on-your-bigcommerce-store" title="Permanent link">&para;</a></h2>
 <p>Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, click <strong>Create a Script</strong>, choose:</p>
 <ul>
-<li><strong>Location on page</strong> = <code>Footer</code></li>
+<li><strong>Location on page</strong> = <code>Head</code></li>
 <li><strong>Select pages where script will be added</strong> = <code>Store Pages</code></li>
 <li><strong>Script type</strong> = <code>Script</code></li>
 </ul>
 <p>Enter the script below to <strong>Scripts contents</strong>: </p>
 <pre><code class="language-html">&lt;script&gt;
-    window.jQueryTheme = window.jQueryTheme || window.chiarajQuery || window.jQuery;
-    window.PapaThemesVariantImageGallerySettings = {
-        debug: true,
-        graphQLToken: '{{settings.storefront_api.token}}'
-    }
+    {{#unless customer}}
+    var script = document.createElement('script');
+    script.src = 'https://d3r059eq9mm6jz.cloudfront.net/microapps/hide-price/main.YOURDOMAIN.js';
+    document.head.appendChild(script);
+    {{/unless}}
 &lt;/script&gt;
-&lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/microapps/variant-image-gallery/main.YOURDOMAIN.js&quot; async defer&gt;&lt;/script&gt;
 </code></pre>
-<p>Replace <code>YOURDOMAIN</code> by your store's domain name, for example <code>lockertown.com</code>. The complete URL should look like <code>https://d3r059eq9mm6jz.cloudfront.net/microapps/variant-image-gallery/main.lockertown.com.js</code></p>
-<h2 id="edit-product-images">Edit product images<a class="headerlink" href="#edit-product-images" title="Permanent link">&para;</a></h2>
-<p>Upload all images for the product options in Product Images. Edit the product images, append <code>|</code> and the option value to the description field of each product images, For example: <code>| Red</code></p>
-<p><img alt="edit-product-image-variant" src="img/edit-product-image-variant.jpg" /></p>
+<p>Replace <code>YOURDOMAIN</code> by your store's domain name, for example <code>devtestent.beautysolutions.com</code>. The complete URL should look like <code>https://d3r059eq9mm6jz.cloudfront.net/microapps/hide-price/main.devtestent.beautysolutions.com.js</code></p>
 <!--
-Source code: https://github.com/tvlgiao/bc-bigcommerce-api-app/microapps/variant-image-gallery/
+Source code: https://github.com/tvlgiao/bc-bigcommerce-api-app/microapps/hide-price/
 -->
               
             </div>
@@ -257,10 +251,8 @@ Source code: https://github.com/tvlgiao/bc-bigcommerce-api-app/microapps/variant
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="product-review-images.html" class="btn btn-neutral float-right" title="Product Review Images">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="product-option-tooltip.html" class="btn btn-neutral" title="Tooltips for Product Options"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="product-review-images.html" class="btn btn-neutral" title="Product Review Images"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -286,10 +278,8 @@ Source code: https://github.com/tvlgiao/bc-bigcommerce-api-app/microapps/variant
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="product-option-tooltip.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="product-review-images.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="product-review-images.html" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
