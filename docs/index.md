@@ -32,3 +32,4 @@
 - [Tooltips for Product Options](product-option-tooltip.md)
 - [Image Gallery for Product Options](variant-image-gallery.md)
 - [Product Review Images](product-review-images.md)
+- [Hide Price for Non-Logged In Customers](hide-price.md)
