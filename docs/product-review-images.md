@@ -41,7 +41,7 @@ Copy and store **API Access Token** key.
 
 ### Access App Dashboard
 
-Open this link: http://d1zh3k10d52vcg.cloudfront.net/app.html
+Open this link: <http://d1zh3k10d52vcg.cloudfront.net/app.html>
 
 Enter:
 
