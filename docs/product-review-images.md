@@ -16,17 +16,18 @@ Enter the script below to **Scripts contents**:
 ```html
 <script>
     window.PapathemesReviewFileUploadSettings = {
+        thumbSize: '200x200',
         graphQLToken: '{{settings.storefront_api.token}}',
         storeHash: '{{settings.store_hash}}'
     };
     (function() {
         var link = document.createElement('link');
-        link.href = 'https://d1zh3k10d52vcg.cloudfront.net/scripts/0.1.2/reviewfileupload.css';
+        link.href = 'https://d1zh3k10d52vcg.cloudfront.net/scripts/0.1.3/reviewfileupload.css';
         link.rel = 'stylesheet';
         document.head.appendChild(link);
     })();
 </script>
-<script src="https://d1zh3k10d52vcg.cloudfront.net/scripts/0.1.2/reviewfileupload.js" async defer></script>
+<script src="https://d1zh3k10d52vcg.cloudfront.net/scripts/0.1.3/reviewfileupload.js" async defer></script>
 ```
 
 ## Register your API Token Acess

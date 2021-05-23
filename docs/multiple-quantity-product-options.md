@@ -339,6 +339,30 @@ html .mqpo-productsTable::-webkit-scrollbar-thumb:window-inactive {
 }
 ```
 
+## Display bulk pricing with unit price
+
+```html
+<script>
+    window.PapathemesMultiQtyProductOptionsSettings = {
+        ...
+        bulkPriceConfig: {
+            addBulkPricingElementFunc: function($bulkPricing, $productView) {
+                $productView.find('.productView-priceShareWrapper').after($bulkPricing);
+            }
+        },
+        graphQLToken: '{{settings.storefront_api.token}}',
+        ...
+    };
+</script>
+<script src="//papathemes.com/content/multiqtyproductoptions/addon.bulk-price.YOURDOMAIN.js" async defer></script>
+```
+
+## Check product minimum and maximum quantity on cart page
+
+```html
+<script src="//papathemes.com/content/multiqtyproductoptions/addon.cart-qty-check.YOURDOMAIN.js" async defer></script>
+```
+
 
 ## Install for Supermarket theme
 
