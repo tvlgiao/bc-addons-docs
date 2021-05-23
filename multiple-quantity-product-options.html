@@ -98,6 +98,10 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#display-bulk-pricing-with-unit-price">Display bulk pricing with unit price</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#check-product-minimum-and-maximum-quantity-on-cart-page">Check product minimum and maximum quantity on cart page</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#install-for-supermarket-theme">Install for Supermarket theme</a>
     </li>
     </ul>
@@ -538,6 +542,24 @@ html .mqpo-productsTable::-webkit-scrollbar-thumb {
 html .mqpo-productsTable::-webkit-scrollbar-thumb:window-inactive {
     background: rgba(255,0,0,.4)
 }
+</code></pre>
+<h2 id="display-bulk-pricing-with-unit-price">Display bulk pricing with unit price<a class="headerlink" href="#display-bulk-pricing-with-unit-price" title="Permanent link">&para;</a></h2>
+<pre><code class="language-html">&lt;script&gt;
+    window.PapathemesMultiQtyProductOptionsSettings = {
+        ...
+        bulkPriceConfig: {
+            addBulkPricingElementFunc: function($bulkPricing, $productView) {
+                $productView.find('.productView-priceShareWrapper').after($bulkPricing);
+            }
+        },
+        graphQLToken: '{{settings.storefront_api.token}}',
+        ...
+    };
+&lt;/script&gt;
+&lt;script src=&quot;//papathemes.com/content/multiqtyproductoptions/addon.bulk-price.YOURDOMAIN.js&quot; async defer&gt;&lt;/script&gt;
+</code></pre>
+<h2 id="check-product-minimum-and-maximum-quantity-on-cart-page">Check product minimum and maximum quantity on cart page<a class="headerlink" href="#check-product-minimum-and-maximum-quantity-on-cart-page" title="Permanent link">&para;</a></h2>
+<pre><code class="language-html">&lt;script src=&quot;//papathemes.com/content/multiqtyproductoptions/addon.cart-qty-check.YOURDOMAIN.js&quot; async defer&gt;&lt;/script&gt;
 </code></pre>
 <h2 id="install-for-supermarket-theme">Install for Supermarket theme<a class="headerlink" href="#install-for-supermarket-theme" title="Permanent link">&para;</a></h2>
 <p>Add below options:</p>

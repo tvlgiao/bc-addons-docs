@@ -247,17 +247,18 @@
 <p>Enter the script below to <strong>Scripts contents</strong>: </p>
 <pre><code class="language-html">&lt;script&gt;
     window.PapathemesReviewFileUploadSettings = {
+        thumbSize: '200x200',
         graphQLToken: '{{settings.storefront_api.token}}',
         storeHash: '{{settings.store_hash}}'
     };
     (function() {
         var link = document.createElement('link');
-        link.href = 'https://d1zh3k10d52vcg.cloudfront.net/scripts/0.1.2/reviewfileupload.css';
+        link.href = 'https://d1zh3k10d52vcg.cloudfront.net/scripts/0.1.3/reviewfileupload.css';
         link.rel = 'stylesheet';
         document.head.appendChild(link);
     })();
 &lt;/script&gt;
-&lt;script src=&quot;https://d1zh3k10d52vcg.cloudfront.net/scripts/0.1.2/reviewfileupload.js&quot; async defer&gt;&lt;/script&gt;
+&lt;script src=&quot;https://d1zh3k10d52vcg.cloudfront.net/scripts/0.1.3/reviewfileupload.js&quot; async defer&gt;&lt;/script&gt;
 </code></pre>
 <h2 id="register-your-api-token-acess">Register your API Token Acess<a class="headerlink" href="#register-your-api-token-acess" title="Permanent link">&para;</a></h2>
 <h3 id="create-the-api-access-key">Create the API Access Key<a class="headerlink" href="#create-the-api-access-key" title="Permanent link">&para;</a></h3>
