@@ -259,7 +259,7 @@ Source code: https://github.com/tvlgiao/bc-bigcommerce-api-app/microapps/hide-pr
     {{#or (unless customer) (if customer.customer_group_name '===' 'Guests')}}
     window.PapaThemesHidePriceSettings = {
         priceSelector: '[data-test-id=&quot;product-widget-price&quot;], [data-test-id=&quot;product-set-widget-price&quot;]',
-        loginHtml: '&lt;span class=&quot;login_msg_prod&quot;&gt;&lt;a href=&quot;/login.php&quot;&gt;Login&lt;/a&gt; or &lt;a href=&quot;/login.php?action=create_account&quot;&gt;Sign Up&lt;/a&gt; to see price&lt;/span&gt;&quot;
+        loginHtml: '&lt;span class=&quot;login_msg_prod&quot;&gt;&lt;a href=&quot;/login.php&quot;&gt;Login&lt;/a&gt; or &lt;a href=&quot;/login.php?action=create_account&quot;&gt;Sign Up&lt;/a&gt; to see price&lt;/span&gt;'
     };
     var script = document.createElement('script');
     script.src = 'https://d3r059eq9mm6jz.cloudfront.net/microapps/hide-price/main.YOURDOMAIN.js';
