@@ -373,3 +373,22 @@ priceWithTaxSelector: '[data-also-bought-parent-scope] [data-product-price-with-
 priceWithoutTaxSelector: '[data-also-bought-parent-scope] [data-product-price-without-tax]',
 ```
 
+## Version 2 (Beta)
+
+```html
+<script>
+    window.PapaThemesProductOptionsBulkOrderSettings = {
+        storeHash: '{{settings.store_hash}}',
+        rules: [
+            {
+                productIds: [],
+                options: [
+                    'Colour',
+                    'Color'
+                ]
+            }
+        ]
+    };
+</script>
+<script src="https://d3r059eq9mm6jz.cloudfront.net/microapps/product-options-bulk-order/main.YOURDOMAIN.js" async defer></script>
+```

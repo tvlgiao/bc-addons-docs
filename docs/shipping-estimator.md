@@ -146,3 +146,31 @@ Insert `productFormSelector: '[data-also-bought-parent-scope] form[data-cart-ite
 <script src="//papathemes.com/content/shippingestimatoraddon/shipping-estimator.central-uk.mybigcommerce.com.js?1" async></script>
 ```
 
+
+**Example 5:**
+
+Collapse the heading by default and display below Add to Cart button:
+
+```html
+<script>
+    window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
+    window.PapathemesShippingEstimatorSettings = {
+        productFormSelector: '[data-also-bought-parent-scope] form[data-cart-item-add]',
+        renderToSelector: '.productView-details:last-child',
+        defaultCountry: 'United Kingdom',
+        lang: {
+            estimate_shipping: 'Calculate Shipping'
+        }
+    };
+    (function() {
+        var css = document.createElement('style');
+        css.innerHTML = '@media (min-width: 801px) {'
+            + '/*div.PASE-shipping-estimator { float: right; clear: right; width: 50% }*/'
+            + '}'
+        	+ 'div.PASE-shipping-estimator { margin-top: -0.75rem }'
+        	+ '.form--addToCart { margin-bottom: 0 }'
+        ;document.head.appendChild(css);
+    })();
+</script>
+<script src="https://papathemes.com/content/shippingestimatoraddon/shipping-estimator.r129.co.js" async defer></script>
+```

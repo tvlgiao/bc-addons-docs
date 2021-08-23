@@ -42,7 +42,7 @@ Edit your custom script as below:
     {{#or (unless customer) (if customer.customer_group_name '===' 'Guests')}}
     window.PapaThemesHidePriceSettings = {
         priceSelector: '[data-test-id="product-widget-price"], [data-test-id="product-set-widget-price"]',
-        loginHtml: `<span class='login_msg_prod'><a href='/login.php'>Login</a> or <a href='/login.php?action=create_account'>Sign Up</a> to see price</span>`
+        loginHtml: '<span class="login_msg_prod"><a href="/login.php">Login</a> or <a href="/login.php?action=create_account">Sign Up</a> to see price</span>'
     };
     var script = document.createElement('script');
     script.src = 'https://d3r059eq9mm6jz.cloudfront.net/microapps/hide-price/main.YOURDOMAIN.js';
