@@ -344,6 +344,30 @@
 &lt;/script&gt;
 &lt;script src=&quot;//papathemes.com/content/shippingestimatoraddon/shipping-estimator.central-uk.mybigcommerce.com.js?1&quot; async&gt;&lt;/script&gt;
 </code></pre>
+<p><strong>Example 5:</strong></p>
+<p>Collapse the heading by default and display below Add to Cart button:</p>
+<pre><code class="language-html">&lt;script&gt;
+    window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
+    window.PapathemesShippingEstimatorSettings = {
+        productFormSelector: '[data-also-bought-parent-scope] form[data-cart-item-add]',
+        renderToSelector: '.productView-details:last-child',
+        defaultCountry: 'United Kingdom',
+        lang: {
+            estimate_shipping: 'Calculate Shipping'
+        }
+    };
+    (function() {
+        var css = document.createElement('style');
+        css.innerHTML = '@media (min-width: 801px) {'
+            + '/*div.PASE-shipping-estimator { float: right; clear: right; width: 50% }*/'
+            + '}'
+            + 'div.PASE-shipping-estimator { margin-top: -0.75rem }'
+            + '.form--addToCart { margin-bottom: 0 }'
+        ;document.head.appendChild(css);
+    })();
+&lt;/script&gt;
+&lt;script src=&quot;https://papathemes.com/content/shippingestimatoraddon/shipping-estimator.r129.co.js&quot; async defer&gt;&lt;/script&gt;
+</code></pre>
               
             </div>
           </div>

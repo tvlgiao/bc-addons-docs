@@ -104,6 +104,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#install-for-supermarket-theme">Install for Supermarket theme</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#version-2-beta">Version 2 (Beta)</a>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -565,6 +567,23 @@ html .mqpo-productsTable::-webkit-scrollbar-thumb:window-inactive {
 <p>Add below options:</p>
 <pre><code class="language-js">priceWithTaxSelector: '[data-also-bought-parent-scope] [data-product-price-with-tax]',
 priceWithoutTaxSelector: '[data-also-bought-parent-scope] [data-product-price-without-tax]',
+</code></pre>
+<h2 id="version-2-beta">Version 2 (Beta)<a class="headerlink" href="#version-2-beta" title="Permanent link">&para;</a></h2>
+<pre><code class="language-html">&lt;script&gt;
+    window.PapaThemesProductOptionsBulkOrderSettings = {
+        storeHash: '{{settings.store_hash}}',
+        rules: [
+            {
+                productIds: [],
+                options: [
+                    'Colour',
+                    'Color'
+                ]
+            }
+        ]
+    };
+&lt;/script&gt;
+&lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/microapps/product-options-bulk-order/main.YOURDOMAIN.js&quot; async defer&gt;&lt;/script&gt;
 </code></pre>
               
             </div>
