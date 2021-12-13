@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Add Shipping Option Your Customer's Shipping Account - Documentation</title>
+  <title>Hide Product Option Values based on Customer Groups - Documentation</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="css/theme.css" />
@@ -20,8 +20,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Add Shipping Option Your Customer's Shipping Account";
-    var mkdocs_page_input_path = "customer-account-shipping-option.md";
+    var mkdocs_page_name = "Hide Product Option Values based on Customer Groups";
+    var mkdocs_page_input_path = "hide-option-values-based-on-customer-groups.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -126,12 +126,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="free-shipping-badges.html">Display Free Shipping Badges</a>
                     </li>
                 </ul>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="customer-account-shipping-option.html">Add Shipping Option Your Customer's Shipping Account</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#install-on-your-store">Install on your store</a>
-    </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="customer-account-shipping-option.html">Add Shipping Option Your Customer's Shipping Account</a>
                     </li>
                 </ul>
                 <ul>
@@ -190,8 +186,10 @@
                     <li class="toctree-l1"><a class="reference internal" href="hide-price.html">Hide Price for Non-Logged In Customers</a>
                     </li>
                 </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="hide-option-values-based-on-customer-groups.html">Hide Product Option Values based on Customer Groups</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="hide-option-values-based-on-customer-groups.html">Hide Product Option Values based on Customer Groups</a>
+    <ul class="current">
+    </ul>
                     </li>
                 </ul>
       </div>
@@ -215,7 +213,7 @@
     
       
     
-    <li>Add Shipping Option Your Customer's Shipping Account</li>
+    <li>Hide Product Option Values based on Customer Groups</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -227,28 +225,48 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="add-shipping-option-your-customers-shipping-account">Add Shipping Option: Your Customer's Shipping Account<a class="headerlink" href="#add-shipping-option-your-customers-shipping-account" title="Permanent link">&para;</a></h1>
-<p>Add a shipping option with your customer's shipping account on the checkout page.</p>
-<p><img alt="Your customer's shipping account" src="img/your-customer-shipping-account.jpg" /></p>
-<h2 id="install-on-your-store">Install on your store<a class="headerlink" href="#install-on-your-store" title="Permanent link">&para;</a></h2>
-<p>Create 2 custom fields in <strong>Advanced Settings</strong> &gt; <strong>Account Signup Form</strong> &gt; <strong>Address Fields</strong>:</p>
-<ol>
-<li><code>Shipping Account</code> (or any name you want), type = <strong>Text Field</strong></li>
-<li><code>Shipping Options</code> (or any name you want), type = <strong>Checkboxes</strong>, values = <code>NDA, 2 DAYS or Ground</code> or example.</li>
-</ol>
-<p>Find the custom fields' ID on the checkout page using Web Developer Tool of your browser (Ask our developer for help).</p>
-<p>Add a new shipping option, You can use ShippingHQ to create a custom shipping option or ask our developer to create a new shipping option via BigCommerce API.</p>
-<p>Create a new script in <strong>Storefront</strong> &gt; <strong>Script Manager</strong>:</p>
-<ul>
-<li><strong>Location</strong> = <code>Footer</code></li>
-<li><strong>Display on Page</strong> = <code>Checkout Page</code></li>
-<li><strong>Script content</strong>: Insert content from this file: https://github.com/tvlgiao/bc-supermarket-dev/blob/afead38f780ec1345ae8994fda3c354ac02bcef8/templates/components/harmonycr/customer-shipping-account.html</li>
-</ul>
-<p>Update the variables below:</p>
-<pre><code class="language-js">var SHIPPING_ACCOUNT_FIELD_ID = 26;
-var SHIPPING_OPTIONS_FIELD_ID = 28;
-var SHIPPING_ACCOUNT_OPTION_LABEL = 'Your UPS/FEDEX Account';
+                <h1 id="hide-product-option-values-based-on-customer-groups">Hide Product Option Values based on Customer Groups<a class="headerlink" href="#hide-product-option-values-based-on-customer-groups" title="Permanent link">&para;</a></h1>
+<p>Example configuration:</p>
+<pre><code class="language-html">&lt;script&gt;
+    window.ZACATAKLURES_HIDEOPTIONS = {
+        rules: [
+            {
+                options: [
+                    {
+                        name: 'Size',
+                        value: 'Extra Small',
+                    },
+                    {
+                        name: 'Size',
+                        value: 'Extra Large'
+                    },
+                    {
+                        name: 'Size',
+                        value: 'Monster',
+                    },
+                    {
+                        name: 'Head Type',
+                        value: 'Soft Skull'
+                    },
+                    {
+                        name: 'Rigging Option',
+                        value: 'Twin Hook Shackle Rig - Mustad 7691S'
+                    }
+                ],
+                customerGroups: [
+                    // 'Guests',
+                    'Dealer Australia',
+                    'Dealer International'
+                ]
+            }
+        ],
+        customerGroupName: '{{{customer_group_name}}}',
+        graphQLToken: '{{{settings.storefront_api.token}}}',
+        debug: true
+    };
+&lt;/script&gt;
 </code></pre>
+<p>GitHub: https://github.com/tvlgiao/bc-zacataklures-chiara-hide-product-options</p>
               
             </div>
           </div>
@@ -256,10 +274,8 @@ var SHIPPING_ACCOUNT_OPTION_LABEL = 'Your UPS/FEDEX Account';
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="better-reorder.html" class="btn btn-neutral float-right" title="Better Product Reorder">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="free-shipping-badges.html" class="btn btn-neutral" title="Display Free Shipping Badges"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="hide-price.html" class="btn btn-neutral" title="Hide Price for Non-Logged In Customers"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -285,10 +301,8 @@ var SHIPPING_ACCOUNT_OPTION_LABEL = 'Your UPS/FEDEX Account';
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="free-shipping-badges.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="hide-price.html" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-    
-      <span><a href="better-reorder.html" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
