@@ -24,16 +24,6 @@ Enter the script below to **Scripts contents**:
 ```html
 <script>
     if (!window.jQueryTheme) window.jQueryTheme = window.chiarajQuery || window.jQuerySupermarket;
-    window.PapathemesOrderMultiSKUsSettings = {
-        renderToSelector: '#papathemes_ordermultiskus_app',
-        csvSkuColumn: 'SKU',
-        csvQtyColumn: 'QUANTITY',
-        cartQtySelector: '.cart-quantity'
-    };
-</script>
-<script src="//papathemes.com/content/ordermultiskus/ordermultiskus.YOURDOMAIN.js" defer async></script>
-<script>
-    if (!window.jQueryTheme) window.jQueryTheme = window.chiarajQuery || window.jQuerySupermarket;
     window.PapathemesDeleteCartSettings = {
         // Required settings
         cartId: '{{cart_id}}',
