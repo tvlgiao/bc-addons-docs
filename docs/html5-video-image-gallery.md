@@ -11,3 +11,9 @@ Enter the **video ID** to the custom field value. For example, Your Vimeo video 
 
 
 
+## Display YouTube video gallery in a popup in image gallery for Supermarket theme
+
+- GitHub: https://github.com/tvlgiao/bc-raneystruckparts-supermarket-youtube-video-image-gallery
+- Demo: https://www.raneystruckparts.com/angry-duck-hood-ornament/#video-gallery
+
+
