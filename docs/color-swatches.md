@@ -92,3 +92,32 @@ The color swatches logic is as follows:
 - The color swatch images are in the attached zip file.
 
 Github Repo: https://github.com/tvlgiao/bc-petals-root-theme-card-color-swatches-variant-sku
+
+
+## Custom JavaScript auto select the coresponding color on PDP
+
+```js
+(function($) {
+    $('body').on('click', '.productSwatches-swatches-item', function(event) {
+        var $el = $(event.currentTarget);
+        var id = $el.data('attributeId');
+        var value = $el.data('attributeValue');
+        var $a = $el.closest('.card').find('.card-figure > a');
+        var href = $a.attr('href').replace(/\?.*$/, '') + '?attribute[' + id + ']=' + value;
+        $a.attr('href', href);
+    });
+    $(window).on('load', function() {
+        var params = new URLSearchParams(window.location.search);
+        for (let k of params.keys()) {
+            var m = k.match(/attribute\[([0-9]+)\]/);
+            if (m) {
+                var value = params.get(k);
+                $('input').filter(function(i, el) {
+                    var $el = $(el);
+                    return $el.attr('name') === k && $el.attr('value') === value;
+                }).trigger('click');
+            }
+        }
+    });
+})(window.jQuery);
+```
