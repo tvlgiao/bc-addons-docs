@@ -33,6 +33,9 @@ nav:
 - Product Review Images: product-review-images.md
 - Hide Price for Non-Logged In Customers: hide-price.md
 - Hide Product Option Values based on Customer Groups: hide-option-values-based-on-customer-groups.md
+- Pre-Select Product Options Sharing Link: preselect-product-option-link.md
+- Prevent Purchase Low Stock Products: prevent-purchase-low-stock.md
+- Product Card Lowest Price: product-card-lowest-price.md
 theme: readthedocs
 use_directory_urls: false
 

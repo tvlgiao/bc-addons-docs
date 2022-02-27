@@ -33,3 +33,6 @@
 - [Image Gallery for Product Options](variant-image-gallery.md)
 - [Product Review Images](product-review-images.md)
 - [Hide Price for Non-Logged In Customers](hide-price.md)
+- [Pre-Select Product Options Sharing Link](preselect-product-option-link.md)
+- [Prevent Purchase Low Stock Products](prevent-purchase-low-stock.md)
+- [Product Card Lowest Price](price-card-lowest-price.md)
