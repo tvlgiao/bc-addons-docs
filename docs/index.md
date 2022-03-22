@@ -36,3 +36,5 @@
 - [Pre-Select Product Options Sharing Link](preselect-product-option-link.md)
 - [Prevent Purchase Low Stock Products](prevent-purchase-low-stock.md)
 - [Product Card Lowest Price](price-card-lowest-price.md)
+- [Minimum Order Amount & Minimum Category Quantity](category-minimum-quantity.md)
+

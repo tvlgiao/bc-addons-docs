@@ -25,11 +25,16 @@ Enter the script below to **Scripts contents**:
             {
                 productId: '',
                 optionMatch: '',
-                optionValueMatch: 'Including $400 Refundable Core Charge Deposit.',
+                optionValueMatch: '',
                 productIdToAdd: 378,
             }
         ],
-        cartId: '{{cart_id}}'
+        cartId: '{{cart_id}}',
+        graphQLToken: '{{{settings.storefront_api.token}}}',
+        checkProductCustomField: '',
+        addOneOnly: false, // Add product only 1 qty. Only support if using GraphQL.
+        allowRemoval: false,
+        debug: false
     };
 </script>
 <script src="//papathemes.com/content/autoaddtocartaddon/autoaddtocart.YOURDOMAIN.js" async></script>
@@ -44,6 +49,9 @@ Replace `YOURDOMAIN` by your store's domain name.
 - `optionMatch`: Input the option name to process only when this option is selected.
 - `optionValueMatch`: Input the option value to process only when this option value is selected.
 - `productIdToAdd`: Input the additional product ID to add to cart.
+- `checkProductCustomField`: A custom field that is used to retrieve the appropriate product to add to cart.
+- `addOneOnly`: Whether the product should be added once for the entire cart.
+- `allowRemoval`: Whether allow to remove the product from cart.
 
 ### Custom Fields template file
 

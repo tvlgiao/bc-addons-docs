@@ -36,6 +36,7 @@ nav:
 - Pre-Select Product Options Sharing Link: preselect-product-option-link.md
 - Prevent Purchase Low Stock Products: prevent-purchase-low-stock.md
 - Product Card Lowest Price: product-card-lowest-price.md
+- Minimum Order Amount & Minimum Category Quantity: category-minimum-quantity.md
 theme: readthedocs
 use_directory_urls: false
 
