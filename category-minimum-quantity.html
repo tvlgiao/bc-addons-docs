@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Prevent Purchase Low Stock Products - Documentation</title>
+  <title>Minimum Order Amount & Minimum Category Quantity - Documentation</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="css/theme.css" />
@@ -20,8 +20,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Prevent Purchase Low Stock Products";
-    var mkdocs_page_input_path = "prevent-purchase-low-stock.md";
+    var mkdocs_page_name = "Minimum Order Amount & Minimum Category Quantity";
+    var mkdocs_page_input_path = "category-minimum-quantity.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -194,20 +194,20 @@
                     <li class="toctree-l1"><a class="" href="preselect-product-option-link.md">Pre-Select Product Options Sharing Link</a>
                     </li>
                 </ul>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="prevent-purchase-low-stock.html">Prevent Purchase Low Stock Products</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#install-on-your-bigcommerce-store">Install on your BigCommerce Store</a>
-    </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="prevent-purchase-low-stock.html">Prevent Purchase Low Stock Products</a>
                     </li>
                 </ul>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="product-card-lowest-price.html">Product Card Lowest Price</a>
                     </li>
                 </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="category-minimum-quantity.html">Minimum Order Amount & Minimum Category Quantity</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="category-minimum-quantity.html">Minimum Order Amount & Minimum Category Quantity</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#install-on-your-bigcommerce-store">Install on your BigCommerce Store</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
       </div>
@@ -231,7 +231,7 @@
     
       
     
-    <li>Prevent Purchase Low Stock Products</li>
+    <li>Minimum Order Amount & Minimum Category Quantity</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -243,28 +243,37 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="prevent-purchase-low-stock-products">Prevent Purchase Low Stock Products<a class="headerlink" href="#prevent-purchase-low-stock-products" title="Permanent link">&para;</a></h1>
+                <h1 id="minimum-order-amount-minimum-category-quantity">Minimum Order Amount &amp; Minimum Category Quantity<a class="headerlink" href="#minimum-order-amount-minimum-category-quantity" title="Permanent link">&para;</a></h1>
 <h2 id="install-on-your-bigcommerce-store">Install on your BigCommerce Store<a class="headerlink" href="#install-on-your-bigcommerce-store" title="Permanent link">&para;</a></h2>
 <p>Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, click <strong>Create a Script</strong>, choose:</p>
 <ul>
 <li><strong>Location on page</strong> = <code>Footer</code></li>
-<li><strong>Select pages where script will be added</strong> = <code>Checkout Page</code></li>
+<li><strong>Select pages where script will be added</strong> = <code>Store pages</code></li>
 <li><strong>Script type</strong> = <code>Script</code></li>
 </ul>
 <p>Enter the script below to <strong>Scripts contents</strong>: </p>
 <pre><code class="language-html">&lt;script&gt;
     window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.chiarajQuery || window.jQuery;
-    window.PapaThemesPreventPurchaseLowStockSettings = {
+    window.PapaThemesCategoryMinimumQuantitySettings = {
         debug: false,
         graphQLToken: '{{{settings.storefront_api.token}}}',
-        deletedMsg: '{items} are no longer available and was removed from your cart!'
+        apiUrl: '',
+        useApi: false,
+        storeHash: '{{{store_hash}}}',
+        minimumAmount: 0,
+        minimumAmountErrorMsg: 'Minimum order amount is $%min%',
+        minimumQuantityByCategory: {},
+        minimumErrorMsg: 'Minimum product quantity of %category% category is %min%',
+        cartCheckoutActionSelector: '.previewCartAction-checkout, .previewCartAction-checkoutMultiple, .previewCart-additionalCheckoutButtons, .previewCartCheckout-checkoutButton, .previewCartCheckout-additionalCheckoutButtons, .cart-actions .button--primary, .card-actions .checkoutMultiple, .cart-additionalCheckoutButtons',
+        watchingElementSelector: '#checkout-app, [data-cart-content] [data-cart-quantity], [data-cart-preview] [data-cart-quantity], .previewCart',
+        cartStatusSelector: '[data-cart-status]'
     };
 &lt;/script&gt;
-&lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/microapps/prevent-purchase-low-stock/main.YOURDOMAIN.js&quot; async defer&gt;&lt;/script&gt;
+&lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/microapps/category-minimum-quantity/main.YOURDOMAIN.js&quot; async defer&gt;&lt;/script&gt;
 </code></pre>
-<p>Replace <code>YOURDOMAIN</code> by your store's domain name, for example <code>lockertown.com</code>. The complete URL should look like <code>https://d3r059eq9mm6jz.cloudfront.net/microapps/variant-image-gallery/main.lockertown.com.js</code></p>
+<p>Replace <code>YOURDOMAIN</code> by your store's domain name, for example <code>example.com</code>. The complete URL should look like <code>https://d3r059eq9mm6jz.cloudfront.net/microapps/category-minimum-quantity/main.example.com.js</code></p>
 <!--
-Source code: https://github.com/tvlgiao/bc-bigcommerce-api-app/microapps/prevent-purchase-low-stock/
+Source code: https://github.com/tvlgiao/bc-bigcommerce-api-app/microapps/minimum-category-quantity/
 -->
               
             </div>
@@ -273,10 +282,8 @@ Source code: https://github.com/tvlgiao/bc-bigcommerce-api-app/microapps/prevent
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="product-card-lowest-price.html" class="btn btn-neutral float-right" title="Product Card Lowest Price">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="hide-option-values-based-on-customer-groups.html" class="btn btn-neutral" title="Hide Product Option Values based on Customer Groups"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="product-card-lowest-price.html" class="btn btn-neutral" title="Product Card Lowest Price"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -302,10 +309,8 @@ Source code: https://github.com/tvlgiao/bc-bigcommerce-api-app/microapps/prevent
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="hide-option-values-based-on-customer-groups.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="product-card-lowest-price.html" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-    
-      <span><a href="product-card-lowest-price.html" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

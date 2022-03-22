@@ -214,6 +214,10 @@
                     <li class="toctree-l1"><a class="reference internal" href="product-card-lowest-price.html">Product Card Lowest Price</a>
                     </li>
                 </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="category-minimum-quantity.html">Minimum Order Amount & Minimum Category Quantity</a>
+                    </li>
+                </ul>
       </div>
     </div>
     </nav>
@@ -265,11 +269,16 @@
             {
                 productId: '',
                 optionMatch: '',
-                optionValueMatch: 'Including $400 Refundable Core Charge Deposit.',
+                optionValueMatch: '',
                 productIdToAdd: 378,
             }
         ],
-        cartId: '{{cart_id}}'
+        cartId: '{{cart_id}}',
+        graphQLToken: '{{{settings.storefront_api.token}}}',
+        checkProductCustomField: '',
+        addOneOnly: false, // Add product only 1 qty. Only support if using GraphQL.
+        allowRemoval: false,
+        debug: false
     };
 &lt;/script&gt;
 &lt;script src=&quot;//papathemes.com/content/autoaddtocartaddon/autoaddtocart.YOURDOMAIN.js&quot; async&gt;&lt;/script&gt;
@@ -281,6 +290,9 @@
 <li><code>optionMatch</code>: Input the option name to process only when this option is selected.</li>
 <li><code>optionValueMatch</code>: Input the option value to process only when this option value is selected.</li>
 <li><code>productIdToAdd</code>: Input the additional product ID to add to cart.</li>
+<li><code>checkProductCustomField</code>: A custom field that is used to retrieve the appropriate product to add to cart.</li>
+<li><code>addOneOnly</code>: Whether the product should be added once for the entire cart.</li>
+<li><code>allowRemoval</code>: Whether allow to remove the product from cart.</li>
 </ul>
 <h3 id="custom-fields-template-file">Custom Fields template file<a class="headerlink" href="#custom-fields-template-file" title="Permanent link">&para;</a></h3>
 <p>Create file <code>components/products/custom-fields.html</code> with content below:</p>
