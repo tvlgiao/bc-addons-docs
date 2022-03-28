@@ -37,4 +37,5 @@
 - [Prevent Purchase Low Stock Products](prevent-purchase-low-stock.md)
 - [Product Card Lowest Price](price-card-lowest-price.md)
 - [Minimum Order Amount & Minimum Category Quantity](category-minimum-quantity.md)
+- [IGAT Variants Table](igat-variants-table.md)
 
