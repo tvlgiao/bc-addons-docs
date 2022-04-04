@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Limit Shipping Options - Documentation</title>
+  <title>Multi Storefronts Global Login - Documentation</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="css/theme.css" />
@@ -20,8 +20,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Limit Shipping Options";
-    var mkdocs_page_input_path = "limit-shipping-options.md";
+    var mkdocs_page_name = "Multi Storefronts Global Login";
+    var mkdocs_page_input_path = "multi-storefronts-global-login.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -114,8 +114,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="quantity-in-cart.html">Quantity In Cart</a>
                     </li>
                 </ul>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="limit-shipping-options.html">Limit Shipping Options</a>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="limit-shipping-options.html">Limit Shipping Options</a>
                     </li>
                 </ul>
                 <ul>
@@ -210,8 +210,12 @@
                     <li class="toctree-l1"><a class="reference internal" href="igat-variants-table.html">IGAT Variants Table</a>
                     </li>
                 </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="multi-storefronts-global-login.html">Multi Storefronts Global Login</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="multi-storefronts-global-login.html">Multi Storefronts Global Login</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#enable-global-logins-on-your-stores">Enable global logins on your stores</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
       </div>
@@ -235,7 +239,7 @@
     
       
     
-    <li>Limit Shipping Options</li>
+    <li>Multi Storefronts Global Login</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -247,7 +251,25 @@
           <div role="main">
             <div class="section">
               
-                
+                <h1 id="multi-storefronts-global-login">Multi Storefronts Global Login<a class="headerlink" href="#multi-storefronts-global-login" title="Permanent link">&para;</a></h1>
+<p>This extension enables customers to register with one store, can login to all of your storefronts that are associated with the same account. The Multi-Storefronts feature is available only to Enterprise accounts. When installing the extension, your existing customer accounts have been also connected to all of your channels.</p>
+<h2 id="enable-global-logins-on-your-stores">Enable global logins on your stores<a class="headerlink" href="#enable-global-logins-on-your-stores" title="Permanent link">&para;</a></h2>
+<p>Create an API key for BC API access by following this instruction: https://support.bigcommerce.com/s/article/Store-API-Accounts#creating</p>
+<ul>
+<li>Choose <strong>Create V2/V3 API Token</strong>.</li>
+<li>In <strong>Oauth Scopes</strong> choose:<ul>
+<li><strong>Customers</strong>: <code>modify</code></li>
+<li><strong>Customers Login</strong>: <code>modify</code></li>
+<li><strong>Sites &amp; Routes</strong>: <code>read-only</code></li>
+<li><strong>Channel Settings</strong>: <code>modify</code></li>
+<li><strong>Channel Listings</strong>: <code>read-only</code></li>
+</ul>
+</li>
+</ul>
+<p>Send us the Access Token code to install on your database.</p>
+<p>Run the following script to install the extension:</p>
+<p><code>https://051ilzoi51.execute-api.us-east-1.amazonaws.com/latest/STOREHASH/jackgameroom/install-global-logins</code></p>
+<p>replace <strong>STOREHASH</strong> by your store hash code.</p>
               
             </div>
           </div>
@@ -255,10 +277,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="disallow-different-billing-address.html" class="btn btn-neutral float-right" title="Disallow Different Billing Address">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="quantity-in-cart.html" class="btn btn-neutral" title="Quantity In Cart"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="igat-variants-table.html" class="btn btn-neutral" title="IGAT Variants Table"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -284,10 +304,8 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="quantity-in-cart.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="igat-variants-table.html" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-    
-      <span><a href="disallow-different-billing-address.html" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
