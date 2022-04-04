@@ -38,4 +38,5 @@
 - [Product Card Lowest Price](price-card-lowest-price.md)
 - [Minimum Order Amount & Minimum Category Quantity](category-minimum-quantity.md)
 - [IGAT Variants Table](igat-variants-table.md)
+- [Multi Storefronts Global Login](multi-storefronts-global-login.md)
 

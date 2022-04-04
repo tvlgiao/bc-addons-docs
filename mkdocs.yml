@@ -38,6 +38,7 @@ nav:
 - Product Card Lowest Price: product-card-lowest-price.md
 - Minimum Order Amount & Minimum Category Quantity: category-minimum-quantity.md
 - IGAT Variants Table: igat-variants-table.md
+- Multi Storefronts Global Login: multi-storefronts-global-login.md
 theme: readthedocs
 use_directory_urls: false
 

@@ -24,7 +24,7 @@ Enter the script below to **Scripts contents**:
 <script src="https://d3r059eq9mm6jz.cloudfront.net/microapps/igat-variants-table/main.YOURDOMAIN.js" async defer></script>
 ```
 
-Replace `YOURDOMAIN` by your store's domain name, for example `igat-snc-di-gatto-pietro-c-store-2.mybigcommerce.com`. The complete URL should look like `https://d3r059eq9mm6jz.cloudfront.net/microapps/variant-image-gallery/main.igat-snc-di-gatto-pietro-c-store-2.mybigcommerce.com.js`
+Replace `YOURDOMAIN` by your store's domain name, for example `igat-snc-di-gatto-pietro-c-store-2.mybigcommerce.com`. The complete URL should look like `https://d3r059eq9mm6jz.cloudfront.net/microapps/igat-variants-table/main.igat-snc-di-gatto-pietro-c-store-2.mybigcommerce.com.js`
 
 
 ## Configuration
