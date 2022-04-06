@@ -10,6 +10,7 @@ Create an API key for BC API access by following this instruction: https://suppo
 - In **Oauth Scopes** choose:
     - **Customers**: `modify`
     - **Customers Login**: `modify`
+    - **Stored Payment Instruments**: `modify`
     - **Sites & Routes**: `read-only`
     - **Channel Settings**: `modify`
     - **Channel Listings**: `read-only`
@@ -18,7 +19,7 @@ Send us the Access Token code to install on your database.
 
 Run the following script to install the extension:
 
-`https://051ilzoi51.execute-api.us-east-1.amazonaws.com/latest/STOREHASH/jackgameroom/install-global-logins`
+`https://051ilzoi51.execute-api.us-east-1.amazonaws.com/latest/jackgameroom/STOREHASH/install-global-logins`
 
-replace **STOREHASH** by your store hash code.
+Replace **STOREHASH** by your store hash code.
 
