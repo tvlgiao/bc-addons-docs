@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Display Brand Logo on PDP - Documentation</title>
+  <title>Add Back to Category button on the cart page - Documentation</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="css/theme.css" />
@@ -20,8 +20,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Display Brand Logo on PDP";
-    var mkdocs_page_input_path = "brand-logo-on-pdp.md";
+    var mkdocs_page_name = "Add Back to Category button on the cart page";
+    var mkdocs_page_input_path = "back-to-category.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -166,14 +166,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="checkout-payment-method-customizations.html">Checkout Payment Method Customizations</a>
                     </li>
                 </ul>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="brand-logo-on-pdp.html">Display Brand Logo on PDP</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#install-the-script-to-your-store">Install the script to your store</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#settings">Settings</a>
-    </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="brand-logo-on-pdp.html">Display Brand Logo on PDP</a>
                     </li>
                 </ul>
                 <ul>
@@ -224,8 +218,12 @@
                     <li class="toctree-l1"><a class="reference internal" href="papersushishop-expected-shipping-date.html">Papersushishop Expected Shipping Date</a>
                     </li>
                 </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="back-to-category.html">Add Back to Category button on the cart page</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="back-to-category.html">Add Back to Category button on the cart page</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
       </div>
@@ -249,7 +247,7 @@
     
       
     
-    <li>Display Brand Logo on PDP</li>
+    <li>Add Back to Category button on the cart page</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -261,8 +259,8 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="display-brand-logo-on-product-details-page">Display Brand Logo on Product Details Page<a class="headerlink" href="#display-brand-logo-on-product-details-page" title="Permanent link">&para;</a></h1>
-<h2 id="install-the-script-to-your-store">Install the script to your store<a class="headerlink" href="#install-the-script-to-your-store" title="Permanent link">&para;</a></h2>
+                <h1 id="add-back-to-category-button-on-the-cart-page">Add Back to Category button on the cart page<a class="headerlink" href="#add-back-to-category-button-on-the-cart-page" title="Permanent link">&para;</a></h1>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <p>Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, click <strong>Create a Script</strong>, choose:</p>
 <ul>
 <li><strong>Location on page</strong> = <code>Footer</code></li>
@@ -271,30 +269,13 @@
 </ul>
 <p>Enter the script below to <strong>Scripts contents</strong>: </p>
 <pre><code class="language-html">&lt;script&gt;
-    window.PAPATHEMES_BRANDLOGOV2_SETTINGS = {
-        debug: true,
-        graphQLToken: '{{settings.storefront_api.token}}'
+    window.PapathemesBackToCategorySettings = {
+        pageType: '{{page_type}}'
     };
 &lt;/script&gt;
-&lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/brand-logo-v2.public.js&quot; async defer&gt;&lt;/script&gt;
+&lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/microapps/back-to-category/main.YOURDOMAIN.js&quot; async defer&gt;&lt;/script&gt;
 </code></pre>
-<h2 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">&para;</a></h2>
-<p><strong>Default settings:</strong></p>
-<pre><code class="language-js">{
-    debug = false,
-    graphQLToken = '',
-    productViewSelector = '.productView',
-    getProductIdFunc = $productView =&gt; Number($productView.find('input[name=product_id]').filter((i, el) =&gt; $(el).closest('[data-also-bought]').length === 0).val()),
-    brandImageWidth = 100,
-    brandImageHeight = 50,
-    brandImageTemplate = `
-        &lt;img class=&quot;_brandImg&quot; src=&quot;&lt;%img%&gt;&quot; alt=&quot;&lt;%alt%&gt;&quot;&gt;
-    `,
-    renderBrandImageFunc = ($productView, html) =&gt; {
-        $productView.find('.productView-brand a').prepend(html);
-    },
-}
-</code></pre>
+<p>Replace <code>YOURDOMAIN</code> by your store's domain name, for example <code>marquis-wines.com</code>. The complete URL should look like <code>https://d3r059eq9mm6jz.cloudfront.net/microapps/back-to-category/main.marquis-wines.com.js</code>.</p>
               
             </div>
           </div>
@@ -302,10 +283,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="product-option-tooltip.html" class="btn btn-neutral float-right" title="Tooltips for Product Options">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="checkout-payment-method-customizations.html" class="btn btn-neutral" title="Checkout Payment Method Customizations"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="papersushishop-expected-shipping-date.html" class="btn btn-neutral" title="Papersushishop Expected Shipping Date"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -331,10 +310,8 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="checkout-payment-method-customizations.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="papersushishop-expected-shipping-date.html" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-    
-      <span><a href="product-option-tooltip.html" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
