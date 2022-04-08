@@ -23,5 +23,5 @@ Enter the script below to **Scripts contents**:
 <script src="https://d3r059eq9mm6jz.cloudfront.net/microapps/papersushishop-expected-shipping-date/main.YOURDOMAIN.js" async defer></script>
 ```
 
-Replace `YOURDOMAIN` by your store's domain name, for example `papersushishop.com`. The complete URL should look like `https://d3r059eq9mm6jz.cloudfront.net/microapps/microapps/papersushishop-expected-shipping-date/main.papersushishop.com.js`
+Replace `YOURDOMAIN` by your store's domain name, for example `papersushishop.com`. The complete URL should look like `https://d3r059eq9mm6jz.cloudfront.net/microapps/papersushishop-expected-shipping-date/main.papersushishop.com.js`
 
