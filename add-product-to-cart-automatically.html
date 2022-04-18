@@ -103,7 +103,13 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#custom-fields-template-file">Custom Fields template file</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#configuration-for-fordieselscom">Configuration for fordiesels.com</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#configuration-for-vanbindcom">Configuration for vanbind.com</a>
     </li>
         </ul>
     </li>
@@ -234,6 +240,10 @@
                     <li class="toctree-l1"><a class="reference internal" href="back-to-category.html">Add Back to Category button on the cart page</a>
                     </li>
                 </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="shipping-countdown.html">Shipping Countdown</a>
+                    </li>
+                </ul>
       </div>
     </div>
     </nav>
@@ -321,8 +331,8 @@
     {{/each}}
 &lt;/ul&gt;
 </code></pre>
-<h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
-<p>Configuration for fordiesels.com</p>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<h3 id="configuration-for-fordieselscom">Configuration for fordiesels.com<a class="headerlink" href="#configuration-for-fordieselscom" title="Permanent link">&para;</a></h3>
 <pre><code class="language-html">&lt;script&gt;
     window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
     window.PapathemesAutoAddToCartSettings = {
@@ -335,6 +345,74 @@
     };
 &lt;/script&gt;
 &lt;script src=&quot;//papathemes.com/content/autoaddtocartaddon/autoaddtocart.fordiesels.com.js&quot; async&gt;&lt;/script&gt;
+</code></pre>
+<h3 id="configuration-for-vanbindcom">Configuration for vanbind.com<a class="headerlink" href="#configuration-for-vanbindcom" title="Permanent link">&para;</a></h3>
+<p>Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, click <strong>Create a Script</strong>, choose:</p>
+<ul>
+<li><strong>Location on page</strong> = <code>Footer</code></li>
+<li><strong>Select pages where script will be added</strong> = <code>All pages</code></li>
+<li><strong>Script type</strong> = <code>Script</code></li>
+</ul>
+<p>Enter the script below to <strong>Scripts contents</strong>: </p>
+<pre><code class="language-html">&lt;script&gt;
+    window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
+    window.PapathemesAutoAddToCartSettings = {
+        cartId: '{{cart_id}}',
+        conditions: [
+            {
+                checkProductCustomField: '',
+                optionMatch: 'Foil &amp; Deboss',
+                optionValueMatch: 'Blind Deboss',
+                productIdToAdd: 15984
+            },
+            {
+                checkProductCustomField: '',
+                optionMatch: 'Foil &amp; Deboss',
+                optionValueMatch: 'Foil &amp; Deboss',
+                productIdToAdd: 15984
+            },
+            {
+                checkProductCustomField: '',
+                optionMatch: 'Artwork Burnishing',
+                optionValueMatch: 'Burnished',
+                productIdToAdd: 15984
+            },
+            {
+                checkProductCustomField: '',
+                optionMatch: 'Foil &amp; Emboss',
+                optionValueMatch: 'Foil &amp; Emboss',
+                productIdToAdd: 15984
+            },
+            {
+                checkProductCustomField: '',
+                optionMatch: 'Foil',
+                optionValueMatch: 'Foil',
+                productIdToAdd: 15984
+            },
+            {
+                checkProductCustomField: '',
+                optionMatch: 'Screen Printing',
+                optionValueMatch: '1 Colour',
+                productIdToAdd: 15985
+            },
+            {
+                checkProductCustomField: '',
+                optionMatch: 'Screen Printing',
+                optionValueMatch: '1 Color',
+                productIdToAdd: 15985
+            },
+            {
+                checkProductCustomField: '',
+                optionMatch: 'Screen Printing',
+                optionValueMatch: '2 Colour',
+                productIdToAdd: 15985
+            }
+        ],
+        addOneOnly: true,
+        allowRemoval: false
+    };
+&lt;/script&gt;
+&lt;script src=&quot;//papathemes.com/content/autoaddtocartaddon/autoaddtocart.vanbind.com.js&quot; async defer&gt;&lt;/script&gt;
 </code></pre>
               
             </div>

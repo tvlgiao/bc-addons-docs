@@ -224,6 +224,10 @@
                     <li class="toctree-l1"><a class="reference internal" href="back-to-category.html">Add Back to Category button on the cart page</a>
                     </li>
                 </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="shipping-countdown.html">Shipping Countdown</a>
+                    </li>
+                </ul>
       </div>
     </div>
     </nav>
@@ -258,6 +262,22 @@
             <div class="section">
               
                 <h1 id="tooltips-for-product-options">Tooltips for Product Options<a class="headerlink" href="#tooltips-for-product-options" title="Permanent link">&para;</a></h1>
+<pre><code class="language-html">&lt;script&gt;
+    window.PapaThemesProductOptionTooltipSettings = {
+        tooltips: [
+            {
+                optionName: 'Back',
+                tooltip: 'Duct Size (Face Size) - Measure the size of the duct opening - NOT the size of the exisitng vent cover -Includes Mounting Clips for Wall Installations'
+            },
+            {
+                optionName: 'Karat',
+                tooltip: 'Select the Species of Wood (Unfinished and Factory Sanded)'
+            }
+        ]
+    };
+&lt;/script&gt;
+&lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/microapps/product-option-tooltip/main.YOURDOMAIN.js&quot; async defer&gt;&lt;/script&gt;
+</code></pre>
 <ul>
 <li>Git: https://github.com/tvlgiao/bc-bigcommerce-api-app/microapps/product-option-tooltip/</li>
 </ul>

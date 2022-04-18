@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Add Back to Category button on the cart page - Documentation</title>
+  <title>Shipping Countdown - Documentation</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="css/theme.css" />
@@ -20,8 +20,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Add Back to Category button on the cart page";
-    var mkdocs_page_input_path = "back-to-category.md";
+    var mkdocs_page_name = "Shipping Countdown";
+    var mkdocs_page_input_path = "shipping-countdown.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -218,16 +218,22 @@
                     <li class="toctree-l1"><a class="reference internal" href="papersushishop-expected-shipping-date.html">Papersushishop Expected Shipping Date</a>
                     </li>
                 </ul>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="back-to-category.html">Add Back to Category button on the cart page</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
-    </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="back-to-category.html">Add Back to Category button on the cart page</a>
                     </li>
                 </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="shipping-countdown.html">Shipping Countdown</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="shipping-countdown.html">Shipping Countdown</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#custom-css">Custom CSS</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
       </div>
@@ -251,7 +257,7 @@
     
       
     
-    <li>Add Back to Category button on the cart page</li>
+    <li>Shipping Countdown</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -263,7 +269,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="add-back-to-category-button-on-the-cart-page">Add Back to Category button on the cart page<a class="headerlink" href="#add-back-to-category-button-on-the-cart-page" title="Permanent link">&para;</a></h1>
+                <h1 id="shipping-countdown">Shipping Countdown<a class="headerlink" href="#shipping-countdown" title="Permanent link">&para;</a></h1>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <p>Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, click <strong>Create a Script</strong>, choose:</p>
 <ul>
@@ -273,13 +279,67 @@
 </ul>
 <p>Enter the script below to <strong>Scripts contents</strong>: </p>
 <pre><code class="language-html">&lt;script&gt;
-    window.PapathemesBackToCategorySettings = {
-        pageType: '{{page_type}}'
+    window.PapathemesShippingCountdownSettings = {
+        storeTZ = 'America/Mexico_City',
     };
 &lt;/script&gt;
-&lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/microapps/back-to-category/main.YOURDOMAIN.js&quot; async defer&gt;&lt;/script&gt;
+&lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/microapps/shipping-countdown/main.YOURDOMAIN.js&quot; async defer&gt;&lt;/script&gt;
 </code></pre>
-<p>Replace <code>YOURDOMAIN</code> by your store's domain name, for example <code>marquis-wines.com</code>. The complete URL should look like <code>https://d3r059eq9mm6jz.cloudfront.net/microapps/back-to-category/main.marquis-wines.com.js</code>.</p>
+<p>Replace <code>YOURDOMAIN</code> by your store's domain name, for example <code>imrbatteries.com</code>. The complete URL should look like <code>https://d3r059eq9mm6jz.cloudfront.net/microapps/shipping-countdown/main.imrbatteries.com.js</code></p>
+<p>Add a HTML widget in the product page with the content below:</p>
+<pre><code class="language-html">&lt;div
+    data-papathemes-shipping-countdown=&quot;12:00:00&quot;
+    data-hour-text=&quot;Hr&quot;
+    data-hours-text=&quot;Hrs&quot;
+    data-minute-text=&quot;Min&quot;
+    data-minutes-text=&quot;Mins&quot;
+    style=&quot;display:none&quot;&gt;
+    &lt;div data-today-hm&gt;In Stock &amp; Ready To Ship!&lt;br/&gt;Order In The Next &lt;strong&gt;%HOUR%&lt;/strong&gt; and &lt;strong&gt;%MINUTE%&lt;/strong&gt; to ship today.&lt;/div&gt;
+    &lt;div data-today-m&gt;In Stock &amp; Ready To Ship!&lt;br/&gt;Order In The Next &lt;strong&gt;%MINUTE%&lt;/strong&gt; to ship today.&lt;/div&gt;
+    &lt;div data-tomorrow-hm&gt;In Stock &amp; Ready To Ship!&lt;br/&gt;Order In The Next &lt;strong&gt;%HOUR%&lt;/strong&gt; and &lt;strong&gt;%MINUTE%&lt;/strong&gt; to ship tomorrow.&lt;/div&gt;
+    &lt;div data-tomorrow-m&gt;In Stock &amp; Ready To Ship!&lt;br/&gt;Order In The Next &lt;strong&gt;%MINUTE%&lt;/strong&gt; to ship tomorrow.&lt;/div&gt;
+    &lt;div data-monday&gt;In Stock &amp; Ready To Ship!&lt;br/&gt;Order now to ship Monday.&lt;/div&gt;
+    &lt;div data-custom&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="custom-css">Custom CSS<a class="headerlink" href="#custom-css" title="Permanent link">&para;</a></h3>
+<pre><code class="language-html">&lt;script&gt;
+    (function() {
+        var style = document.createElement('style');
+        style.innerHTML = `
+            [data-papathemes-shipping-countdown] {
+                padding: .75rem;
+                background-color: #fff;
+                order: 26; /* below bulk pricing for Chiara theme */
+            }
+            @media (min-width: 801px) {
+                width: 50%;
+                float: right;
+                clear: right;
+                padding: .75rem 1.5rem;
+            }
+        `;
+        document.head.appendChild(style);
+    })();
+&lt;/script&gt;
+</code></pre>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<pre><code class="language-html">&lt;script&gt;
+    window.PapathemesShippingCountdownSettings = {
+        countdownSelector = [data-papathemes-shipping-countdown]',
+        debug = false,
+        graphQLToken = '{{{settings.storefront_api.token}}}',
+        storeTZ = 'America/Mexico_City',
+        checkMetaField = false,
+        countdownValues = {
+            parcel: '15:00:00',
+            LTL: '12:00:00',
+        },
+        defaultCountdownTime = '12:00:00', // use this value if checkMetafield = false or data-papathemes-shipping-countdown = empty
+        findProductIdFunc = ($scope) =&gt; Number($scope.closest('.productView').find('form[data-cart-item-add] input[name=&quot;product_id&quot;]').val()),
+    };
+&lt;/script&gt;
+</code></pre>
               
             </div>
           </div>
@@ -287,10 +347,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="shipping-countdown.html" class="btn btn-neutral float-right" title="Shipping Countdown">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="papersushishop-expected-shipping-date.html" class="btn btn-neutral" title="Papersushishop Expected Shipping Date"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="back-to-category.html" class="btn btn-neutral" title="Add Back to Category button on the cart page"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -316,10 +374,8 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="papersushishop-expected-shipping-date.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="back-to-category.html" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-    
-      <span><a href="shipping-countdown.html" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
