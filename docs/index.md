@@ -41,3 +41,4 @@
 - [Multi Storefronts Global Login](multi-storefronts-global-login.md)
 - [Papersushishop Expected Shipping Date](papersushishop-expected-shipping-date.md)
 - [Add Back to Category button on the cart page](back-to-category.md)
+- [Shipping Countdown](shipping-countdown.md)

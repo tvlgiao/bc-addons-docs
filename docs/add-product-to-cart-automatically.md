@@ -68,9 +68,10 @@ Create file `components/products/custom-fields.html` with content below:
 </ul>
 ```
 
-### Examples
+## Examples
 
-Configuration for fordiesels.com
+### Configuration for fordiesels.com
+
 ```html
 <script>
     window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
@@ -84,4 +85,76 @@ Configuration for fordiesels.com
     };
 </script>
 <script src="//papathemes.com/content/autoaddtocartaddon/autoaddtocart.fordiesels.com.js" async></script>
+```
+
+### Configuration for vanbind.com
+
+Go to **Storefront** > **Script Manager**, click **Create a Script**, choose:
+
+- **Location on page** = `Footer`
+- **Select pages where script will be added** = `All pages`
+- **Script type** = `Script`
+
+Enter the script below to **Scripts contents**: 
+
+```html
+<script>
+    window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
+    window.PapathemesAutoAddToCartSettings = {
+        cartId: '{{cart_id}}',
+        conditions: [
+            {
+                checkProductCustomField: '',
+                optionMatch: 'Foil & Deboss',
+                optionValueMatch: 'Blind Deboss',
+                productIdToAdd: 15984
+            },
+            {
+                checkProductCustomField: '',
+                optionMatch: 'Foil & Deboss',
+                optionValueMatch: 'Foil & Deboss',
+                productIdToAdd: 15984
+            },
+            {
+                checkProductCustomField: '',
+                optionMatch: 'Artwork Burnishing',
+                optionValueMatch: 'Burnished',
+                productIdToAdd: 15984
+            },
+            {
+                checkProductCustomField: '',
+                optionMatch: 'Foil & Emboss',
+                optionValueMatch: 'Foil & Emboss',
+                productIdToAdd: 15984
+            },
+            {
+                checkProductCustomField: '',
+                optionMatch: 'Foil',
+                optionValueMatch: 'Foil',
+                productIdToAdd: 15984
+            },
+            {
+                checkProductCustomField: '',
+                optionMatch: 'Screen Printing',
+                optionValueMatch: '1 Colour',
+                productIdToAdd: 15985
+            },
+            {
+                checkProductCustomField: '',
+                optionMatch: 'Screen Printing',
+                optionValueMatch: '1 Color',
+                productIdToAdd: 15985
+            },
+            {
+                checkProductCustomField: '',
+                optionMatch: 'Screen Printing',
+                optionValueMatch: '2 Colour',
+                productIdToAdd: 15985
+            }
+        ],
+        addOneOnly: true,
+        allowRemoval: false
+    };
+</script>
+<script src="//papathemes.com/content/autoaddtocartaddon/autoaddtocart.vanbind.com.js" async defer></script>
 ```
