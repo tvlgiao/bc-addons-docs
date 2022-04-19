@@ -181,6 +181,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#edit-product-images">Edit product images</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#use-images-from-variants-meta-fields">Use images from variant's meta fields</a>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -290,6 +292,19 @@
 <!--
 Source code: https://github.com/tvlgiao/bc-bigcommerce-api-app/microapps/variant-image-gallery/
 -->
+
+<h2 id="use-images-from-variants-meta-fields">Use images from variant's meta fields<a class="headerlink" href="#use-images-from-variants-meta-fields" title="Permanent link">&para;</a></h2>
+<pre><code class="language-html">&lt;script&gt;
+    window.jQueryTheme = window.jQueryTheme || window.chiarajQuery || window.jQuerySupermarket || window.jQuery;
+    window.PapaThemesVariantImageGallerySettings = {
+        graphQLToken: '{{settings.storefront_api.token}}',
+        variantMetaField: ['papa', 'image_urls'],
+        variantMetaFieldImagePrefix: 'https://cdn11.bigcommerce.com/s-uvr8lhx57w/product_images/import',
+        disableBaguetteBox: true
+    }
+&lt;/script&gt;
+&lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/microapps/variant-image-gallery/main.4statetrucks.com.js&quot; async defer&gt;&lt;/script&gt;
+</code></pre>
               
             </div>
           </div>
