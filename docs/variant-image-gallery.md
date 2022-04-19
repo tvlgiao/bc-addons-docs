@@ -37,3 +37,17 @@ Source code: https://github.com/tvlgiao/bc-bigcommerce-api-app/microapps/variant
 -->
 
   
+## Use images from variant's meta fields
+
+```html
+<script>
+    window.jQueryTheme = window.jQueryTheme || window.chiarajQuery || window.jQuerySupermarket || window.jQuery;
+    window.PapaThemesVariantImageGallerySettings = {
+        graphQLToken: '{{settings.storefront_api.token}}',
+        variantMetaField: ['papa', 'image_urls'],
+        variantMetaFieldImagePrefix: 'https://cdn11.bigcommerce.com/s-uvr8lhx57w/product_images/import',
+        disableBaguetteBox: true
+    }
+</script>
+<script src="https://d3r059eq9mm6jz.cloudfront.net/microapps/variant-image-gallery/main.4statetrucks.com.js" async defer></script>
+```

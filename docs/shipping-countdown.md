@@ -13,7 +13,7 @@ Enter the script below to **Scripts contents**:
 ```html
 <script>
     window.PapathemesShippingCountdownSettings = {
-        storeTZ = 'America/Mexico_City',
+        storeTZ: 'America/Mexico_City'
     };
 </script>
 <script src="https://d3r059eq9mm6jz.cloudfront.net/microapps/shipping-countdown/main.YOURDOMAIN.js" async defer></script>
@@ -54,10 +54,12 @@ Add a HTML widget in the product page with the content below:
                 order: 26; /* below bulk pricing for Chiara theme */
             }
             @media (min-width: 801px) {
-                width: 50%;
-                float: right;
-                clear: right;
-                padding: .75rem 1.5rem;
+                [data-papathemes-shipping-countdown] {
+                    width: 50%;
+                    float: right;
+                    clear: right;
+                    padding: .75rem 1.5rem;
+                }
             }
         `;
         document.head.appendChild(style);
