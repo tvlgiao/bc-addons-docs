@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Prevent Purchase Low Stock Products - Documentation</title>
+  <title>Pre-Select Product Options Sharing Link - Documentation</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="css/theme.css" />
@@ -20,8 +20,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Prevent Purchase Low Stock Products";
-    var mkdocs_page_input_path = "prevent-purchase-low-stock.md";
+    var mkdocs_page_name = "Pre-Select Product Options Sharing Link";
+    var mkdocs_page_input_path = "preselect-product-option-link.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -190,16 +190,20 @@
                     <li class="toctree-l1"><a class="reference internal" href="hide-option-values-based-on-customer-groups.html">Hide Product Option Values based on Customer Groups</a>
                     </li>
                 </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="preselect-product-option-link.html">Pre-Select Product Options Sharing Link</a>
-                    </li>
-                </ul>
                 <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="prevent-purchase-low-stock.html">Prevent Purchase Low Stock Products</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="preselect-product-option-link.html">Pre-Select Product Options Sharing Link</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#install-on-your-bigcommerce-store">Install on your BigCommerce Store</a>
+    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#create-the-api-access-key">Create the API Access Key</a>
+    </li>
+        </ul>
     </li>
     </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="prevent-purchase-low-stock.html">Prevent Purchase Low Stock Products</a>
                     </li>
                 </ul>
                 <ul>
@@ -251,7 +255,7 @@
     
       
     
-    <li>Prevent Purchase Low Stock Products</li>
+    <li>Pre-Select Product Options Sharing Link</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -263,29 +267,40 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="prevent-purchase-low-stock-products">Prevent Purchase Low Stock Products<a class="headerlink" href="#prevent-purchase-low-stock-products" title="Permanent link">&para;</a></h1>
-<h2 id="install-on-your-bigcommerce-store">Install on your BigCommerce Store<a class="headerlink" href="#install-on-your-bigcommerce-store" title="Permanent link">&para;</a></h2>
+                <h1 id="create-selected-product-options-link">Create selected product options link<a class="headerlink" href="#create-selected-product-options-link" title="Permanent link">&para;</a></h1>
+<p>Demo: <a href="https://theme-demo-01.mybigcommerce.com/dining-table-set-folding-dining-room-table-set/">https://theme-demo-01.mybigcommerce.com/dining-table-set-folding-dining-room-table-set/</a></p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <p>Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, click <strong>Create a Script</strong>, choose:</p>
 <ul>
 <li><strong>Location on page</strong> = <code>Footer</code></li>
-<li><strong>Select pages where script will be added</strong> = <code>Checkout Page</code></li>
+<li><strong>Select pages where script will be added</strong> = <code>Store Pages</code></li>
 <li><strong>Script type</strong> = <code>Script</code></li>
 </ul>
 <p>Enter the script below to <strong>Scripts contents</strong>: </p>
 <pre><code class="language-html">&lt;script&gt;
-    window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.chiarajQuery || window.jQuery;
-    window.PapaThemesPreventPurchaseLowStockSettings = {
+    window.PapaThemesPreselectProductOptionLinkSettings = {
+        productViewSelector: '.productView',
         debug: false,
-        graphQLToken: '{{{settings.storefront_api.token}}}',
-        deletedMsg: '{items} are no longer available and was removed from your cart!'
+        storeHash: '{{{settings.store_hash}}}',
+        shareButtonTmpl: '&lt;button class=&quot;button button--secondary&quot; type=&quot;button&quot; data-waiting-msg=&quot;Creating...&quot;&gt;Share&lt;/button&gt;',
+        insertShareButtionFunc: (self) =&gt; $(self.shareButtonTmpl).insertAfter(self.$scope.find('form[data-cart-item-add]')),
+        addToCartFormSelector: 'form[data-cart-item-add]',
+        pathPrefix: 'product-quote/'
     };
 &lt;/script&gt;
-&lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/microapps/prevent-purchase-low-stock/main.YOURDOMAIN.js&quot; async defer&gt;&lt;/script&gt;
+&lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/microapps/preselect-product-option-link/main.YOURDOMAIN.js&quot; async defer&gt;&lt;/script&gt;
 </code></pre>
-<p>Replace <code>YOURDOMAIN</code> by your store's domain name, for example <code>lockertown.com</code>. The complete URL should look like <code>https://d3r059eq9mm6jz.cloudfront.net/microapps/variant-image-gallery/main.lockertown.com.js</code></p>
-<!--
-Source code: https://github.com/tvlgiao/bc-bigcommerce-api-app/microapps/prevent-purchase-low-stock/
--->
+<p>Replace <code>YOURDOMAIN</code> by your store's domain name, for example <code>theme-demo-01.mybigcommerce.com</code>. The complete URL should look like <code>https://d3r059eq9mm6jz.cloudfront.net/microapps/back-to-category/main.theme-demo-01.mybigcommerce.com.js</code>.</p>
+<h3 id="create-the-api-access-key">Create the API Access Key<a class="headerlink" href="#create-the-api-access-key" title="Permanent link">&para;</a></h3>
+<p>Login to your BC admin panel with <strong>store owner account</strong>, go to Advanced Settings &gt; API Accounts &gt; Click <strong>Create V2/V3 API Token</strong> from <strong>Create API Account</strong> dropdown button.</p>
+<p>In <strong>OAuth Scopes</strong>, choose:
+- <strong>Information &amp; settings</strong> = <code>Read-Only</code>.
+- <strong>Channel settings</strong> = <code>Read-Only</code>.
+- <strong>Channel listings</strong> = <code>Read-Only</code>.
+- <strong>Sites &amp; Routes</strong> = <code>Modify</code>.
+- 
+- Then click <strong>Save</strong> button.</p>
+<p>Send us the API credential file to install it on our server.</p>
               
             </div>
           </div>
@@ -293,10 +308,10 @@ Source code: https://github.com/tvlgiao/bc-bigcommerce-api-app/microapps/prevent
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="product-card-lowest-price.html" class="btn btn-neutral float-right" title="Product Card Lowest Price">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="prevent-purchase-low-stock.html" class="btn btn-neutral float-right" title="Prevent Purchase Low Stock Products">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="preselect-product-option-link.html" class="btn btn-neutral" title="Pre-Select Product Options Sharing Link"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="hide-option-values-based-on-customer-groups.html" class="btn btn-neutral" title="Hide Product Option Values based on Customer Groups"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -322,10 +337,10 @@ Source code: https://github.com/tvlgiao/bc-bigcommerce-api-app/microapps/prevent
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="preselect-product-option-link.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="hide-option-values-based-on-customer-groups.html" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="product-card-lowest-price.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="prevent-purchase-low-stock.html" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
