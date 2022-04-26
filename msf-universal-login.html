@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Limit Countries / States - Documentation</title>
+  <title>Multi Storefronts Universal Login Automatically - Documentation</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="css/theme.css" />
@@ -20,8 +20,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Limit Countries / States";
-    var mkdocs_page_input_path = "limit-countries.md";
+    var mkdocs_page_name = "Multi Storefronts Universal Login Automatically";
+    var mkdocs_page_input_path = "msf-universal-login.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -106,12 +106,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="shipment-details.html">Shipment Details</a>
                     </li>
                 </ul>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="limit-countries.html">Limit Countries / States</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#install-on-your-bigcommerce-store">Install on your BigCommerce store</a>
-    </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="limit-countries.html">Limit Countries / States</a>
                     </li>
                 </ul>
                 <ul>
@@ -218,8 +214,12 @@
                     <li class="toctree-l1"><a class="reference internal" href="multi-storefronts-global-login.html">Multi Storefronts Global Login</a>
                     </li>
                 </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="msf-universal-login.html">Multi Storefronts Universal Login Automatically</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="msf-universal-login.html">Multi Storefronts Universal Login Automatically</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
                 <ul>
@@ -255,7 +255,7 @@
     
       
     
-    <li>Limit Countries / States</li>
+    <li>Multi Storefronts Universal Login Automatically</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -267,18 +267,46 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="limit-countrtes-and-states">Limit Countrtes and States<a class="headerlink" href="#limit-countrtes-and-states" title="Permanent link">&para;</a></h1>
-<h2 id="install-on-your-bigcommerce-store">Install on your BigCommerce store<a class="headerlink" href="#install-on-your-bigcommerce-store" title="Permanent link">&para;</a></h2>
-<p>Insert the script below to <strong>Advanced Settings</strong> &gt; <strong>Web Analytics</strong>:</p>
+                <h1 id="multi-storefronts-universal-login-automatically">Multi-Storefronts Universal Login Automatically<a class="headerlink" href="#multi-storefronts-universal-login-automatically" title="Permanent link">&para;</a></h1>
+<p>This addon allows customers log in to one store, will also log in to all other multi-stores using the same account. The Multi-Storefronts feature is available only to Enterprise accounts.</p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<p>Create an API key for BC API access by following this instruction: https://support.bigcommerce.com/s/article/Store-API-Accounts#creating</p>
+<ul>
+<li>Choose <strong>Create V2/V3 API Token</strong>.</li>
+<li>In <strong>Oauth Scopes</strong> choose:<ul>
+<li><strong>Customers</strong>: <code>read-only</code></li>
+<li><strong>Customers Login</strong>: <code>login</code></li>
+</ul>
+</li>
+</ul>
+<p>Send us the Access Token, Client ID and Client Secret code to install on your database.</p>
+<p>Go to <strong>Channel Manager</strong> &gt; <strong>Storefronts</strong> &gt; click <strong>Scripts</strong> on all stores, then click <strong>Create a Script</strong>, choose:</p>
+<ul>
+<li><strong>Location on page</strong> = <code>Footer</code></li>
+<li><strong>Select pages where script will be added</strong> = <code>All Pages</code></li>
+<li><strong>Script type</strong> = <code>Script</code></li>
+</ul>
+<p>Enter the script below to <strong>Scripts contents</strong>: </p>
 <pre><code class="language-html">&lt;script&gt;
-    window.PAPATHEMES_LIMIT_COUNTRIES_SETTINGS = {
-        supportedCountries: ['US', 'EG'],
-        supportedCountryNames: ['United States', 'Egypt'],
-        excludeStates: ['Alabama']
+    window.PapathemesMsfUniversalLoginSettings = {
+        debug: true,
+        urls: [
+            'papathemes-app-sandbox.mybigcommerce.com',
+            'papathemeappsandbox2-945366.mybigcommerce.com'
+        ],
+        storeHash: '{{{settings.store_hash}}}',
+        customerId: '{{{customer.id}}}',
+        channelId: '{{{settings.channel_id}}}'
     };
 &lt;/script&gt;
-&lt;script src=&quot;//papathemes.com/content/supermarket/addon.limit-countries.js&quot; async&gt;&lt;/script&gt;
+&lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/microapps/back-to-category/main.YOURDOMAIN.js&quot; async defer&gt;&lt;/script&gt;
 </code></pre>
+<p>Replace <code>YOURDOMAIN</code> by your <strong>primary store</strong>'s domain name, for example <code>papathemes-app-sandbox.mybigcommerce.com</code>. The complete URL should look like <code>https://d3r059eq9mm6jz.cloudfront.net/microapps/back-to-category/main.papathemes-app-sandbox.mybigcommerce.com.js</code>.</p>
+<p>Replace the domain list (<code>urls</code>) by your store's domains:</p>
+<pre><code class="language-js">'papathemes-app-sandbox.mybigcommerce.com',
+'papathemeappsandbox2-945366.mybigcommerce.com'
+</code></pre>
+<p>Create the script again for each of your stores, but don't modify the primary store's domain.</p>
               
             </div>
           </div>
@@ -286,10 +314,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="quantity-in-cart.html" class="btn btn-neutral float-right" title="Quantity In Cart">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="papersushishop-expected-shipping-date.html" class="btn btn-neutral float-right" title="Papersushishop Expected Shipping Date">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="shipment-details.html" class="btn btn-neutral" title="Shipment Details"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="multi-storefronts-global-login.html" class="btn btn-neutral" title="Multi Storefronts Global Login"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -315,10 +343,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="shipment-details.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="multi-storefronts-global-login.html" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="quantity-in-cart.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="papersushishop-expected-shipping-date.html" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
