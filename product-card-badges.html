@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Add Back to Category button on the cart page - Documentation</title>
+  <title>Product Card Badges - Documentation</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="css/theme.css" />
@@ -20,8 +20,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Add Back to Category button on the cart page";
-    var mkdocs_page_input_path = "back-to-category.md";
+    var mkdocs_page_name = "Product Card Badges";
+    var mkdocs_page_input_path = "product-card-badges.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -222,20 +222,20 @@
                     <li class="toctree-l1"><a class="reference internal" href="papersushishop-expected-shipping-date.html">Papersushishop Expected Shipping Date</a>
                     </li>
                 </ul>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="back-to-category.html">Add Back to Category button on the cart page</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
-    </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="back-to-category.html">Add Back to Category button on the cart page</a>
                     </li>
                 </ul>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="shipping-countdown.html">Shipping Countdown</a>
                     </li>
                 </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="product-card-badges.html">Product Card Badges</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="product-card-badges.html">Product Card Badges</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#install-on-your-bigcommerce-store">Install on your BigCommerce Store</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
       </div>
@@ -259,7 +259,7 @@
     
       
     
-    <li>Add Back to Category button on the cart page</li>
+    <li>Product Card Badges</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -271,23 +271,27 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="add-back-to-category-button-on-the-cart-page">Add Back to Category button on the cart page<a class="headerlink" href="#add-back-to-category-button-on-the-cart-page" title="Permanent link">&para;</a></h1>
-<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+                <h1 id="product-card-badges">Product Card Badges<a class="headerlink" href="#product-card-badges" title="Permanent link">&para;</a></h1>
+<p>Display <strong>Sale badge</strong>, <strong>Out of Stock badge</strong> and <strong>custom badges</strong> taken from product custom fields (<code>__badge</code>) on every product cards created by <strong>BigCommerce widgets</strong> and <strong>Klevu Search</strong> app.</p>
+<h2 id="install-on-your-bigcommerce-store">Install on your BigCommerce Store<a class="headerlink" href="#install-on-your-bigcommerce-store" title="Permanent link">&para;</a></h2>
 <p>Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, click <strong>Create a Script</strong>, choose:</p>
 <ul>
 <li><strong>Location on page</strong> = <code>Footer</code></li>
-<li><strong>Select pages where script will be added</strong> = <code>Store Pages</code></li>
+<li><strong>Select pages where script will be added</strong> = <code>Store pages</code></li>
 <li><strong>Script type</strong> = <code>Script</code></li>
 </ul>
 <p>Enter the script below to <strong>Scripts contents</strong>: </p>
 <pre><code class="language-html">&lt;script&gt;
-    window.PapathemesBackToCategorySettings = {
-        pageType: '{{page_type}}'
+    window.PapathemesProductCardBadgesSettings = {
+        graphQLToken: '{{{settings.storefront_api.token}}}'
     };
 &lt;/script&gt;
-&lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/microapps/back-to-category/main.YOURDOMAIN.js&quot; async defer&gt;&lt;/script&gt;
+&lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/microapps/product-card-badges/main.YOURDOMAIN.js&quot; async defer&gt;&lt;/script&gt;
 </code></pre>
-<p>Replace <code>YOURDOMAIN</code> by your store's domain name, for example <code>marquis-wines.com</code>. The complete URL should look like <code>https://d3r059eq9mm6jz.cloudfront.net/microapps/back-to-category/main.marquis-wines.com.js</code>.</p>
+<p>Replace <code>YOURDOMAIN</code> by your store's domain name, for example <code>example.com</code>. The complete URL should look like <code>https://d3r059eq9mm6jz.cloudfront.net/microapps/product-card-badges/main.example.com.js</code></p>
+<!--
+Source code: https://github.com/tvlgiao/bc-bigcommerce-api-app/microapps/product-card-badges/
+-->
               
             </div>
           </div>
@@ -295,10 +299,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="shipping-countdown.html" class="btn btn-neutral float-right" title="Shipping Countdown">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="papersushishop-expected-shipping-date.html" class="btn btn-neutral" title="Papersushishop Expected Shipping Date"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="shipping-countdown.html" class="btn btn-neutral" title="Shipping Countdown"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -324,10 +326,8 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="papersushishop-expected-shipping-date.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="shipping-countdown.html" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-    
-      <span><a href="shipping-countdown.html" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
