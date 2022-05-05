@@ -34,10 +34,10 @@ Enter the script below to **Scripts contents**:
         channelId: '{{{settings.channel_id}}}'
     };
 </script>
-<script src="https://d3r059eq9mm6jz.cloudfront.net/microapps/back-to-category/main.YOURDOMAIN.js" async defer></script>
+<script src="https://d3r059eq9mm6jz.cloudfront.net/microapps/msf-universal-login/main.YOURDOMAIN.js" async defer></script>
 ```
 
-Replace `YOURDOMAIN` by your **primary store**'s domain name, for example `papathemes-app-sandbox.mybigcommerce.com`. The complete URL should look like `https://d3r059eq9mm6jz.cloudfront.net/microapps/back-to-category/main.papathemes-app-sandbox.mybigcommerce.com.js`.
+Replace `YOURDOMAIN` by your **primary store**'s domain name, for example `papathemes-app-sandbox.mybigcommerce.com`. The complete URL should look like `https://d3r059eq9mm6jz.cloudfront.net/microapps/msf-universal-login/main.papathemes-app-sandbox.mybigcommerce.com.js`.
 
 Replace the domain list (`urls`) by your store's domains:
 

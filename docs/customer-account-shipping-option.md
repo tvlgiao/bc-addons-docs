@@ -6,6 +6,9 @@ Add a shipping option with your customer's shipping account on the checkout page
 
 ## Install on your store
 
+**New version:** https://github.com/tvlgiao/bc-bigcommerce-api-app/tree/master/microapps/customer-shipping-account
+
+
 Create 2 custom fields in **Advanced Settings** > **Account Signup Form** > **Address Fields**:
 
 1. `Shipping Account` (or any name you want), type = **Text Field**
