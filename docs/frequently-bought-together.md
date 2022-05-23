@@ -113,3 +113,21 @@ Example:
 ```
 
 Set `independent: true` in the script option.
+
+
+## JH Buy Together (v2)
+
+Git: `bigcommerce-api-app/jh-buy-together`
+
+Install:
+
+```html
+<script>
+    window.PapaThemesJhBuyTogetherSettings = {
+        debug: true,
+        graphQLToken: '{{{settings.storefront_api.token}}}',
+        addToCartFormSelector: '[data-also-bought-parent-scope] [data-cart-item-add]',
+    };
+</script>
+<script src="http://localhost:9000/main.public.js" async defer></script>
+```
