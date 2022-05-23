@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Add File Upload Field on Registration Page - Documentation</title>
+  <title>Product Bundles - Documentation</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="css/theme.css" />
@@ -20,8 +20,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Add File Upload Field on Registration Page";
-    var mkdocs_page_input_path = "file-upload.md";
+    var mkdocs_page_name = "Product Bundles";
+    var mkdocs_page_input_path = "product-bundles.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -134,12 +134,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="better-reorder.html">Better Product Reorder</a>
                     </li>
                 </ul>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="file-upload.html">Add File Upload Field on Registration Page</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#2022-01-19">2022-01-19</a>
-    </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="file-upload.html">Add File Upload Field on Registration Page</a>
                     </li>
                 </ul>
                 <ul>
@@ -238,8 +234,12 @@
                     <li class="toctree-l1"><a class="reference internal" href="product-card-badges.html">Product Card Badges</a>
                     </li>
                 </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="product-bundles.html">Product Bundles</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="product-bundles.html">Product Bundles</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#install-on-your-bigcommerce-store">Install on your BigCommerce Store</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
       </div>
@@ -263,7 +263,7 @@
     
       
     
-    <li>Add File Upload Field on Registration Page</li>
+    <li>Product Bundles</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -275,17 +275,30 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="add-file-upload-field-on-customer-registration-page">Add File Upload field on customer registration page<a class="headerlink" href="#add-file-upload-field-on-customer-registration-page" title="Permanent link">&para;</a></h1>
-<p><img alt="Signup Form File Upload" src="img/singup-form-file-upload.png" /></p>
+                <h1 id="product-bundles">Product Bundles<a class="headerlink" href="#product-bundles" title="Permanent link">&para;</a></h1>
+<p><img alt="Product Bundles Demo" src="img/product-bundles-demo.gif" /></p>
+<h2 id="install-on-your-bigcommerce-store">Install on your BigCommerce Store<a class="headerlink" href="#install-on-your-bigcommerce-store" title="Permanent link">&para;</a></h2>
+<p>Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, click <strong>Create a Script</strong>, choose:</p>
 <ul>
-<li>Server App: https://github.com/tvlgiao/bc-shopsoardistusa-fileupload-app</li>
-<li>Theme Mod: https://github.com/tvlgiao/bc-shopsoarusadist-fileupload-supermarket-theme</li>
+<li><strong>Location on page</strong> = <code>Footer</code></li>
+<li><strong>Select pages where script will be added</strong> = <code>Store pages</code></li>
+<li><strong>Script type</strong> = <code>Script</code></li>
 </ul>
-<h2 id="2022-01-19">2022-01-19<a class="headerlink" href="#2022-01-19" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Server: bigcommerce-api-app</li>
-<li>Theme Mod: https://github.com/tvlgiao/bc-dankshop-account-file-upload</li>
-</ul>
+<p>Enter the script below to <strong>Scripts contents</strong>: </p>
+<pre><code class="language-html">&lt;script&gt;
+    window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.chiarajQuery || window.jQuery;
+    window.PapaThemesProductBundlesSettings = {
+        graphQLToken: '{{{settings.storefront_api.token}}}',
+        currencyCode: '{{currency_selector.active_currency_code}}',
+        showRating: {{settings.show_product_rating}}
+    };
+&lt;/script&gt;
+&lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/microapps/product-bundles/main.YOURDOMAIN.js&quot; async defer&gt;&lt;/script&gt;
+</code></pre>
+<p>Replace <code>YOURDOMAIN</code> by your store's domain name, for example <code>example.com</code>. The complete URL should look like <code>https://d3r059eq9mm6jz.cloudfront.net/microapps/product-bundles/main.example.com.js</code></p>
+<!--
+Source code: https://github.com/tvlgiao/bc-bigcommerce-api-app/microapps/product-bundles/
+-->
               
             </div>
           </div>
@@ -293,10 +306,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="shop-by-child-sku.html" class="btn btn-neutral float-right" title="Select product variants by SKU">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="better-reorder.html" class="btn btn-neutral" title="Better Product Reorder"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="product-card-badges.html" class="btn btn-neutral" title="Product Card Badges"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -322,10 +333,8 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="better-reorder.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="product-card-badges.html" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-    
-      <span><a href="shop-by-child-sku.html" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

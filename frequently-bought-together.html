@@ -77,6 +77,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#make-products-frequently-bought-together-add-to-cart-independently-from-the-main-product">Make products frequently bought together add to cart independently from the main product</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#jh-buy-together-v2">JH Buy Together (v2)</a>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -244,6 +246,10 @@
                     <li class="toctree-l1"><a class="reference internal" href="product-card-badges.html">Product Card Badges</a>
                     </li>
                 </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="product-bundles.html">Product Bundles</a>
+                    </li>
+                </ul>
       </div>
     </div>
     </nav>
@@ -362,6 +368,18 @@ $('body').one('load.alsobought', (event, callback) =&gt; callback(event, this));
 &lt;script src=&quot;//papathemes.com/content/alsoboughtaddon/alsobought.YOURDOMAIN.js&quot; async&gt;&lt;/script&gt;
 </code></pre>
 <p>Set <code>independent: true</code> in the script option.</p>
+<h2 id="jh-buy-together-v2">JH Buy Together (v2)<a class="headerlink" href="#jh-buy-together-v2" title="Permanent link">&para;</a></h2>
+<p>Git: <code>bigcommerce-api-app/jh-buy-together</code></p>
+<p>Install:</p>
+<pre><code class="language-html">&lt;script&gt;
+    window.PapaThemesJhBuyTogetherSettings = {
+        debug: true,
+        graphQLToken: '{{{settings.storefront_api.token}}}',
+        addToCartFormSelector: '[data-also-bought-parent-scope] [data-cart-item-add]',
+    };
+&lt;/script&gt;
+&lt;script src=&quot;http://localhost:9000/main.public.js&quot; async defer&gt;&lt;/script&gt;
+</code></pre>
               
             </div>
           </div>
