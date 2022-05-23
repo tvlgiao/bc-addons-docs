@@ -34,14 +34,16 @@ Add custom fields similar to the screenshot below:
 ![product custom fields](img/product-bundles-custom-fields.png)
 
 Display specific products:
+
 - Name: `__bundle_product`
 - Value: _Tab Title_ (_image file_): _product_id1_,_product_id2_,...
 
 Display products from specific categories:
+
 - Name: `__bundle_category`
 - Value: _Tab Title_ (_image file_): _category_id1_,_category_id2_,...
 
-Update the thumbnail images of each tab in **Storefront** > **Image Manager**.
+Upload the thumbnail images of each tab in **Storefront** > **Image Manager**.
 
 <!--
 Source code: https://github.com/tvlgiao/bc-bigcommerce-api-app/microapps/product-bundles/

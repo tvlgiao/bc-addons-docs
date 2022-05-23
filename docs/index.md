@@ -45,3 +45,4 @@
 - [Shipping Countdown](shipping-countdown.md)
 - [Product Card Badges](product-card-badges.md)
 - [Product Bundles](product-bundles.md)
+- [Add Signature on Delivery on Checkout Page](checkout-signature-delivery.md)
