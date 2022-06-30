@@ -173,6 +173,8 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#productcustomfield">productCustomField</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#stateproductcustomfield">stateProductCustomField</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#graphqltoken">graphQLToken</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#limitproductsperquery">limitProductsPerQuery</a>
@@ -184,6 +186,8 @@
     <li class="toctree-l3"><a class="reference internal" href="#renderdropdownfunc">renderDropdownFunc</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#txtunavailableshippingcountry">txtUnavailableShippingCountry</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#txtunavailableshippingstate">txtUnavailableShippingState</a>
     </li>
         </ul>
     </li>
@@ -272,6 +276,10 @@
                     <li class="toctree-l1"><a class="reference internal" href="checkout-signature-delivery.html">Add Signature on Delivery on Checkout Page</a>
                     </li>
                 </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="wholesale-discount-price.html">Display product PriceList-based price vs. regular price</a>
+                    </li>
+                </ul>
       </div>
     </div>
     </nav>
@@ -338,7 +346,17 @@
 <ul>
 <li>The custom field to read shipping countries. Field value contains country ISO 2-letters code, seperated by commas.</li>
 <li>Default: <code>__purchasable_countries</code></li>
-<li>Example: Field name = <code>__purchasable_countries</code>, Field value = <code>US,VN</code></li>
+<li>
+<p>Example: Field name = <code>__purchasable_countries</code>, Field value = <code>US,VN</code></p>
+</li>
+<li>
+<h3 id="stateproductcustomfield">stateProductCustomField<a class="headerlink" href="#stateproductcustomfield" title="Permanent link">&para;</a></h3>
+</li>
+<li>
+<p>The custom field to read shipping states. Field value contains country ISO 2-letters code or state name, seperated by commas.</p>
+</li>
+<li>Default: <code>__purchasable_states</code></li>
+<li>Example: Field name = <code>__purchasable_states</code>, Field value = <code>GA,Geogia,AL,Alabama</code></li>
 </ul>
 <h3 id="graphqltoken">graphQLToken<a class="headerlink" href="#graphqltoken" title="Permanent link">&para;</a></h3>
 <ul>
@@ -367,6 +385,9 @@
             &lt;%#countries%&gt;
                 &lt;li&gt;&lt;img src=&quot;&lt;%flag%&gt;&quot; alt=&quot;&lt;%name%&gt;&quot;&gt;&lt;%name%&gt;&lt;/li&gt;
             &lt;%/countries%&gt;
+            &lt;%#states%&gt;
+                &lt;li&gt;&lt;%.%&gt;&lt;/li&gt;
+            &lt;%/states%&gt;
         &lt;/ul&gt;
     &lt;/div&gt;
 &lt;/div&gt;
@@ -381,8 +402,14 @@
 <li>Error message on checkout page.</li>
 <li>Default: <code>&lt;strong&gt;{name}&lt;/strong&gt; cannot ship to &lt;strong&gt;{country}&lt;/strong&gt;</code></li>
 </ul>
+<h3 id="txtunavailableshippingstate">txtUnavailableShippingState<a class="headerlink" href="#txtunavailableshippingstate" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Error message on checkout page.</li>
+<li>Default: <code>&lt;strong&gt;{name}&lt;/strong&gt; cannot ship to &lt;strong&gt;{state}&lt;/strong&gt;</code></li>
+</ul>
 <h2 id="edit-product">Edit Product<a class="headerlink" href="#edit-product" title="Permanent link">&para;</a></h2>
-<p>Edit your product, add a custom field with name = <code>__purchasable_countries</code>, value contains the shipping countries ISO 2-letters code, separated by commas. For example: <code>US,VN</code></p>
+<p>Edit your product, add a custom field with name = <code>__purchasable_countries</code>, value contains the shipping countries ISO 2-letters code, separated by commas. For example: <code>US,VN</code>.
+Add a custom field with name = <code>__purchasable_states</code>, value contains the shipping states ISO 2-letters code or state name, separated by commas. For example: <code>GA,Alabama</code>. </p>
 <p><img alt="products-restrict-shipping-countries-custom-fields" src="img/products-restrict-shipping-countries-custom-fields.png" /></p>
               
             </div>
