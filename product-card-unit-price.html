@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Display Brand Logo on PDP - Documentation</title>
+  <title>Product Card Lowest Price - Documentation</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="css/theme.css" />
@@ -20,8 +20,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Display Brand Logo on PDP";
-    var mkdocs_page_input_path = "brand-logo-on-pdp.md";
+    var mkdocs_page_name = "Product Card Lowest Price";
+    var mkdocs_page_input_path = "product-card-unit-price.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -166,14 +166,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="checkout-payment-method-customizations.html">Checkout Payment Method Customizations</a>
                     </li>
                 </ul>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="brand-logo-on-pdp.html">Display Brand Logo on PDP</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#install-the-script-to-your-store">Install the script to your store</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#settings">Settings</a>
-    </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="brand-logo-on-pdp.html">Display Brand Logo on PDP</a>
                     </li>
                 </ul>
                 <ul>
@@ -208,8 +202,14 @@
                     <li class="toctree-l1"><a class="reference internal" href="product-card-lowest-price.html">Product Card Lowest Price</a>
                     </li>
                 </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="product-card-unit-price.html">Product Card Lowest Price</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="product-card-unit-price.html">Product Card Lowest Price</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#install-on-your-bigcommerce-store">Install on your BigCommerce Store</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#parameters">Parameters</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
                 <ul>
@@ -277,7 +277,7 @@
     
       
     
-    <li>Display Brand Logo on PDP</li>
+    <li>Product Card Lowest Price</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -289,37 +289,61 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="display-brand-logo-on-product-details-page">Display Brand Logo on Product Details Page<a class="headerlink" href="#display-brand-logo-on-product-details-page" title="Permanent link">&para;</a></h1>
-<h2 id="install-the-script-to-your-store">Install the script to your store<a class="headerlink" href="#install-the-script-to-your-store" title="Permanent link">&para;</a></h2>
+                <h1 id="product-card-lowest-price">Product Card Lowest Price<a class="headerlink" href="#product-card-lowest-price" title="Permanent link">&para;</a></h1>
+<p>Demo: <a href="https://easybuyingredients.com/shop-all/">https://easybuyingredients.com/shop-all/</a></p>
+<h2 id="install-on-your-bigcommerce-store">Install on your BigCommerce Store<a class="headerlink" href="#install-on-your-bigcommerce-store" title="Permanent link">&para;</a></h2>
 <p>Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, click <strong>Create a Script</strong>, choose:</p>
 <ul>
 <li><strong>Location on page</strong> = <code>Footer</code></li>
-<li><strong>Select pages where script will be added</strong> = <code>Store Pages</code></li>
+<li><strong>Select pages where script will be added</strong> = <code>Store pages</code></li>
 <li><strong>Script type</strong> = <code>Script</code></li>
 </ul>
-<p>Enter the script below to <strong>Scripts contents</strong>: </p>
+<p>Enter the script below to <strong>Scripts contents</strong>:</p>
 <pre><code class="language-html">&lt;script&gt;
-    window.PAPATHEMES_BRANDLOGOV2_SETTINGS = {
-        debug: true,
-        graphQLToken: '{{settings.storefront_api.token}}'
+    window.PapathemesProductCardUnitPriceSettings = {
+        graphQLToken: '{{{settings.storefront_api.token}}}',
+        money: {{{json settings.money}}}
     };
 &lt;/script&gt;
-&lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/brand-logo-v2.public.js&quot; async defer&gt;&lt;/script&gt;
+&lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/microapps/product-card-unit-price/main.YOURDOMAIN.js&quot; async defer&gt;&lt;/script&gt;
 </code></pre>
-<h2 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">&para;</a></h2>
-<p><strong>Default settings:</strong></p>
-<pre><code class="language-js">{
+<p>Replace <code>YOURDOMAIN</code> by your store's domain name, for example <code>example.com</code>. The complete URL should look like <code>https://d3r059eq9mm6jz.cloudfront.net/microapps/product-card-unit-price/main.example.com.js</code></p>
+<h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
+<pre><code class="language-js">window.PapathemesProductCardUnitPriceSettings = {
     debug = false,
     graphQLToken = '',
-    productViewSelector = '.productView',
-    getProductIdFunc = $productView =&gt; Number($productView.find('input[name=product_id]').filter((i, el) =&gt; $(el).closest('[data-also-bought]').length === 0).val()),
-    brandImageWidth = 100,
-    brandImageHeight = 50,
-    brandImageTemplate = `
-        &lt;img class=&quot;_brandImg&quot; src=&quot;&lt;%img%&gt;&quot; alt=&quot;&lt;%alt%&gt;&quot;&gt;
+    graphQLItemLimit = 20,
+    productCardSelector = '.card, [class*=&quot;sd-product-set-carousel&quot;] &gt; div &gt; div &gt; div',
+    unitOptionNames = ['Weight'],
+    unitPriceWithTaxHtml = `
+        &lt;div class=&quot;price-section price-section--unit price-section--withTax&quot;&gt;
+            &lt;span class=&quot;price-label&quot;&gt;From&lt;/span&gt;
+            &lt;span data-product-price-with-tax= class=&quot;price price--withTax price--main&quot;&gt;{price}&lt;/span&gt;&lt;span class=&quot;price-label&quot;&gt;/{unit}&lt;/span&gt;
+        &lt;/div&gt;
     `,
-    renderBrandImageFunc = ($productView, html) =&gt; {
-        $productView.find('.productView-brand a').prepend(html);
+    unitPriceWithoutTaxHtml = `
+        &lt;div class=&quot;price-section price-section--unit price-section--withoutTax&quot;&gt;
+            &lt;span class=&quot;price-label&quot;&gt;From&lt;/span&gt;
+            &lt;span data-product-price-with-tax class=&quot;price price--withoutTax price--main&quot;&gt;{price}&lt;/span&gt;&lt;span class=&quot;price-label&quot;&gt;/{unit}&lt;/span&gt;
+        &lt;/div&gt;
+    `,
+    findProductIdFunc = $card =&gt;
+        Number($card.data('entityId')) ||
+        Number($card.find('[data-product-id]').data('productId')) ||
+        Number($card.find('[href*=&quot;product_id=&quot;]').attr('href').replace(/^.*product_id=([0-9]*).*$/i, '$1')),
+    extractValueFunc = valueLabel =&gt; {
+        const a = valueLabel.split(' ', 2).map(s =&gt; String(s).trim());
+        return {
+            number: Number(a[0]),
+            unit: a[1],
+        };
+    },
+    insertUnitPriceFunc = ($card, html) =&gt; {
+        if ($card.is('.card')) {
+            $card.find('.card-body [data-test-info-type=&quot;price&quot;]').first().html('').append(html);
+        } else {
+            $card.append(html);
+        }
     },
 }
 </code></pre>
@@ -330,10 +354,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="product-option-tooltip.html" class="btn btn-neutral float-right" title="Tooltips for Product Options">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="category-minimum-quantity.html" class="btn btn-neutral float-right" title="Minimum Order Amount & Minimum Category Quantity">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="checkout-payment-method-customizations.html" class="btn btn-neutral" title="Checkout Payment Method Customizations"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="product-card-lowest-price.html" class="btn btn-neutral" title="Product Card Lowest Price"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -359,10 +383,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="checkout-payment-method-customizations.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="product-card-lowest-price.html" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="product-option-tooltip.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="category-minimum-quantity.html" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
