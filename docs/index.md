@@ -36,6 +36,7 @@
 - [Pre-Select Product Options Sharing Link](preselect-product-option-link.md)
 - [Prevent Purchase Low Stock Products](prevent-purchase-low-stock.md)
 - [Product Card Lowest Price](price-card-lowest-price.md)
+- [Product Card Unit Price](price-card-unit-price.md)
 - [Minimum Order Amount & Minimum Category Quantity](category-minimum-quantity.md)
 - [IGAT Variants Table](igat-variants-table.md)
 - [Multi Storefronts Global Login](multi-storefronts-global-login.md)
@@ -46,3 +47,4 @@
 - [Product Card Badges](product-card-badges.md)
 - [Product Bundles](product-bundles.md)
 - [Add Signature on Delivery on Checkout Page](checkout-signature-delivery.md)
+- [Display product PriceList-based price vs. regular price](wholesale-discount-price.md)

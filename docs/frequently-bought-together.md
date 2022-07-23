@@ -117,6 +117,8 @@ Set `independent: true` in the script option.
 
 ## JH Buy Together (v2)
 
+<div style="position: relative; padding-bottom: 63.53166986564299%; height: 0;"><iframe src="https://www.loom.com/embed/b20330e4f8d4448787be517e6d110d28" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
 Git: `bigcommerce-api-app/jh-buy-together`
 
 Install:

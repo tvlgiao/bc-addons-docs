@@ -43,6 +43,12 @@ Enter the script below to **Scripts contents**:
 - The custom field to read shipping countries. Field value contains country ISO 2-letters code, seperated by commas.
 - Default: `__purchasable_countries`
 - Example: Field name = `__purchasable_countries`, Field value = `US,VN`
+  
+- ### stateProductCustomField
+
+- The custom field to read shipping states. Field value contains country ISO 2-letters code or state name, seperated by commas.
+- Default: `__purchasable_states`
+- Example: Field name = `__purchasable_states`, Field value = `GA,Geogia,AL,Alabama`
 
 ### graphQLToken
 
@@ -72,6 +78,9 @@ Enter the script below to **Scripts contents**:
             <%#countries%>
                 <li><img src="<%flag%>" alt="<%name%>"><%name%></li>
             <%/countries%>
+            <%#states%>
+                <li><%.%></li>
+            <%/states%>
         </ul>
     </div>
 </div>
@@ -87,10 +96,16 @@ Enter the script below to **Scripts contents**:
 - Error message on checkout page.
 - Default: `<strong>{name}</strong> cannot ship to <strong>{country}</strong>`
 
+### txtUnavailableShippingState
+
+- Error message on checkout page.
+- Default: `<strong>{name}</strong> cannot ship to <strong>{state}</strong>`
+
 
 ## Edit Product
 
-Edit your product, add a custom field with name = `__purchasable_countries`, value contains the shipping countries ISO 2-letters code, separated by commas. For example: `US,VN`
+Edit your product, add a custom field with name = `__purchasable_countries`, value contains the shipping countries ISO 2-letters code, separated by commas. For example: `US,VN`.
+Add a custom field with name = `__purchasable_states`, value contains the shipping states ISO 2-letters code or state name, separated by commas. For example: `GA,Alabama`. 
 
 ![products-restrict-shipping-countries-custom-fields](img/products-restrict-shipping-countries-custom-fields.png)
 
