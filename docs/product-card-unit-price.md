@@ -1,4 +1,4 @@
-# Product Card Lowest Price
+# Product Card Unit Price
 
 Demo: <https://easybuyingredients.com/shop-all/>
 
@@ -36,6 +36,7 @@ window.PapathemesProductCardUnitPriceSettings = {
     graphQLItemLimit = 20,
     productCardSelector = '.card, [class*="sd-product-set-carousel"] > div > div > div',
     unitOptionNames = ['Weight'],
+    allowDecimalUnit = true,
     unitPriceWithTaxHtml = `
         <div class="price-section price-section--unit price-section--withTax">
             <span class="price-label">From</span>
