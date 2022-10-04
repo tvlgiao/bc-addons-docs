@@ -173,6 +173,12 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="product-option-tooltip.html">Tooltips for Product Options</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#install-tooltips-for-product-options">Install tooltips for product options</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#install-tooltips-for-product-options-and-the-faceted-filters">Install tooltips for product options and the faceted filters</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#source-code-not-published">Source Code (Not Published)</a>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -286,6 +292,14 @@
             <div class="section">
               
                 <h1 id="tooltips-for-product-options">Tooltips for Product Options<a class="headerlink" href="#tooltips-for-product-options" title="Permanent link">&para;</a></h1>
+<h2 id="install-tooltips-for-product-options">Install tooltips for product options<a class="headerlink" href="#install-tooltips-for-product-options" title="Permanent link">&para;</a></h2>
+<p>Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, click <strong>Create a Script</strong>, choose:</p>
+<ul>
+<li><strong>Location on page</strong> = <code>Footer</code></li>
+<li><strong>Select pages where script will be added</strong> = <code>Store pages</code></li>
+<li><strong>Script type</strong> = <code>Script</code></li>
+</ul>
+<p>Enter the script below to <strong>Scripts contents</strong>:</p>
 <pre><code class="language-html">&lt;script&gt;
     window.PapaThemesProductOptionTooltipSettings = {
         tooltips: [
@@ -295,13 +309,53 @@
             },
             {
                 optionName: 'Karat',
-                tooltip: 'Select the Species of Wood (Unfinished and Factory Sanded)'
+                tooltipHtml: 'Select the &lt;b&gt;Species of Wood&lt;/b&gt; (Unfinished and Factory Sanded)'
             }
         ]
     };
 &lt;/script&gt;
 &lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/microapps/product-option-tooltip/main.YOURDOMAIN.js&quot; async defer&gt;&lt;/script&gt;
 </code></pre>
+<p>Replace <code>YOURDOMAIN</code> by your store's domain name, for example: <code>imrbatteries.com</code>, the complete URL is <code>https://d3r059eq9mm6jz.cloudfront.net/microapps/product-option-tooltip/main.imrbatteries.com.js</code>.</p>
+<h2 id="install-tooltips-for-product-options-and-the-faceted-filters">Install tooltips for product options and the faceted filters<a class="headerlink" href="#install-tooltips-for-product-options-and-the-faceted-filters" title="Permanent link">&para;</a></h2>
+<p>Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, click <strong>Create a Script</strong>, choose:</p>
+<ul>
+<li><strong>Location on page</strong> = <code>Footer</code></li>
+<li><strong>Select pages where script will be added</strong> = <code>Store pages</code></li>
+<li><strong>Script type</strong> = <code>Script</code></li>
+</ul>
+<p>Enter the script below to <strong>Scripts contents</strong>:</p>
+<pre><code class="language-html">&lt;script&gt;
+    window.PapaThemesProductOptionTooltipSettings = {
+        scopeSelector: '[data-product-option-change], #facetedSearch',
+        labelSelector: '[data-product-attribute] label:first-child, .accordion-title',
+        tooltips: [
+            {
+                optionName: 'Back',
+                tooltip: 'Duct Size (Face Size) - Measure the size of the duct opening - NOT the size of the exisitng vent cover -Includes Mounting Clips for Wall Installations'
+            },
+            {
+                optionName: 'Karat',
+                tooltip: 'Select the Species of Wood (Unfinished and Factory Sanded)'
+            },
+            {
+                optionName: 'Brand',
+                tooltip: 'Temporibus aspernatur vero assumenda qui nostrum molestias dignissimos et.'
+            },
+            {
+                optionName: 'Color',
+                tooltip: 'Non debitis fuga reprehenderit nisi vel.'
+            }
+        ]
+    };
+&lt;/script&gt;
+&lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/microapps/product-option-tooltip/main.YOURDOMAIN.js&quot; async defer&gt;&lt;/script&gt;
+</code></pre>
+<ul>
+<li>Replace <code>YOURDOMAIN</code> by your store's domain name, for example: <code>imrbatteries.com</code>, the complete URL is <code>https://d3r059eq9mm6jz.cloudfront.net/microapps/product-option-tooltip/main.imrbatteries.com.js</code>.</li>
+<li>Edit <code>optionName</code> and <code>tooltip</code> variables to reflect your actual product option name / filter name and tooltip content.</li>
+</ul>
+<h2 id="source-code-not-published">Source Code (Not Published)<a class="headerlink" href="#source-code-not-published" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Git: https://github.com/tvlgiao/bc-bigcommerce-api-app/microapps/product-option-tooltip/</li>
 </ul>
