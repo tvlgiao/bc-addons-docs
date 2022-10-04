@@ -10,3 +10,7 @@
 - Server: bigcommerce-api-app
 - Theme Mod: https://github.com/tvlgiao/bc-dankshop-account-file-upload
 
+
+## 2022-08-11
+- Support Multiple Files Upload: https://github.com/tvlgiao/supermarket-swavdistro-account-file-upload
+

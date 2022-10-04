@@ -27,7 +27,7 @@ Enter the script below to **Scripts contents**:
 Replace `YOURDOMAIN` by your store's domain name, for example `example.com`. The complete URL should look like `https://d3r059eq9mm6jz.cloudfront.net/microapps/product-card-unit-price/main.example.com.js`
 
 
-## Parameters
+## Configuration
 
 ```js
 window.PapathemesProductCardUnitPriceSettings = {
