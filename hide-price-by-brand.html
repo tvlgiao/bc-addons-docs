@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Shipment Details - Documentation</title>
+  <title>Hide product prices based on specific brands - Documentation</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="css/theme.css" />
@@ -20,8 +20,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Shipment Details";
-    var mkdocs_page_input_path = "shipment-details.md";
+    var mkdocs_page_name = "Hide product prices based on specific brands";
+    var mkdocs_page_input_path = "hide-price-by-brand.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -102,16 +102,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="sell-by-pack.html">Sell By Pack</a>
                     </li>
                 </ul>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="shipment-details.html">Shipment Details</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#install-on-your-bigcommerce-store">Install on your BigCommerce store</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#create-api-account">Create API account</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="shipment-details.html">Shipment Details</a>
                     </li>
                 </ul>
                 <ul>
@@ -194,8 +186,10 @@
                     <li class="toctree-l1"><a class="reference internal" href="hide-price.html">Hide Price for Non-Logged In Customers</a>
                     </li>
                 </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="hide-price-by-brand.html">Hide product prices based on specific brands</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="hide-price-by-brand.html">Hide product prices based on specific brands</a>
+    <ul class="current">
+    </ul>
                     </li>
                 </ul>
                 <ul>
@@ -283,7 +277,7 @@
     
       
     
-    <li>Shipment Details</li>
+    <li>Hide product prices based on specific brands</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -295,36 +289,9 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="shipment-details">Shipment Details<a class="headerlink" href="#shipment-details" title="Permanent link">&para;</a></h1>
-<p>This app allows to display detailed shipments include shipped products, billing address, shipping address and tracking details on customer's order page.</p>
-<p><img alt="shipment-details" src="img/shipment-details.png" /></p>
-<h2 id="install-on-your-bigcommerce-store">Install on your BigCommerce store<a class="headerlink" href="#install-on-your-bigcommerce-store" title="Permanent link">&para;</a></h2>
-<p>Edit your theme file <code>templates/layout/base.html</code>, insert the code below before <code>&lt;/body&gt;</code> tag:</p>
-<pre><code class="language-html">&lt;script&gt;
-    {{#if shipments}}
-    window.PAPATHEMES_SHIPMENT_DETAILS_SETTINGS = {
-        storeDomain: 'supermarket-yellow-demo.mybigcommerce.com',
-        customerId: '{{customer.id}}',
-        currencySetting: {{{JSONstringify settings.money}}},
-        storefrontShipments: {{{JSONstringify shipments}}},
-    };
-    {{/if}}
-&lt;/script&gt;
-&lt;script {{#if shipments}}src=&quot;//papathemes.com/content/supermarket/addon.shipment-details.js&quot;{{/if}} async&gt;&lt;/script&gt;
-</code></pre>
-<p>Replace <code>supermarket-yellow-demo.mybigcommerce.com</code> by your store domain.</p>
-<h3 id="create-api-account">Create API account<a class="headerlink" href="#create-api-account" title="Permanent link">&para;</a></h3>
-<p>Log in with your store owner account. Go to <strong>Advanced Settings</strong> &gt; <strong>API Settings</strong>, click <strong>Create API Account</strong> and choose <strong>Create V2/V3 API Token</strong>.</p>
-<p>Choose these permission:</p>
-<ul>
-<li><strong>Customers</strong>: Read-Only</li>
-<li><strong>Information &amp; Settings</strong>: Read-Only</li>
-<li><strong>Orders</strong>: Read-Only</li>
-<li><strong>Products</strong>: Read-Only</li>
-<li><strong>Order Transactions</strong>: Read-Only</li>
-</ul>
-<p>Then click <strong>Save</strong> button.</p>
-<p><strong>Send us the credentials TXT file.</strong></p>
+                <h1 id="hide-product-prices-based-on-specific-brands">Hide product prices based on specific brands<a class="headerlink" href="#hide-product-prices-based-on-specific-brands" title="Permanent link">&para;</a></h1>
+<p>This extension allows to hide product prices, add to cart and checkout buttons based on specific brands. Editing theme files is required.</p>
+<p>Source Code: https://github.com/tvlgiao/brand-based-hide-prices-cornerstone-gloantiagingshop</p>
               
             </div>
           </div>
@@ -332,10 +299,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="limit-countries.html" class="btn btn-neutral float-right" title="Limit Countries / States">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="hide-option-values-based-on-customer-groups.html" class="btn btn-neutral float-right" title="Hide Product Option Values based on Customer Groups">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="sell-by-pack.html" class="btn btn-neutral" title="Sell By Pack"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="hide-price.html" class="btn btn-neutral" title="Hide Price for Non-Logged In Customers"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -361,10 +328,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="sell-by-pack.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="hide-price.html" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="limit-countries.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="hide-option-values-based-on-customer-groups.html" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
