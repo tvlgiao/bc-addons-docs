@@ -189,6 +189,8 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="hide-price-by-brand.html">Hide product prices based on specific brands</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -292,6 +294,17 @@
                 <h1 id="hide-product-prices-based-on-specific-brands">Hide product prices based on specific brands<a class="headerlink" href="#hide-product-prices-based-on-specific-brands" title="Permanent link">&para;</a></h1>
 <p>This extension allows to hide product prices, add to cart and checkout buttons based on specific brands. Editing theme files is required.</p>
 <p>Source Code: https://github.com/tvlgiao/brand-based-hide-prices-cornerstone-gloantiagingshop</p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Edit the theme files.</p>
+</li>
+<li>
+<p>Edit file <code>components/papathemes/hide-prices/head.html</code>, update the brand names for products to hide:</p>
+</li>
+</ol>
+<pre><code class="language-handlebars">{{assignVar 'hidePriceBrands' 'Brand Name 1,Brand Name 2'}}
+</code></pre>
               
             </div>
           </div>
