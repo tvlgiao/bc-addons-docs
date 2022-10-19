@@ -49,3 +49,4 @@
 - [Product Bundles](product-bundles.md)
 - [Add Signature on Delivery on Checkout Page](checkout-signature-delivery.md)
 - [Display product PriceList-based price vs. regular price](wholesale-discount-price.md)
+- [Checkout File Upload](checkout-file-upload.md)
