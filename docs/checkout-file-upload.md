@@ -21,7 +21,7 @@ Enter the script below to **Scripts contents**:
         pageType: '{{page_type}}',
         customFieldNames: ['Prescription'],
         customFieldValueRegex: /yes|1|true/i,
-        fileModifierNames: ['File Upload'],
+        fileModifierNames: ['File Upload']
     };
 </script>
 <script src="https://d3r059eq9mm6jz.cloudfront.net/microapps/checkout-file-upload/main.YOURDOMAIN.js" async defer></script>
@@ -35,5 +35,11 @@ Edit the product that holds the uploaded file:
 
 - Create a custom field, for example: `Prescription` with value = `Yes`.
 - Add a File Upload modifier name = `File Upload`.
+
+## DEMO
+
+1. Add [this product](https://theme-demo-01.mybigcommerce.com/file-upload-product/) to cart
+2. Proceed to the checkout page. At the payment step, the file upload form will appear.
+
 
 
