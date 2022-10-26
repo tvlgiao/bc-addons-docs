@@ -373,7 +373,9 @@ priceWithTaxSelector: '[data-also-bought-parent-scope] [data-product-price-with-
 priceWithoutTaxSelector: '[data-also-bought-parent-scope] [data-product-price-without-tax]',
 ```
 
-## Version 2 (Beta)
+## Version 2 (Beta):
+
+### Product Options Bulk Order
 
 ```html
 <script>
@@ -392,3 +394,10 @@ priceWithoutTaxSelector: '[data-also-bought-parent-scope] [data-product-price-wi
 </script>
 <script src="https://d3r059eq9mm6jz.cloudfront.net/microapps/product-options-bulk-order/main.YOURDOMAIN.js" async defer></script>
 ```
+
+### Product Variants Bulk Order
+
+Similar to **product-options-bulk-order** but display all product variants.
+
+Git: https://github.com/tvlgiao/bc-bigcommerce-api-app/microapps/product-variants-bulk-order
+

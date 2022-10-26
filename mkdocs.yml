@@ -1,55 +1,62 @@
 site_name: "Documentation"
 nav:
-- Home: index.md
-- Conditional Product Options: conditional-product-options.md
-- Frequently Bought Together: frequently-bought-together.md
-- Shipping Estimator on Product Page: shipping-estimator.md
-- Display Color Swatches on Product Items: color-swatches.md
-- Mutiple Category Dependent Dropdowns: multiple-category-dependent-dropdowns.md
-- Mutiple Quantity Product Options: multiple-quantity-product-options.md
-- Product Pick List Price: product-pick-list-price.md
-- Custom Popups: popups.md
-- Automatically Add Additional Product To Cart: add-product-to-cart-automatically.md
-- Sell By Pack: sell-by-pack.md
-- Shipment Details: shipment-details.md
-- Limit Countries / States: limit-countries.md
-- Quantity In Cart: quantity-in-cart.md
-- Limit Shipping Options: limit-shipping-options.md
-- Disallow Different Billing Address: disallow-different-billing-address.md
-- Display Free Shipping Badges: free-shipping-badges.md
-- Add Shipping Option Your Customer's Shipping Account: customer-account-shipping-option.md
-- Better Product Reorder: better-reorder.md
+- Add Back to Category button on the cart page: back-to-category.md
 - Add File Upload Field on Registration Page: file-upload.md
-- Select product variants by SKU: shop-by-child-sku.md
-- HTML5 Video Image Gallery: html5-video-image-gallery.md
-- Display Product Weight on Cart Page: cart-weight.md
-- Order Multiple SKUs: order-multiple-skus.md
-- Delete Cart: delete-cart.md
-- Restrict Shipping Countries on Specific Products: restrict-shipping-countries-on-specific-products.md
+- Add Shipping Option Your Customer's Shipping Account: customer-account-shipping-option.md
+- Add Signature on Delivery on Checkout Page: checkout-signature-delivery.md
+- Apparel Product Options: apparel-product-options.md
+- Automatically Add Additional Product To Cart: add-product-to-cart-automatically.md
+- Automatically Add Product to Cart Based on Customer Group: add-product-to-cart-automatically-based-on-customer-group.md
+- Better Product Reorder: better-reorder.md
+- Bulk Pricing Option: bulk-pricing-option.md
+- Checkout File Upload: checkout-file-upload.md
 - Checkout Payment Method Customizations: checkout-payment-method-customizations.md
+- Conditional Product Options: conditional-product-options.md
+- Custom Popups: popups.md
+- Delete Cart: delete-cart.md
+- Disallow Different Billing Address: disallow-different-billing-address.md
 - Display Brand Logo on PDP: brand-logo-on-pdp.md
-- Tooltips for Product Options: product-option-tooltip.md
-- Image Gallery for Product Options: variant-image-gallery.md
-- Product Review Images: product-review-images.md
+- Display Brand Logo on Product Cards: product-card-brand-logo.md
+- Display Color Swatches on Product Items: color-swatches.md
+- Display Free Shipping Badges: free-shipping-badges.md
+- Display product PriceList-based price vs. regular price: wholesale-discount-price.md
+- Display Product Weight on Cart Page: cart-weight.md
+- Frequently Bought Together: frequently-bought-together.md
 - Hide Price for Non-Logged In Customers: hide-price.md
-- Hide product prices based on specific brands: hide-price-by-brand.md
 - Hide Product Option Values based on Customer Groups: hide-option-values-based-on-customer-groups.md
-- Pre-Select Product Options Sharing Link: preselect-product-option-link.md
-- Prevent Purchase Low Stock Products: prevent-purchase-low-stock.md
-- Product Card Lowest Price: product-card-lowest-price.md
-- Product Card Unit Price: product-card-unit-price.md
-- Minimum Order Amount & Minimum Category Quantity: category-minimum-quantity.md
+- Hide product prices based on specific brands: hide-price-by-brand.md
+- Home: index.md
+- HTML5 Video Image Gallery: html5-video-image-gallery.md
 - IGAT Variants Table: igat-variants-table.md
+- Image Gallery for Product Options: variant-image-gallery.md
+- Limit Countries / States: limit-countries.md
+- Limit Shipping Options: limit-shipping-options.md
+- Minimum Order Amount & Minimum Category Quantity: category-minimum-quantity.md
 - Multi Storefronts Global Login: multi-storefronts-global-login.md
 - Multi Storefronts Universal Login Automatically: msf-universal-login.md
+- Mutiple Category Dependent Dropdowns: multiple-category-dependent-dropdowns.md
+- Mutiple Quantity Product Options: multiple-quantity-product-options.md
+- Order Multiple SKUs: order-multiple-skus.md
 - Papersushishop Expected Shipping Date: papersushishop-expected-shipping-date.md
-- Add Back to Category button on the cart page: back-to-category.md
-- Shipping Countdown: shipping-countdown.md
-- Product Card Badges: product-card-badges.md
+- PC Builder Product Bundles: pc-builder-product-bundles.md
+- Pre-Select Product Options Sharing Link: preselect-product-option-link.md
+- Prevent Purchase Low Stock Products: prevent-purchase-low-stock.md
 - Product Bundles: product-bundles.md
-- Add Signature on Delivery on Checkout Page: checkout-signature-delivery.md
-- Display product PriceList-based price vs. regular price: wholesale-discount-price.md
-- Checkout File Upload: checkout-file-upload.md
+- Product Card Badges: product-card-badges.md
+- Product Card Lowest Price: product-card-lowest-price.md
+- Product Card Unit Price: product-card-unit-price.md
+- Product Designer: product-designer.md
+- Product Pick List Price: product-pick-list-price.md
+- Product Review Images: product-review-images.md
+- Quantity In Cart: quantity-in-cart.md
+- Restrict Shipping Countries on Specific Products: restrict-shipping-countries-on-specific-products.md
+- Rolls Calculator: rolls-calculator.md
+- Select product variants by SKU: shop-by-child-sku.md
+- Sell By Pack: sell-by-pack.md
+- Shipment Details: shipment-details.md
+- Shipping Countdown: shipping-countdown.md
+- Shipping Estimator on Product Page: shipping-estimator.md
+- Tooltips for Product Options: product-option-tooltip.md
 theme: readthedocs
 use_directory_urls: false
 
