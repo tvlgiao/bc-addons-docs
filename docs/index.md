@@ -12,7 +12,7 @@
 - [Better Product Reorder](better-reorder.md)
 - [Bulk Pricing Option](bulk-pricing-option.md)
 - [Checkout File Upload](checkout-file-upload.md)
-- [Checkout Payment Method Customizations](checkout-payment-method-customizations.md)
+- [Checkout Shipping & Payment Method Customizations](checkout-shipping-and-payment-method-customizations.md)
 - [Conditional Product Options](conditional-product-options.md)
 - [Custom Popups](popups.md)
 - [Delete Cart](delete-cart.md)
