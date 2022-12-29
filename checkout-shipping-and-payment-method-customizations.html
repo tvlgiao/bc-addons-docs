@@ -21,7 +21,7 @@
   <script>
     // Current page data
     var mkdocs_page_name = "Checkout Payment Method Customizations";
-    var mkdocs_page_input_path = "checkout-payment-method-customizations.md";
+    var mkdocs_page_input_path = "checkout-shipping-and-payment-method-customizations.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -99,7 +99,7 @@
                     </li>
                 </ul>
                 <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="checkout-payment-method-customizations.html">Checkout Payment Method Customizations</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="checkout-shipping-and-payment-method-customizations.html">Checkout Payment Method Customizations</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#install-the-script-to-your-store">Install the script to your store</a>
     </li>
@@ -117,11 +117,25 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#paymentmethodlabeltemplate">paymentMethodLabelTemplate</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#shippingmethodlabeldesctemplate">shippingMethodLabelDescTemplate</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#txtmaxamounterror">txtMaxAmountError</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#txtminamounterror">txtMinAmountError</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#txtconditionproducterror">txtConditionProductError</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#txtcategoryerror">txtCategoryError</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#txtpreordererror">txtPreorderError</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#txtcustomergrouperror">txtCustomerGroupError</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#txtcouponerror">txtCouponError</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#txtskuerror">txtSkuError</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#txtproductoptionerror">txtProductOptionError</a>
     </li>
         </ul>
     </li>
@@ -353,16 +367,16 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="checkout-payment-method-customizations">Checkout Payment Method Customizations<a class="headerlink" href="#checkout-payment-method-customizations" title="Permanent link">&para;</a></h1>
+                <h1 id="checkout-shipping-payment-method-customizations">Checkout Shipping &amp; Payment Method Customizations<a class="headerlink" href="#checkout-shipping-payment-method-customizations" title="Permanent link">&para;</a></h1>
 <p><img alt="payment-methods-customization" src="img/payment-methods-customization.png" /></p>
-<p>This extension allows you to customize the payment methods displayed on the checkout page:</p>
+<p>This extension allows you to customize the shipping &amp; payment methods displayed on the checkout page:</p>
 <ul>
-<li>Freely change the display order of each payment methods.</li>
-<li>Freely change each payment method's name, description, logo and the supported credit card's logo.</li>
-<li>Limit payment methods by the order total amount. It's possible to limit by minimum or maximum amount.</li>
-<li>Limit payment methods by product conditions (New, Used or Refurbished).</li>
+<li>Freely change the display order of each shipping &amp; payment methods.</li>
+<li>Freely change each shipping &amp; payment method's name, description, logo and the supported credit card's logo.</li>
+<li>Limit shipping &amp; payment methods by the order total amount. It's possible to limit by minimum or maximum amount.</li>
+<li>Limit shipping &amp; payment methods by product conditions (New, Used or Refurbished).</li>
 </ul>
-<p>Does not require editing of your theme files. Works with all Stencil / Cornerstone based themes. The code is optimized, asynchronously loaded (parallel loaded), works fast and doesn't affect the speed of your website.</p>
+<p>It does not require editing of your theme files, works with all Stencil / Cornerstone based themes. The code is optimized, asynchronously loaded (parallel loaded), works fast and doesn't affect the speed of your website.</p>
 <h2 id="install-the-script-to-your-store">Install the script to your store<a class="headerlink" href="#install-the-script-to-your-store" title="Permanent link">&para;</a></h2>
 <p>Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, click <strong>Create a Script</strong>, choose:</p>
 <ul>
@@ -380,8 +394,9 @@
         // See 'Settings' section
     };
 &lt;/script&gt;
-&lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/croxcheckout.public.js&quot; async defer&gt;&lt;/script&gt;
+&lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/microapps/conditional-shipping-payment-methods/main.YOURDOMAIN.js&quot; async defer&gt;&lt;/script&gt;
 </code></pre>
+<p>Replace <code>YOURDOMAIN</code> by your domain name, for example <code>example.com</code>: <code>https://d3r059eq9mm6jz.cloudfront.net/microapps/conditional-shipping-payment-methods/main.example.com.js</code></p>
 <h2 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">&para;</a></h2>
 <h3 id="cartid">cartId<a class="headerlink" href="#cartid" title="Permanent link">&para;</a></h3>
 <ul>
@@ -412,24 +427,37 @@
 </code></pre>
 <h3 id="paymentmethods">paymentMethods<a class="headerlink" href="#paymentmethods" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Configure how to display your payment methods.</li>
+<li>Configure how to display your shipping &amp; payment methods.</li>
 <li>Default:</li>
 </ul>
-<pre><code class="language-js">{
+<pre><code class="language-js">paymentMethods: {
     squarev2: {
         title: 'Credit Card',
         icons: ['visa', 'mastercard', 'amex', 'jcb'],
         order: 3,
     },
-    paypalcommerce: {
-        titleImg: 'https://cdn11.bigcommerce.com/r-fc1004fc93d5d0867d67e043f9ec4d0a0bf67d29/img/payment-providers/paypal_commerce_logo.svg',
+    paypalexpress: {
+        titleImg: 'https://cdn11.bigcommerce.com/r-ee66862ae166200c57f1b2929aa2864d113b10b0/img/payment-providers/paypal_commerce_logo.svg',
         titleImgAlt: 'Paypal',
-        // icons: ['visa', 'mastercard'],
         order: 1,
+        couponsDisable: ['ES6TG2AIL'],
+        skusDisable: ['alsobought-child-4'],
+        productOptionsDisable: [
+            {
+                name: 'Color',
+                value: 'Red',
+            },
+        ],
+    },
+    paypalcommerce: {
+        titleImg: 'https://cdn11.bigcommerce.com/r-ee66862ae166200c57f1b2929aa2864d113b10b0/img/payment-providers/paypal_commerce_logo.svg',
+        titleImgAlt: 'Paypal',
+        order: 1,
+        preorderDisable: false,
     },
     'afterpay-PAY_BY_INSTALLMENT': {
         title: 'Pay over time',
-        titleImg: 'https://cdn11.bigcommerce.com/r-fc1004fc93d5d0867d67e043f9ec4d0a0bf67d29/img/payment-providers/afterpay-badge-blackonmint.png',
+        titleImg: 'https://cdn11.bigcommerce.com/r-ee66862ae166200c57f1b2929aa2864d113b10b0/img/payment-providers/afterpay-badge-blackonmint.png',
         titleImgAlt: 'Pay over time',
         order: 2,
         maxAmount: 2000,
@@ -450,10 +478,12 @@
         title: 'Studio10 Rental',
         description: 'Only available to Perth Customers',
         order: 6,
+        customerGroupDisable: ['Guest', 'USA Wholesale'],
     },
     instore: {
         title: 'Pay on collection from Balcatta, WA',
         description: 'Cash/EFTPOS/Credit Card',
+        enableForCategoryIds: [123, 456],
         order: 7,
     },
     moneyorder: {
@@ -462,11 +492,35 @@
         order: 8,
         productConditionsDisable: ['Used', 'Refurbished'],
     },
-}
+    studio19: {
+    },
+},
+shippingMethods: {
+    'Pickup In Store': {
+        order: 1,
+        couponsDisable: ['ES6TG2AIL'],
+        skusDisable: ['alsobought-child-4'],
+        productOptionsDisable: [
+            {
+                name: 'Color',
+                value: 'Red',
+            },
+        ],
+    },
+    'FEDEX by Customer': {
+        order: 2,
+        description: 'Please allow 24 hours for clearance/confirmation',
+        minAmount: 1000,
+    },
+    'Flat Rate': {
+        order: 3,
+    }
+},
 </code></pre>
-<p><strong>Payment methods are specfied in the list:</strong></p>
+<p><strong>Payment methods list:</strong></p>
 <ul>
 <li><code>squarev2</code>: Default Credit Card</li>
+<li><code>paypalexpress</code>: PayPal</li>
 <li><code>paypalcommerce</code>: PayPal</li>
 <li><code>afterpay-PAY_BY_INSTALLMENT</code>: AfterPay</li>
 <li><code>bankdeposit</code>: Bank Deposit</li>
@@ -475,21 +529,42 @@
 <li><code>instore</code>: In-Store Payment</li>
 <li><code>moneyorder</code>: Money Order</li>
 </ul>
-<p>Please contact us if any of your payment method is not listed above.</p>
-<p><strong>Settings for each payment method:</strong></p>
+<p><strong>Shipping methods list:</strong></p>
 <ul>
-<li><code>title</code>: Payment method name.</li>
-<li><code>titleImg</code>: Payment method image (Optional).</li>
-<li><code>titleImgAlt</code>: Alt text for the payment method image (Optional).</li>
+<li>Pickup In Store</li>
+<li>FEDEX by Customer</li>
+<li>Flat Rate</li>
+<li><em>(shipping method name)</em></li>
+</ul>
+<p>Please contact us if any of your shipping or payment method is not listed above.</p>
+<p><strong>Settings for each shipping/payment method:</strong></p>
+<ul>
+<li><code>title</code>: Shipping/Payment method name.</li>
+<li><code>titleImg</code>: Shipping/Payment method image (Optional).</li>
+<li><code>titleImgAlt</code>: Alt text for the shipping/payment method image (Optional).</li>
 <li><code>icons</code>: Array of card icons displayed (Optional). Example: <code>['visa', 'mastercard', 'amex', 'jcb']</code>.</li>
 <li><code>order</code>: Sort order number (Optional).</li>
-<li><code>minAmount</code>: Limit the payment method by minimum order amount (Optional). Example: <code>100</code>.</li>
-<li><code>maxAmount</code>: Limit the payment method by minimum order amount (Optional). Example: <code>1000</code>.</li>
-<li><code>productConditionsDisable</code>: Limit the payment method by product conditions (Optional). Example: <code>['Used', 'Refurbished']</code>.</li>
+<li><code>minAmount</code>: Limit by minimum order amount (Optional). Example: <code>100</code>.</li>
+<li><code>maxAmount</code>: Limit by maximum  order amount (Optional). Example: <code>1000</code>.</li>
+<li><code>productConditionsDisable</code>: Disable for specific product conditions (Optional). Example: <code>['Used', 'Refurbished']</code>.</li>
+<li><code>couponsDisable</code>: Disable for specific coupon codes. Example: <code>['ES6TG2AIL']</code>.</li>
+<li><code>skusDisable</code>: Disable for specific SKUs or variant SKUs. Example: <code>['alsobought-child-4']</code>.</li>
+<li><code>productOptionsDisable</code>: Disable for specific product options. Example:</li>
+</ul>
+<pre><code class="language-js">productOptionsDisable: [
+    {
+        name: 'Color',
+        value: 'Red',
+    },
+],
+</code></pre>
+<ul>
+<li><code>customerGroupDisable</code>: Disable for specific customer groups. Example: <code>['Guest', 'USA Wholesale']</code>.</li>
+<li><code>enableForCategoryIds</code>: Enable for specific product categories. Example: <code>[123, 456]</code>.</li>
 </ul>
 <h3 id="paymentmethodlabeltemplate">paymentMethodLabelTemplate<a class="headerlink" href="#paymentmethodlabeltemplate" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Template for displaying the payment method.</li>
+<li>Template for displaying each payment method.</li>
 <li>Default:</li>
 </ul>
 <pre><code class="language-html">&lt;label&gt;
@@ -514,6 +589,26 @@
     &lt;%/errors%&gt;
 &lt;/label&gt;
 </code></pre>
+<h3 id="shippingmethodlabeldesctemplate">shippingMethodLabelDescTemplate<a class="headerlink" href="#shippingmethodlabeldesctemplate" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Template for display each shipping method.</li>
+<li>Default:</li>
+</ul>
+<pre><code class="language-html">&lt;span class=&quot;shippingOption-desc&quot;&gt;
+    &lt;%#titleImg%&gt;
+        &lt;img alt=&quot;&lt;%titleImgAlt%&gt;&quot; class=&quot;shippingProviderHeader-img&quot; data-test=&quot;shipping-method-logo&quot; src=&quot;&lt;%.%&gt;&quot;&gt;
+    &lt;%/titleImg%&gt;
+    &lt;%#title%&gt;
+        &lt;span class=&quot;shippingProviderHeader-name&quot; data-test=&quot;shipping-method-name&quot;&gt;&lt;%&amp;.%&gt;&lt;/span&gt;
+    &lt;%/title%&gt;
+    &lt;%#description%&gt;
+        &lt;span class=&quot;shippingProviderHeader-description&quot; data-test=&quot;shipping-method-description&quot;&gt;&lt;%&amp;.%&gt;&lt;/span&gt;
+    &lt;%/description%&gt;
+    &lt;%#errors%&gt;
+        &lt;span class=&quot;shippingProviderHeader-error&quot; data-test=&quot;shipping-method-description&quot;&gt;&lt;%&amp;.%&gt;&lt;/span&gt;
+    &lt;%/errors%&gt;
+&lt;/span&gt;
+</code></pre>
 <h3 id="txtmaxamounterror">txtMaxAmountError<a class="headerlink" href="#txtmaxamounterror" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Error message when exceeding the maximum amount.</li>
@@ -529,123 +624,100 @@
 <li>Error message when product condition is not unavailable for the payment method.</li>
 <li>Default: <code>'Not available with {condition} products'</code></li>
 </ul>
+<h3 id="txtcategoryerror">txtCategoryError<a class="headerlink" href="#txtcategoryerror" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Error message when categories are not matched.</li>
+<li>Default: <code>'Not available for some products in your cart'</code></li>
+</ul>
+<h3 id="txtpreordererror">txtPreorderError<a class="headerlink" href="#txtpreordererror" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Error message when preorder is matched.</li>
+<li>Default: <code>'Not available for pre-order products'</code></li>
+</ul>
+<h3 id="txtcustomergrouperror">txtCustomerGroupError<a class="headerlink" href="#txtcustomergrouperror" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Error message when customer group is matched.</li>
+<li>Default: <code>'Not available for {customerGroup} customers'</code>.</li>
+</ul>
+<h3 id="txtcouponerror">txtCouponError<a class="headerlink" href="#txtcouponerror" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Error message when coupon code is matched.</li>
+<li>Default: <code>'Not available for coupon {coupon}'</code>.</li>
+</ul>
+<h3 id="txtskuerror">txtSkuError<a class="headerlink" href="#txtskuerror" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Error message when SKU is matched.</li>
+<li>Default: <code>'Not available for sku {sku}'</code></li>
+</ul>
+<h3 id="txtproductoptionerror">txtProductOptionError<a class="headerlink" href="#txtproductoptionerror" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Error message when product option is matched.</li>
+<li>Default: <code>Not available for {option}'</code></li>
+</ul>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <h3 id="recommended-settings-example">Recommended settings example:<a class="headerlink" href="#recommended-settings-example" title="Permanent link">&para;</a></h3>
 <pre><code class="language-html">&lt;script&gt;
-    window.PAPATHEMES_CROXCHECKOUT_SETTINGS = {
+    window.PapathemesConditionalShippingPaymentMethodsSettings = {
         cartId: '{{cart_id}}',
         storeHash: '{{settings.store_hash}}',
         paymentMethods: {
             squarev2: {
                 title: 'Credit Card',
                 icons: ['visa', 'mastercard', 'amex', 'jcb'],
-                order: 3
+                order: 3,
+            },
+            paypalexpress: {
+                titleImg: 'https://cdn11.bigcommerce.com/r-ee66862ae166200c57f1b2929aa2864d113b10b0/img/payment-providers/paypal_commerce_logo.svg',
+                titleImgAlt: 'Paypal',
+                order: 1,
+                maxAmount: 1000,
             },
             paypalcommerce: {
-                titleImg: 'https://cdn11.bigcommerce.com/r-fc1004fc93d5d0867d67e043f9ec4d0a0bf67d29/img/payment-providers/paypal_commerce_logo.svg',
+                titleImg: 'https://cdn11.bigcommerce.com/r-ee66862ae166200c57f1b2929aa2864d113b10b0/img/payment-providers/paypal_commerce_logo.svg',
                 titleImgAlt: 'Paypal',
-                order: 1
+                order: 1,
+                maxAmount: 1000,
             },
             'afterpay-PAY_BY_INSTALLMENT': {
                 title: 'Pay over time',
-                titleImg: 'https://cdn11.bigcommerce.com/r-fc1004fc93d5d0867d67e043f9ec4d0a0bf67d29/img/payment-providers/afterpay-badge-blackonmint.png',
+                titleImg: 'https://cdn11.bigcommerce.com/r-ee66862ae166200c57f1b2929aa2864d113b10b0/img/payment-providers/afterpay-badge-blackonmint.png',
                 titleImgAlt: 'Pay over time',
                 order: 2,
-                maxAmount: 2000
+                maxAmount: 2000,
             },
             bankdeposit: {
                 title: 'Bank Deposit',
                 description: 'Please allow 24 hours for clearance/confirmation',
                 order: 4,
-                minAmount: 1000
+                minAmount: 1000,
             },
             cheque: {
                 title: 'OpenPay',
                 description: 'Not available on used/refurbished equipment',
                 order: 5,
-                productConditionsDisable: ['Used', 'Refurbished']
+                productConditionsDisable: ['Used', 'Refurbished'],
             },
             cod: {
                 title: 'Studio10 Rental',
                 description: 'Only available to Perth Customers',
-                order: 6
+                order: 6,
+                customerGroupDisable: ['Guest', 'USA Wholesale'],
             },
             instore: {
                 title: 'Pay on collection from Balcatta, WA',
                 description: 'Cash/EFTPOS/Credit Card',
-                order: 7
+                enableForCategoryIds: [123, 456],
+                order: 7,
             },
             moneyorder: {
                 title: 'Humm',
                 description: 'Not available on used/refurbished equipment',
                 order: 8,
-                productConditionsDisable: ['Used', 'Refurbished']
-            }
-        },
-        txtMaxAmountError: 'Exceeds maximum transaction value of {amount}',
-        txtMinAmountError: 'Exceeds minimum transaction value of {amount}',
-        txtConditionProductError: 'Not available with {condition} products'
-    };
-&lt;/script&gt;
-</code></pre>
-<h3 id="full-settings-example">Full settings example:<a class="headerlink" href="#full-settings-example" title="Permanent link">&para;</a></h3>
-<pre><code class="language-html">&lt;script&gt;
-    window.PAPATHEMES_CROXCHECKOUT_SETTINGS = {
-        cartId: '{{cart_id}}',
-        storeHash: '{{settings.store_hash}}',
-        apiUrl: 'https://051ilzoi51.execute-api.us-east-1.amazonaws.com/latest',
-        svgIcons: {
-            visa: '&lt;svg height=&quot;100&quot; viewBox=&quot;0 0 148 100&quot; width=&quot;148&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;g fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;&gt;&lt;path d=&quot;M148 84c0 6.6-5.55 12-12 12H12C5.55 96 0 90.6 0 84V12C0 5.4 5.55 0 12 0h124c6.45 0 12 5.4 12 12v72z&quot; fill=&quot;#F3F4F4&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M0 24V12C0 5.4 5.74 0 12 0h124c6.26 0 12 5.4 12 12v12&quot; fill=&quot;#01579F&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M148 76v12c0 8.667-5.74 12-12 12H12c-6.26 0-12-3.333-12-12V76&quot; fill=&quot;#FAA41D&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M55.01 65.267l4.72-29.186h7.546l-4.72 29.19H55.01M89.913 36.8c-1.49-.59-3.85-1.242-6.77-1.242-7.452 0-12.7 3.974-12.73 9.656-.063 4.19 3.756 6.52 6.613 7.918 2.92 1.428 3.913 2.36 3.913 3.633-.04 1.957-2.36 2.857-4.54 2.857-3.014 0-4.628-.465-7.08-1.552l-.996-.466-1.055 6.55c1.77.808 5.03 1.52 8.415 1.553 7.92 0 13.075-3.912 13.137-9.967.03-3.322-1.987-5.868-6.334-7.948-2.64-1.336-4.256-2.236-4.256-3.602.032-1.242 1.367-2.514 4.348-2.514 2.453-.06 4.254.53 5.62 1.12l.684.31L89.91 36.8m10.03 18.13c.62-1.675 3.013-8.165 3.013-8.165-.03.062.62-1.707.994-2.794l.525 2.52s1.428 6.986 1.74 8.445H99.94zm9.317-18.846h-5.84c-1.8 0-3.17.53-3.945 2.424L88.265 65.27h7.918s1.305-3.6 1.585-4.377h9.687c.217 1.024.9 4.377.9 4.377h6.987l-6.082-29.19zm-60.555 0l-7.39 19.904-.807-4.037c-1.37-4.652-5.653-9.713-10.435-12.23l6.77 25.52h7.98L56.68 36.09H48.7&quot; fill=&quot;#3B5CAA&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M34.454 36.08H22.312l-.124.59c9.47 2.423 15.744 8.26 18.32 15.277L37.87 38.534c-.436-1.863-1.77-2.39-3.416-2.453&quot; fill=&quot;#F8A51D&quot;&gt;&lt;/path&gt;&lt;/g&gt;&lt;/svg&gt;',
-            mastercard: '&lt;svg viewBox=&quot;0 0 131.39 86.9&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;path d=&quot;M48.37 15.14h34.66v56.61H48.37z&quot; fill=&quot;#ff5f00&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M51.94 43.45a35.94 35.94 0 0113.75-28.3 36 36 0 100 56.61 35.94 35.94 0 01-13.75-28.31z&quot; fill=&quot;#eb001b&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M120.5 65.76V64.6h.5v-.24h-1.19v.24h.47v1.16zm2.31 0v-1.4h-.36l-.42 1-.42-1h-.36v1.4h.26V64.7l.39.91h.27l.39-.91v1.06zM123.94 43.45a36 36 0 01-58.25 28.3 36 36 0 000-56.61 36 36 0 0158.25 28.3z&quot; fill=&quot;#f79e1b&quot;&gt;&lt;/path&gt;&lt;/svg&gt;',
-            amex: '&lt;svg height=&quot;104&quot; viewBox=&quot;0 0 156 104&quot; width=&quot;156&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;g fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;&gt;&lt;path d=&quot;M144 104H12c-6.15 0-12-5.85-12-12V12C0 5.85 5.85 0 12 0h132c6.15 0 12 5.85 12 12v80c0 6.15-5.85 12-12 12z&quot; fill=&quot;#60C7EE&quot;&gt;&lt;/path&gt;&lt;g fill=&quot;#FFF&quot;&gt;&lt;path d=&quot;M95.05 46.532v3.68h12.93v4.723H95.05V59.5h12.79l5.244-6.824-4.673-6.144H95.05m-59.707 9.382h5.906l-2.97-8.324-2.94 8.324&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M128.833 52.77l11.29-15.125h-19.067l-2.536 3.9-2.608-3.9h-46.59l-1.254 4.224-1.264-4.227H31.27L17.72 68.687h17.326l1.31-3.822h3.824l1.345 3.822h73.594l3.28-4.594 3.28 4.594h19.36l-4.867-6.343-7.342-9.574zM83.185 64.744H76.38v-17.66l-5.243 17.66h-6.16l-5.233-17.66v17.66H44.318l-1.345-3.823H33.54l-1.312 3.826h-8.483L33.85 41.588h9.065L52.94 64.56V41.59h10.927l4.214 14.09 4.187-14.09h10.92v23.156zm40.524 0l-5.31-7.44-5.31 7.44H86.72V41.588h27.085l4.76 7.124 4.63-7.124h9.062l-8.37 11.215 9.16 11.94h-9.338z&quot;&gt;&lt;/path&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;',
-            jcb: '&lt;svg clip-rule=&quot;evenodd&quot; fill-rule=&quot;evenodd&quot; stroke-linejoin=&quot;round&quot; stroke-miterlimit=&quot;1.4&quot; viewBox=&quot;0 0 480 301&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;path d=&quot;M444 0H24C12 0 0 12 0 24v240.1c0 24 12 36 36 36h408c24 0 36-12 36-36v-228C480 12 468 0 444 0z&quot; fill=&quot;#f4f4f4&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M314.8 174.9h21.5l2.7-.2c4-.8 7.6-4.5 7.6-9.6 0-5-3.5-8.6-7.6-9.6l-2.7-.3h-21.5V175z&quot; fill=&quot;#469951&quot; fill-rule=&quot;nonzero&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M333.9 39.2a37.3 37.3 0 0 0-37.3 37.2v38.7h52.6c1.2 0 2.7 0 3.7.2 11.9.7 20.7 6.8 20.7 17.4 0 8.4-6 15.6-17 17v.4c12 .8 21.3 7.6 21.3 18 0 11.3-10.3 18.7-23.8 18.7h-57.7v75.7h54.7a37.3 37.3 0 0 0 37.2-37.3v-186H334z&quot; fill=&quot;#469951&quot; fill-rule=&quot;nonzero&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M343.9 135.2c0-5-3.5-8.2-7.6-8.8l-2-.2h-19.5v18h19.5c.3 0 1.4 0 2-.2 4.1-.6 7.6-3.9 7.6-8.8z&quot; fill=&quot;#469951&quot; fill-rule=&quot;nonzero&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M128 39.2a37.3 37.3 0 0 0-37.3 37.2v92a73.7 73.7 0 0 0 32.2 8.3c12.8 0 19.8-7.7 19.8-18.4V115h32v43.2c0 16.8-10.5 30.5-46 30.5-21.4 0-38.2-4.7-38.2-4.7v78.4h54.7a37.3 37.3 0 0 0 37.2-37.3V39.2H128z&quot; fill=&quot;#245797&quot; fill-rule=&quot;nonzero&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M231 39.2a37.3 37.3 0 0 0-37.3 37.2v48.8c9.4-8 25.8-13.1 52.2-12 14 .7 29.2 4.6 29.2 4.6v15.8a70.9 70.9 0 0 0-28.2-8.2c-20-1.5-32.1 8.4-32.1 25.5 0 17.4 12 27.3 32 25.6a74.3 74.3 0 0 0 28.3-8.2v15.8s-15 3.9-29.2 4.5c-26.4 1.2-42.8-3.9-52.2-11.9v86h54.6a37.3 37.3 0 0 0 37.3-37.3V39.2h-54.7z&quot; fill=&quot;#ca4638&quot; fill-rule=&quot;nonzero&quot;&gt;&lt;/path&gt;&lt;/svg&gt;'
-        },
-        paymentMethods: {
-            squarev2: {
-                title: 'Credit Card',
-                icons: ['visa', 'mastercard', 'amex', 'jcb'],
-                order: 3
+                productConditionsDisable: ['Used', 'Refurbished'],
+                preorderDisable: false,
             },
-            paypalcommerce: {
-                titleImg: 'https://cdn11.bigcommerce.com/r-fc1004fc93d5d0867d67e043f9ec4d0a0bf67d29/img/payment-providers/paypal_commerce_logo.svg',
-                titleImgAlt: 'Paypal',
-                order: 1
+            studio19: {
             },
-            'afterpay-PAY_BY_INSTALLMENT': {
-                title: 'Pay over time',
-                titleImg: 'https://cdn11.bigcommerce.com/r-fc1004fc93d5d0867d67e043f9ec4d0a0bf67d29/img/payment-providers/afterpay-badge-blackonmint.png',
-                titleImgAlt: 'Pay over time',
-                order: 2,
-                maxAmount: 2000
-            },
-            bankdeposit: {
-                title: 'Bank Deposit',
-                description: 'Please allow 24 hours for clearance/confirmation',
-                order: 4,
-                minAmount: 1000
-            },
-            cheque: {
-                title: 'OpenPay',
-                description: 'Not available on used/refurbished equipment',
-                order: 5,
-                productConditionsDisable: ['Used', 'Refurbished']
-            },
-            cod: {
-                title: 'Studio10 Rental',
-                description: 'Only available to Perth Customers',
-                order: 6
-            },
-            instore: {
-                title: 'Pay on collection from Balcatta, WA',
-                description: 'Cash/EFTPOS/Credit Card',
-                order: 7
-            },
-            moneyorder: {
-                title: 'Humm',
-                description: 'Not available on used/refurbished equipment',
-                order: 8,
-                productConditionsDisable: ['Used', 'Refurbished']
-            }
         },
         paymentMethodLabelTemplate: `
             &lt;label&gt;
@@ -670,9 +742,176 @@
                 &lt;%/errors%&gt;
             &lt;/label&gt;
         `,
+        shippingMethods: {
+            'Pickup In Store': {
+                order: 1,
+                couponsDisable: ['ES6TG2AIL'],
+                skusDisable: ['alsobought-child-4'],
+                productOptionsDisable: [
+                    {
+                        name: 'Color',
+                        value: 'Red',
+                    },
+                ],
+            },
+            'FEDEX by Customer': {
+                order: 2,
+                description: 'Please allow 24 hours for clearance/confirmation',
+                minAmount: 1000,
+            },
+            'Flat Rate': {
+                order: 3,
+            }
+        },
+    };
+&lt;/script&gt;
+</code></pre>
+<h3 id="full-settings-example">Full settings example:<a class="headerlink" href="#full-settings-example" title="Permanent link">&para;</a></h3>
+<pre><code class="language-html">&lt;script&gt;
+    window.PapathemesConditionalShippingPaymentMethodsSettings = {
+        cartId: '{{cart_id}}',
+        storeHash: '{{settings.store_hash}}',
+        svgIcons: {
+            visa: '&lt;svg height=&quot;100&quot; viewBox=&quot;0 0 148 100&quot; width=&quot;148&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;g fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;&gt;&lt;path d=&quot;M148 84c0 6.6-5.55 12-12 12H12C5.55 96 0 90.6 0 84V12C0 5.4 5.55 0 12 0h124c6.45 0 12 5.4 12 12v72z&quot; fill=&quot;#F3F4F4&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M0 24V12C0 5.4 5.74 0 12 0h124c6.26 0 12 5.4 12 12v12&quot; fill=&quot;#01579F&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M148 76v12c0 8.667-5.74 12-12 12H12c-6.26 0-12-3.333-12-12V76&quot; fill=&quot;#FAA41D&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M55.01 65.267l4.72-29.186h7.546l-4.72 29.19H55.01M89.913 36.8c-1.49-.59-3.85-1.242-6.77-1.242-7.452 0-12.7 3.974-12.73 9.656-.063 4.19 3.756 6.52 6.613 7.918 2.92 1.428 3.913 2.36 3.913 3.633-.04 1.957-2.36 2.857-4.54 2.857-3.014 0-4.628-.465-7.08-1.552l-.996-.466-1.055 6.55c1.77.808 5.03 1.52 8.415 1.553 7.92 0 13.075-3.912 13.137-9.967.03-3.322-1.987-5.868-6.334-7.948-2.64-1.336-4.256-2.236-4.256-3.602.032-1.242 1.367-2.514 4.348-2.514 2.453-.06 4.254.53 5.62 1.12l.684.31L89.91 36.8m10.03 18.13c.62-1.675 3.013-8.165 3.013-8.165-.03.062.62-1.707.994-2.794l.525 2.52s1.428 6.986 1.74 8.445H99.94zm9.317-18.846h-5.84c-1.8 0-3.17.53-3.945 2.424L88.265 65.27h7.918s1.305-3.6 1.585-4.377h9.687c.217 1.024.9 4.377.9 4.377h6.987l-6.082-29.19zm-60.555 0l-7.39 19.904-.807-4.037c-1.37-4.652-5.653-9.713-10.435-12.23l6.77 25.52h7.98L56.68 36.09H48.7&quot; fill=&quot;#3B5CAA&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M34.454 36.08H22.312l-.124.59c9.47 2.423 15.744 8.26 18.32 15.277L37.87 38.534c-.436-1.863-1.77-2.39-3.416-2.453&quot; fill=&quot;#F8A51D&quot;&gt;&lt;/path&gt;&lt;/g&gt;&lt;/svg&gt;',
+            mastercard: '&lt;svg viewBox=&quot;0 0 131.39 86.9&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;path d=&quot;M48.37 15.14h34.66v56.61H48.37z&quot; fill=&quot;#ff5f00&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M51.94 43.45a35.94 35.94 0 0113.75-28.3 36 36 0 100 56.61 35.94 35.94 0 01-13.75-28.31z&quot; fill=&quot;#eb001b&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M120.5 65.76V64.6h.5v-.24h-1.19v.24h.47v1.16zm2.31 0v-1.4h-.36l-.42 1-.42-1h-.36v1.4h.26V64.7l.39.91h.27l.39-.91v1.06zM123.94 43.45a36 36 0 01-58.25 28.3 36 36 0 000-56.61 36 36 0 0158.25 28.3z&quot; fill=&quot;#f79e1b&quot;&gt;&lt;/path&gt;&lt;/svg&gt;',
+            amex: '&lt;svg height=&quot;104&quot; viewBox=&quot;0 0 156 104&quot; width=&quot;156&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;g fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;&gt;&lt;path d=&quot;M144 104H12c-6.15 0-12-5.85-12-12V12C0 5.85 5.85 0 12 0h132c6.15 0 12 5.85 12 12v80c0 6.15-5.85 12-12 12z&quot; fill=&quot;#60C7EE&quot;&gt;&lt;/path&gt;&lt;g fill=&quot;#FFF&quot;&gt;&lt;path d=&quot;M95.05 46.532v3.68h12.93v4.723H95.05V59.5h12.79l5.244-6.824-4.673-6.144H95.05m-59.707 9.382h5.906l-2.97-8.324-2.94 8.324&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M128.833 52.77l11.29-15.125h-19.067l-2.536 3.9-2.608-3.9h-46.59l-1.254 4.224-1.264-4.227H31.27L17.72 68.687h17.326l1.31-3.822h3.824l1.345 3.822h73.594l3.28-4.594 3.28 4.594h19.36l-4.867-6.343-7.342-9.574zM83.185 64.744H76.38v-17.66l-5.243 17.66h-6.16l-5.233-17.66v17.66H44.318l-1.345-3.823H33.54l-1.312 3.826h-8.483L33.85 41.588h9.065L52.94 64.56V41.59h10.927l4.214 14.09 4.187-14.09h10.92v23.156zm40.524 0l-5.31-7.44-5.31 7.44H86.72V41.588h27.085l4.76 7.124 4.63-7.124h9.062l-8.37 11.215 9.16 11.94h-9.338z&quot;&gt;&lt;/path&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;',
+            jcb: '&lt;svg clip-rule=&quot;evenodd&quot; fill-rule=&quot;evenodd&quot; stroke-linejoin=&quot;round&quot; stroke-miterlimit=&quot;1.4&quot; viewBox=&quot;0 0 480 301&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;path d=&quot;M444 0H24C12 0 0 12 0 24v240.1c0 24 12 36 36 36h408c24 0 36-12 36-36v-228C480 12 468 0 444 0z&quot; fill=&quot;#f4f4f4&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M314.8 174.9h21.5l2.7-.2c4-.8 7.6-4.5 7.6-9.6 0-5-3.5-8.6-7.6-9.6l-2.7-.3h-21.5V175z&quot; fill=&quot;#469951&quot; fill-rule=&quot;nonzero&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M333.9 39.2a37.3 37.3 0 0 0-37.3 37.2v38.7h52.6c1.2 0 2.7 0 3.7.2 11.9.7 20.7 6.8 20.7 17.4 0 8.4-6 15.6-17 17v.4c12 .8 21.3 7.6 21.3 18 0 11.3-10.3 18.7-23.8 18.7h-57.7v75.7h54.7a37.3 37.3 0 0 0 37.2-37.3v-186H334z&quot; fill=&quot;#469951&quot; fill-rule=&quot;nonzero&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M343.9 135.2c0-5-3.5-8.2-7.6-8.8l-2-.2h-19.5v18h19.5c.3 0 1.4 0 2-.2 4.1-.6 7.6-3.9 7.6-8.8z&quot; fill=&quot;#469951&quot; fill-rule=&quot;nonzero&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M128 39.2a37.3 37.3 0 0 0-37.3 37.2v92a73.7 73.7 0 0 0 32.2 8.3c12.8 0 19.8-7.7 19.8-18.4V115h32v43.2c0 16.8-10.5 30.5-46 30.5-21.4 0-38.2-4.7-38.2-4.7v78.4h54.7a37.3 37.3 0 0 0 37.2-37.3V39.2H128z&quot; fill=&quot;#245797&quot; fill-rule=&quot;nonzero&quot;&gt;&lt;/path&gt;&lt;path d=&quot;M231 39.2a37.3 37.3 0 0 0-37.3 37.2v48.8c9.4-8 25.8-13.1 52.2-12 14 .7 29.2 4.6 29.2 4.6v15.8a70.9 70.9 0 0 0-28.2-8.2c-20-1.5-32.1 8.4-32.1 25.5 0 17.4 12 27.3 32 25.6a74.3 74.3 0 0 0 28.3-8.2v15.8s-15 3.9-29.2 4.5c-26.4 1.2-42.8-3.9-52.2-11.9v86h54.6a37.3 37.3 0 0 0 37.3-37.3V39.2h-54.7z&quot; fill=&quot;#ca4638&quot; fill-rule=&quot;nonzero&quot;&gt;&lt;/path&gt;&lt;/svg&gt;',
+        },
+        paymentMethods: {
+            squarev2: {
+                title: 'Credit Card',
+                icons: ['visa', 'mastercard', 'amex', 'jcb'],
+                order: 3,
+            },
+            paypalexpress: {
+                titleImg: 'https://cdn11.bigcommerce.com/r-ee66862ae166200c57f1b2929aa2864d113b10b0/img/payment-providers/paypal_commerce_logo.svg',
+                titleImgAlt: 'Paypal',
+                order: 1,
+                couponsDisable: ['ES6TG2AIL'],
+                skusDisable: ['alsobought-child-4'],
+                productOptionsDisable: [
+                    {
+                        name: 'Color',
+                        value: 'Red',
+                    },
+                ],
+            },
+            paypalcommerce: {
+                titleImg: 'https://cdn11.bigcommerce.com/r-ee66862ae166200c57f1b2929aa2864d113b10b0/img/payment-providers/paypal_commerce_logo.svg',
+                titleImgAlt: 'Paypal',
+                order: 1,
+                preorderDisable: false,
+            },
+            'afterpay-PAY_BY_INSTALLMENT': {
+                title: 'Pay over time',
+                titleImg: 'https://cdn11.bigcommerce.com/r-ee66862ae166200c57f1b2929aa2864d113b10b0/img/payment-providers/afterpay-badge-blackonmint.png',
+                titleImgAlt: 'Pay over time',
+                order: 2,
+                maxAmount: 2000,
+            },
+            bankdeposit: {
+                title: 'Bank Deposit',
+                description: 'Please allow 24 hours for clearance/confirmation',
+                order: 4,
+                minAmount: 1000,
+            },
+            cheque: {
+                title: 'OpenPay',
+                description: 'Not available on used/refurbished equipment',
+                order: 5,
+                productConditionsDisable: ['Used', 'Refurbished'],
+            },
+            cod: {
+                title: 'Studio10 Rental',
+                description: 'Only available to Perth Customers',
+                order: 6,
+                customerGroupDisable: ['Guest', 'USA Wholesale'],
+            },
+            instore: {
+                title: 'Pay on collection from Balcatta, WA',
+                description: 'Cash/EFTPOS/Credit Card',
+                enableForCategoryIds: [123, 456],
+                order: 7,
+            },
+            moneyorder: {
+                title: 'Humm',
+                description: 'Not available on used/refurbished equipment',
+                order: 8,
+                productConditionsDisable: ['Used', 'Refurbished'],
+            },
+            studio19: {
+            },
+        },
+        paymentMethodLabelTemplate: `
+            &lt;label&gt;
+                &lt;%#titleImg%&gt;
+                    &lt;img alt=&quot;&lt;%titleImgAlt%&gt;&quot; class=&quot;paymentProviderHeader-img&quot; data-test=&quot;payment-method-logo&quot; src=&quot;&lt;%.%&gt;&quot;&gt;
+                &lt;%/titleImg%&gt;
+                &lt;%#title%&gt;
+                    &lt;span class=&quot;paymentProviderHeader-name&quot; data-test=&quot;payment-method-name&quot;&gt;&lt;%&amp;.%&gt;&lt;/span&gt;
+                &lt;%/title%&gt;
+                &lt;div class=&quot;paymentProviderHeader-cc&quot;&gt;
+                    &lt;ul class=&quot;creditCardTypes-list&quot;&gt;
+                        &lt;%#icons%&gt;
+                            &lt;li class=&quot;creditCardTypes-list-item&quot;&gt;&lt;span class=&quot;cardIcon&quot;&gt;&lt;div class=&quot;icon cardIcon-icon icon--medium&quot; data-test=&quot;credit-card-icon-&lt;%code%&gt;&quot;&gt;&lt;%&amp;svg%&gt;&lt;/div&gt;&lt;/span&gt;&lt;/li&gt;
+                        &lt;%/icons%&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;%#description%&gt;
+                    &lt;span class=&quot;paymentProviderHeader-description&quot; data-test=&quot;payment-method-description&quot;&gt;&lt;%&amp;.%&gt;&lt;/span&gt;
+                &lt;%/description%&gt;
+                &lt;%#errors%&gt;
+                    &lt;span class=&quot;paymentProviderHeader-error&quot; data-test=&quot;payment-method-description&quot;&gt;&lt;%&amp;.%&gt;&lt;/span&gt;
+                &lt;%/errors%&gt;
+            &lt;/label&gt;
+        `,
+        shippingMethods: {
+            'Pickup In Store': {
+                order: 1,
+                couponsDisable: ['ES6TG2AIL'],
+                skusDisable: ['alsobought-child-4'],
+                productOptionsDisable: [
+                    {
+                        name: 'Color',
+                        value: 'Red',
+                    },
+                ],
+            },
+            'FEDEX by Customer': {
+                order: 2,
+                description: 'Please allow 24 hours for clearance/confirmation',
+                minAmount: 1000,
+            },
+            'Flat Rate': {
+                order: 3,
+            }
+        },
+        shippingMethodLabelDescTemplate: `
+            &lt;span class=&quot;shippingOption-desc&quot;&gt;
+                &lt;%#titleImg%&gt;
+                    &lt;img alt=&quot;&lt;%titleImgAlt%&gt;&quot; class=&quot;shippingProviderHeader-img&quot; data-test=&quot;shipping-method-logo&quot; src=&quot;&lt;%.%&gt;&quot;&gt;
+                &lt;%/titleImg%&gt;
+                &lt;%#title%&gt;
+                    &lt;span class=&quot;shippingProviderHeader-name&quot; data-test=&quot;shipping-method-name&quot;&gt;&lt;%&amp;.%&gt;&lt;/span&gt;
+                &lt;%/title%&gt;
+                &lt;%#description%&gt;
+                    &lt;span class=&quot;shippingProviderHeader-description&quot; data-test=&quot;shipping-method-description&quot;&gt;&lt;%&amp;.%&gt;&lt;/span&gt;
+                &lt;%/description%&gt;
+                &lt;%#errors%&gt;
+                    &lt;span class=&quot;shippingProviderHeader-error&quot; data-test=&quot;shipping-method-description&quot;&gt;&lt;%&amp;.%&gt;&lt;/span&gt;
+                &lt;%/errors%&gt;
+            &lt;/span&gt;
+        `,
+        enableStudio19: false,
         txtMaxAmountError: 'Exceeds maximum transaction value of {amount}',
         txtMinAmountError: 'Exceeds minimum transaction value of {amount}',
-        txtConditionProductError: 'Not available with {condition} products'
+        txtConditionProductError: 'Not available with {condition} products',
+        txtCategoryError: 'Not available for some products in your cart',
+        txtPreorderError: 'Not available for pre-order products',
+        txtCustomerGroupError: 'Not available for {customerGroup} customers',
+        txtCouponError: 'Not available for coupon {coupon}',
+        txtSkuError: 'Not available for sku {sku}',
+        txtProductOptionError: 'Not available for {option}',
     };
 &lt;/script&gt;
 </code></pre>
