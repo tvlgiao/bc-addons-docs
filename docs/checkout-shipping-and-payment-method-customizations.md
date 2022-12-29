@@ -24,7 +24,7 @@ Enter the script below to **Scripts contents**:
 
 ```html
 <script>
-    window.PAPATHEMES_CROXCHECKOUT_SETTINGS = {
+    window.PapathemesConditionalShippingPaymentMethodsSettings = {
         cartId: '{{cart_id}}',
         storeHash: '{{settings.store_hash}}',
 
