@@ -11,6 +11,7 @@
 - [Automatically Add Product to Cart Based on Customer Group](add-product-to-cart-automatically-based-on-customer-group.md)
 - [Better Product Reorder](better-reorder.md)
 - [Bulk Pricing Option](bulk-pricing-option.md)
+- [Bulk Pricing Variants](bulk-pricing-variants.md)
 - [Checkout File Upload](checkout-file-upload.md)
 - [Checkout Shipping & Payment Method Customizations](checkout-shipping-and-payment-method-customizations.md)
 - [Conditional Product Options](conditional-product-options.md)
