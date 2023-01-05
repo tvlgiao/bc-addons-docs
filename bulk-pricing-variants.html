@@ -97,6 +97,8 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="bulk-pricing-variants.html">Bulk Pricing Variants</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -329,6 +331,49 @@
 <p><img alt="Bulk pricing variants" src="img/bulk-pricing-variants.png" /></p>
 <p>Git: https://github.com/tvlgiao/bc-bigcommerce-api-app/microapps/bulk-pricing-variants</p>
 <p>This extension displays all product variants and bulk pricing tiers in a table on PDP.</p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<p>Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, click <strong>Create a Script</strong>, choose:</p>
+<ul>
+<li><strong>Location on page</strong> = <code>Footer</code></li>
+<li><strong>Select pages where script will be added</strong> = <code>All pages</code></li>
+<li><strong>Category type</strong> = <code>Essential</code></li>
+<li><strong>Script type</strong> = <code>Script</code></li>
+</ul>
+<p>Enter the script below to <strong>Scripts contents</strong>:</p>
+<pre><code class="language-html">&lt;script&gt;
+    window.PapathemesBulkPricingVariantsSettings = {
+        graphQLToken: '{{{settings.storefront_api.token}}}',
+        currencyCode: '{{currency_selector.active_currency_code}}',
+        money: {{{json settings.money}}},
+        displayTableFunc: function($table, $scope) {
+            $scope.after($table);
+        }
+    };
+    (function() {
+        function loadMainScript() {
+            window.jQueryTheme = window.jQueryTheme || window.jQuery;
+            var js = document.createElement('script');
+            js.src = 'https://d3r059eq9mm6jz.cloudfront.net/microapps/bulk-pricing-variants/main.YOURDOMAIN.js';
+            js.async = true;
+            js.defer = true;
+            document.head.appendChild(js);
+        }
+        if (!window.jQueryTheme &amp;&amp; !window.jQuery) {
+            var jquery = document.createElement('script');
+            jquery.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
+            jquery.integrity = 'sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=';
+            jquery.crossOrigin = 'anonymous';
+            jquery.async = true;
+            jquery.defer = true;
+            jquery.onload = loadMainScript;
+            document.head.appendChild(jquery);
+        } else {
+            loadMainScript();
+        }
+    })();
+&lt;/script&gt;
+</code></pre>
+<p>Replace <code>YOURDOMAIN</code> by your domain name, for example <code>khardware.com</code></p>
               
             </div>
           </div>
