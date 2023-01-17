@@ -57,4 +57,5 @@
 - [Shipment Details](shipment-details.md)
 - [Shipping Countdown](shipping-countdown.md)
 - [Shipping Estimator on Product Page](shipping-estimator.md)
+- [Stock Filter](stock-filter.md)
 - [Tooltips for Product Options](product-option-tooltip.md)
