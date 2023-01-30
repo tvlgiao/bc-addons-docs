@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Multi Storefronts Universal Login Automatically - Documentation</title>
+  <title>Stock Filter - Documentation</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="css/theme.css" />
@@ -20,8 +20,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Multi Storefronts Universal Login Automatically";
-    var mkdocs_page_input_path = "msf-universal-login.md";
+    var mkdocs_page_name = "Stock Filter";
+    var mkdocs_page_input_path = "stock-filter.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -194,12 +194,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="multi-storefronts-global-login.html">Multi Storefronts Global Login</a>
                     </li>
                 </ul>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="msf-universal-login.html">Multi Storefronts Universal Login Automatically</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
-    </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="msf-universal-login.html">Multi Storefronts Universal Login Automatically</a>
                     </li>
                 </ul>
                 <ul>
@@ -290,8 +286,12 @@
                     <li class="toctree-l1"><a class="reference internal" href="shipping-estimator.html">Shipping Estimator on Product Page</a>
                     </li>
                 </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="stock-filter.html">Stock Filter</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="stock-filter.html">Stock Filter</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#install-on-your-bigcommerce-store">Install on your BigCommerce Store</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
                 <ul>
@@ -319,7 +319,7 @@
     
       
     
-    <li>Multi Storefronts Universal Login Automatically</li>
+    <li>Stock Filter</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -331,46 +331,55 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="multi-storefronts-universal-login-automatically">Multi-Storefronts Universal Login Automatically<a class="headerlink" href="#multi-storefronts-universal-login-automatically" title="Permanent link">&para;</a></h1>
-<p>This addon allows customers log in to one store, will also log in to all other multi-stores using the same account. The Multi-Storefronts feature is available only to Enterprise accounts.</p>
-<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<p>Create an API key for BC API access by following this instruction: https://support.bigcommerce.com/s/article/Store-API-Accounts#creating</p>
-<ul>
-<li>Choose <strong>Create V2/V3 API Token</strong>.</li>
-<li>In <strong>Oauth Scopes</strong> choose:<ul>
-<li><strong>Customers</strong>: <code>read-only</code></li>
-<li><strong>Customers Login</strong>: <code>login</code></li>
-</ul>
-</li>
-</ul>
-<p>Send us the Access Token, Client ID and Client Secret code to install on your database.</p>
-<p>Go to <strong>Channel Manager</strong> &gt; <strong>Storefronts</strong> &gt; click <strong>Scripts</strong> on all stores, then click <strong>Create a Script</strong>, choose:</p>
+                <h1 id="stock-filter">Stock Filter<a class="headerlink" href="#stock-filter" title="Permanent link">&para;</a></h1>
+<p>Display In Stock / Out of Stock filter on category pages and search pages.</p>
+<h2 id="install-on-your-bigcommerce-store">Install on your BigCommerce Store<a class="headerlink" href="#install-on-your-bigcommerce-store" title="Permanent link">&para;</a></h2>
+<p>Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, click <strong>Create a Script</strong>, choose:</p>
 <ul>
 <li><strong>Location on page</strong> = <code>Footer</code></li>
-<li><strong>Select pages where script will be added</strong> = <code>All Pages</code></li>
+<li><strong>Select pages where script will be added</strong> = <code>Store Pages</code></li>
 <li><strong>Script type</strong> = <code>Script</code></li>
 </ul>
 <p>Enter the script below to <strong>Scripts contents</strong>: </p>
 <pre><code class="language-html">&lt;script&gt;
-    window.PapathemesMsfUniversalLoginSettings = {
+    window.PapathemesStockFilterSettings = {
         debug: true,
-        urls: [
-            'papathemes-app-sandbox.mybigcommerce.com',
-            'papathemeappsandbox2-945366.mybigcommerce.com'
-        ],
-        storeHash: '{{{settings.store_hash}}}',
-        customerId: '{{{customer.id}}}',
-        channelId: '{{{settings.channel_id}}}'
+        storeHash: &quot;{{settings.store_hash}}&quot;,
+        graphQLToken: &quot;{{settings.storefront_api.token}}&quot;,
+        currencyCode: &quot;{{currency_selector.active_currency_code}}&quot;,
+        restrictToLogin: {{default theme_settings.restrict_to_login false}},
+        customerId: {{default customer.id 0}},
+        showProductRating: {{default settings.show_product_rating false}},
+        card_show_border: {{default theme_settings.card_show_border false}},
+        card_show_button: {{default theme_settings.card_show_button false}},
+        show_product_quick_view: {{default theme_settings.show_product_quick_view false}},
+        show_product_quantity_box: {{default theme_settings.show_product_quantity_box false}},
+        show_sku: {{default theme_settings.show_sku false}},
+        show_compare: {{default category.show_compare false}},
+        card_show_swatches: {{default theme_settings.card_show_swatches false}},
+        ajax_add_to_cart: {{default theme_settings.ajax_add_to_cart false}},
+        product_sale_badges: &quot;{{default theme_settings.product_sale_badges 'label'}}&quot;,
+        product_sale_label: &quot;{{default theme_settings.product_sale_label 'Sale'}}&quot;,
+        product_custom_badges: {{default theme_settings.product_custom_badges false}},
+        categoryId: &quot;{{category.id}}&quot;,
+        defaultSortBy: &quot;{{pagination.category.sort}}&quot;,
+        defaultLimit: &quot;{{theme_settings.categorypage_products_per_page}}&quot;
     };
 &lt;/script&gt;
-&lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/microapps/msf-universal-login/main.YOURDOMAIN.js&quot; async defer&gt;&lt;/script&gt;
+&lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/microapps/stock-filter/main.YOURDOMAIN.js&quot; async defer&gt;&lt;/script&gt;
 </code></pre>
-<p>Replace <code>YOURDOMAIN</code> by your <strong>primary store</strong>'s domain name, for example <code>papathemes-app-sandbox.mybigcommerce.com</code>. The complete URL should look like <code>https://d3r059eq9mm6jz.cloudfront.net/microapps/msf-universal-login/main.papathemes-app-sandbox.mybigcommerce.com.js</code>.</p>
-<p>Replace the domain list (<code>urls</code>) by your store's domains:</p>
-<pre><code class="language-js">'papathemes-app-sandbox.mybigcommerce.com',
-'papathemeappsandbox2-945366.mybigcommerce.com'
-</code></pre>
-<p>Create the script again for each of your stores, but don't modify the primary store's domain.</p>
+<p>Replace <code>YOURDOMAIN</code> by your domain name. For example: <code>example.com</code>.</p>
+<p>Create and send us a v2/v3 API token wth OAuth Scopes:</p>
+<ul>
+<li><strong>Products</strong> = <code>Read Only</code></li>
+<li><strong>Information &amp; settings</strong> = <code>Read Only</code></li>
+<li><strong>Sites &amp; Routes</strong> = <code>Ready Only</code></li>
+<li><strong>Channel settings</strong> = <code>Read Only</code></li>
+<li><strong>Channel listings</strong> = <code>Read Only</code></li>
+</ul>
+<!--
+Source code: https://github.com/tvlgiao/bc-bigcommerce-api-app/microapps/stock-filter/
+-->
               
             </div>
           </div>
@@ -378,10 +387,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="multiple-category-dependent-dropdowns.html" class="btn btn-neutral float-right" title="Mutiple Category Dependent Dropdowns">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="product-option-tooltip.html" class="btn btn-neutral float-right" title="Tooltips for Product Options">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="multi-storefronts-global-login.html" class="btn btn-neutral" title="Multi Storefronts Global Login"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="shipping-estimator.html" class="btn btn-neutral" title="Shipping Estimator on Product Page"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -407,10 +416,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="multi-storefronts-global-login.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="shipping-estimator.html" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="multiple-category-dependent-dropdowns.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="product-option-tooltip.html" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
