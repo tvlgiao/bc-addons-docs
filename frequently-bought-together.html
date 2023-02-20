@@ -378,6 +378,35 @@ $('body').one('load.alsobought', (event, callback) =&gt; callback(event, this));
         &quot;add_selected_to_cart&quot;: &quot;Add selected to cart&quot;
     }
 </code></pre>
+<ol start="5">
+<li>
+<p>Edit file <code>config.json</code>, add <code>"alsobought_product": "custom"</code> to the <code>settings</code> variable.</p>
+</li>
+<li>
+<p>Edit file <code>schema.json</code>, add the setting schema to product page section:</p>
+</li>
+</ol>
+<pre><code class="language-json">{
+    &quot;type&quot;: &quot;select&quot;,
+    &quot;label&quot;: &quot;Frequently Bought Together&quot;,
+    &quot;id&quot;: &quot;alsobought_product&quot;,
+    &quot;force_reload&quot;: true,
+    &quot;options&quot;: [
+        {
+        &quot;value&quot;: &quot;custom&quot;,
+        &quot;label&quot;: &quot;Custom fields&quot;
+        },
+        {
+        &quot;value&quot;: &quot;related&quot;,
+        &quot;label&quot;: &quot;Related products&quot;
+        },
+        {
+        &quot;value&quot;: &quot;similar&quot;,
+        &quot;label&quot;: &quot;Similar by views&quot;
+        }
+    ]
+}
+</code></pre>
 <p>Add the code below to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, <strong>Location</strong> = <code>Footer</code>, <strong>Pages</strong> = <code>All Storefront Pages</code>:</p>
 <pre><code class="language-html">&lt;script&gt;window.jQueryAlsoBought = window.jQueryTheme || window.jQuery;&lt;/script&gt;
 &lt;script src=&quot;//papathemes.com/content/alsoboughtaddon/alsobought.YOURDOMAIN.js&quot; async&gt;&lt;/script&gt;
@@ -388,8 +417,9 @@ $('body').one('load.alsobought', (event, callback) =&gt; callback(event, this));
 
 </code></pre>
 <h2 id="assign-frequently-bought-products-to-a-product">Assign frequently bought products to a product<a class="headerlink" href="#assign-frequently-bought-products-to-a-product" title="Permanent link">&para;</a></h2>
-<p>Edit your product, add some custom field with name <code>__alsobought</code> and value is the frequently product ID. You can add many custom field <code>__alsobought</code> as you want.</p>
-<p>Example:</p>
+<p>To configure the products displayed in the Frequently Bought Together (FBT) section on the Product Page, go to the <strong>Theme Editor</strong>, navigate to <strong>Theme Styles</strong> &gt; <strong>Product</strong> (or <strong>Product Page</strong>). A new setting called <strong>Frequently Bought Together</strong> has been added. Here, you can select related products or customer-viewed products for specific products.</p>
+<p>If you want to choose specific products from custom fields, you can edit the product and add a custom field named <code>__alsobought</code> with the frequently bought product ID as the value. You can add as many custom fields with the name <code>__alsobought</code> as you want.</p>
+<p>For example:</p>
 <ul>
 <li><code>__alsobought</code> : <code>389</code></li>
 <li><code>__alsobought</code> : <code>388</code></li>
