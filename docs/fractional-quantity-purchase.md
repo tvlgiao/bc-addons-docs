@@ -2,6 +2,8 @@
 
 The Fractional Quantity & Unit Labels extension enables the display and adjustment of product quantities in fractional increments, such as 0.5, 1, 1.5, 2, 2.5, and so on. Additionally, it allows for customization of unit price labels, like "Yards." Users can configure both the unit price label and fractional quantity increments for individual products through custom product fields. This extension is easily installed via the Script Manager without the need to modify theme files and is compatible with all BigCommerce themes.
 
+![fractional product quantity](img/fractional-quantity-pdp.jpg)
+
 Please note that this extension is specifically designed for the **Supermarket** theme. If the merchant is using a different theme, our developer may need to modify some CSS code and configuration settings to ensure proper compatibility with their custom theme.
 
 ## Installation
@@ -30,6 +32,7 @@ Edit your product:
 - Add a custom field named `__unit` with a value representing the fractional quantity number (e.g., `0.5`).
 - Add a custom field named `__unit_label` with a value representing the unit price label (e.g., `Yards`).
 
+![Edit custom fields](img/fractional-quantity-edit-custom-fields.jpg)
 
 
 ## DEV ONLY
