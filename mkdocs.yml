@@ -23,6 +23,7 @@ nav:
 - Display Free Shipping Badges: free-shipping-badges.md
 - Display product PriceList-based price vs. regular price: wholesale-discount-price.md
 - Display Product Weight on Cart Page: cart-weight.md
+- Fractional Quantity & Unit Labels: fractional-quantity-purchase.md
 - Frequently Bought Together: frequently-bought-together.md
 - Hide Price for Non-Logged In Customers: hide-price.md
 - Hide Product Option Values based on Customer Groups: hide-option-values-based-on-customer-groups.md
