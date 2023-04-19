@@ -335,7 +335,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="minimum-order-amount-minimum-category-quantity">Minimum Order Amount &amp; Minimum Category Quantity<a class="headerlink" href="#minimum-order-amount-minimum-category-quantity" title="Permanent link">&para;</a></h1>
+                <h1 id="minimum-order-amount-minimum-category-brand-quantity-total-amount">Minimum Order Amount &amp; Minimum Category / Brand Quantity &amp; Total Amount<a class="headerlink" href="#minimum-order-amount-minimum-category-brand-quantity-total-amount" title="Permanent link">&para;</a></h1>
 <h2 id="install-on-your-bigcommerce-store">Install on your BigCommerce Store<a class="headerlink" href="#install-on-your-bigcommerce-store" title="Permanent link">&para;</a></h2>
 <p>Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, click <strong>Create a Script</strong>, choose:</p>
 <ul>
@@ -355,10 +355,16 @@
         minimumAmount: 0,
         minimumAmountErrorMsg: 'Minimum order amount is $%min%',
         minimumQuantityByCategory: {},
-        minimumErrorMsg: 'Minimum product quantity of %category% category is %min%',
+        minimumErrorMsg: 'Minimum product quantity of &quot;%category%&quot; category is %min%',
+        minimumAmountByCategory: {},
+        minimumAmountByCategoryErrorMsg: 'Minimum order amount of &quot;%category%&quot; category is $%min%',
+        minimumAmountByBrand: {},
+        minimumAmountByBrandErrorMsg: 'Minimum order amount of &quot;%brand%&quot; brand is $%min%',
         cartCheckoutActionSelector: '.previewCartAction-checkout, .previewCartAction-checkoutMultiple, .previewCart-additionalCheckoutButtons, .previewCartCheckout-checkoutButton, .previewCartCheckout-additionalCheckoutButtons, .cart-actions .button--primary, .card-actions .checkoutMultiple, .cart-additionalCheckoutButtons',
         watchingElementSelector: '#checkout-app, [data-cart-content] [data-cart-quantity], [data-cart-preview] [data-cart-quantity], .previewCart',
-        cartStatusSelector: '[data-cart-status]'
+        cartStatusSelector: '[data-cart-status]',
+        disableProcessOrderButtonOnly: false,
+        watchingPaymentFormSelector: '[data-test=&quot;payment-form&quot;]'
     };
 &lt;/script&gt;
 &lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/microapps/category-minimum-quantity/main.YOURDOMAIN.js&quot; async defer&gt;&lt;/script&gt;
