@@ -1,4 +1,4 @@
-# Minimum Order Amount & Minimum Category Quantity
+# Minimum Order Amount & Minimum Category / Brand Quantity & Total Amount
 
 ## Install on your BigCommerce Store
 
@@ -23,10 +23,16 @@ Enter the script below to **Scripts contents**:
         minimumAmount: 0,
         minimumAmountErrorMsg: 'Minimum order amount is $%min%',
         minimumQuantityByCategory: {},
-        minimumErrorMsg: 'Minimum product quantity of %category% category is %min%',
+        minimumErrorMsg: 'Minimum product quantity of "%category%" category is %min%',
+        minimumAmountByCategory: {},
+        minimumAmountByCategoryErrorMsg: 'Minimum order amount of "%category%" category is $%min%',
+        minimumAmountByBrand: {},
+        minimumAmountByBrandErrorMsg: 'Minimum order amount of "%brand%" brand is $%min%',
         cartCheckoutActionSelector: '.previewCartAction-checkout, .previewCartAction-checkoutMultiple, .previewCart-additionalCheckoutButtons, .previewCartCheckout-checkoutButton, .previewCartCheckout-additionalCheckoutButtons, .cart-actions .button--primary, .card-actions .checkoutMultiple, .cart-additionalCheckoutButtons',
         watchingElementSelector: '#checkout-app, [data-cart-content] [data-cart-quantity], [data-cart-preview] [data-cart-quantity], .previewCart',
-        cartStatusSelector: '[data-cart-status]'
+        cartStatusSelector: '[data-cart-status]',
+        disableProcessOrderButtonOnly: false,
+        watchingPaymentFormSelector: '[data-test="payment-form"]'
     };
 </script>
 <script src="https://d3r059eq9mm6jz.cloudfront.net/microapps/category-minimum-quantity/main.YOURDOMAIN.js" async defer></script>

@@ -37,7 +37,7 @@ Edit your product:
 
 ## DEV ONLY
 
-GitHub: https://github.com/tvlgiao/bc-bigcommerce-api-app/microapps/customizations/gstreetfabrics
+GitHub: https://github.com/allcommerce/bc-bigcommerce-api-app/microapps/customizations/gstreetfabrics
 
 ### Run the script in development mode:
 
