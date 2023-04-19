@@ -195,6 +195,18 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#install-on-your-bigcommerce-store">Install on your BigCommerce Store</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#limit-minimum-order-amount-for-the-whole-cart">Limit minimum order amount for the whole cart</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#limit-minimum-quantity-of-products-per-categories">Limit minimum quantity of products per categories</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#limit-minimum-order-amount-per-categories">Limit minimum order amount per categories</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#limit-minimum-order-amount-per-brands">Limit minimum order amount per brands</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -337,13 +349,13 @@
               
                 <h1 id="minimum-order-amount-minimum-category-brand-quantity-total-amount">Minimum Order Amount &amp; Minimum Category / Brand Quantity &amp; Total Amount<a class="headerlink" href="#minimum-order-amount-minimum-category-brand-quantity-total-amount" title="Permanent link">&para;</a></h1>
 <h2 id="install-on-your-bigcommerce-store">Install on your BigCommerce Store<a class="headerlink" href="#install-on-your-bigcommerce-store" title="Permanent link">&para;</a></h2>
-<p>Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, click <strong>Create a Script</strong>, choose:</p>
+<p>Navigate to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, click <strong>Create a Script</strong>, and choose:</p>
 <ul>
 <li><strong>Location on page</strong> = <code>Footer</code></li>
-<li><strong>Select pages where script will be added</strong> = <code>Store pages</code></li>
+<li><strong>Select pages where script will be added</strong> = <code>All Pages</code></li>
 <li><strong>Script type</strong> = <code>Script</code></li>
 </ul>
-<p>Enter the script below to <strong>Scripts contents</strong>: </p>
+<p>Enter the script below in the <strong>Script contents</strong> section:</p>
 <pre><code class="language-html">&lt;script&gt;
     window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.chiarajQuery || window.jQuery;
     window.PapaThemesCategoryMinimumQuantitySettings = {
@@ -369,7 +381,33 @@
 &lt;/script&gt;
 &lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/microapps/category-minimum-quantity/main.YOURDOMAIN.js&quot; async defer&gt;&lt;/script&gt;
 </code></pre>
-<p>Replace <code>YOURDOMAIN</code> by your store's domain name, for example <code>example.com</code>. The complete URL should look like <code>https://d3r059eq9mm6jz.cloudfront.net/microapps/category-minimum-quantity/main.example.com.js</code></p>
+<p>Replace <code>YOURDOMAIN</code> with your store's domain name, for example <code>example.com</code>. The complete URL should look like <code>https://d3r059eq9mm6jz.cloudfront.net/microapps/category-minimum-quantity/main.example.com.js</code></p>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<h3 id="limit-minimum-order-amount-for-the-whole-cart">Limit minimum order amount for the whole cart<a class="headerlink" href="#limit-minimum-order-amount-for-the-whole-cart" title="Permanent link">&para;</a></h3>
+<p>To limit minimum order amount for the whole cart, set <code>minimumAmount</code> to the minimum amount you want to limit. For example, if you want to limit minimum order amount to <code>$100</code>, set <code>minimumAmount</code> to <code>100</code>.</p>
+<pre><code class="language-js">minimumAmount: 0,
+</code></pre>
+<h3 id="limit-minimum-quantity-of-products-per-categories">Limit minimum quantity of products per categories<a class="headerlink" href="#limit-minimum-quantity-of-products-per-categories" title="Permanent link">&para;</a></h3>
+<p>To limit minimum quantity of products per categories, set <code>minimumQuantityByCategory</code> to the minimum quantity you want to limit. For example, if you want to limit minimum quantity of products in category ID <code>110</code> to <code>2</code> and category ID <code>112</code> to <code>4</code>, set <code>minimumQuantityByCategory</code> to:</p>
+<pre><code class="language-js">minimumQuantityByCategory: {
+    110: 2,
+    112: 4
+},
+</code></pre>
+<h3 id="limit-minimum-order-amount-per-categories">Limit minimum order amount per categories<a class="headerlink" href="#limit-minimum-order-amount-per-categories" title="Permanent link">&para;</a></h3>
+<p>To limit minimum order amount per categories, set <code>minimumAmountByCategory</code> to the minimum amount you want to limit. For example, if you want to limit minimum order amount of products in category ID <code>110</code> to <code>$100</code> and category ID <code>112</code> to <code>$200</code>, set <code>minimumAmountByCategory</code> to:</p>
+<pre><code class="language-js">minimumAmountByCategory: {
+    110: 100,
+    112: 200
+},
+</code></pre>
+<h3 id="limit-minimum-order-amount-per-brands">Limit minimum order amount per brands<a class="headerlink" href="#limit-minimum-order-amount-per-brands" title="Permanent link">&para;</a></h3>
+<p>To limit minimum order amount per brands, set <code>minimumAmountByBrand</code> to the minimum amount you want to limit. For example, if you want to limit minimum order amount of products in brand <code>ashanks</code> to <code>$100</code> and brand <code>bluedio</code> to <code>$200</code>, set <code>minimumAmountByBrand</code> to:</p>
+<pre><code class="language-js">minimumAmountByBrand: {
+    'ashanks': 100,
+    'bluedio': 200
+},
+</code></pre>
 <!--
 Source code: https://github.com/tvlgiao/bc-bigcommerce-api-app/microapps/minimum-category-quantity/
 -->
