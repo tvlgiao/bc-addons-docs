@@ -2,14 +2,13 @@
 
 ## Install on your BigCommerce Store
 
-Go to **Storefront** > **Script Manager**, click **Create a Script**, choose:
+Navigate to **Storefront** > **Script Manager**, click **Create a Script**, and choose:
 
 - **Location on page** = `Footer`
-- **Select pages where script will be added** = `Store pages`
+- **Select pages where script will be added** = `All Pages`
 - **Script type** = `Script`
 
-Enter the script below to **Scripts contents**: 
-
+Enter the script below in the **Script contents** section:
 
 ```html
 <script>
@@ -38,8 +37,51 @@ Enter the script below to **Scripts contents**:
 <script src="https://d3r059eq9mm6jz.cloudfront.net/microapps/category-minimum-quantity/main.YOURDOMAIN.js" async defer></script>
 ```
 
-Replace `YOURDOMAIN` by your store's domain name, for example `example.com`. The complete URL should look like `https://d3r059eq9mm6jz.cloudfront.net/microapps/category-minimum-quantity/main.example.com.js`
+Replace `YOURDOMAIN` with your store's domain name, for example `example.com`. The complete URL should look like `https://d3r059eq9mm6jz.cloudfront.net/microapps/category-minimum-quantity/main.example.com.js`
 
+## Usage
+
+### Limit minimum order amount for the whole cart
+
+To limit minimum order amount for the whole cart, set `minimumAmount` to the minimum amount you want to limit. For example, if you want to limit minimum order amount to `$100`, set `minimumAmount` to `100`.
+
+```js
+minimumAmount: 0,
+```
+
+### Limit minimum quantity of products per categories
+
+To limit minimum quantity of products per categories, set `minimumQuantityByCategory` to the minimum quantity you want to limit. For example, if you want to limit minimum quantity of products in category ID `110` to `2` and category ID `112` to `4`, set `minimumQuantityByCategory` to:
+
+```js
+minimumQuantityByCategory: {
+    110: 2,
+    112: 4
+},
+```
+
+### Limit minimum order amount per categories
+
+To limit minimum order amount per categories, set `minimumAmountByCategory` to the minimum amount you want to limit. For example, if you want to limit minimum order amount of products in category ID `110` to `$100` and category ID `112` to `$200`, set `minimumAmountByCategory` to:
+
+
+```js
+minimumAmountByCategory: {
+    110: 100,
+    112: 200
+},
+```
+
+### Limit minimum order amount per brands
+
+To limit minimum order amount per brands, set `minimumAmountByBrand` to the minimum amount you want to limit. For example, if you want to limit minimum order amount of products in brand `ashanks` to `$100` and brand `bluedio` to `$200`, set `minimumAmountByBrand` to:
+
+```js
+minimumAmountByBrand: {
+    'ashanks': 100,
+    'bluedio': 200
+},
+```
 
 
 
