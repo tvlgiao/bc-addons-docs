@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Product Designer - Documentation</title>
+  <title>Display Product Stock on Product Card - Documentation</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="css/theme.css" />
@@ -20,8 +20,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Product Designer";
-    var mkdocs_page_input_path = "product-designer.md";
+    var mkdocs_page_name = "Display Product Stock on Product Card";
+    var mkdocs_page_input_path = "product-card-stock.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -150,8 +150,14 @@
                     <li class="toctree-l1"><a class="reference internal" href="cart-weight.html">Display Product Weight on Cart Page</a>
                     </li>
                 </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="product-card-stock.html">Display Product Stock on Product Card</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="product-card-stock.html">Display Product Stock on Product Card</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#install-the-script-to-your-store">Install the script to your store</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#settings">Settings</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
                 <ul>
@@ -250,10 +256,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="product-card-unit-price.html">Product Card Unit Price</a>
                     </li>
                 </ul>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="product-designer.html">Product Designer</a>
-    <ul class="current">
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="product-designer.html">Product Designer</a>
                     </li>
                 </ul>
                 <ul>
@@ -325,7 +329,7 @@
     
       
     
-    <li>Product Designer</li>
+    <li>Display Product Stock on Product Card</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -337,8 +341,49 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="product-designer">Product Designer<a class="headerlink" href="#product-designer" title="Permanent link">&para;</a></h1>
-<p>Git: https://github.com/tvlgiao/bc-bigcommerce-api-app/microapps/product-designer</p>
+                <h1 id="display-stock-on-product-cards">Display Stock on Product Cards<a class="headerlink" href="#display-stock-on-product-cards" title="Permanent link">&para;</a></h1>
+<h2 id="install-the-script-to-your-store">Install the script to your store<a class="headerlink" href="#install-the-script-to-your-store" title="Permanent link">&para;</a></h2>
+<p>Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, click <strong>Create a Script</strong>, choose:</p>
+<ul>
+<li><strong>Location on page</strong> = <code>Footer</code></li>
+<li><strong>Select pages where script will be added</strong> = <code>Home Pages</code></li>
+<li><strong>Script type</strong> = <code>Script</code></li>
+</ul>
+<p>Enter the script below to <strong>Scripts contents</strong>: </p>
+<pre><code class="language-html">&lt;script&gt;
+    window.PapathemesProductCardStockSettings = {
+        debug: true,
+        graphQLToken: '{{settings.storefront_api.token}}'
+    };
+&lt;/script&gt;
+&lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/microapps/product-card-stock/main.YOURDOMAIN.js&quot; async&gt;&lt;/script&gt;
+</code></pre>
+<p>Replace <code>YOURDOMAIN</code> by your store's domain name, for example <code>example.com</code>. The complete URL should look like <code>https://d3r059eq9mm6jz.cloudfront.net/microapps/product-card-stock/main.example.com.js</code></p>
+<h2 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">&para;</a></h2>
+<p><strong>Default settings:</strong></p>
+<pre><code class="language-js">{
+    debug = false,
+    graphQLToken = '',
+    graphQLItemLimit = 50,
+    productCardSelector = '.card',
+    inStockMessage = 'stk pả lager',
+    outOfStockMessage = 'Udsolgt',
+    comingSoonMessage = 'Kommer Snart',
+    iconBeforeMessage = `&lt;span&gt;&amp;#9679;&lt;/span&gt;`,
+    findProductIdFunc = $card =&gt;
+        Number($card.data('entityId')) ||
+        Number($card.find('[data-product-id]').data('productId')) ||
+        Number(String($card.find('[href*=&quot;product_id=&quot;]').attr('href')).replace(/^.*product_id=([0-9]*).*$/i, '$1')) ||
+        Number($card.find('input[name=&quot;product_id&quot;]').first().val()),
+
+    insertStock = ($card, html) =&gt; {
+        if ($card.is('.card')) {
+            const $stockLocation = $card.find('.card-body');
+            $stockLocation.append(html);
+        }
+    },
+}
+</code></pre>
               
             </div>
           </div>
@@ -346,10 +391,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="product-pick-list-price.html" class="btn btn-neutral float-right" title="Product Pick List Price">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="fractional-quantity-purchase.html" class="btn btn-neutral float-right" title="Fractional Quantity & Unit Labels">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="product-card-unit-price.html" class="btn btn-neutral" title="Product Card Unit Price"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="cart-weight.html" class="btn btn-neutral" title="Display Product Weight on Cart Page"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -375,10 +420,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="product-card-unit-price.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="cart-weight.html" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="product-pick-list-price.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="fractional-quantity-purchase.html" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
