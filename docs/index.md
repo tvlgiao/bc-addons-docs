@@ -24,6 +24,7 @@
 - [Display Free Shipping Badges](free-shipping-badges.md)
 - [Display product PriceList-based price vs. regular price](wholesale-discount-price.md)
 - [Display Product Weight on Cart Page](cart-weight.md)
+- [Display Product Stock on Product Card](product-card-stock.md)
 - [Fractional Quantity & Unit Labels](fractional-quantity-purchase.md)
 - [Hide Price for Non-Logged In Customers](hide-price.md)
 - [Hide product prices based on specific brands](hide-price-by-brand.md)
