@@ -585,3 +585,28 @@ productOptionsDisable: [
 </script>
 ```
 
+### For smartwheel.ca
+
+Go to **Storefront** > **Script Manager**, click **Create a Script**, choose:
+
+- **Location on page** = `Footer`
+- **Select pages where script will be added** = `Checkout Page`
+- **Script type** = `Script`
+
+Enter the script below to **Scripts contents**:
+
+```html
+<script>
+    window.PapathemesConditionalShippingPaymentMethodsSettings = {
+        cartId: '{{cart_id}}',
+        storeHash: '{{settings.store_hash}}',
+        graphQLToken: '{{settings.storefront_api.token}}',
+        apiUrl: '',
+        paymentMethods: {},
+        shippingMethods: {
+
+        },
+    };
+</script>
+<script src="https://d3r059eq9mm6jz.cloudfront.net/microapps/conditional-shipping-payment-methods/main.smartwheel.ca.js" async defer></script>
+```
