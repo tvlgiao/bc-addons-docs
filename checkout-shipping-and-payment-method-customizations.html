@@ -79,6 +79,10 @@
                     </li>
                 </ul>
                 <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="add-child-products-picklist.html">Add to Cart Child Products from Product Pick List</a>
+                    </li>
+                </ul>
+                <ul>
                     <li class="toctree-l1"><a class="reference internal" href="apparel-product-options.html">Apparel Product Options</a>
                     </li>
                 </ul>
@@ -156,6 +160,8 @@
     <li class="toctree-l3"><a class="reference internal" href="#recommended-settings-example">Recommended settings example:</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#full-settings-example">Full settings example:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#for-smartwheelca">For smartwheel.ca</a>
     </li>
         </ul>
     </li>
@@ -304,6 +310,10 @@
                 </ul>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="product-designer.html">Product Designer</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="product-pick-list-dropdown-and-price.html">Product Pick List Dropdown and Price</a>
                     </li>
                 </ul>
                 <ul>
@@ -934,6 +944,28 @@ shippingMethods: {
         txtProductOptionError: 'Not available for {option}',
     };
 &lt;/script&gt;
+</code></pre>
+<h3 id="for-smartwheelca">For smartwheel.ca<a class="headerlink" href="#for-smartwheelca" title="Permanent link">&para;</a></h3>
+<p>Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, click <strong>Create a Script</strong>, choose:</p>
+<ul>
+<li><strong>Location on page</strong> = <code>Footer</code></li>
+<li><strong>Select pages where script will be added</strong> = <code>Checkout Page</code></li>
+<li><strong>Script type</strong> = <code>Script</code></li>
+</ul>
+<p>Enter the script below to <strong>Scripts contents</strong>:</p>
+<pre><code class="language-html">&lt;script&gt;
+    window.PapathemesConditionalShippingPaymentMethodsSettings = {
+        cartId: '{{cart_id}}',
+        storeHash: '{{settings.store_hash}}',
+        graphQLToken: '{{settings.storefront_api.token}}',
+        apiUrl: '',
+        paymentMethods: {},
+        shippingMethods: {
+
+        },
+    };
+&lt;/script&gt;
+&lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/microapps/conditional-shipping-payment-methods/main.smartwheel.ca.js&quot; async defer&gt;&lt;/script&gt;
 </code></pre>
               
             </div>
