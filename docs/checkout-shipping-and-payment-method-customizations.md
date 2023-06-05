@@ -598,14 +598,203 @@ Enter the script below to **Scripts contents**:
 ```html
 <script>
     window.PapathemesConditionalShippingPaymentMethodsSettings = {
+        // ====================================================================
+        // Configuration for Payment Methods
+        // ====================================================================
+        paymentMethods: {
+
+            // ----------------------------------------------------------------
+            // Configuration for Credit Card by Braintree
+            // ----------------------------------------------------------------
+            braintree: {
+                // Disallow for customer groups:
+                customerGroupEnable: ['Guest', 'All', 'Default', 'L0 Consumer', 'L1 Consumer'],
+
+                // Disallow for skus:
+                skusDisable: ['1ZR-11X-72V', '1DT-X2U-3240WH'],
+
+                // Disallow for coupons:
+                couponsDisable: ['Local4894'], // Disallow for "Local4894" coupon
+
+                // Disallow for modifiers:
+                productOptionsDisable: [
+                    {
+                        name: 'Flash Sale - Save Big',
+                        value: 'DIY - Parts only limited warranty - Save Big!',
+                    },
+                ],
+            },
+
+            // ----------------------------------------------------------------
+            // Configuration for Credit Card by Stripe
+            // ----------------------------------------------------------------
+            'stripeupe-card': {
+                // Disallow for customer groups:
+                customerGroupEnable: ['Guest', 'All', 'Default', 'L0 Consumer', 'L1 Consumer'],
+
+                // Disallow for skus:
+                skusDisable: ['1ZR-11X-72V', '1DT-X2U-3240WH'],
+
+                // Disallow for coupons:
+                couponsDisable: ['Local4894'], // Disallow for "Local4894" coupon
+
+                // Disallow for modifiers:
+                productOptionsDisable: [
+                    {
+                        name: 'Flash Sale - Save Big',
+                        value: 'DIY - Parts only limited warranty - Save Big!',
+                    },
+                ],
+            },
+
+            // ----------------------------------------------------------------
+            // Configuration for PayPal
+            // ----------------------------------------------------------------
+            paypalcommerce: {
+                // Disallow for customer groups:
+                customerGroupEnable: ['Guest', 'All', 'Default', 'L0 Consumer', 'L1 Consumer'],
+
+                // Disallow for skus:
+                couponsDisable: ['Local4894'], // Disallow for "Local4894" coupon
+            },
+
+            // ----------------------------------------------------------------
+            // Configuration for Bank Deposit
+            // ----------------------------------------------------------------
+            bankdeposit: {
+                // Disallow for customer groups:
+                customerGroupEnable: ['L2 Consumer', 'L3 Consumer', 'L4 Consumer'],
+
+                // Disallow for categories:
+                disableForCategoryIds: [226], // Disallow for "Taubik" category
+            },
+
+            // ----------------------------------------------------------------
+            // Configuration for Sezzle
+            // ----------------------------------------------------------------
+            sezzle: {
+                // Disallow for customer groups:
+                customerGroupEnable: ['Guest', 'All', 'Default', 'L0 Consumer', 'L1 Consumer'],
+
+                // Disallow for skus:
+                skusDisable: ['1ZR-11X-72V', '1DT-X2U-3240WH'],
+
+                // Disallow for coupons:
+                couponsDisable: ['Local4894'], // Disallow for "Local4894" coupon
+
+                // Disallow for modifiers:
+                productOptionsDisable: [
+                    {
+                        name: 'Flash Sale - Save Big',
+                        value: 'DIY - Parts only limited warranty - Save Big!',
+                    },
+                ],
+            },
+
+            // ----------------------------------------------------------------
+            // Configuration for Gift Certificate
+            // ----------------------------------------------------------------
+            bigcommerce_gift_certificate: {
+            },
+
+            // ----------------------------------------------------------------
+            // Configuration for Store Credit
+            // ----------------------------------------------------------------
+            bigcommerce_store_credit: {
+            }
+        },
+
+        // ====================================================================
+        // Configuration for Shipping Methods
+        // ====================================================================
+        shippingMethods: {
+
+            // ----------------------------------------------------------------
+            // Configuration for Free Shipping
+            // ----------------------------------------------------------------
+            'Free Shipping': {
+                // Disallow for customer groups:
+                customerGroupDisable: ['L2 Consumer', 'L3 Consumer', 'L4 Consumer'],
+
+                // Disallow for skus:
+                skusDisable: ['1ZR-11X-72V', '1DT-X2U-3240WH'],
+
+                // Disallow for categories:
+                disableForCategoryIds: [226], // Disallow for "Taubik" category
+
+                // Disallow for coupons:
+                couponsDisable: ['Local4894'], // Disallow for "Local4894" coupon
+
+                // Disallow for modifiers:
+                productOptionsDisable: [
+                    {
+                        name: 'Flash Sale - Save Big',
+                        value: 'DIY - Parts only limited warranty - Save Big!',
+                    },
+                ],
+            },
+
+            // ----------------------------------------------------------------
+            // Configuration for Pickup In Store - Burlington, ON
+            // ----------------------------------------------------------------
+            'Pickup In Store - Burlington, ON': {
+            },
+
+            // ----------------------------------------------------------------
+            // Configuration for Pickup / Collect - Etobicoke, ON
+            // ----------------------------------------------------------------
+            'Pickup / Collect - Etobicoke, ON': {
+            },
+
+            // ----------------------------------------------------------------
+            // Configuration for FixedShipping
+            // ----------------------------------------------------------------
+            FixedShipping: {
+                // Disallow for coupons:
+                couponsDisable: ['Local4894'], // Disallow for "Local4894" coupon
+            },
+
+            // ----------------------------------------------------------------
+            // Configuration for UPS--Standard
+            // ----------------------------------------------------------------
+            'UPS--Standard': {
+                // Disallow for coupons:
+                couponsDisable: ['Local4894'], // Disallow for "Local4894" coupon
+            },
+
+            // ----------------------------------------------------------------
+            // Configuration for UPS--Expedited
+            // ----------------------------------------------------------------
+            'Canpar--Ground': {
+                // Disallow for coupons:
+                couponsDisable: ['Local4894'], // Disallow for "Local4894" coupon
+            },
+
+            // ----------------------------------------------------------------
+            // Configuration for Federal Express--Fedex Ground
+            // ----------------------------------------------------------------
+            'Federal Express--Fedex Ground': {
+                // Disallow for coupons:
+                couponsDisable: ['Local4894'], // Disallow for "Local4894" coupon
+            },
+
+            // ----------------------------------------------------------------
+            // Configuration for Canpar--Express Parcel
+            // ----------------------------------------------------------------
+            'Canpar--Express Parcel': {
+                // Disallow for coupons:
+                couponsDisable: ['Local4894'], // Disallow for "Local4894" coupon
+            }
+        },
+
+        // !!!!!!!!!!!!!!!!!!!!!!!!!!!
+        // DO NOT EDIT BELOW SETTINGS:
+        // !!!!!!!!!!!!!!!!!!!!!!!!!!!
         cartId: '{{cart_id}}',
         storeHash: '{{settings.store_hash}}',
         graphQLToken: '{{settings.storefront_api.token}}',
         apiUrl: '',
-        paymentMethods: {},
-        shippingMethods: {
-
-        },
+        debug: true,
     };
 </script>
 <script src="https://d3r059eq9mm6jz.cloudfront.net/microapps/conditional-shipping-payment-methods/main.smartwheel.ca.js" async defer></script>
