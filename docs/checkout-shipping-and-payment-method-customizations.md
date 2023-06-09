@@ -794,6 +794,7 @@ Enter the script below to **Scripts contents**:
         storeHash: '{{settings.store_hash}}',
         graphQLToken: '{{settings.storefront_api.token}}',
         apiUrl: '',
+        hideDisabledMethods: true,
         debug: true,
     };
 </script>

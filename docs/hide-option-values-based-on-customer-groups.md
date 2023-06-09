@@ -1,6 +1,6 @@
 # Hide Product Option Values based on Customer Groups
 
-Example configuration:
+## Install the script to your store
 
 ```html
 <script>
@@ -43,8 +43,19 @@ Example configuration:
 </script>
 ```
 
-GitHub (new): https://github.com/tvlgiao/bigcommerce-api-app/tree/master/microapps/hide-product-option
-GitHub: https://github.com/tvlgiao/bc-zacataklures-chiara-hide-product-options
+- GitHub (new): https://github.com/tvlgiao/bigcommerce-api-app/tree/master/microapps/hide-product-option
+- GitHub: https://github.com/tvlgiao/bc-zacataklures-chiara-hide-product-options
+
+
+## Installation for strideanimalhealth.com
+
+Go to **Storefront** > **Script Manager**, click **Create a Script**, choose:
+
+- **Location on page** = `Footer`
+- **Select pages where script will be added** = `Store Pages`
+- **Script type** = `Script`
+
+Enter the script below to **Scripts contents**:
 
 
 ```html
