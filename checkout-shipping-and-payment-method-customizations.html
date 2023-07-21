@@ -471,6 +471,7 @@
         titleImgAlt: 'Paypal',
         order: 1,
         couponsDisable: ['ES6TG2AIL'],
+        couponsEnable: ['ON'],
         skusDisable: ['alsobought-child-4'],
         productOptionsDisable: [
             {
@@ -496,7 +497,11 @@
         title: 'Bank Deposit',
         description: 'Please allow 24 hours for clearance/confirmation',
         order: 4,
-        minAmount: 1000,
+        $any: {
+            minAmount: 1000,
+            couponsEnable: ['ON'],
+            customersGroupEnable: ['USA Wholesale'],
+        }
     },
     cheque: {
         title: 'OpenPay',
@@ -578,6 +583,7 @@ shippingMethods: {
 <li><code>maxAmount</code>: Limit by maximum  order amount (Optional). Example: <code>1000</code>.</li>
 <li><code>productConditionsDisable</code>: Disable for specific product conditions (Optional). Example: <code>['Used', 'Refurbished']</code>.</li>
 <li><code>couponsDisable</code>: Disable for specific coupon codes. Example: <code>['ES6TG2AIL']</code>.</li>
+<li><code>couponsEnable</code>: Enable for specific coupon codes. Example: <code>['ON']</code>.</li>
 <li><code>skusDisable</code>: Disable for specific SKUs or variant SKUs. Example: <code>['alsobought-child-4']</code>.</li>
 <li><code>productOptionsDisable</code>: Disable for specific product options. Example:</li>
 </ul>
@@ -591,7 +597,14 @@ shippingMethods: {
 <ul>
 <li><code>customerGroupDisable</code>: Disable for specific customer groups. Example: <code>['Guest', 'USA Wholesale']</code>.</li>
 <li><code>enableForCategoryIds</code>: Enable for specific product categories. Example: <code>[123, 456]</code>.</li>
+<li><code>$any</code>: Pass if any conditions inside is passed. Example:</li>
 </ul>
+<pre><code class="language-js">$any: {
+    minAmount: 1000,
+    couponsEnable: ['ON'],
+    customersGroupEnable: ['USA Wholesale'],
+}
+</code></pre>
 <h3 id="paymentmethodlabeltemplate">paymentMethodLabelTemplate<a class="headerlink" href="#paymentmethodlabeltemplate" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Template for displaying each payment method.</li>
@@ -1019,9 +1032,13 @@ shippingMethods: {
             // Configuration for Bank Deposit
             // ----------------------------------------------------------------
             bankdeposit: {
-                // Disallow for customer groups:
-                customerGroupEnable: ['L2 Consumer', 'L3 Consumer', 'L4 Consumer'],
-
+                $any: {
+                    // Enable for customer groups:
+                    customerGroupEnable: ['L2 Consumer', 'L3 Consumer', 'L4 Consumer'],
+                    // Or:
+                    // Enable for coupons:
+                    couponsEnable: ['ON']
+                },
                 // Disallow for categories:
                 disableForCategoryIds: [226], // Disallow for &quot;Taubik&quot; category
             },
