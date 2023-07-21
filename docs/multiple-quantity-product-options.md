@@ -22,7 +22,8 @@ Enter the script below to **Scripts contents**:
         fields: [
             {
                 name: 'Add Remote',
-                productIds: []
+                productIds: [],
+                excludedProductIds: [123, 456],
             }
         ],
         cartId: '{{cart_id}}'

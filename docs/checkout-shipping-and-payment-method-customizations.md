@@ -88,6 +88,7 @@ paymentMethods: {
         titleImgAlt: 'Paypal',
         order: 1,
         couponsDisable: ['ES6TG2AIL'],
+        couponsEnable: ['ON'],
         skusDisable: ['alsobought-child-4'],
         productOptionsDisable: [
             {
@@ -113,7 +114,11 @@ paymentMethods: {
         title: 'Bank Deposit',
         description: 'Please allow 24 hours for clearance/confirmation',
         order: 4,
-        minAmount: 1000,
+        $any: {
+            minAmount: 1000,
+            couponsEnable: ['ON'],
+            customersGroupEnable: ['USA Wholesale'],
+        }
     },
     cheque: {
         title: 'OpenPay',
@@ -198,6 +203,7 @@ Please contact us if any of your shipping or payment method is not listed above.
 - `maxAmount`: Limit by maximum  order amount (Optional). Example: `1000`.
 - `productConditionsDisable`: Disable for specific product conditions (Optional). Example: `['Used', 'Refurbished']`.
 - `couponsDisable`: Disable for specific coupon codes. Example: `['ES6TG2AIL']`.
+- `couponsEnable`: Enable for specific coupon codes. Example: `['ON']`.
 - `skusDisable`: Disable for specific SKUs or variant SKUs. Example: `['alsobought-child-4']`.
 - `productOptionsDisable`: Disable for specific product options. Example:
 ```js
@@ -210,6 +216,14 @@ productOptionsDisable: [
 ```
 - `customerGroupDisable`: Disable for specific customer groups. Example: `['Guest', 'USA Wholesale']`.
 - `enableForCategoryIds`: Enable for specific product categories. Example: `[123, 456]`.
+- `$any`: Pass if any conditions inside is passed. Example:
+```js
+$any: {
+    minAmount: 1000,
+    couponsEnable: ['ON'],
+    customersGroupEnable: ['USA Wholesale'],
+}
+```
 
 
 ### paymentMethodLabelTemplate
@@ -662,9 +676,13 @@ Enter the script below to **Scripts contents**:
             // Configuration for Bank Deposit
             // ----------------------------------------------------------------
             bankdeposit: {
-                // Disallow for customer groups:
-                customerGroupEnable: ['L2 Consumer', 'L3 Consumer', 'L4 Consumer'],
-
+                $any: {
+                    // Enable for customer groups:
+                    customerGroupEnable: ['L2 Consumer', 'L3 Consumer', 'L4 Consumer'],
+                    // Or:
+                    // Enable for coupons:
+                    couponsEnable: ['ON']
+                },
                 // Disallow for categories:
                 disableForCategoryIds: [226], // Disallow for "Taubik" category
             },
