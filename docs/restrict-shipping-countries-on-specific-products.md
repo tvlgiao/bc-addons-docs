@@ -22,12 +22,21 @@ Enter the script below to **Scripts contents**:
 
 ```html
 <script>
-    if (!window.jQueryTheme) window.jQueryTheme = window.chiarajQuery || window.jQuerySupermarket;
+    window.jQueryTheme = window.jQueryTheme || window.chiarajQuery || window.jQuerySupermarket || window.jQuery;
     window.PAPATHEMES_RESTRICT_PRODUCT_PURCHASE_BY_COUNTRY = {
         cartId: '{{cart_id}}',
         graphQLToken: '{{settings.storefront_api.token}}'
     };
 </script>
+<script src="https://d3r059eq9mm6jz.cloudfront.net/microapps/restrict-product-purchase-by-country/main.YOURDOMAIN.js" async defer></script>
+```
+
+Replace `YOURDOMAIN` with your store's domain name, for example `example.com`. The complete URL should look like `https://d3r059eq9mm6jz.cloudfront.net/microapps/category-minimum-quantity/main.example.com.js`
+
+
+Deprecated script:
+
+```html
 <script src="https://papathemes.com/content/supermarket/addon.restrict-product-purchase-by-country.js" async defer></script>
 ```
 
