@@ -396,13 +396,17 @@
 </ul>
 <p>Enter the script below to <strong>Scripts contents</strong>: </p>
 <pre><code class="language-html">&lt;script&gt;
-    if (!window.jQueryTheme) window.jQueryTheme = window.chiarajQuery || window.jQuerySupermarket;
+    window.jQueryTheme = window.jQueryTheme || window.chiarajQuery || window.jQuerySupermarket || window.jQuery;
     window.PAPATHEMES_RESTRICT_PRODUCT_PURCHASE_BY_COUNTRY = {
         cartId: '{{cart_id}}',
         graphQLToken: '{{settings.storefront_api.token}}'
     };
 &lt;/script&gt;
-&lt;script src=&quot;https://papathemes.com/content/supermarket/addon.restrict-product-purchase-by-country.js&quot; async defer&gt;&lt;/script&gt;
+&lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/microapps/restrict-product-purchase-by-country/main.YOURDOMAIN.js&quot; async defer&gt;&lt;/script&gt;
+</code></pre>
+<p>Replace <code>YOURDOMAIN</code> with your store's domain name, for example <code>example.com</code>. The complete URL should look like <code>https://d3r059eq9mm6jz.cloudfront.net/microapps/category-minimum-quantity/main.example.com.js</code></p>
+<p>Deprecated script:</p>
+<pre><code class="language-html">&lt;script src=&quot;https://papathemes.com/content/supermarket/addon.restrict-product-purchase-by-country.js&quot; async defer&gt;&lt;/script&gt;
 </code></pre>
 <h2 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">&para;</a></h2>
 <h3 id="cartid">cartId<a class="headerlink" href="#cartid" title="Permanent link">&para;</a></h3>
