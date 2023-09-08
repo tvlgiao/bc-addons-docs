@@ -163,6 +163,8 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#for-smartwheelca">For smartwheel.ca</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#for-legacyiconscom">For legacyicons.com</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -1173,6 +1175,67 @@ shippingMethods: {
     };
 &lt;/script&gt;
 &lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/microapps/conditional-shipping-payment-methods/main.smartwheel.ca.js&quot; async defer&gt;&lt;/script&gt;
+</code></pre>
+<h3 id="for-legacyiconscom">For legacyicons.com<a class="headerlink" href="#for-legacyiconscom" title="Permanent link">&para;</a></h3>
+<p>Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, click <strong>Create a Script</strong>, choose:</p>
+<ul>
+<li><strong>Location on page</strong> = <code>Footer</code></li>
+<li><strong>Select pages where script will be added</strong> = <code>Checkout Page</code></li>
+<li><strong>Script type</strong> = <code>Script</code></li>
+</ul>
+<p>Enter the script below to <strong>Scripts contents</strong>:</p>
+<pre><code class="language-html">&lt;script&gt;
+    window.PapathemesConditionalShippingPaymentMethodsSettings = {
+        // ====================================================================
+        // Configuration for Payment Methods
+        // ====================================================================
+        paymentMethods: {
+            // NET-30
+            'cheque': {
+                customersGroupEnable: ['Wholesale', 'Ancient Faith'],
+                minAmount: 750,
+            },
+
+            // E-Check
+            'moneyorder': {
+                customersGroupEnable: ['Wholesale'],
+            },
+        },
+
+        // ====================================================================
+        // Configuration for Shipping Methods
+        // ====================================================================
+        shippingMethods: {
+            'Rush': {
+                skusMatchDisable: /MP|CC|CP|(H$)/,
+                productCustomFieldsDisable: [
+                    { name: 'Rush', value: 'No' },
+                    { name: 'Shipping', value: 'Freight' },
+                ],
+            },
+
+            'Freight Deposit': {
+            },
+
+            '__other__': {
+                productCustomFieldsDisable: [
+                    { name: 'Shipping', value: 'Freight' },
+                ],
+            },
+        },
+
+        // !!!!!!!!!!!!!!!!!!!!!!!!!!!
+        // DO NOT EDIT BELOW SETTINGS:
+        // !!!!!!!!!!!!!!!!!!!!!!!!!!!
+        cartId: '{{cart_id}}',
+        storeHash: '{{settings.store_hash}}',
+        graphQLToken: '{{settings.storefront_api.token}}',
+        apiUrl: '',
+        hideDisabledMethods: true,
+        debug: true,
+    };
+&lt;/script&gt;
+&lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/microapps/conditional-shipping-payment-methods/main.legacyicons.com.js&quot; async defer&gt;&lt;/script&gt;
 </code></pre>
               
             </div>
