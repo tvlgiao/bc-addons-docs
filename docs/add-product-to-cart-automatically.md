@@ -49,7 +49,7 @@ Replace `YOURDOMAIN` by your store's domain name.
 - `optionMatch`: Input the option name to process only when this option is selected.
 - `optionValueMatch`: Input the option value to process only when this option value is selected.
 - `productIdToAdd`: Input the additional product ID to add to cart.
-- `checkProductCustomField`: A custom field that is used to retrieve the appropriate product to add to cart.
+- `checkProductCustomField`: A custom field that is used to retrieve the appropriate product to add to cart by product ID or product SKU.
 - `addOneOnly`: Whether the product should be added once for the entire cart.
 - `allowRemoval`: Whether allow to remove the product from cart.
 
