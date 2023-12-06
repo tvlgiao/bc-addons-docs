@@ -11,9 +11,9 @@ Create an API key for BC API access by following this instruction: https://suppo
     - **Customers**: `modify`
     - **Customers Login**: `modify`
     - **Stored Payment Instruments**: `modify`
-    - **Sites & Routes**: `read-only`
+    - **Sites & Routes**: `modify`
     - **Channel Settings**: `modify`
-    - **Channel Listings**: `read-only`
+    - **Channel Listings**: `modify`
 
 Send us the Access Token code to install on your database.
 
