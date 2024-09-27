@@ -8,6 +8,7 @@ Apply the patch below to your theme:
 
 **Newest version:**
 
+- https://github.com/allcommerce/bc-supermarket-dev/tree/trutechtools (2024-09-27)
 - https://github.com/tvlgiao/legalsupply-supermarket
 
 **Older version:**
