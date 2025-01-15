@@ -33,6 +33,7 @@
 - [HTML5 Video Image Gallery](html5-video-image-gallery.md)
 - [IGAT Variants Table](igat-variants-table.md)
 - [Image Gallery for Product Options](variant-image-gallery.md)
+- [Infinite Products Scrolling](infinite-products-scrolling.md)
 - [Limit Countries & States](limit-countries.md)
 - [Limit Shipping Options](limit-shipping-options.md)
 - [Minimum Order Amount & Minimum Category Quantity](category-minimum-quantity.md)
