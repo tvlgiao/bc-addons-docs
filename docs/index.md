@@ -43,6 +43,7 @@
 - [Multiple Quantity Product Options](multiple-quantity-product-options.md)
 - [Order Multiple SKUs](order-multiple-skus.md)
 - [Papersushishop Expected Shipping Date](papersushishop-expected-shipping-date.md)
+- [Pay by PO](pay-by-po.md)
 - [PC Builder Product Bundles](pc-builder-product-bundles.md)
 - [Pre-Select Product Options Sharing Link](preselect-product-option-link.md)
 - [Prevent Purchase Low Stock Products](prevent-purchase-low-stock.md)
