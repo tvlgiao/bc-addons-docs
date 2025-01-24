@@ -4,7 +4,26 @@ Add a shipping option with your customer's shipping account on the checkout page
 
 ![Your customer's shipping account](img/your-customer-shipping-account.jpg)
 
-## Install on your store
+
+## Install on your store (v2)
+
+https://github.com/tvlgiao/bc-bigcommerce-api-app/tree/master/microapps/customer-shipping-account-v2
+
+```html
+<script>
+    window.PapathemesCustomerShippingAccountV2Settings = {
+        SHIPPING_METHOD: 'Flat rate',
+        SHIPPING_ACCOUNT_FIELD: 'Shipping Account Number',
+        EXTRA_FIELDS: ['Shipping Options'],
+        DEBUG: false,
+        checkoutId: '{{checkout.id}}'
+    };
+</script>
+<script data-dev-src="http://localhost:5173/src/main.js" data-dev-type="module" src="https://d3r059eq9mm6jz.cloudfront.net/microapps/customer-shipping-account-v2/index.papathemes-app-sandbox.mybigcommerce.com.js" defer async></script>
+```
+
+
+## Install on your store (v1)
 
 **New version:** https://github.com/tvlgiao/bc-bigcommerce-api-app/tree/master/microapps/customer-shipping-account
 
