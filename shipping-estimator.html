@@ -298,13 +298,75 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">Shipping Estimator on Product Page</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#install-the-script-on-your-bigcommerce-store">Install the script on your BigCommerce store</a>
+    <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#live-demonstrations">Live Demonstrations</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#installation-instructions">Installation Instructions</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#hide-country-and-city">Hide country and city:</a>
+    <li class="toctree-l3"><a class="reference internal" href="#prerequisites">Prerequisites</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-1-access-script-manager">Step 1: Access Script Manager</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-2-configure-script-settings">Step 2: Configure Script Settings</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-3-add-script-code">Step 3: Add Script Code</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-implementation">Example Implementation</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#custom-product-form-element-selector-for-supermarket-and-chiara-themes">Custom product form element selector for Supermarket and Chiara themes</a>
+    <li class="toctree-l2"><a class="reference internal" href="#configuration-options">Configuration Options</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#core-settings">Core Settings</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#simplified-address-configuration">Simplified Address Configuration</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#theme-specific-configurations">Theme-Specific Configurations</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#supermarket-and-chiara-themes">Supermarket and Chiara Themes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example-1-complete-address-form">Example 1: Complete Address Form</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#example-2-simplified-address-form">Example 2: Simplified Address Form</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#advanced-implementation-examples">Advanced Implementation Examples</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#example-1-custom-positioning-with-responsive-design">Example 1: Custom Positioning with Responsive Design</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-2-custom-quotes-template">Example 2: Custom Quotes Template</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-3-custom-language-labels-and-positioning">Example 3: Custom Language Labels and Positioning</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#language-customization">Language Customization</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#advanced-configuration-options">Advanced Configuration Options</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#additional-parameters">Additional Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#css-customization">CSS Customization</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#common-issues">Common Issues</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#browser-compatibility">Browser Compatibility</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#best-practices">Best Practices</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#support-and-maintenance">Support and Maintenance</a>
     </li>
     </ul>
                 </li>
@@ -340,21 +402,65 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="shipping-estimator-on-product-page">Shipping Estimator on Product Page<a class="headerlink" href="#shipping-estimator-on-product-page" title="Permanent link">&para;</a></h1>
-<p><strong>Demo 1:</strong> Showing Country, State, City and Zipcode:</p>
-<p><img alt="Shipping estimator demo 1" src="img/estimate-shipping-demo1.gif" /></p>
-<p><strong>Demo 2:</strong> Showing State and Zipcode only:</p>
-<p><img alt="Shipping estimator demo 2" src="img/estimate-shipping-demo2.gif" /></p>
-<h2 id="install-the-script-on-your-bigcommerce-store">Install the script on your BigCommerce store<a class="headerlink" href="#install-the-script-on-your-bigcommerce-store" title="Permanent link">&para;</a></h2>
-<p>Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, click <strong>Create a Script</strong>, choose:</p>
+                <h1 id="shipping-estimator-add-on-for-bigcommerce-product-pages">Shipping Estimator Add-on for BigCommerce Product Pages<a class="headerlink" href="#shipping-estimator-add-on-for-bigcommerce-product-pages" title="Permanent link">&para;</a></h1>
+<p>The Shipping Estimator add-on allows customers to calculate shipping costs directly on product pages before adding items to their cart. This enhances the shopping experience by providing transparent shipping information upfront, reducing cart abandonment and improving customer satisfaction.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>This add-on integrates seamlessly with your BigCommerce store's product pages, enabling customers to:</p>
 <ul>
-<li><strong>Location on page</strong> = <code>Footer</code></li>
-<li><strong>Select pages where script will be added</strong> = <code>All pages</code></li>
-<li><strong>Script type</strong> = <code>Script</code></li>
+<li>Calculate real-time shipping costs based on their location</li>
+<li>View multiple shipping options and rates</li>
+<li>Make informed purchasing decisions with transparent shipping costs</li>
+<li>Experience a streamlined checkout process</li>
 </ul>
-<p>Enter the script below to <strong>Scripts contents</strong>: </p>
-<pre><code class="language-html">
- &lt;script&gt;
+<h2 id="live-demonstrations">Live Demonstrations<a class="headerlink" href="#live-demonstrations" title="Permanent link">&para;</a></h2>
+<p><strong>Demo 1:</strong> Complete address form with Country, State, City, and Zipcode fields:</p>
+<p><img alt="Shipping estimator demo 1" src="img/estimate-shipping-demo1.gif" /></p>
+<p><strong>Demo 2:</strong> Simplified form showing State and Zipcode fields only:</p>
+<p><img alt="Shipping estimator demo 2" src="img/estimate-shipping-demo2.gif" /></p>
+<h2 id="installation-instructions">Installation Instructions<a class="headerlink" href="#installation-instructions" title="Permanent link">&para;</a></h2>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Active BigCommerce store</li>
+<li>Administrative access to your store's control panel</li>
+<li>Your store domain name</li>
+</ul>
+<h3 id="step-1-access-script-manager">Step 1: Access Script Manager<a class="headerlink" href="#step-1-access-script-manager" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Log into your BigCommerce admin panel</li>
+<li>Navigate to <strong>Storefront</strong> → <strong>Script Manager</strong></li>
+<li>Click <strong>Create a Script</strong></li>
+</ol>
+<h3 id="step-2-configure-script-settings">Step 2: Configure Script Settings<a class="headerlink" href="#step-2-configure-script-settings" title="Permanent link">&para;</a></h3>
+<p>Set the following options in the script configuration:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Location on page</strong></td>
+<td><code>Footer</code></td>
+<td>Ensures proper loading order</td>
+</tr>
+<tr>
+<td><strong>Select pages where script will be added</strong></td>
+<td><code>All pages</code></td>
+<td>Enables the estimator across all product pages</td>
+</tr>
+<tr>
+<td><strong>Script type</strong></td>
+<td><code>Script</code></td>
+<td>JavaScript execution type</td>
+</tr>
+</tbody>
+</table>
+<h3 id="step-3-add-script-code">Step 3: Add Script Code<a class="headerlink" href="#step-3-add-script-code" title="Permanent link">&para;</a></h3>
+<p>Copy and paste the following code into the <strong>Scripts contents</strong> field:</p>
+<pre><code class="language-html">&lt;script&gt;
     window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
     window.PapathemesShippingEstimatorSettings = {
         defaultCountry: 'Australia'
@@ -362,7 +468,9 @@
 &lt;/script&gt;
 &lt;script src=&quot;//papathemes.com/content/shippingestimatoraddon/shipping-estimator.YOURDOMAIN.js&quot; async&gt;&lt;/script&gt;
 </code></pre>
-<p><strong>Note:</strong> replace <code>YOURDOMAIN</code> by your own domain. Example:</p>
+<p><strong>Important</strong>: Replace <code>YOURDOMAIN</code> with your actual store domain name.</p>
+<h3 id="example-implementation">Example Implementation<a class="headerlink" href="#example-implementation" title="Permanent link">&para;</a></h3>
+<p>For a store with domain <code>sinkwarehouse.com.au</code>:</p>
 <pre><code class="language-html">&lt;script&gt;
     window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
     window.PapathemesShippingEstimatorSettings = {
@@ -371,16 +479,64 @@
 &lt;/script&gt;
 &lt;script src=&quot;//papathemes.com/content/shippingestimatoraddon/shipping-estimator.sinkwarehouse.com.au.js&quot; async&gt;&lt;/script&gt;
 </code></pre>
-<ul>
-<li><code>defaultCountry</code>: allows to set country selected by default.</li>
-</ul>
-<h3 id="hide-country-and-city">Hide country and city:<a class="headerlink" href="#hide-country-and-city" title="Permanent link">&para;</a></h3>
-<p>To hide country and city, set:</p>
-<ul>
-<li><code>hideCountry: true</code></li>
-<li><code>hideCity: true</code></li>
-</ul>
-<p>See example below:</p>
+<h2 id="configuration-options">Configuration Options<a class="headerlink" href="#configuration-options" title="Permanent link">&para;</a></h2>
+<h3 id="core-settings">Core Settings<a class="headerlink" href="#core-settings" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>defaultCountry</code></td>
+<td>String</td>
+<td>Pre-selected country in dropdown</td>
+<td><code>'United States'</code></td>
+</tr>
+<tr>
+<td><code>hideCountry</code></td>
+<td>Boolean</td>
+<td>Hide country selection field</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>hideState</code></td>
+<td>Boolean</td>
+<td>Hide state/province field</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>hideCity</code></td>
+<td>Boolean</td>
+<td>Hide city field</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>productFormSelector</code></td>
+<td>String</td>
+<td>CSS selector for product form</td>
+<td>Auto-detected</td>
+</tr>
+<tr>
+<td><code>renderToSelector</code></td>
+<td>String</td>
+<td>CSS selector for estimator placement</td>
+<td>Auto-detected</td>
+</tr>
+<tr>
+<td><code>useCustomQuotesTemplate</code></td>
+<td>Boolean</td>
+<td>Use custom styling for shipping quotes</td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="simplified-address-configuration">Simplified Address Configuration<a class="headerlink" href="#simplified-address-configuration" title="Permanent link">&para;</a></h3>
+<p>To display only essential fields (state and zipcode), configure the settings as follows:</p>
 <pre><code class="language-html">&lt;script&gt;
     window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
     window.PapathemesShippingEstimatorSettings = {
@@ -391,10 +547,12 @@
 &lt;/script&gt;
 &lt;script src=&quot;//papathemes.com/content/shippingestimatoraddon/shipping-estimator.YOURDOMAIN.js&quot; async&gt;&lt;/script&gt;
 </code></pre>
-<h2 id="custom-product-form-element-selector-for-supermarket-and-chiara-themes">Custom product form element selector for Supermarket and Chiara themes<a class="headerlink" href="#custom-product-form-element-selector-for-supermarket-and-chiara-themes" title="Permanent link">&para;</a></h2>
-<p><strong>Supermarket</strong> &amp; <strong>Chiara</strong> themes support <strong>Products Frequently Bought Together</strong> feature built-in. You will need to specify different product form HTML element selector so that the shipping estimator can estimate your main product properly.</p>
-<p>Insert <code>productFormSelector: '[data-also-bought-parent-scope] form[data-cart-item-add]'</code> into the configuration variable.</p>
-<p><strong>Example 1:</strong> Show country, state, city and zipcode:</p>
+<h2 id="theme-specific-configurations">Theme-Specific Configurations<a class="headerlink" href="#theme-specific-configurations" title="Permanent link">&para;</a></h2>
+<h3 id="supermarket-and-chiara-themes">Supermarket and Chiara Themes<a class="headerlink" href="#supermarket-and-chiara-themes" title="Permanent link">&para;</a></h3>
+<p>The <strong>Supermarket</strong> and <strong>Chiara</strong> themes include built-in <strong>Products Frequently Bought Together</strong> functionality. To ensure proper integration with the main product form, you must specify a custom product form selector.</p>
+<p>Add <code>productFormSelector: '[data-also-bought-parent-scope] form[data-cart-item-add]'</code> to your configuration.</p>
+<h4 id="example-1-complete-address-form">Example 1: Complete Address Form<a class="headerlink" href="#example-1-complete-address-form" title="Permanent link">&para;</a></h4>
+<p>Display all address fields (country, state, city, zipcode):</p>
 <pre><code class="language-html">&lt;script&gt;
     window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
     window.PapathemesShippingEstimatorSettings = {
@@ -404,7 +562,8 @@
 &lt;/script&gt;
 &lt;script src=&quot;//papathemes.com/content/shippingestimatoraddon/shipping-estimator.YOURDOMAIN.js&quot; async&gt;&lt;/script&gt;
 </code></pre>
-<p><strong>Example 2:</strong> Show country and zipcode only</p>
+<h4 id="example-2-simplified-address-form">Example 2: Simplified Address Form<a class="headerlink" href="#example-2-simplified-address-form" title="Permanent link">&para;</a></h4>
+<p>Display only state and zipcode fields:</p>
 <pre><code class="language-html">&lt;script&gt;
     window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
     window.PapathemesShippingEstimatorSettings = {
@@ -416,7 +575,9 @@
 &lt;/script&gt;
 &lt;script src=&quot;//papathemes.com/content/shippingestimatoraddon/shipping-estimator.YOURDOMAIN.js&quot; async&gt;&lt;/script&gt;
 </code></pre>
-<p><strong>Example 3:</strong> Install to Supermarket theme below Frequently Bought Together module on phragos.com:</p>
+<h2 id="advanced-implementation-examples">Advanced Implementation Examples<a class="headerlink" href="#advanced-implementation-examples" title="Permanent link">&para;</a></h2>
+<h3 id="example-1-custom-positioning-with-responsive-design">Example 1: Custom Positioning with Responsive Design<a class="headerlink" href="#example-1-custom-positioning-with-responsive-design" title="Permanent link">&para;</a></h3>
+<p>Position the estimator below the Frequently Bought Together module with custom responsive styling:</p>
 <pre><code class="language-html">&lt;script&gt;
     window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
     window.PapathemesShippingEstimatorSettings = {
@@ -435,7 +596,8 @@
 &lt;/script&gt;
 &lt;script src=&quot;//papathemes.com/content/shippingestimatoraddon/shipping-estimator.phragos.com.js&quot; async&gt;&lt;/script&gt;
 </code></pre>
-<p><strong>Example 4:</strong> Use custom quotes template:</p>
+<h3 id="example-2-custom-quotes-template">Example 2: Custom Quotes Template<a class="headerlink" href="#example-2-custom-quotes-template" title="Permanent link">&para;</a></h3>
+<p>Implement a custom design for shipping quotes display:</p>
 <p><img alt="estimate-shipping-custom-quotes-template" src="img/estimate-shipping-custom-quotes-template.png" /></p>
 <pre><code class="language-html">&lt;script&gt;
     window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
@@ -455,8 +617,8 @@
 &lt;/script&gt;
 &lt;script src=&quot;//papathemes.com/content/shippingestimatoraddon/shipping-estimator.central-uk.mybigcommerce.com.js?1&quot; async&gt;&lt;/script&gt;
 </code></pre>
-<p><strong>Example 5:</strong></p>
-<p>Collapse the heading by default and display below Add to Cart button:</p>
+<h3 id="example-3-custom-language-labels-and-positioning">Example 3: Custom Language Labels and Positioning<a class="headerlink" href="#example-3-custom-language-labels-and-positioning" title="Permanent link">&para;</a></h3>
+<p>Customize heading text and position below the Add to Cart button:</p>
 <pre><code class="language-html">&lt;script&gt;
     window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
     window.PapathemesShippingEstimatorSettings = {
@@ -473,12 +635,133 @@
             + '/*div.PASE-shipping-estimator { float: right; clear: right; width: 50% }*/'
             + '}'
             + 'div.PASE-shipping-estimator { margin-top: -0.75rem }'
-            + '.form--addToCart { margin-bottom: 0 }'
-        ;document.head.appendChild(css);
+            + '.form--addToCart { margin-bottom: 0 }';
+        document.head.appendChild(css);
     })();
 &lt;/script&gt;
 &lt;script src=&quot;https://papathemes.com/content/shippingestimatoraddon/shipping-estimator.r129.co.js&quot; async defer&gt;&lt;/script&gt;
 </code></pre>
+<h2 id="language-customization">Language Customization<a class="headerlink" href="#language-customization" title="Permanent link">&para;</a></h2>
+<p>Customize text labels using the <code>lang</code> configuration object:</p>
+<pre><code class="language-javascript">window.PapathemesShippingEstimatorSettings = {
+    lang: {
+        estimate_shipping: 'Calculate Shipping Costs',
+        country: 'Select Country',
+        state: 'State/Province',
+        city: 'City',
+        zipcode: 'Postal Code',
+        calculate: 'Get Shipping Rates'
+    }
+};
+</code></pre>
+<h2 id="advanced-configuration-options">Advanced Configuration Options<a class="headerlink" href="#advanced-configuration-options" title="Permanent link">&para;</a></h2>
+<h3 id="additional-parameters">Additional Parameters<a class="headerlink" href="#additional-parameters" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>lang</code></td>
+<td>Object</td>
+<td>Custom language labels</td>
+<td>English labels</td>
+</tr>
+<tr>
+<td><code>collapsible</code></td>
+<td>Boolean</td>
+<td>Make estimator collapsible</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>collapsed</code></td>
+<td>Boolean</td>
+<td>Start in collapsed state</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>showEstimateButton</code></td>
+<td>Boolean</td>
+<td>Display calculate button</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>autoCalculate</code></td>
+<td>Boolean</td>
+<td>Calculate on field change</td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="css-customization">CSS Customization<a class="headerlink" href="#css-customization" title="Permanent link">&para;</a></h3>
+<p>You can add custom CSS styling by injecting styles into the page:</p>
+<pre><code class="language-javascript">(function() {
+    var style = document.createElement('style');
+    style.innerHTML = `
+        .PASE-shipping-estimator {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        .PASE-shipping-estimator .form-field {
+            margin-bottom: 0.5rem;
+        }
+    `;
+    document.head.appendChild(style);
+})();
+</code></pre>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="common-issues">Common Issues<a class="headerlink" href="#common-issues" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Estimator not appearing</strong>
+   - Verify the domain in the script URL matches your store domain exactly
+   - Check browser console for JavaScript errors
+   - Ensure the script is loaded in the footer</p>
+</li>
+<li>
+<p><strong>Incorrect product detection</strong>
+   - Verify <code>productFormSelector</code> is properly configured for your theme
+   - Check if your theme has custom product form structures</p>
+</li>
+<li>
+<p><strong>Styling conflicts</strong>
+   - Use custom CSS to override theme-specific styling
+   - Adjust <code>renderToSelector</code> to place the estimator in a better location</p>
+</li>
+<li>
+<p><strong>Shipping rates not calculating</strong>
+   - Ensure your BigCommerce shipping zones are properly configured
+   - Verify that shipping methods are enabled for the selected regions</p>
+</li>
+</ol>
+<h3 id="browser-compatibility">Browser Compatibility<a class="headerlink" href="#browser-compatibility" title="Permanent link">&para;</a></h3>
+<p>The shipping estimator supports:
+- Chrome 60+
+- Firefox 55+
+- Safari 12+
+- Edge 79+
+- Internet Explorer 11+ (with polyfills)</p>
+<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Performance</strong>: The script loads asynchronously to avoid blocking page rendering</li>
+<li><strong>User Experience</strong>: Consider hiding less relevant fields for a cleaner interface</li>
+<li><strong>Mobile Optimization</strong>: Test the estimator on mobile devices and adjust styling as needed</li>
+<li><strong>Testing</strong>: Verify shipping calculations match your store's actual shipping rates</li>
+</ol>
+<h2 id="support-and-maintenance">Support and Maintenance<a class="headerlink" href="#support-and-maintenance" title="Permanent link">&para;</a></h2>
+<p>For technical support or customization requests, provide:
+- Your store domain
+- Current theme name and version
+- Specific configuration requirements
+- Any custom styling needs
+- Screenshots of issues (if applicable)</p>
               
             </div>
           </div><footer>

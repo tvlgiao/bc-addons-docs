@@ -66,7 +66,9 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">Add Shipping Option Your Customer's Shipping Account</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#install-on-your-store">Install on your store</a>
+    <li class="toctree-l2"><a class="reference internal" href="#install-on-your-store-v2">Install on your store (v2)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#install-on-your-store-v1">Install on your store (v1)</a>
     </li>
     </ul>
                 </li>
@@ -337,7 +339,20 @@
                 <h1 id="add-shipping-option-your-customers-shipping-account">Add Shipping Option: Your Customer's Shipping Account<a class="headerlink" href="#add-shipping-option-your-customers-shipping-account" title="Permanent link">&para;</a></h1>
 <p>Add a shipping option with your customer's shipping account on the checkout page.</p>
 <p><img alt="Your customer's shipping account" src="img/your-customer-shipping-account.jpg" /></p>
-<h2 id="install-on-your-store">Install on your store<a class="headerlink" href="#install-on-your-store" title="Permanent link">&para;</a></h2>
+<h2 id="install-on-your-store-v2">Install on your store (v2)<a class="headerlink" href="#install-on-your-store-v2" title="Permanent link">&para;</a></h2>
+<p>https://github.com/tvlgiao/bc-bigcommerce-api-app/tree/master/microapps/customer-shipping-account-v2</p>
+<pre><code class="language-html">&lt;script&gt;
+    window.PapathemesCustomerShippingAccountV2Settings = {
+        SHIPPING_METHOD: 'Flat rate',
+        SHIPPING_ACCOUNT_FIELD: 'Shipping Account Number',
+        EXTRA_FIELDS: ['Shipping Options'],
+        DEBUG: false,
+        checkoutId: '{{checkout.id}}'
+    };
+&lt;/script&gt;
+&lt;script data-dev-src=&quot;http://localhost:5173/src/main.js&quot; data-dev-type=&quot;module&quot; src=&quot;https://d3r059eq9mm6jz.cloudfront.net/microapps/customer-shipping-account-v2/index.papathemes-app-sandbox.mybigcommerce.com.js&quot; defer async&gt;&lt;/script&gt;
+</code></pre>
+<h2 id="install-on-your-store-v1">Install on your store (v1)<a class="headerlink" href="#install-on-your-store-v1" title="Permanent link">&para;</a></h2>
 <p><strong>New version:</strong> https://github.com/tvlgiao/bc-bigcommerce-api-app/tree/master/microapps/customer-shipping-account</p>
 <p>Create 2 custom fields in <strong>Advanced Settings</strong> &gt; <strong>Account Signup Form</strong> &gt; <strong>Address Fields</strong>:</p>
 <ol>
