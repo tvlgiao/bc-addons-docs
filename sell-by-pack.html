@@ -426,38 +426,46 @@
 <h2 id="product-configuration">Product Configuration<a class="headerlink" href="#product-configuration" title="Permanent link">&para;</a></h2>
 <h3 id="setting-up-basic-pack-quantities">Setting Up Basic Pack Quantities<a class="headerlink" href="#setting-up-basic-pack-quantities" title="Permanent link">&para;</a></h3>
 <ol>
-<li>
-<p><strong>Edit Your Product</strong>:
-   - Go to <strong>Products</strong> → <strong>View Products</strong>
-   - Click <strong>Edit</strong> on the product you want to sell by pack</p>
-</li>
-<li>
-<p><strong>Add Custom Field</strong>:
-   - Scroll down to the <strong>Custom Fields</strong> section
-   - Click <strong>Add Custom Field</strong>
-   - Set <strong>Custom Field Name</strong> to: <code>Step</code>
-   - Set <strong>Custom Field Value</strong> to your pack size (e.g., <code>10</code> for 10-packs)</p>
-</li>
+<li><strong>Edit Your Product</strong>:</li>
 </ol>
+<ul>
+<li>Go to <strong>Products</strong> → <strong>View Products</strong></li>
+<li>Click <strong>Edit</strong> on the product you want to sell by pack</li>
+</ul>
+<ol start="2">
+<li><strong>Add Custom Field</strong>:</li>
+</ol>
+<ul>
+<li>Scroll down to the <strong>Custom Fields</strong> section</li>
+<li>Click <strong>Add Custom Field</strong></li>
+<li>Set <strong>Custom Field Name</strong> to: <code>Step</code></li>
+<li>Set <strong>Custom Field Value</strong> to your pack size (e.g., <code>10</code> for 10-packs)</li>
+</ul>
 <p><img alt="edit-custom-field-sell-by-pack" src="img/edit-custom-field-sell-by-pack.png" /></p>
 <ol start="3">
-<li><strong>Update Minimum Quantity</strong>:
-   - In the <strong>Inventory</strong> section, set <strong>Minimum Purchase Quantity</strong> to match your pack size
-   - This ensures customers can't purchase less than one complete pack</li>
+<li><strong>Update Minimum Quantity</strong>:</li>
 </ol>
+<ul>
+<li>In the <strong>Inventory</strong> section, set <strong>Minimum Purchase Quantity</strong> to match your pack size</li>
+<li>This ensures customers can't purchase less than one complete pack</li>
+</ul>
 <h3 id="advanced-different-pack-sizes-for-product-variants">Advanced: Different Pack Sizes for Product Variants<a class="headerlink" href="#advanced-different-pack-sizes-for-product-variants" title="Permanent link">&para;</a></h3>
 <p>If your product has variants (size, color, etc.) with different pack quantities, use this format in the <strong>Custom Field Value</strong>:</p>
 <pre><code>200,SKU-E23036E2:100,SKU-62C208F5:125,SKU-65D30EBC:150
 </code></pre>
-<p><strong>Explanation</strong>:
-- <code>200</code> = Default pack size for all variants
-- <code>SKU-E23036E2:100</code> = This specific variant SKU sells in packs of 100
-- <code>SKU-62C208F5:125</code> = This variant SKU sells in packs of 125
-- <code>SKU-65D30EBC:150</code> = This variant SKU sells in packs of 150</p>
-<p><strong>Format Rules</strong>:
-- Separate each variant with a comma (<code>,</code>)
-- Use colon (<code>:</code>) between SKU and pack size
-- First number is always the default pack size</p>
+<p><strong>Explanation</strong>:</p>
+<ul>
+<li><code>200</code> = Default pack size for all variants</li>
+<li><code>SKU-E23036E2:100</code> = This specific variant SKU sells in packs of 100</li>
+<li><code>SKU-62C208F5:125</code> = This variant SKU sells in packs of 125</li>
+<li><code>SKU-65D30EBC:150</code> = This variant SKU sells in packs of 150</li>
+</ul>
+<p><strong>Format Rules</strong>:</p>
+<ul>
+<li>Separate each variant with a comma (<code>,</code>)</li>
+<li>Use colon (<code>:</code>) between SKU and pack size</li>
+<li>First number is always the default pack size</li>
+</ul>
 <h2 id="configuration-options">Configuration Options<a class="headerlink" href="#configuration-options" title="Permanent link">&para;</a></h2>
 <h3 id="basic-settings">Basic Settings<a class="headerlink" href="#basic-settings" title="Permanent link">&para;</a></h3>
 <p>These settings control the core functionality and can be customized if needed:</p>
@@ -577,12 +585,18 @@
 </table>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <h3 id="common-issues">Common Issues<a class="headerlink" href="#common-issues" title="Permanent link">&para;</a></h3>
-<p><strong>Problem</strong>: Quantity buttons don't work
-- <strong>Solution</strong>: Check that your theme uses standard BigCommerce selectors. Contact support if using a custom theme.</p>
-<p><strong>Problem</strong>: Pack quantities not displaying
-- <strong>Solution</strong>: Ensure the custom field name is exactly <code>Step</code> (case-sensitive)</p>
-<p><strong>Problem</strong>: Script not loading
-- <strong>Solution</strong>: Verify you replaced <code>YOURDOMAIN</code> with your actual domain name in the script URL</p>
+<p><strong>Problem</strong>: Quantity buttons don't work</p>
+<ul>
+<li><strong>Solution</strong>: Check that your theme uses standard BigCommerce selectors. Contact support if using a custom theme.</li>
+</ul>
+<p><strong>Problem</strong>: Pack quantities not displaying</p>
+<ul>
+<li><strong>Solution</strong>: Ensure the custom field name is exactly <code>Step</code> (case-sensitive)</li>
+</ul>
+<p><strong>Problem</strong>: Script not loading</p>
+<ul>
+<li><strong>Solution</strong>: Verify you replaced <code>YOURDOMAIN</code> with your actual domain name in the script URL</li>
+</ul>
 <h3 id="getting-help">Getting Help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h3>
 <ul>
 <li>For technical support, contact your theme developer</li>
