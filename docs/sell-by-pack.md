@@ -51,10 +51,12 @@ Copy and paste the following code into the **Scripts contents** field:
 ### Setting Up Basic Pack Quantities
 
 1. **Edit Your Product**:
+
    - Go to **Products** → **View Products**
    - Click **Edit** on the product you want to sell by pack
 
 2. **Add Custom Field**:
+
    - Scroll down to the **Custom Fields** section
    - Click **Add Custom Field**
    - Set **Custom Field Name** to: `Step`
@@ -63,6 +65,7 @@ Copy and paste the following code into the **Scripts contents** field:
 ![edit-custom-field-sell-by-pack](img/edit-custom-field-sell-by-pack.png)
 
 3. **Update Minimum Quantity**:
+
    - In the **Inventory** section, set **Minimum Purchase Quantity** to match your pack size
    - This ensures customers can't purchase less than one complete pack
 
@@ -75,12 +78,14 @@ If your product has variants (size, color, etc.) with different pack quantities,
 ```
 
 **Explanation**:
+
 - `200` = Default pack size for all variants
 - `SKU-E23036E2:100` = This specific variant SKU sells in packs of 100
 - `SKU-62C208F5:125` = This variant SKU sells in packs of 125
 - `SKU-65D30EBC:150` = This variant SKU sells in packs of 150
 
 **Format Rules**:
+
 - Separate each variant with a comma (`,`)
 - Use colon (`:`) between SKU and pack size
 - First number is always the default pack size
@@ -125,12 +130,15 @@ These settings control the core functionality and can be customized if needed:
 ### Common Issues
 
 **Problem**: Quantity buttons don't work
+
 - **Solution**: Check that your theme uses standard BigCommerce selectors. Contact support if using a custom theme.
 
 **Problem**: Pack quantities not displaying
+
 - **Solution**: Ensure the custom field name is exactly `Step` (case-sensitive)
 
 **Problem**: Script not loading
+
 - **Solution**: Verify you replaced `YOURDOMAIN` with your actual domain name in the script URL
 
 ### Getting Help
