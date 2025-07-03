@@ -1,18 +1,37 @@
 # Sell Products By Pack
 
-This addon allows to sell products per pack, suitable wholesale purchases.
+Transform your BigCommerce store to sell products in bulk quantities with this powerful addon. Perfect for wholesale businesses, B2B stores, or any retailer offering products in predetermined pack sizes.
 
 ![bc-sell-by-pack-demo](img/bc-sell-by-pack-demo.gif)
 
-## Install on your BigCommerce Store
+## What This Addon Does
 
-Go to **Storefront** > **Script Manager**, click **Create a Script**, choose:
+- **Pack-Based Selling**: Force customers to purchase products in specific quantities (e.g., 10-packs, 50-packs)
+- **Variant Support**: Set different pack sizes for product variants
+- **Automatic Validation**: Prevents customers from adding incorrect quantities to cart
+- **Wholesale Ready**: Ideal for businesses selling to retailers or bulk buyers
 
-- **Location on page** = `Footer`
-- **Select pages where script will be added** = `All pages`
-- **Script type** = `Script`
+## Installation Guide
 
-Enter the script below to **Scripts contents**: 
+### Step 1: Access Script Manager
+
+1. Log into your BigCommerce admin panel
+2. Navigate to **Storefront** → **Script Manager**
+3. Click the **Create a Script** button
+
+### Step 2: Configure Script Settings
+
+Fill in the following settings:
+
+| Field | Value |
+|-------|-------|
+| **Location on page** | Footer |
+| **Select pages where script will be added** | All pages |
+| **Script type** | Script |
+
+### Step 3: Add the Script Code
+
+Copy and paste the following code into the **Scripts contents** field:
 
 ```html
 <script>
@@ -25,56 +44,100 @@ Enter the script below to **Scripts contents**:
 <script src="//papathemes.com/content/sellbypackaddon/sellbypack.YOURDOMAIN.js" async></script>
 ```
 
-Replace `YOURDOMAIN` by your store's domain name.
+**Important**: Replace `YOURDOMAIN` with your actual store domain name (e.g., if your store is `mystore.com`, use `sellbypack.mystore.js`)
 
-## Edit product
+## Product Configuration
 
-Edit your product, add a custom field with name = **Step** and value is the number of items sell per pack:
+### Setting Up Basic Pack Quantities
+
+1. **Edit Your Product**:
+   - Go to **Products** → **View Products**
+   - Click **Edit** on the product you want to sell by pack
+
+2. **Add Custom Field**:
+   - Scroll down to the **Custom Fields** section
+   - Click **Add Custom Field**
+   - Set **Custom Field Name** to: `Step`
+   - Set **Custom Field Value** to your pack size (e.g., `10` for 10-packs)
 
 ![edit-custom-field-sell-by-pack](img/edit-custom-field-sell-by-pack.png)
 
-Update **Minimum Purchase Quantity** to be equal the number of items sell per pack.
+3. **Update Minimum Quantity**:
+   - In the **Inventory** section, set **Minimum Purchase Quantity** to match your pack size
+   - This ensures customers can't purchase less than one complete pack
 
-### Configure quantity per variant SKUs
+### Advanced: Different Pack Sizes for Product Variants
 
+If your product has variants (size, color, etc.) with different pack quantities, use this format in the **Custom Field Value**:
 
-Enter the custom field value, for example: `200,SKU-E23036E2:100,SKU-62C208F5:125,SKU-65D30EBC:150`
+```
+200,SKU-E23036E2:100,SKU-62C208F5:125,SKU-65D30EBC:150
+```
 
-- First value is the default number of items per pack (`200`)
-- Variant SKU (`SKU-E23036E2`) and the coresponding number of items per pack (`100`) separated by colon (`:`).
-- Each variant/pack is separated by a commas (`,`).
+**Explanation**:
+- `200` = Default pack size for all variants
+- `SKU-E23036E2:100` = This specific variant SKU sells in packs of 100
+- `SKU-62C208F5:125` = This variant SKU sells in packs of 125
+- `SKU-65D30EBC:150` = This variant SKU sells in packs of 150
 
-
-## Settings
-
-Available settings and default values are listed below:
-
-**Basic Settings:**
-
-- `stepCustomFieldName = 'Step'`: Input the custom field name which has custom field value is quantity step. For example, custom field is `Step` and value = `10` to sell the product every 10 pcs.
-- `minQtyIsStep = true`: Specify minimum quantity  equal the step value.
-- `graphQLToken = '{{settings.storefront_api.token}}'`
-
-**Advanced Settings for custom themes:**
-
-- `qtyChangeSelector = '[data-quantity-change]'`: The quantity input CSS selector.
-- `notQtyChangeSelector = '[data-also-bought] [data-quantity-change]'`: filter elements are not quantity input.
-- `productViewSelector = '.productView'`: Product view CSS selector.
-- `customFieldRowSelector = '[class*=productView-info-row]'`: Custom field row CSS selector.
-- `customFieldNameSelector = '.productView-info-name'`: Custom field name CSS selector.
-- `customFieldValueSelector = '.productView-info-value'`: Custom field value CSS selector.
-- `incBtnSelector = '[data-action="inc"]'`: Increase button CSS selector.
-- `decBtnSelector = '[data-action="dec"]'`: Decrease button CSS selector.
-- `formSelector = 'form[data-cart-item-add]'`: Add to Cart Form CSS selector.
-- `productIdInputSelector = 'input[name="product_id"]'`: The hidden product_id input selector.
-- `cartQtyInputSelector = '[data-cart-content] input[name^="qty-"]'`: Quantity input selector on the cart page.
-- `cartQtyIdRegExp = /^qty-(.*)/`: RegExp to find product item ID in the cart.
-- `cartQtyBtnSelector = '[data-action]'`: Quantity increase/decrease buttons selector.
-- `cartOverlaySelector = '[data-cart] .loadingOverlay'`: Cart overlay selector.
-- `productViewTemplate = 'products/product-view'`: Product view template file.
+**Format Rules**:
+- Separate each variant with a comma (`,`)
+- Use colon (`:`) between SKU and pack size
+- First number is always the default pack size
 
 
-## Misc
+## Configuration Options
+
+### Basic Settings
+
+These settings control the core functionality and can be customized if needed:
+
+| Setting | Default Value | Description |
+|---------|---------------|-------------|
+| `stepCustomFieldName` | `'Step'` | The name of the custom field that contains pack quantities |
+| `minQtyIsStep` | `true` | Automatically sets minimum purchase quantity to match pack size |
+| `graphQLToken` | `'{{settings.storefront_api.token}}'` | Required for API communication (do not change) |
+
+### Advanced Theme Customization
+
+**⚠️ For Developers Only**: These settings are for custom themes that may use different CSS selectors:
+
+| Setting | Default Value | Purpose |
+|---------|---------------|---------|
+| `qtyChangeSelector` | `'[data-quantity-change]'` | Quantity input field selector |
+| `notQtyChangeSelector` | `'[data-also-bought] [data-quantity-change]'` | Elements to exclude from quantity changes |
+| `productViewSelector` | `'.productView'` | Main product display container |
+| `customFieldRowSelector` | `'[class*=productView-info-row]'` | Custom field row container |
+| `customFieldNameSelector` | `'.productView-info-name'` | Custom field name element |
+| `customFieldValueSelector` | `'.productView-info-value'` | Custom field value element |
+| `incBtnSelector` | `'[data-action="inc"]'` | Quantity increase button |
+| `decBtnSelector` | `'[data-action="dec"]'` | Quantity decrease button |
+| `formSelector` | `'form[data-cart-item-add]'` | Add to cart form |
+| `productIdInputSelector` | `'input[name="product_id"]'` | Hidden product ID input |
+| `cartQtyInputSelector` | `'[data-cart-content] input[name^="qty-"]'` | Cart quantity inputs |
+| `cartQtyIdRegExp` | `/^qty-(.*)/` | Pattern to match cart item IDs |
+| `cartQtyBtnSelector` | `'[data-action]'` | Cart quantity buttons |
+| `cartOverlaySelector` | `'[data-cart] .loadingOverlay'` | Cart loading overlay |
+| `productViewTemplate` | `'products/product-view'` | Product page template file |
+
+## Troubleshooting
+
+### Common Issues
+
+**Problem**: Quantity buttons don't work
+- **Solution**: Check that your theme uses standard BigCommerce selectors. Contact support if using a custom theme.
+
+**Problem**: Pack quantities not displaying
+- **Solution**: Ensure the custom field name is exactly `Step` (case-sensitive)
+
+**Problem**: Script not loading
+- **Solution**: Verify you replaced `YOURDOMAIN` with your actual domain name in the script URL
+
+### Getting Help
+
+- For technical support, contact your theme developer
+- For addon-specific issues, refer to the documentation or contact the addon provider
+
+## Additional Resources
 
 - Mod for Camden theme: https://github.com/tvlgiao/bc-sellbypack-ilighting-camden-theme
-
