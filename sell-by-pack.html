@@ -286,17 +286,43 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">Sell By Pack</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#install-on-your-bigcommerce-store">Install on your BigCommerce Store</a>
+    <li class="toctree-l2"><a class="reference internal" href="#what-this-addon-does">What This Addon Does</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#edit-product">Edit product</a>
+    <li class="toctree-l2"><a class="reference internal" href="#installation-guide">Installation Guide</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#configure-quantity-per-variant-skus">Configure quantity per variant SKUs</a>
+    <li class="toctree-l3"><a class="reference internal" href="#step-1-access-script-manager">Step 1: Access Script Manager</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-2-configure-script-settings">Step 2: Configure Script Settings</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-3-add-the-script-code">Step 3: Add the Script Code</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#settings">Settings</a>
+    <li class="toctree-l2"><a class="reference internal" href="#product-configuration">Product Configuration</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#setting-up-basic-pack-quantities">Setting Up Basic Pack Quantities</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#misc">Misc</a>
+    <li class="toctree-l3"><a class="reference internal" href="#advanced-different-pack-sizes-for-product-variants">Advanced: Different Pack Sizes for Product Variants</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#configuration-options">Configuration Options</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#basic-settings">Basic Settings</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#advanced-theme-customization">Advanced Theme Customization</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#common-issues">Common Issues</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getting-help">Getting Help</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#additional-resources">Additional Resources</a>
     </li>
     </ul>
                 </li>
@@ -345,16 +371,48 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="sell-products-by-pack">Sell Products By Pack<a class="headerlink" href="#sell-products-by-pack" title="Permanent link">&para;</a></h1>
-<p>This addon allows to sell products per pack, suitable wholesale purchases.</p>
+<p>Transform your BigCommerce store to sell products in bulk quantities with this powerful addon. Perfect for wholesale businesses, B2B stores, or any retailer offering products in predetermined pack sizes.</p>
 <p><img alt="bc-sell-by-pack-demo" src="img/bc-sell-by-pack-demo.gif" /></p>
-<h2 id="install-on-your-bigcommerce-store">Install on your BigCommerce Store<a class="headerlink" href="#install-on-your-bigcommerce-store" title="Permanent link">&para;</a></h2>
-<p>Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, click <strong>Create a Script</strong>, choose:</p>
+<h2 id="what-this-addon-does">What This Addon Does<a class="headerlink" href="#what-this-addon-does" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Location on page</strong> = <code>Footer</code></li>
-<li><strong>Select pages where script will be added</strong> = <code>All pages</code></li>
-<li><strong>Script type</strong> = <code>Script</code></li>
+<li><strong>Pack-Based Selling</strong>: Force customers to purchase products in specific quantities (e.g., 10-packs, 50-packs)</li>
+<li><strong>Variant Support</strong>: Set different pack sizes for product variants</li>
+<li><strong>Automatic Validation</strong>: Prevents customers from adding incorrect quantities to cart</li>
+<li><strong>Wholesale Ready</strong>: Ideal for businesses selling to retailers or bulk buyers</li>
 </ul>
-<p>Enter the script below to <strong>Scripts contents</strong>: </p>
+<h2 id="installation-guide">Installation Guide<a class="headerlink" href="#installation-guide" title="Permanent link">&para;</a></h2>
+<h3 id="step-1-access-script-manager">Step 1: Access Script Manager<a class="headerlink" href="#step-1-access-script-manager" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Log into your BigCommerce admin panel</li>
+<li>Navigate to <strong>Storefront</strong> → <strong>Script Manager</strong></li>
+<li>Click the <strong>Create a Script</strong> button</li>
+</ol>
+<h3 id="step-2-configure-script-settings">Step 2: Configure Script Settings<a class="headerlink" href="#step-2-configure-script-settings" title="Permanent link">&para;</a></h3>
+<p>Fill in the following settings:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Location on page</strong></td>
+<td>Footer</td>
+</tr>
+<tr>
+<td><strong>Select pages where script will be added</strong></td>
+<td>All pages</td>
+</tr>
+<tr>
+<td><strong>Script type</strong></td>
+<td>Script</td>
+</tr>
+</tbody>
+</table>
+<h3 id="step-3-add-the-script-code">Step 3: Add the Script Code<a class="headerlink" href="#step-3-add-the-script-code" title="Permanent link">&para;</a></h3>
+<p>Copy and paste the following code into the <strong>Scripts contents</strong> field:</p>
 <pre><code class="language-html">&lt;script&gt;
     window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.chiarajQuery || window.jQuery || window.$;
     window.PapathemesSellByPackSettings = {
@@ -364,45 +422,173 @@
 &lt;/script&gt;
 &lt;script src=&quot;//papathemes.com/content/sellbypackaddon/sellbypack.YOURDOMAIN.js&quot; async&gt;&lt;/script&gt;
 </code></pre>
-<p>Replace <code>YOURDOMAIN</code> by your store's domain name.</p>
-<h2 id="edit-product">Edit product<a class="headerlink" href="#edit-product" title="Permanent link">&para;</a></h2>
-<p>Edit your product, add a custom field with name = <strong>Step</strong> and value is the number of items sell per pack:</p>
+<p><strong>Important</strong>: Replace <code>YOURDOMAIN</code> with your actual store domain name (e.g., if your store is <code>mystore.com</code>, use <code>sellbypack.mystore.js</code>)</p>
+<h2 id="product-configuration">Product Configuration<a class="headerlink" href="#product-configuration" title="Permanent link">&para;</a></h2>
+<h3 id="setting-up-basic-pack-quantities">Setting Up Basic Pack Quantities<a class="headerlink" href="#setting-up-basic-pack-quantities" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Edit Your Product</strong>:
+   - Go to <strong>Products</strong> → <strong>View Products</strong>
+   - Click <strong>Edit</strong> on the product you want to sell by pack</p>
+</li>
+<li>
+<p><strong>Add Custom Field</strong>:
+   - Scroll down to the <strong>Custom Fields</strong> section
+   - Click <strong>Add Custom Field</strong>
+   - Set <strong>Custom Field Name</strong> to: <code>Step</code>
+   - Set <strong>Custom Field Value</strong> to your pack size (e.g., <code>10</code> for 10-packs)</p>
+</li>
+</ol>
 <p><img alt="edit-custom-field-sell-by-pack" src="img/edit-custom-field-sell-by-pack.png" /></p>
-<p>Update <strong>Minimum Purchase Quantity</strong> to be equal the number of items sell per pack.</p>
-<h3 id="configure-quantity-per-variant-skus">Configure quantity per variant SKUs<a class="headerlink" href="#configure-quantity-per-variant-skus" title="Permanent link">&para;</a></h3>
-<p>Enter the custom field value, for example: <code>200,SKU-E23036E2:100,SKU-62C208F5:125,SKU-65D30EBC:150</code></p>
+<ol start="3">
+<li><strong>Update Minimum Quantity</strong>:
+   - In the <strong>Inventory</strong> section, set <strong>Minimum Purchase Quantity</strong> to match your pack size
+   - This ensures customers can't purchase less than one complete pack</li>
+</ol>
+<h3 id="advanced-different-pack-sizes-for-product-variants">Advanced: Different Pack Sizes for Product Variants<a class="headerlink" href="#advanced-different-pack-sizes-for-product-variants" title="Permanent link">&para;</a></h3>
+<p>If your product has variants (size, color, etc.) with different pack quantities, use this format in the <strong>Custom Field Value</strong>:</p>
+<pre><code>200,SKU-E23036E2:100,SKU-62C208F5:125,SKU-65D30EBC:150
+</code></pre>
+<p><strong>Explanation</strong>:
+- <code>200</code> = Default pack size for all variants
+- <code>SKU-E23036E2:100</code> = This specific variant SKU sells in packs of 100
+- <code>SKU-62C208F5:125</code> = This variant SKU sells in packs of 125
+- <code>SKU-65D30EBC:150</code> = This variant SKU sells in packs of 150</p>
+<p><strong>Format Rules</strong>:
+- Separate each variant with a comma (<code>,</code>)
+- Use colon (<code>:</code>) between SKU and pack size
+- First number is always the default pack size</p>
+<h2 id="configuration-options">Configuration Options<a class="headerlink" href="#configuration-options" title="Permanent link">&para;</a></h2>
+<h3 id="basic-settings">Basic Settings<a class="headerlink" href="#basic-settings" title="Permanent link">&para;</a></h3>
+<p>These settings control the core functionality and can be customized if needed:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>stepCustomFieldName</code></td>
+<td><code>'Step'</code></td>
+<td>The name of the custom field that contains pack quantities</td>
+</tr>
+<tr>
+<td><code>minQtyIsStep</code></td>
+<td><code>true</code></td>
+<td>Automatically sets minimum purchase quantity to match pack size</td>
+</tr>
+<tr>
+<td><code>graphQLToken</code></td>
+<td><code>'{{settings.storefront_api.token}}'</code></td>
+<td>Required for API communication (do not change)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="advanced-theme-customization">Advanced Theme Customization<a class="headerlink" href="#advanced-theme-customization" title="Permanent link">&para;</a></h3>
+<p><strong>⚠️ For Developers Only</strong>: These settings are for custom themes that may use different CSS selectors:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default Value</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>qtyChangeSelector</code></td>
+<td><code>'[data-quantity-change]'</code></td>
+<td>Quantity input field selector</td>
+</tr>
+<tr>
+<td><code>notQtyChangeSelector</code></td>
+<td><code>'[data-also-bought] [data-quantity-change]'</code></td>
+<td>Elements to exclude from quantity changes</td>
+</tr>
+<tr>
+<td><code>productViewSelector</code></td>
+<td><code>'.productView'</code></td>
+<td>Main product display container</td>
+</tr>
+<tr>
+<td><code>customFieldRowSelector</code></td>
+<td><code>'[class*=productView-info-row]'</code></td>
+<td>Custom field row container</td>
+</tr>
+<tr>
+<td><code>customFieldNameSelector</code></td>
+<td><code>'.productView-info-name'</code></td>
+<td>Custom field name element</td>
+</tr>
+<tr>
+<td><code>customFieldValueSelector</code></td>
+<td><code>'.productView-info-value'</code></td>
+<td>Custom field value element</td>
+</tr>
+<tr>
+<td><code>incBtnSelector</code></td>
+<td><code>'[data-action="inc"]'</code></td>
+<td>Quantity increase button</td>
+</tr>
+<tr>
+<td><code>decBtnSelector</code></td>
+<td><code>'[data-action="dec"]'</code></td>
+<td>Quantity decrease button</td>
+</tr>
+<tr>
+<td><code>formSelector</code></td>
+<td><code>'form[data-cart-item-add]'</code></td>
+<td>Add to cart form</td>
+</tr>
+<tr>
+<td><code>productIdInputSelector</code></td>
+<td><code>'input[name="product_id"]'</code></td>
+<td>Hidden product ID input</td>
+</tr>
+<tr>
+<td><code>cartQtyInputSelector</code></td>
+<td><code>'[data-cart-content] input[name^="qty-"]'</code></td>
+<td>Cart quantity inputs</td>
+</tr>
+<tr>
+<td><code>cartQtyIdRegExp</code></td>
+<td><code>/^qty-(.*)/</code></td>
+<td>Pattern to match cart item IDs</td>
+</tr>
+<tr>
+<td><code>cartQtyBtnSelector</code></td>
+<td><code>'[data-action]'</code></td>
+<td>Cart quantity buttons</td>
+</tr>
+<tr>
+<td><code>cartOverlaySelector</code></td>
+<td><code>'[data-cart] .loadingOverlay'</code></td>
+<td>Cart loading overlay</td>
+</tr>
+<tr>
+<td><code>productViewTemplate</code></td>
+<td><code>'products/product-view'</code></td>
+<td>Product page template file</td>
+</tr>
+</tbody>
+</table>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="common-issues">Common Issues<a class="headerlink" href="#common-issues" title="Permanent link">&para;</a></h3>
+<p><strong>Problem</strong>: Quantity buttons don't work
+- <strong>Solution</strong>: Check that your theme uses standard BigCommerce selectors. Contact support if using a custom theme.</p>
+<p><strong>Problem</strong>: Pack quantities not displaying
+- <strong>Solution</strong>: Ensure the custom field name is exactly <code>Step</code> (case-sensitive)</p>
+<p><strong>Problem</strong>: Script not loading
+- <strong>Solution</strong>: Verify you replaced <code>YOURDOMAIN</code> with your actual domain name in the script URL</p>
+<h3 id="getting-help">Getting Help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h3>
 <ul>
-<li>First value is the default number of items per pack (<code>200</code>)</li>
-<li>Variant SKU (<code>SKU-E23036E2</code>) and the coresponding number of items per pack (<code>100</code>) separated by colon (<code>:</code>).</li>
-<li>Each variant/pack is separated by a commas (<code>,</code>).</li>
+<li>For technical support, contact your theme developer</li>
+<li>For addon-specific issues, refer to the documentation or contact the addon provider</li>
 </ul>
-<h2 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">&para;</a></h2>
-<p>Available settings and default values are listed below:</p>
-<p><strong>Basic Settings:</strong></p>
-<ul>
-<li><code>stepCustomFieldName = 'Step'</code>: Input the custom field name which has custom field value is quantity step. For example, custom field is <code>Step</code> and value = <code>10</code> to sell the product every 10 pcs.</li>
-<li><code>minQtyIsStep = true</code>: Specify minimum quantity  equal the step value.</li>
-<li><code>graphQLToken = '{{settings.storefront_api.token}}'</code></li>
-</ul>
-<p><strong>Advanced Settings for custom themes:</strong></p>
-<ul>
-<li><code>qtyChangeSelector = '[data-quantity-change]'</code>: The quantity input CSS selector.</li>
-<li><code>notQtyChangeSelector = '[data-also-bought] [data-quantity-change]'</code>: filter elements are not quantity input.</li>
-<li><code>productViewSelector = '.productView'</code>: Product view CSS selector.</li>
-<li><code>customFieldRowSelector = '[class*=productView-info-row]'</code>: Custom field row CSS selector.</li>
-<li><code>customFieldNameSelector = '.productView-info-name'</code>: Custom field name CSS selector.</li>
-<li><code>customFieldValueSelector = '.productView-info-value'</code>: Custom field value CSS selector.</li>
-<li><code>incBtnSelector = '[data-action="inc"]'</code>: Increase button CSS selector.</li>
-<li><code>decBtnSelector = '[data-action="dec"]'</code>: Decrease button CSS selector.</li>
-<li><code>formSelector = 'form[data-cart-item-add]'</code>: Add to Cart Form CSS selector.</li>
-<li><code>productIdInputSelector = 'input[name="product_id"]'</code>: The hidden product_id input selector.</li>
-<li><code>cartQtyInputSelector = '[data-cart-content] input[name^="qty-"]'</code>: Quantity input selector on the cart page.</li>
-<li><code>cartQtyIdRegExp = /^qty-(.*)/</code>: RegExp to find product item ID in the cart.</li>
-<li><code>cartQtyBtnSelector = '[data-action]'</code>: Quantity increase/decrease buttons selector.</li>
-<li><code>cartOverlaySelector = '[data-cart] .loadingOverlay'</code>: Cart overlay selector.</li>
-<li><code>productViewTemplate = 'products/product-view'</code>: Product view template file.</li>
-</ul>
-<h2 id="misc">Misc<a class="headerlink" href="#misc" title="Permanent link">&para;</a></h2>
+<h2 id="additional-resources">Additional Resources<a class="headerlink" href="#additional-resources" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Mod for Camden theme: https://github.com/tvlgiao/bc-sellbypack-ilighting-camden-theme</li>
 </ul>
