@@ -1,33 +1,44 @@
 # Multiple Category Dependent Dropdowns
 
+**This feature helps customers find products more easily by displaying interconnected category dropdown menus.**
 
-**Horizontal layout demo:**
+## 🎯 What does this feature do?
+
+Instead of customers having to manually browse through categories one by one, this feature will:
+
+- Display interconnected dropdown menus
+- When a customer selects a category, the next dropdown automatically updates with relevant options
+- Help customers find the right products quickly and efficiently
+
+## 📱 Display Layouts
+
+**Horizontal layout (suitable for top of page display):**
 
 ![Horizontal layout demo](img/mcdd-demo1.gif)
 
-
-**Vertical layout demo:**
+**Vertical layout (suitable for sidebar display):**
 
 ![Vertical layout demo](img/mcdd-demo2.gif)
 
+**Vertical layout - 5 category levels:**
 
-**Vertical layout -  5 Levels:**
+![5 category levels](img/mcdd-vertical-5-level.png)
 
-![5 levels](img/mcdd-vertical-5-level.png)
+## 🛠️ How to Install on Your BigCommerce Store
 
+### 📐 Method 1: Horizontal Layout
 
+**Step 1:** Access your BigCommerce admin panel
 
-## Install on your BigCommerce store
+**Step 2:** Go to **Storefront** > **Script Manager**, then click **Create a Script**
 
-### Horizontal layout
-
-Go to **Storefront** > **Script Manager**, click **Create a Script**, choose:
+**Step 3:** Configure the following settings:
 
 - **Location on page** = `Footer`
 - **Select pages where script will be added** = `All pages`
 - **Script type** = `Script`
 
-Enter the script below to **Scripts contents**: 
+**Step 4:** Copy and paste the following code into **Scripts contents**:
 
 ```html
 <script>
@@ -56,25 +67,25 @@ Enter the script below to **Scripts contents**:
 <script src="//papathemes.com/content/mcdd/mcdd.YOURDOMAIN.js" async></script>
 ```
 
-- Replace `YOURDOMAIN` by your domain name. For example: `mydomain.com`.
-- Update `body > .body` in `renderToSelector: 'body > .body'` by the container HTML element selector to render the form.
-- `usePrepend` = `true`: specify the form will be rendered on the top inside of the container HTML element.
-- `rootCategoryId` = `0`: specify the root category to load its subcategories into the first dropdown.
-- `maxDepth`: specify the number of dropdowns or categories to display.
-- `showOnAllPages` = `true`: Show on all pages or only on the coresponding category, descendant cateories and products.
-- Customize words or languages in `lang` variable.
+**Step 5:** Customize the following settings:
+
+- **Replace `YOURDOMAIN`**: Change `YOURDOMAIN` to your domain name (example: `mydomain.com`)
+- **Display position**: You can change `'body > .body'` to another location where you want to display the form
+- **Number of category levels**: Change the number `3` in `maxDepth: 3` to increase/decrease the number of dropdowns
+- **Display on which pages**: `showOnAllPages: true` means display on all pages
+- **Customize text**: Modify the text in the `lang` section as desired:
+  - `heading`: Form title
+  - `category_label_0, 1, 2`: Labels for each dropdown
+  - `choose_label_0, 1, 2`: Default text in dropdowns
+  - `submit_label`: Search button text
 
 
 
-### Vertical layout
+### 📐 Method 2: Vertical Layout
 
-Go to **Storefront** > **Script Manager**, click **Create a Script**, choose:
+**Steps 1-3:** Follow the same steps as Method 1 above
 
-- **Location on page** = `Footer`
-- **Select pages where script will be added** = `All pages`
-- **Script type** = `Script`
-
-Enter the script below to **Scripts contents**: 
+**Step 4:** Copy and paste the following code into **Scripts contents**:
 
 ```html
 <script>
@@ -104,22 +115,21 @@ Enter the script below to **Scripts contents**:
 <script src="//papathemes.com/content/mcdd/mcdd.YOURDOMAIN.js" async></script>
 ```
 
-- Replace `YOURDOMAIN` by your domain name. For example: `mydomain.com`.
-- Update `.page-sidebar` in `renderToSelector: '.page-sidebar'` by the container HTML element selector to render the form.
-- `usePrepend` = `true`: specify the form will be rendered on the top inside of the container HTML element.
-- `maxDepth`: specify the number of dropdowns or categories to display.
-- `verticalLayout` = `true`: Display the form vertically.
-- Customize words or languages in `lang` variable.
+**Step 5:** Customize the following settings:
 
-### Insert on Supermarket theme
+- **Replace `YOURDOMAIN`**: Change `YOURDOMAIN` to your domain name
+- **Display position**: You can change `'.page-sidebar'` to another location
+- **Number of levels**: You can change `maxDepth: 5` to increase/decrease the number of dropdowns
+- **Vertical layout**: `verticalLayout: true` displays the form vertically
+- **Customize text**: Modify the text in the `lang` section as desired
 
-Go to **Storefront** > **Script Manager**, click **Create a Script**, choose:
+### 🎨 Method 3: Installation for Supermarket Theme
 
-- **Location on page** = `Footer`
-- **Select pages where script will be added** = `All pages`
-- **Script type** = `Script`
+**Note:** Only applies to stores using the Supermarket theme
 
-Enter the script below to **Scripts contents**: 
+**Steps 1-3:** Follow the same steps as the methods above
+
+**Step 4:** Copy and paste the following code:
 
 ```html
 <script>
@@ -147,25 +157,52 @@ Enter the script below to **Scripts contents**:
 <script src="//papathemes.com/content/mcdd/mcdd.supermarket.js" async></script>
 ```
 
-- Update `body > .body` in `renderToSelector: 'body > .body'` by the container HTML element selector to render the form.
-- `usePrepend` = `true`: specify the form will be rendered on the top inside of the container HTML element.
-- `maxDepth`: specify the number of dropdowns or categories to display.
-- Customize words or languages in `lang` variable.
+**Step 5:** Customize the following settings:
 
+- **Display position**: You can change `'body > .body'` to another location where you want to display the form
+- **Number of levels**: Change `maxDepth: 3` to adjust the number of dropdowns
+- **Customize text**: Edit the text in the `lang` section
 
-## Usage
+## 📝 Category Setup Guide
 
-1. Create the hierachy categories as below screenshot for example:
+**For the feature to work properly, you need to set up categories in a hierarchical order:**
 
-![hierarchy categories](img/mcdd-hierarchy-categories.png)
+**Step 1: Create Category Structure**
 
-2. Assign products to the appropriate categories.
+Create categories in order from general to specific. Example for an auto parts store:
 
-3. Edit the root filter category ID, you will find the category ID in the address bar:
+![Category hierarchy structure](img/mcdd-hierarchy-categories.png)
 
-![mcdd-find-category-id](img/mcdd-find-category-id.png)
+**Step 2: Assign Products**
 
-4. Edit the theme file or the script in Script Manager, enter the category ID as below screenshot:
+Assign products to the appropriate final-level categories (the most specific subcategories).
 
-![mcdd-root-category-id-config](img/mcdd-root-category-id-config.png)
+**Step 3: Find Root Category ID**
 
+- Go to your store's category management section
+- Select the root category (highest level category) that you want as the starting point
+- Find the category ID in the browser address bar:
+
+![How to find category ID](img/mcdd-find-category-id.png)
+
+**Step 4: Update Category ID in Code**
+
+Replace the number `0` in `rootCategoryId: 0` with the category ID you just found:
+
+![How to configure root category ID](img/mcdd-root-category-id-config.png)
+
+## ✅ Expected Results
+
+After completing the above steps, customers will see:
+
+- The search form appears at the selected location
+- Category dropdowns are interconnected
+- When selecting a category, the next dropdown automatically updates
+- The "Find" button will take customers to the appropriate category or product page
+
+## 🔧 Important Notes
+
+- Ensure the category structure is set up in proper hierarchical order
+- All products must be assigned to final-level categories
+- Text can be customized according to your store's language and industry
+- If you encounter issues, check the category ID and hierarchical structure again
