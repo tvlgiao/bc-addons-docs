@@ -210,17 +210,25 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">Mutiple Category Dependent Dropdowns</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#install-on-your-bigcommerce-store">Install on your BigCommerce store</a>
+    <li class="toctree-l2"><a class="reference internal" href="#what-does-this-feature-do">🎯 What does this feature do?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#display-layouts">📱 Display Layouts</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-install-on-your-bigcommerce-store">🛠️ How to Install on Your BigCommerce Store</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#horizontal-layout">Horizontal layout</a>
+    <li class="toctree-l3"><a class="reference internal" href="#method-1-horizontal-layout">📐 Method 1: Horizontal Layout</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#vertical-layout">Vertical layout</a>
+    <li class="toctree-l3"><a class="reference internal" href="#method-2-vertical-layout">📐 Method 2: Vertical Layout</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#insert-on-supermarket-theme">Insert on Supermarket theme</a>
+    <li class="toctree-l3"><a class="reference internal" href="#method-3-installation-for-supermarket-theme">🎨 Method 3: Installation for Supermarket Theme</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a>
+    <li class="toctree-l2"><a class="reference internal" href="#category-setup-guide">📝 Category Setup Guide</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#expected-results">✅ Expected Results</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#important-notes">🔧 Important Notes</a>
     </li>
     </ul>
                 </li>
@@ -345,21 +353,32 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="multiple-category-dependent-dropdowns">Multiple Category Dependent Dropdowns<a class="headerlink" href="#multiple-category-dependent-dropdowns" title="Permanent link">&para;</a></h1>
-<p><strong>Horizontal layout demo:</strong></p>
+<p><strong>This feature helps customers find products more easily by displaying interconnected category dropdown menus.</strong></p>
+<h2 id="what-does-this-feature-do">🎯 What does this feature do?<a class="headerlink" href="#what-does-this-feature-do" title="Permanent link">&para;</a></h2>
+<p>Instead of customers having to manually browse through categories one by one, this feature will:</p>
+<ul>
+<li>Display interconnected dropdown menus</li>
+<li>When a customer selects a category, the next dropdown automatically updates with relevant options</li>
+<li>Help customers find the right products quickly and efficiently</li>
+</ul>
+<h2 id="display-layouts">📱 Display Layouts<a class="headerlink" href="#display-layouts" title="Permanent link">&para;</a></h2>
+<p><strong>Horizontal layout (suitable for top of page display):</strong></p>
 <p><img alt="Horizontal layout demo" src="img/mcdd-demo1.gif" /></p>
-<p><strong>Vertical layout demo:</strong></p>
+<p><strong>Vertical layout (suitable for sidebar display):</strong></p>
 <p><img alt="Vertical layout demo" src="img/mcdd-demo2.gif" /></p>
-<p><strong>Vertical layout -  5 Levels:</strong></p>
-<p><img alt="5 levels" src="img/mcdd-vertical-5-level.png" /></p>
-<h2 id="install-on-your-bigcommerce-store">Install on your BigCommerce store<a class="headerlink" href="#install-on-your-bigcommerce-store" title="Permanent link">&para;</a></h2>
-<h3 id="horizontal-layout">Horizontal layout<a class="headerlink" href="#horizontal-layout" title="Permanent link">&para;</a></h3>
-<p>Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, click <strong>Create a Script</strong>, choose:</p>
+<p><strong>Vertical layout - 5 category levels:</strong></p>
+<p><img alt="5 category levels" src="img/mcdd-vertical-5-level.png" /></p>
+<h2 id="how-to-install-on-your-bigcommerce-store">🛠️ How to Install on Your BigCommerce Store<a class="headerlink" href="#how-to-install-on-your-bigcommerce-store" title="Permanent link">&para;</a></h2>
+<h3 id="method-1-horizontal-layout">📐 Method 1: Horizontal Layout<a class="headerlink" href="#method-1-horizontal-layout" title="Permanent link">&para;</a></h3>
+<p><strong>Step 1:</strong> Access your BigCommerce admin panel</p>
+<p><strong>Step 2:</strong> Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, then click <strong>Create a Script</strong></p>
+<p><strong>Step 3:</strong> Configure the following settings:</p>
 <ul>
 <li><strong>Location on page</strong> = <code>Footer</code></li>
 <li><strong>Select pages where script will be added</strong> = <code>All pages</code></li>
 <li><strong>Script type</strong> = <code>Script</code></li>
 </ul>
-<p>Enter the script below to <strong>Scripts contents</strong>: </p>
+<p><strong>Step 4:</strong> Copy and paste the following code into <strong>Scripts contents</strong>:</p>
 <pre><code class="language-html">&lt;script&gt;
     window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
     window.PapathemesMCDDSettings = {
@@ -385,23 +404,21 @@
 &lt;script type=&quot;application/json&quot; id=&quot;PAPATHEMESMCDD_subcategories&quot; data-instantload-body-dynamic&gt;[{{#each category.subcategories}}{ &quot;name&quot;: {{{JSONstringify name}}}, &quot;id&quot;: {{{JSONstringify id}}}, &quot;url&quot;: {{{JSONstringify url}}} }{{#unless @last}},{{/unless}}{{/each}}]&lt;/script&gt;
 &lt;script src=&quot;//papathemes.com/content/mcdd/mcdd.YOURDOMAIN.js&quot; async&gt;&lt;/script&gt;
 </code></pre>
+<p><strong>Step 5:</strong> Customize the following settings:</p>
 <ul>
-<li>Replace <code>YOURDOMAIN</code> by your domain name. For example: <code>mydomain.com</code>.</li>
-<li>Update <code>body &gt; .body</code> in <code>renderToSelector: 'body &gt; .body'</code> by the container HTML element selector to render the form.</li>
-<li><code>usePrepend</code> = <code>true</code>: specify the form will be rendered on the top inside of the container HTML element.</li>
-<li><code>rootCategoryId</code> = <code>0</code>: specify the root category to load its subcategories into the first dropdown.</li>
-<li><code>maxDepth</code>: specify the number of dropdowns or categories to display.</li>
-<li><code>showOnAllPages</code> = <code>true</code>: Show on all pages or only on the coresponding category, descendant cateories and products.</li>
-<li>Customize words or languages in <code>lang</code> variable.</li>
+<li><strong>Replace <code>YOURDOMAIN</code></strong>: Change <code>YOURDOMAIN</code> to your domain name (example: <code>mydomain.com</code>)</li>
+<li><strong>Display position</strong>: You can change <code>'body &gt; .body'</code> to another location where you want to display the form</li>
+<li><strong>Number of category levels</strong>: Change the number <code>3</code> in <code>maxDepth: 3</code> to increase/decrease the number of dropdowns</li>
+<li><strong>Display on which pages</strong>: <code>showOnAllPages: true</code> means display on all pages</li>
+<li><strong>Customize text</strong>: Modify the text in the <code>lang</code> section as desired:</li>
+<li><code>heading</code>: Form title</li>
+<li><code>category_label_0, 1, 2</code>: Labels for each dropdown</li>
+<li><code>choose_label_0, 1, 2</code>: Default text in dropdowns</li>
+<li><code>submit_label</code>: Search button text</li>
 </ul>
-<h3 id="vertical-layout">Vertical layout<a class="headerlink" href="#vertical-layout" title="Permanent link">&para;</a></h3>
-<p>Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, click <strong>Create a Script</strong>, choose:</p>
-<ul>
-<li><strong>Location on page</strong> = <code>Footer</code></li>
-<li><strong>Select pages where script will be added</strong> = <code>All pages</code></li>
-<li><strong>Script type</strong> = <code>Script</code></li>
-</ul>
-<p>Enter the script below to <strong>Scripts contents</strong>: </p>
+<h3 id="method-2-vertical-layout">📐 Method 2: Vertical Layout<a class="headerlink" href="#method-2-vertical-layout" title="Permanent link">&para;</a></h3>
+<p><strong>Steps 1-3:</strong> Follow the same steps as Method 1 above</p>
+<p><strong>Step 4:</strong> Copy and paste the following code into <strong>Scripts contents</strong>:</p>
 <pre><code class="language-html">&lt;script&gt;
     window.jQueryTheme = window.jQueryTheme || window.jQuerySupermarket || window.jQuery;
     window.PapathemesMCDDSettings = {
@@ -428,22 +445,18 @@
 &lt;script type=&quot;application/json&quot; id=&quot;PAPATHEMESMCDD_subcategories&quot; data-instantload-body-dynamic&gt;[{{#each category.subcategories}}{ &quot;name&quot;: {{{JSONstringify name}}}, &quot;id&quot;: {{{JSONstringify id}}}, &quot;url&quot;: {{{JSONstringify url}}} }{{#unless @last}},{{/unless}}{{/each}}]&lt;/script&gt;
 &lt;script src=&quot;//papathemes.com/content/mcdd/mcdd.YOURDOMAIN.js&quot; async&gt;&lt;/script&gt;
 </code></pre>
+<p><strong>Step 5:</strong> Customize the following settings:</p>
 <ul>
-<li>Replace <code>YOURDOMAIN</code> by your domain name. For example: <code>mydomain.com</code>.</li>
-<li>Update <code>.page-sidebar</code> in <code>renderToSelector: '.page-sidebar'</code> by the container HTML element selector to render the form.</li>
-<li><code>usePrepend</code> = <code>true</code>: specify the form will be rendered on the top inside of the container HTML element.</li>
-<li><code>maxDepth</code>: specify the number of dropdowns or categories to display.</li>
-<li><code>verticalLayout</code> = <code>true</code>: Display the form vertically.</li>
-<li>Customize words or languages in <code>lang</code> variable.</li>
+<li><strong>Replace <code>YOURDOMAIN</code></strong>: Change <code>YOURDOMAIN</code> to your domain name</li>
+<li><strong>Display position</strong>: You can change <code>'.page-sidebar'</code> to another location</li>
+<li><strong>Number of levels</strong>: You can change <code>maxDepth: 5</code> to increase/decrease the number of dropdowns</li>
+<li><strong>Vertical layout</strong>: <code>verticalLayout: true</code> displays the form vertically</li>
+<li><strong>Customize text</strong>: Modify the text in the <code>lang</code> section as desired</li>
 </ul>
-<h3 id="insert-on-supermarket-theme">Insert on Supermarket theme<a class="headerlink" href="#insert-on-supermarket-theme" title="Permanent link">&para;</a></h3>
-<p>Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, click <strong>Create a Script</strong>, choose:</p>
-<ul>
-<li><strong>Location on page</strong> = <code>Footer</code></li>
-<li><strong>Select pages where script will be added</strong> = <code>All pages</code></li>
-<li><strong>Script type</strong> = <code>Script</code></li>
-</ul>
-<p>Enter the script below to <strong>Scripts contents</strong>: </p>
+<h3 id="method-3-installation-for-supermarket-theme">🎨 Method 3: Installation for Supermarket Theme<a class="headerlink" href="#method-3-installation-for-supermarket-theme" title="Permanent link">&para;</a></h3>
+<p><strong>Note:</strong> Only applies to stores using the Supermarket theme</p>
+<p><strong>Steps 1-3:</strong> Follow the same steps as the methods above</p>
+<p><strong>Step 4:</strong> Copy and paste the following code:</p>
 <pre><code class="language-html">&lt;script&gt;
     window.PapathemesMCDDSettings = {
         renderToSelector: 'body &gt; .body',
@@ -468,30 +481,44 @@
 &lt;script type=&quot;application/json&quot; id=&quot;PAPATHEMESMCDD_subcategories&quot; data-instantload-body-dynamic&gt;[{{#each category.subcategories}}{ &quot;name&quot;: {{{JSONstringify name}}}, &quot;id&quot;: {{{JSONstringify id}}}, &quot;url&quot;: {{{JSONstringify url}}} }{{#unless @last}},{{/unless}}{{/each}}]&lt;/script&gt;
 &lt;script src=&quot;//papathemes.com/content/mcdd/mcdd.supermarket.js&quot; async&gt;&lt;/script&gt;
 </code></pre>
+<p><strong>Step 5:</strong> Customize the following settings:</p>
 <ul>
-<li>Update <code>body &gt; .body</code> in <code>renderToSelector: 'body &gt; .body'</code> by the container HTML element selector to render the form.</li>
-<li><code>usePrepend</code> = <code>true</code>: specify the form will be rendered on the top inside of the container HTML element.</li>
-<li><code>maxDepth</code>: specify the number of dropdowns or categories to display.</li>
-<li>Customize words or languages in <code>lang</code> variable.</li>
+<li><strong>Display position</strong>: You can change <code>'body &gt; .body'</code> to another location where you want to display the form</li>
+<li><strong>Number of levels</strong>: Change <code>maxDepth: 3</code> to adjust the number of dropdowns</li>
+<li><strong>Customize text</strong>: Edit the text in the <code>lang</code> section</li>
 </ul>
-<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Create the hierachy categories as below screenshot for example:</li>
-</ol>
-<p><img alt="hierarchy categories" src="img/mcdd-hierarchy-categories.png" /></p>
-<ol start="2">
-<li>
-<p>Assign products to the appropriate categories.</p>
-</li>
-<li>
-<p>Edit the root filter category ID, you will find the category ID in the address bar:</p>
-</li>
-</ol>
-<p><img alt="mcdd-find-category-id" src="img/mcdd-find-category-id.png" /></p>
-<ol start="4">
-<li>Edit the theme file or the script in Script Manager, enter the category ID as below screenshot:</li>
-</ol>
-<p><img alt="mcdd-root-category-id-config" src="img/mcdd-root-category-id-config.png" /></p>
+<h2 id="category-setup-guide">📝 Category Setup Guide<a class="headerlink" href="#category-setup-guide" title="Permanent link">&para;</a></h2>
+<p><strong>For the feature to work properly, you need to set up categories in a hierarchical order:</strong></p>
+<p><strong>Step 1: Create Category Structure</strong></p>
+<p>Create categories in order from general to specific. Example for an auto parts store:</p>
+<p><img alt="Category hierarchy structure" src="img/mcdd-hierarchy-categories.png" /></p>
+<p><strong>Step 2: Assign Products</strong></p>
+<p>Assign products to the appropriate final-level categories (the most specific subcategories).</p>
+<p><strong>Step 3: Find Root Category ID</strong></p>
+<ul>
+<li>Go to your store's category management section</li>
+<li>Select the root category (highest level category) that you want as the starting point</li>
+<li>Find the category ID in the browser address bar:</li>
+</ul>
+<p><img alt="How to find category ID" src="img/mcdd-find-category-id.png" /></p>
+<p><strong>Step 4: Update Category ID in Code</strong></p>
+<p>Replace the number <code>0</code> in <code>rootCategoryId: 0</code> with the category ID you just found:</p>
+<p><img alt="How to configure root category ID" src="img/mcdd-root-category-id-config.png" /></p>
+<h2 id="expected-results">✅ Expected Results<a class="headerlink" href="#expected-results" title="Permanent link">&para;</a></h2>
+<p>After completing the above steps, customers will see:</p>
+<ul>
+<li>The search form appears at the selected location</li>
+<li>Category dropdowns are interconnected</li>
+<li>When selecting a category, the next dropdown automatically updates</li>
+<li>The "Find" button will take customers to the appropriate category or product page</li>
+</ul>
+<h2 id="important-notes">🔧 Important Notes<a class="headerlink" href="#important-notes" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Ensure the category structure is set up in proper hierarchical order</li>
+<li>All products must be assigned to final-level categories</li>
+<li>Text can be customized according to your store's language and industry</li>
+<li>If you encounter issues, check the category ID and hierarchical structure again</li>
+</ul>
               
             </div>
           </div><footer>
