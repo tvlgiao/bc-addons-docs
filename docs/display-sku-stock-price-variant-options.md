@@ -52,23 +52,32 @@ Import new CSS file
 ### Workflow:
 
 1. **Page Load**: When product page loads
+
    - `ProductDetails` constructor is called
    - Initialize `ProductVariantInfo` service with product ID
    - Call `initVariantInfo()` to fetch variants
+
 2. **Fetch Variants**:
+
    - Check if `graphQLToken` exists (required)
    - GraphQL query fetches all product variants with authentication
    - Headers: `Authorization: Bearer ${graphQLToken}`
    - Includes: SKU, stock, prices, option values
    - Data is cached in service
+
 3. **Build Variant Map**:
+
    - Each variant is mapped with combination of option value IDs
    - Example: Size M + Color Red = variant with SKU "M-RED-001"
+
 4. **Display Info**:
+
    - For each option value, find corresponding variant
    - Generate HTML with SKU, stock, price
    - Insert into UI (different for each option type)
+
 5. **Update on Change**:
+
    - When user selects different option
    - Re-calculate variant info
    - Update UI with new data
