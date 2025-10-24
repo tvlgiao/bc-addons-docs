@@ -11,7 +11,9 @@ This feature displays **SKU**, **Stock**, and **Price** for each variant option 
 ## Created/Modified Files
 
 ### 1. **assets/js/theme/common/product-variant-info.js** (NEW)
+
 Service class to:
+
 - Fetch variant data from GraphQL API with authentication (graphQLToken)
 - Map variants with option values
 - Generate HTML to display variant info
@@ -19,7 +21,9 @@ Service class to:
 - Cache variant data for performance optimization
 
 ### 2. **assets/js/theme/common/product-details.js** (UPDATED)
+
 Added:
+
 - Import `ProductVariantInfo` service
 - Method `initVariantInfo()` - Initialize and fetch variant data
 - Method `updateAllOptionVariantInfo()` - Update info for all options
@@ -28,7 +32,9 @@ Added:
 - Method `getVariantTextForSelect()` - Format text for dropdown options
 
 ### 3. **assets/scss/components/stencil/productView/_productView-variantInfo.scss** (NEW)
+
 CSS styling for:
+
 - `.variant-info-container` - Container for variant info
 - `.variant-sku` - SKU display with 📋 icon
 - `.variant-stock` - Stock display (green if in stock, red if out)
@@ -38,6 +44,7 @@ CSS styling for:
 - Out of stock styling
 
 ### 4. **assets/scss/components/stencil/productView/_component.scss** (UPDATED)
+
 Import new CSS file
 
 ## How It Works
@@ -48,23 +55,19 @@ Import new CSS file
    - `ProductDetails` constructor is called
    - Initialize `ProductVariantInfo` service with product ID
    - Call `initVariantInfo()` to fetch variants
-
 2. **Fetch Variants**:
    - Check if `graphQLToken` exists (required)
    - GraphQL query fetches all product variants with authentication
    - Headers: `Authorization: Bearer ${graphQLToken}`
    - Includes: SKU, stock, prices, option values
    - Data is cached in service
-
 3. **Build Variant Map**:
    - Each variant is mapped with combination of option value IDs
    - Example: Size M + Color Red = variant with SKU "M-RED-001"
-
 4. **Display Info**:
    - For each option value, find corresponding variant
    - Generate HTML with SKU, stock, price
    - Insert into UI (different for each option type)
-
 5. **Update on Change**:
    - When user selects different option
    - Re-calculate variant info
@@ -136,6 +139,7 @@ query ProductVariants($productId: Int!, $currencyCode: currencyCode!, $includeTa
 ## UI Display Examples
 
 ### 1. Swatch Options (Color/Size swatches)
+
 ```html
 <label class="form-option form-option-swatch">
   <input type="radio" value="red" />
@@ -151,6 +155,7 @@ query ProductVariants($productId: Int!, $currencyCode: currencyCode!, $includeTa
 ```
 
 ### 2. Rectangle/Radio Options
+
 ```html
 <label class="form-label">
   <input type="radio" value="medium" />
@@ -169,6 +174,7 @@ query ProductVariants($productId: Int!, $currencyCode: currencyCode!, $includeTa
 ```
 
 ### 3. Select Dropdown
+
 ```html
 <select>
   <option value="1">Small (SKU: S-001 - $19.99 - 10 in stock)</option>
@@ -191,6 +197,7 @@ Feature includes logging for debugging:
 ## CSS Classes
 
 ### Main Classes:
+
 - `.variant-info-container` - Container wrapper
 - `.variant-info` - Flex container for info items
 - `.variant-sku` - SKU display
@@ -202,13 +209,16 @@ Feature includes logging for debugging:
   - `.price-was` - Original price (strikethrough)
 
 ### State Classes:
+
 - `.unavailable` - Option unavailable (reduced opacity, strikethrough)
 - `.variant-info-loading` - Loading state with shimmer effect
 
 ## Customization
 
 ### Change icons:
+
 In `product-variant-info.js`:
+
 ```javascript
 generateVariantInfoHTML(variant) {
     // SKU icon: 📋 -> 🏷️
@@ -220,7 +230,9 @@ generateVariantInfoHTML(variant) {
 ```
 
 ### Change colors:
+
 In `_productView-variantInfo.scss`:
+
 ```scss
 .variant-stock {
     &.in-stock {
@@ -234,6 +246,7 @@ In `_productView-variantInfo.scss`:
 ```
 
 ### Change layout:
+
 ```scss
 .variant-info {
     flex-direction: column; // Stack vertically
@@ -259,14 +272,14 @@ In `_productView-variantInfo.scss`:
 ## Testing
 
 ### 1. Test on product with variants:
-```
+
 1. Navigate to product page with variants (Size, Color, etc.)
 2. Open Console to view logs
 3. Select different options
 4. Verify variant info displays correctly
-```
 
 ### 2. Test edge cases:
+
 - Product without variants
 - Out of stock variants
 - Variants with sale price
@@ -276,6 +289,7 @@ In `_productView-variantInfo.scss`:
 ## Troubleshooting
 
 ### Variant info not displaying:
+
 1. Check console logs - if you see "⚠️ graphQLToken does not exist", check config
 2. Verify product has variants in BigCommerce admin
 3. Check GraphQL endpoint `/graphql` is working
@@ -283,11 +297,13 @@ In `_productView-variantInfo.scss`:
 5. Verify `context.showPricesWithTax` settings
 
 ### Wrong price/stock:
+
 1. Check currency code in context
 2. Verify includeTax setting
 3. Check variant mapping logic
 
 ### CSS not applied:
+
 1. Verify SCSS file is imported
 2. Run build process: `npm run build`
 3. Clear cache and reload
@@ -304,6 +320,7 @@ In `_productView-variantInfo.scss`:
 ## Support
 
 If you have issues:
+
 1. Check console logs
 2. Verify GraphQL query in Network tab
 3. Check variant data in BigCommerce admin
