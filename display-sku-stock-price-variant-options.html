@@ -455,28 +455,46 @@
 <h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
 <h3 id="workflow">Workflow:<a class="headerlink" href="#workflow" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Page Load</strong>: When product page loads
-   - <code>ProductDetails</code> constructor is called
-   - Initialize <code>ProductVariantInfo</code> service with product ID
-   - Call <code>initVariantInfo()</code> to fetch variants</li>
-<li><strong>Fetch Variants</strong>:
-   - Check if <code>graphQLToken</code> exists (required)
-   - GraphQL query fetches all product variants with authentication
-   - Headers: <code>Authorization: Bearer ${graphQLToken}</code>
-   - Includes: SKU, stock, prices, option values
-   - Data is cached in service</li>
-<li><strong>Build Variant Map</strong>:
-   - Each variant is mapped with combination of option value IDs
-   - Example: Size M + Color Red = variant with SKU "M-RED-001"</li>
-<li><strong>Display Info</strong>:
-   - For each option value, find corresponding variant
-   - Generate HTML with SKU, stock, price
-   - Insert into UI (different for each option type)</li>
-<li><strong>Update on Change</strong>:
-   - When user selects different option
-   - Re-calculate variant info
-   - Update UI with new data</li>
+<li><strong>Page Load</strong>: When product page loads</li>
 </ol>
+<ul>
+<li><code>ProductDetails</code> constructor is called</li>
+<li>Initialize <code>ProductVariantInfo</code> service with product ID</li>
+<li>Call <code>initVariantInfo()</code> to fetch variants</li>
+</ul>
+<ol start="2">
+<li><strong>Fetch Variants</strong>:</li>
+</ol>
+<ul>
+<li>Check if <code>graphQLToken</code> exists (required)</li>
+<li>GraphQL query fetches all product variants with authentication</li>
+<li>Headers: <code>Authorization: Bearer ${graphQLToken}</code></li>
+<li>Includes: SKU, stock, prices, option values</li>
+<li>Data is cached in service</li>
+</ul>
+<ol start="3">
+<li><strong>Build Variant Map</strong>:</li>
+</ol>
+<ul>
+<li>Each variant is mapped with combination of option value IDs</li>
+<li>Example: Size M + Color Red = variant with SKU "M-RED-001"</li>
+</ul>
+<ol start="4">
+<li><strong>Display Info</strong>:</li>
+</ol>
+<ul>
+<li>For each option value, find corresponding variant</li>
+<li>Generate HTML with SKU, stock, price</li>
+<li>Insert into UI (different for each option type)</li>
+</ul>
+<ol start="5">
+<li><strong>Update on Change</strong>:</li>
+</ol>
+<ul>
+<li>When user selects different option</li>
+<li>Re-calculate variant info</li>
+<li>Update UI with new data</li>
+</ul>
 <h2 id="graphql-query">GraphQL Query<a class="headerlink" href="#graphql-query" title="Permanent link">&para;</a></h2>
 <pre><code class="language-graphql">query ProductVariants($productId: Int!, $currencyCode: currencyCode!, $includeTax: Boolean!) {
   site {
