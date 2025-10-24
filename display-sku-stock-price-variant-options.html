@@ -421,65 +421,61 @@
 <p><strong>Theme Compatibility</strong>: Supermarket theme</p>
 <h2 id="createdmodified-files">Created/Modified Files<a class="headerlink" href="#createdmodified-files" title="Permanent link">&para;</a></h2>
 <h3 id="1-assetsjsthemecommonproduct-variant-infojs-new">1. <strong>assets/js/theme/common/product-variant-info.js</strong> (NEW)<a class="headerlink" href="#1-assetsjsthemecommonproduct-variant-infojs-new" title="Permanent link">&para;</a></h3>
-<p>Service class to:
-- Fetch variant data from GraphQL API with authentication (graphQLToken)
-- Map variants with option values
-- Generate HTML to display variant info
-- Format prices according to currency settings
-- Cache variant data for performance optimization</p>
+<p>Service class to:</p>
+<ul>
+<li>Fetch variant data from GraphQL API with authentication (graphQLToken)</li>
+<li>Map variants with option values</li>
+<li>Generate HTML to display variant info</li>
+<li>Format prices according to currency settings</li>
+<li>Cache variant data for performance optimization</li>
+</ul>
 <h3 id="2-assetsjsthemecommonproduct-detailsjs-updated">2. <strong>assets/js/theme/common/product-details.js</strong> (UPDATED)<a class="headerlink" href="#2-assetsjsthemecommonproduct-detailsjs-updated" title="Permanent link">&para;</a></h3>
-<p>Added:
-- Import <code>ProductVariantInfo</code> service
-- Method <code>initVariantInfo()</code> - Initialize and fetch variant data
-- Method <code>updateAllOptionVariantInfo()</code> - Update info for all options
-- Method <code>updateOptionValueVariantInfo()</code> - Update info for each option value
-- Method <code>getSelectedOptionValueIds()</code> - Get selected option values
-- Method <code>getVariantTextForSelect()</code> - Format text for dropdown options</p>
+<p>Added:</p>
+<ul>
+<li>Import <code>ProductVariantInfo</code> service</li>
+<li>Method <code>initVariantInfo()</code> - Initialize and fetch variant data</li>
+<li>Method <code>updateAllOptionVariantInfo()</code> - Update info for all options</li>
+<li>Method <code>updateOptionValueVariantInfo()</code> - Update info for each option value</li>
+<li>Method <code>getSelectedOptionValueIds()</code> - Get selected option values</li>
+<li>Method <code>getVariantTextForSelect()</code> - Format text for dropdown options</li>
+</ul>
 <h3 id="3-assetsscsscomponentsstencilproductview_productview-variantinfoscss-new">3. <strong>assets/scss/components/stencil/productView/_productView-variantInfo.scss</strong> (NEW)<a class="headerlink" href="#3-assetsscsscomponentsstencilproductview_productview-variantinfoscss-new" title="Permanent link">&para;</a></h3>
-<p>CSS styling for:
-- <code>.variant-info-container</code> - Container for variant info
-- <code>.variant-sku</code> - SKU display with 📋 icon
-- <code>.variant-stock</code> - Stock display (green if in stock, red if out)
-- <code>.variant-price</code> - Price display with sale price support
-- Responsive styles
-- Loading animation
-- Out of stock styling</p>
+<p>CSS styling for:</p>
+<ul>
+<li><code>.variant-info-container</code> - Container for variant info</li>
+<li><code>.variant-sku</code> - SKU display with 📋 icon</li>
+<li><code>.variant-stock</code> - Stock display (green if in stock, red if out)</li>
+<li><code>.variant-price</code> - Price display with sale price support</li>
+<li>Responsive styles</li>
+<li>Loading animation</li>
+<li>Out of stock styling</li>
+</ul>
 <h3 id="4-assetsscsscomponentsstencilproductview_componentscss-updated">4. <strong>assets/scss/components/stencil/productView/_component.scss</strong> (UPDATED)<a class="headerlink" href="#4-assetsscsscomponentsstencilproductview_componentscss-updated" title="Permanent link">&para;</a></h3>
 <p>Import new CSS file</p>
 <h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
 <h3 id="workflow">Workflow:<a class="headerlink" href="#workflow" title="Permanent link">&para;</a></h3>
 <ol>
-<li>
-<p><strong>Page Load</strong>: When product page loads
+<li><strong>Page Load</strong>: When product page loads
    - <code>ProductDetails</code> constructor is called
    - Initialize <code>ProductVariantInfo</code> service with product ID
-   - Call <code>initVariantInfo()</code> to fetch variants</p>
-</li>
-<li>
-<p><strong>Fetch Variants</strong>:
+   - Call <code>initVariantInfo()</code> to fetch variants</li>
+<li><strong>Fetch Variants</strong>:
    - Check if <code>graphQLToken</code> exists (required)
    - GraphQL query fetches all product variants with authentication
    - Headers: <code>Authorization: Bearer ${graphQLToken}</code>
    - Includes: SKU, stock, prices, option values
-   - Data is cached in service</p>
-</li>
-<li>
-<p><strong>Build Variant Map</strong>:
+   - Data is cached in service</li>
+<li><strong>Build Variant Map</strong>:
    - Each variant is mapped with combination of option value IDs
-   - Example: Size M + Color Red = variant with SKU "M-RED-001"</p>
-</li>
-<li>
-<p><strong>Display Info</strong>:
+   - Example: Size M + Color Red = variant with SKU "M-RED-001"</li>
+<li><strong>Display Info</strong>:
    - For each option value, find corresponding variant
    - Generate HTML with SKU, stock, price
-   - Insert into UI (different for each option type)</p>
-</li>
-<li>
-<p><strong>Update on Change</strong>:
+   - Insert into UI (different for each option type)</li>
+<li><strong>Update on Change</strong>:
    - When user selects different option
    - Re-calculate variant info
-   - Update UI with new data</p>
-</li>
+   - Update UI with new data</li>
 </ol>
 <h2 id="graphql-query">GraphQL Query<a class="headerlink" href="#graphql-query" title="Permanent link">&para;</a></h2>
 <pre><code class="language-graphql">query ProductVariants($productId: Int!, $currencyCode: currencyCode!, $includeTax: Boolean!) {
@@ -649,11 +645,12 @@
 </ul>
 <h2 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
 <h3 id="1-test-on-product-with-variants">1. Test on product with variants:<a class="headerlink" href="#1-test-on-product-with-variants" title="Permanent link">&para;</a></h3>
-<pre><code>1. Navigate to product page with variants (Size, Color, etc.)
-2. Open Console to view logs
-3. Select different options
-4. Verify variant info displays correctly
-</code></pre>
+<ol>
+<li>Navigate to product page with variants (Size, Color, etc.)</li>
+<li>Open Console to view logs</li>
+<li>Select different options</li>
+<li>Verify variant info displays correctly</li>
+</ol>
 <h3 id="2-test-edge-cases">2. Test edge cases:<a class="headerlink" href="#2-test-edge-cases" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Product without variants</li>
@@ -693,11 +690,13 @@
 <li><strong>Localization</strong>: Support multi-language</li>
 </ol>
 <h2 id="support">Support<a class="headerlink" href="#support" title="Permanent link">&para;</a></h2>
-<p>If you have issues:
-1. Check console logs
-2. Verify GraphQL query in Network tab
-3. Check variant data in BigCommerce admin
-4. Review applied CSS classes</p>
+<p>If you have issues:</p>
+<ol>
+<li>Check console logs</li>
+<li>Verify GraphQL query in Network tab</li>
+<li>Check variant data in BigCommerce admin</li>
+<li>Review applied CSS classes</li>
+</ol>
               
             </div>
           </div><footer>
