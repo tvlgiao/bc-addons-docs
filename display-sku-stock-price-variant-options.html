@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>Display SKU, Stock & Price on Product Variant Options - Documentation</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Display SKU, Stock \u0026 Price on Product Variant Options";
+        var mkdocs_page_input_path = "display-sku-stock-price-variant-options.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', "UA-241859-16", "bc-addons-docs.papathemes.com");
+        ga('send', 'pageview');
+      </script>
+    
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="index.html" class="icon icon-home"> Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="index.html">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="back-to-category.html">Add Back to Category button on the cart page</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="file-upload.html">Add File Upload Field on Registration Page</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="customer-account-shipping-option.html">Add Shipping Option Your Customer's Shipping Account</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="checkout-signature-delivery.html">Add Signature on Delivery on Checkout Page</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="add-child-products-picklist.html">Add to Cart Child Products from Product Pick List</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="apparel-product-options.html">Apparel Product Options</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="add-product-to-cart-automatically.html">Automatically Add Additional Product To Cart</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="add-product-to-cart-automatically-based-on-customer-group.html">Automatically Add Product to Cart Based on Customer Group</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="bundle-product-tabs.html">Bundle Product Tabs on a Product Detail Page</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="better-reorder.html">Better Product Reorder</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="bulk-pricing-option.html">Bulk Pricing Option</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="bulk-pricing-variants.html">Bulk Pricing Variants</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="checkout-file-upload.html">Checkout File Upload</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="checkout-shipping-and-payment-method-customizations.html">Checkout Shipping & Payment Method Customizations</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="conditional-product-options.html">Conditional Product Options</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="popups.html">Custom Popups</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="delete-cart.html">Delete Cart</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="disallow-different-billing-address.html">Disallow Different Billing Address</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="brand-logo-on-pdp.html">Display Brand Logo on PDP</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="product-card-brand-logo.html">Display Brand Logo on Product Cards</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="color-swatches.html">Display Color Swatches on Product Items</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="free-shipping-badges.html">Display Free Shipping Badges</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="wholesale-discount-price.html">Display product PriceList-based price vs. regular price</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="cart-weight.html">Display Product Weight on Cart Page</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="product-card-stock.html">Display Product Stock on Product Card</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="fractional-quantity-purchase.html">Fractional Quantity & Unit Labels</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="frequently-bought-together.html">Frequently Bought Together</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="hide-price.html">Hide Price for Non-Logged In Customers</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="hide-option-values-based-on-customer-groups.html">Hide Product Option Values based on Customer Groups</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="hide-price-by-brand.html">Hide product prices based on specific brands</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="html5-video-image-gallery.html">HTML5 Video Image Gallery</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="igat-variants-table.html">IGAT Variants Table</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="variant-image-gallery.html">Image Gallery for Product Options</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="limit-countries.html">Limit Countries / States</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="limit-shipping-options.html">Limit Shipping Options</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="category-minimum-quantity.html">Minimum Order Amount & Minimum Category Quantity</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="multi-storefronts-global-login.html">Multi Storefronts Global Login</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="msf-universal-login.html">Multi Storefronts Universal Login Automatically</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="multiple-category-dependent-dropdowns.html">Mutiple Category Dependent Dropdowns</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="multiple-quantity-product-options.html">Mutiple Quantity Product Options</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="order-multiple-skus.html">Order Multiple SKUs</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="papersushishop-expected-shipping-date.html">Papersushishop Expected Shipping Date</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="pc-builder-product-bundles.html">PC Builder Product Bundles</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="preselect-product-option-link.html">Pre-Select Product Options Sharing Link</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="prevent-purchase-low-stock.html">Prevent Purchase Low Stock Products</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="product-bundles.html">Product Bundles</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="product-card-badges.html">Product Card Badges</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="product-card-lowest-price.html">Product Card Lowest Price</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="product-card-unit-price.html">Product Card Unit Price</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="product-designer.html">Product Designer</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="product-pick-list-dropdown-and-price.html">Product Pick List Dropdown and Price</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="product-pick-list-price.html">Product Pick List Price</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="product-review-images.html">Product Review Images</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Display SKU, Stock & Price on Product Variant Options</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#createdmodified-files">Created/Modified Files</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-assetsjsthemecommonproduct-variant-infojs-new">1. assets/js/theme/common/product-variant-info.js (NEW)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-assetsjsthemecommonproduct-detailsjs-updated">2. assets/js/theme/common/product-details.js (UPDATED)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-assetsscsscomponentsstencilproductview_productview-variantinfoscss-new">3. assets/scss/components/stencil/productView/_productView-variantInfo.scss (NEW)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4-assetsscsscomponentsstencilproductview_componentscss-updated">4. assets/scss/components/stencil/productView/_component.scss (UPDATED)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-it-works">How It Works</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#workflow">Workflow:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#graphql-query">GraphQL Query</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ui-display-examples">UI Display Examples</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-swatch-options-colorsize-swatches">1. Swatch Options (Color/Size swatches)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-rectangleradio-options">2. Rectangle/Radio Options</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-select-dropdown">3. Select Dropdown</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#console-logs">Console Logs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#css-classes">CSS Classes</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#main-classes">Main Classes:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#state-classes">State Classes:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#customization">Customization</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#change-icons">Change icons:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#change-colors">Change colors:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#change-layout">Change layout:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#browser-support">Browser Support</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#performance">Performance</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#testing">Testing</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-test-on-product-with-variants">1. Test on product with variants:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-test-edge-cases">2. Test edge cases:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#variant-info-not-displaying">Variant info not displaying:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#wrong-pricestock">Wrong price/stock:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#css-not-applied">CSS not applied:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#future-enhancements">Future Enhancements</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#support">Support</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="quantity-in-cart.html">Quantity In Cart</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="restrict-shipping-countries-on-specific-products.html">Restrict Shipping Countries on Specific Products</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="rolls-calculator.html">Rolls Calculator</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="shop-by-child-sku.html">Select product variants by SKU</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="sell-by-pack.html">Sell By Pack</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="shipment-details.html">Shipment Details</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="shipping-countdown.html">Shipping Countdown</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="shipping-estimator.html">Shipping Estimator on Product Page</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="stock-filter.html">Stock Filter</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="product-option-tooltip.html">Tooltips for Product Options</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html" class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Display SKU, Stock & Price on Product Variant Options</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="display-sku-stock-price-on-product-variant-options">Display SKU, Stock &amp; Price on Product Variant Options<a class="headerlink" href="#display-sku-stock-price-on-product-variant-options" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>This feature displays <strong>SKU</strong>, <strong>Stock</strong>, and <strong>Price</strong> for each variant option value on the product page. Data is fetched from BigCommerce GraphQL API and displayed in real-time when users select options.</p>
+<p><strong>GitHub Repository</strong>: <a href="https://github.com/allcommerce/bc-onlinemetalsupply-supermarket-variant-option-price-sku-stock-mod">bc-onlinemetalsupply-supermarket-variant-option-price-sku-stock-mod</a></p>
+<p><strong>Theme Compatibility</strong>: Supermarket theme</p>
+<h2 id="createdmodified-files">Created/Modified Files<a class="headerlink" href="#createdmodified-files" title="Permanent link">&para;</a></h2>
+<h3 id="1-assetsjsthemecommonproduct-variant-infojs-new">1. <strong>assets/js/theme/common/product-variant-info.js</strong> (NEW)<a class="headerlink" href="#1-assetsjsthemecommonproduct-variant-infojs-new" title="Permanent link">&para;</a></h3>
+<p>Service class to:
+- Fetch variant data from GraphQL API with authentication (graphQLToken)
+- Map variants with option values
+- Generate HTML to display variant info
+- Format prices according to currency settings
+- Cache variant data for performance optimization</p>
+<h3 id="2-assetsjsthemecommonproduct-detailsjs-updated">2. <strong>assets/js/theme/common/product-details.js</strong> (UPDATED)<a class="headerlink" href="#2-assetsjsthemecommonproduct-detailsjs-updated" title="Permanent link">&para;</a></h3>
+<p>Added:
+- Import <code>ProductVariantInfo</code> service
+- Method <code>initVariantInfo()</code> - Initialize and fetch variant data
+- Method <code>updateAllOptionVariantInfo()</code> - Update info for all options
+- Method <code>updateOptionValueVariantInfo()</code> - Update info for each option value
+- Method <code>getSelectedOptionValueIds()</code> - Get selected option values
+- Method <code>getVariantTextForSelect()</code> - Format text for dropdown options</p>
+<h3 id="3-assetsscsscomponentsstencilproductview_productview-variantinfoscss-new">3. <strong>assets/scss/components/stencil/productView/_productView-variantInfo.scss</strong> (NEW)<a class="headerlink" href="#3-assetsscsscomponentsstencilproductview_productview-variantinfoscss-new" title="Permanent link">&para;</a></h3>
+<p>CSS styling for:
+- <code>.variant-info-container</code> - Container for variant info
+- <code>.variant-sku</code> - SKU display with 📋 icon
+- <code>.variant-stock</code> - Stock display (green if in stock, red if out)
+- <code>.variant-price</code> - Price display with sale price support
+- Responsive styles
+- Loading animation
+- Out of stock styling</p>
+<h3 id="4-assetsscsscomponentsstencilproductview_componentscss-updated">4. <strong>assets/scss/components/stencil/productView/_component.scss</strong> (UPDATED)<a class="headerlink" href="#4-assetsscsscomponentsstencilproductview_componentscss-updated" title="Permanent link">&para;</a></h3>
+<p>Import new CSS file</p>
+<h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
+<h3 id="workflow">Workflow:<a class="headerlink" href="#workflow" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Page Load</strong>: When product page loads
+   - <code>ProductDetails</code> constructor is called
+   - Initialize <code>ProductVariantInfo</code> service with product ID
+   - Call <code>initVariantInfo()</code> to fetch variants</p>
+</li>
+<li>
+<p><strong>Fetch Variants</strong>:
+   - Check if <code>graphQLToken</code> exists (required)
+   - GraphQL query fetches all product variants with authentication
+   - Headers: <code>Authorization: Bearer ${graphQLToken}</code>
+   - Includes: SKU, stock, prices, option values
+   - Data is cached in service</p>
+</li>
+<li>
+<p><strong>Build Variant Map</strong>:
+   - Each variant is mapped with combination of option value IDs
+   - Example: Size M + Color Red = variant with SKU "M-RED-001"</p>
+</li>
+<li>
+<p><strong>Display Info</strong>:
+   - For each option value, find corresponding variant
+   - Generate HTML with SKU, stock, price
+   - Insert into UI (different for each option type)</p>
+</li>
+<li>
+<p><strong>Update on Change</strong>:
+   - When user selects different option
+   - Re-calculate variant info
+   - Update UI with new data</p>
+</li>
+</ol>
+<h2 id="graphql-query">GraphQL Query<a class="headerlink" href="#graphql-query" title="Permanent link">&para;</a></h2>
+<pre><code class="language-graphql">query ProductVariants($productId: Int!, $currencyCode: currencyCode!, $includeTax: Boolean!) {
+  site {
+    product(entityId: $productId) {
+      entityId
+      variants(first: 250) {
+        edges {
+          node {
+            entityId
+            sku
+            inventory {
+              isInStock
+              aggregated {
+                availableToSell
+              }
+            }
+            isPurchasable
+            prices(currencyCode: $currencyCode, includeTax: $includeTax) {
+              price { currencyCode value }
+              retailPrice { currencyCode value }
+              salePrice { currencyCode value }
+              basePrice { currencyCode value }
+            }
+            productOptions {
+              edges {
+                node {
+                  entityId
+                  displayName
+                  isVariantOption
+                  ... on MultipleChoiceOption {
+                    __typename
+                    values {
+                      edges {
+                        node {
+                          entityId
+                          label
+                          isSelected
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    currency(currencyCode: $currencyCode) {
+      display {
+        symbol
+        symbolPlacement
+        decimalToken
+        thousandsToken
+        decimalPlaces
+      }
+    }
+  }
+}
+</code></pre>
+<h2 id="ui-display-examples">UI Display Examples<a class="headerlink" href="#ui-display-examples" title="Permanent link">&para;</a></h2>
+<h3 id="1-swatch-options-colorsize-swatches">1. Swatch Options (Color/Size swatches)<a class="headerlink" href="#1-swatch-options-colorsize-swatches" title="Permanent link">&para;</a></h3>
+<pre><code class="language-html">&lt;label class=&quot;form-option form-option-swatch&quot;&gt;
+  &lt;input type=&quot;radio&quot; value=&quot;red&quot; /&gt;
+  &lt;span&gt;Red&lt;/span&gt;
+  &lt;div class=&quot;variant-info-container&quot;&gt;
+    &lt;span class=&quot;variant-info&quot;&gt;
+      &lt;span class=&quot;variant-sku&quot;&gt;📋 SKU: RED-001&lt;/span&gt;
+      &lt;span class=&quot;variant-stock in-stock&quot;&gt;📦 15 in stock&lt;/span&gt;
+      &lt;span class=&quot;variant-price&quot;&gt;$29.99&lt;/span&gt;
+    &lt;/span&gt;
+  &lt;/div&gt;
+&lt;/label&gt;
+</code></pre>
+<h3 id="2-rectangleradio-options">2. Rectangle/Radio Options<a class="headerlink" href="#2-rectangleradio-options" title="Permanent link">&para;</a></h3>
+<pre><code class="language-html">&lt;label class=&quot;form-label&quot;&gt;
+  &lt;input type=&quot;radio&quot; value=&quot;medium&quot; /&gt;
+  &lt;span&gt;Medium&lt;/span&gt;
+  &lt;div class=&quot;variant-info-container&quot;&gt;
+    &lt;span class=&quot;variant-info&quot;&gt;
+      &lt;span class=&quot;variant-sku&quot;&gt;📋 SKU: M-001&lt;/span&gt;
+      &lt;span class=&quot;variant-stock in-stock&quot;&gt;📦 8 in stock&lt;/span&gt;
+      &lt;span class=&quot;variant-price&quot;&gt;
+        &lt;span class=&quot;price-now&quot;&gt;$24.99&lt;/span&gt;
+        &lt;span class=&quot;price-was&quot;&gt;$29.99&lt;/span&gt;
+      &lt;/span&gt;
+    &lt;/span&gt;
+  &lt;/div&gt;
+&lt;/label&gt;
+</code></pre>
+<h3 id="3-select-dropdown">3. Select Dropdown<a class="headerlink" href="#3-select-dropdown" title="Permanent link">&para;</a></h3>
+<pre><code class="language-html">&lt;select&gt;
+  &lt;option value=&quot;1&quot;&gt;Small (SKU: S-001 - $19.99 - 10 in stock)&lt;/option&gt;
+  &lt;option value=&quot;2&quot;&gt;Medium (SKU: M-001 - $24.99 - 8 in stock)&lt;/option&gt;
+  &lt;option value=&quot;3&quot;&gt;Large (SKU: L-001 - $29.99 - Out of stock)&lt;/option&gt;
+&lt;/select&gt;
+</code></pre>
+<h2 id="console-logs">Console Logs<a class="headerlink" href="#console-logs" title="Permanent link">&para;</a></h2>
+<p>Feature includes logging for debugging:</p>
+<pre><code>🎯 Initializing variant info...
+🔍 Fetching variants for product 123...
+✅ Successfully fetched 12 variants
+📊 Mapped 12 variants
+</code></pre>
+<h2 id="css-classes">CSS Classes<a class="headerlink" href="#css-classes" title="Permanent link">&para;</a></h2>
+<h3 id="main-classes">Main Classes:<a class="headerlink" href="#main-classes" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>.variant-info-container</code> - Container wrapper</li>
+<li><code>.variant-info</code> - Flex container for info items</li>
+<li><code>.variant-sku</code> - SKU display</li>
+<li><code>.variant-stock</code> - Stock display</li>
+<li><code>.in-stock</code> - In stock (green color)</li>
+<li><code>.out-of-stock</code> - Out of stock (red color, strikethrough)</li>
+<li><code>.variant-price</code> - Price display</li>
+<li><code>.price-now</code> - Current/sale price</li>
+<li><code>.price-was</code> - Original price (strikethrough)</li>
+</ul>
+<h3 id="state-classes">State Classes:<a class="headerlink" href="#state-classes" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>.unavailable</code> - Option unavailable (reduced opacity, strikethrough)</li>
+<li><code>.variant-info-loading</code> - Loading state with shimmer effect</li>
+</ul>
+<h2 id="customization">Customization<a class="headerlink" href="#customization" title="Permanent link">&para;</a></h2>
+<h3 id="change-icons">Change icons:<a class="headerlink" href="#change-icons" title="Permanent link">&para;</a></h3>
+<p>In <code>product-variant-info.js</code>:</p>
+<pre><code class="language-javascript">generateVariantInfoHTML(variant) {
+    // SKU icon: 📋 -&gt; 🏷️
+    parts.push(`&lt;span class=&quot;variant-sku&quot;&gt;🏷️ SKU: ${variant.sku}&lt;/span&gt;`);
+
+    // Stock icon: 📦 -&gt; ✓
+    parts.push(`&lt;span class=&quot;variant-stock in-stock&quot;&gt;✓ ${stockText}&lt;/span&gt;`);
+}
+</code></pre>
+<h3 id="change-colors">Change colors:<a class="headerlink" href="#change-colors" title="Permanent link">&para;</a></h3>
+<p>In <code>_productView-variantInfo.scss</code>:</p>
+<pre><code class="language-scss">.variant-stock {
+    &amp;.in-stock {
+        color: #28a745; // Green
+    }
+
+    &amp;.out-of-stock {
+        color: #dc3545; // Red
+    }
+}
+</code></pre>
+<h3 id="change-layout">Change layout:<a class="headerlink" href="#change-layout" title="Permanent link">&para;</a></h3>
+<pre><code class="language-scss">.variant-info {
+    flex-direction: column; // Stack vertically
+    // or
+    flex-direction: row; // Inline horizontally
+}
+</code></pre>
+<h2 id="browser-support">Browser Support<a class="headerlink" href="#browser-support" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Chrome/Edge: ✅ Full support</li>
+<li>Firefox: ✅ Full support</li>
+<li>Safari: ✅ Full support</li>
+<li>IE11: ⚠️ Requires polyfills for async/await and Map</li>
+</ul>
+<h2 id="performance">Performance<a class="headerlink" href="#performance" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Variant data is cached after first fetch</li>
+<li>GraphQL query limits to 250 variants (can increase if needed)</li>
+<li>UI updates only when option changes</li>
+<li>No re-fetch when switching between options</li>
+</ul>
+<h2 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
+<h3 id="1-test-on-product-with-variants">1. Test on product with variants:<a class="headerlink" href="#1-test-on-product-with-variants" title="Permanent link">&para;</a></h3>
+<pre><code>1. Navigate to product page with variants (Size, Color, etc.)
+2. Open Console to view logs
+3. Select different options
+4. Verify variant info displays correctly
+</code></pre>
+<h3 id="2-test-edge-cases">2. Test edge cases:<a class="headerlink" href="#2-test-edge-cases" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Product without variants</li>
+<li>Out of stock variants</li>
+<li>Variants with sale price</li>
+<li>Multiple variant combinations</li>
+<li>Slow network (check loading state)</li>
+</ul>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="variant-info-not-displaying">Variant info not displaying:<a class="headerlink" href="#variant-info-not-displaying" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Check console logs - if you see "⚠️ graphQLToken does not exist", check config</li>
+<li>Verify product has variants in BigCommerce admin</li>
+<li>Check GraphQL endpoint <code>/graphql</code> is working</li>
+<li>Verify <code>context.graphQLToken</code> has value (required for authentication)</li>
+<li>Verify <code>context.showPricesWithTax</code> settings</li>
+</ol>
+<h3 id="wrong-pricestock">Wrong price/stock:<a class="headerlink" href="#wrong-pricestock" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Check currency code in context</li>
+<li>Verify includeTax setting</li>
+<li>Check variant mapping logic</li>
+</ol>
+<h3 id="css-not-applied">CSS not applied:<a class="headerlink" href="#css-not-applied" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Verify SCSS file is imported</li>
+<li>Run build process: <code>npm run build</code></li>
+<li>Clear cache and reload</li>
+</ol>
+<h2 id="future-enhancements">Future Enhancements<a class="headerlink" href="#future-enhancements" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Lazy loading</strong>: Only fetch variants when needed</li>
+<li><strong>Image preview</strong>: Display variant image on hover</li>
+<li><strong>Tooltip mode</strong>: Alternative display mode</li>
+<li><strong>Batch updates</strong>: Optimize multiple option changes</li>
+<li><strong>Animation</strong>: Smooth transitions when updating info</li>
+<li><strong>Localization</strong>: Support multi-language</li>
+</ol>
+<h2 id="support">Support<a class="headerlink" href="#support" title="Permanent link">&para;</a></h2>
+<p>If you have issues:
+1. Check console logs
+2. Verify GraphQL query in Network tab
+3. Check variant data in BigCommerce admin
+4. Review applied CSS classes</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="product-review-images.html" class="btn btn-neutral float-left" title="Product Review Images"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="quantity-in-cart.html" class="btn btn-neutral float-right" title="Quantity In Cart">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="product-review-images.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="quantity-in-cart.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="https://use.fontawesome.com/540034d990.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="js/main.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
