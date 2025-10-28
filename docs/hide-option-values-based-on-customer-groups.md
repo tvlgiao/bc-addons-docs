@@ -4,10 +4,10 @@ This script allows you to hide product options or option values based on custome
 
 ## Features
 
-✅ **Hide entire options** - Hide both dropdown/input and label of an option
-✅ **Hide specific values** - Only hide some values within a dropdown
-✅ **Hide for specific customer groups** - Hide options only for certain customer groups
-✅ **Hide for all except** - Hide options for all customer groups except specified ones
+- ✅ **Hide entire options** - Hide both dropdown/input and label of an option
+- ✅ **Hide specific values** - Only hide some values within a dropdown
+- ✅ **Hide for specific customer groups** - Hide options only for certain customer groups
+- ✅ **Hide for all except** - Hide options for all customer groups except specified ones
 
 ## Basic Concepts
 
@@ -118,12 +118,14 @@ This script allows you to hide product options or option values based on custome
 ```
 
 **Result**:
+
 - Customers in "Union County SO" or "Union County SO (FULL)" → See all options
 - Customers in other groups (including guests) → Cannot see "Five Point Star Embroidery" and "Black" color
 
 ## Example 4: Combine Multiple Rules
 
 **Requirement**:
+
 - Hide size "Extra Small" for "Dealer" group
 - Hide entire "Gift Wrapping" option for ALL groups except "VIP Customer"
 
@@ -251,20 +253,25 @@ window.PapathemesHideProductOptionSettings = {
 ## Installation for parrpse.com
 
 ### Requirement
+
 Hide the following options for ALL customer groups EXCEPT "Union County SO" and "Union County SO (FULL)":
+
 - The entire "Five Point Star Embroidery? (+$15.00)" option
 - The "Black" color value (other colors remain visible)
 
 ### Explanation
+
 This configuration uses the `hideForAllExcept` method, which means:
 
 **For Union County SO and Union County SO (FULL) customers:**
+
 - ✅ They can see the "Five Point Star Embroidery? (+$15.00)" option
 - ✅ They can select "Black" color
 - ✅ They can see all other colors
 - Result: Full access to all product options
 
 **For all other customers (including guests, retail customers, etc.):**
+
 - ❌ The "Five Point Star Embroidery? (+$15.00)" option is completely hidden (both label and dropdown disappear)
 - ❌ The "Black" color is removed from the Color dropdown
 - ✅ Other colors are still visible in the dropdown
@@ -310,6 +317,7 @@ window.PapathemesHideProductOptionSettings = {
 | `debug` | `true` | Shows debug information in browser Console (F12) for troubleshooting |
 
 ### Testing
+
 1. **Test as Union County SO customer**: You should see the embroidery option and Black color
 2. **Test as guest or other group**: The embroidery option should completely disappear, and Black color should not be in the dropdown
 3. **Enable debug mode**: Press F12, go to Console tab to see detailed logs
