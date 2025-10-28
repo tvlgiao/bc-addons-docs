@@ -170,7 +170,53 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">Hide Product Option Values based on Customer Groups</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#install-the-script-to-your-store">Install the script to your store</a>
+    <li class="toctree-l2"><a class="reference internal" href="#features">Features</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#basic-concepts">Basic Concepts</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-option-vs-option-value">1. Option vs Option Value</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-hiding-methods">2. Hiding Methods</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-customer-group-selection-methods">3. Customer Group Selection Methods</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#example-1-hide-specific-values-for-certain-customer-groups">Example 1: Hide Specific Values for Certain Customer Groups</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#example-2-hide-entire-option-for-certain-customer-groups">Example 2: Hide Entire Option for Certain Customer Groups</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#example-3-hide-for-all-groups-except-specified-ones">Example 3: Hide for ALL Groups Except Specified Ones</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#example-4-combine-multiple-rules">Example 4: Combine Multiple Rules</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#complete-structure">Complete Structure</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#important-notes">Important Notes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#links">Links</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#installation-guide">Installation Guide</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#step-1-go-to-script-manager">Step 1: Go to Script Manager</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-2-add-script-to-scripts-contents">Step 2: Add script to Scripts contents</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#installation-for-parrpsecom">Installation for parrpse.com</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#requirement">Requirement</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#explanation">Explanation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#script-to-install">Script to Install</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#configuration-breakdown">Configuration Breakdown</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#testing">Testing</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#installation-for-strideanimalhealthcom">Installation for strideanimalhealth.com</a>
     </li>
@@ -340,10 +386,67 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="hide-product-option-values-based-on-customer-groups">Hide Product Option Values based on Customer Groups<a class="headerlink" href="#hide-product-option-values-based-on-customer-groups" title="Permanent link">&para;</a></h1>
-<h2 id="install-the-script-to-your-store">Install the script to your store<a class="headerlink" href="#install-the-script-to-your-store" title="Permanent link">&para;</a></h2>
+                <h1 id="hide-product-optionsvalues-based-on-customer-groups">Hide Product Options/Values based on Customer Groups<a class="headerlink" href="#hide-product-optionsvalues-based-on-customer-groups" title="Permanent link">&para;</a></h1>
+<p>This script allows you to hide product options or option values based on customer groups.</p>
+<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
+<p>✅ <strong>Hide entire options</strong> - Hide both dropdown/input and label of an option
+✅ <strong>Hide specific values</strong> - Only hide some values within a dropdown
+✅ <strong>Hide for specific customer groups</strong> - Hide options only for certain customer groups
+✅ <strong>Hide for all except</strong> - Hide options for all customer groups except specified ones</p>
+<h2 id="basic-concepts">Basic Concepts<a class="headerlink" href="#basic-concepts" title="Permanent link">&para;</a></h2>
+<h3 id="1-option-vs-option-value">1. Option vs Option Value<a class="headerlink" href="#1-option-vs-option-value" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Option</strong>: The entire dropdown or input field. Example: "Color", "Size"</li>
+<li><strong>Option Value</strong>: The values within an option. Example: "Red", "Blue" within "Color" option</li>
+</ul>
+<h3 id="2-hiding-methods">2. Hiding Methods<a class="headerlink" href="#2-hiding-methods" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>When to Use</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hide Option Value</strong></td>
+<td>Want to hide specific values only</td>
+<td>Dropdown still visible but missing some choices</td>
+</tr>
+<tr>
+<td><strong>Hide Entire Option</strong></td>
+<td>Want to hide the entire dropdown/field</td>
+<td>Both dropdown and label disappear</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-customer-group-selection-methods">3. Customer Group Selection Methods<a class="headerlink" href="#3-customer-group-selection-methods" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>When to Use</th>
+<th>Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>customerGroups</strong></td>
+<td>Hide only for specific groups</td>
+<td><code>customerGroups: ['Group A', 'Group B']</code></td>
+</tr>
+<tr>
+<td><strong>hideForAllExcept</strong></td>
+<td>Hide for all groups except specified ones</td>
+<td><code>hideForAllExcept: ['Group A', 'Group B']</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="example-1-hide-specific-values-for-certain-customer-groups">Example 1: Hide Specific Values for Certain Customer Groups<a class="headerlink" href="#example-1-hide-specific-values-for-certain-customer-groups" title="Permanent link">&para;</a></h2>
+<p><strong>Requirement</strong>: Hide sizes "Extra Small" and "Monster" only for "Dealer Australia" and "Dealer International" groups</p>
 <pre><code class="language-html">&lt;script&gt;
-    window.ZACATAKLURES_HIDEOPTIONS = {
+    window.PapathemesHideProductOptionSettings = {
         rules: [
             {
                 options: [
@@ -353,49 +456,270 @@
                     },
                     {
                         name: 'Size',
-                        value: 'Extra Large'
-                    },
-                    {
-                        name: 'Size',
                         value: 'Monster',
-                    },
-                    {
-                        name: 'Head Type',
-                        value: 'Soft Skull'
-                    },
-                    {
-                        name: 'Rigging Option',
-                        value: 'Twin Hook Shackle Rig - Mustad 7691S'
                     }
                 ],
                 customerGroups: [
-                    // 'Guests',
                     'Dealer Australia',
                     'Dealer International'
                 ]
             }
         ],
-        customerGroupName: '{{{customer_group_name}}}',
-        graphQLToken: '{{{settings.storefront_api.token}}}',
-        debug: true
+        customerGroupName: '{{customer.customer_group_name}}',
+        graphQLToken: '{{settings.storefront_api.token}}',
+        debug: false
     };
 &lt;/script&gt;
 </code></pre>
+<h2 id="example-2-hide-entire-option-for-certain-customer-groups">Example 2: Hide Entire Option for Certain Customer Groups<a class="headerlink" href="#example-2-hide-entire-option-for-certain-customer-groups" title="Permanent link">&para;</a></h2>
+<p><strong>Requirement</strong>: Hide the entire "Gift Wrapping" option only for "Wholesale" group</p>
+<pre><code class="language-html">&lt;script&gt;
+    window.PapathemesHideProductOptionSettings = {
+        rules: [
+            {
+                hideOptions: [
+                    'Gift Wrapping'
+                ],
+                customerGroups: [
+                    'Wholesale'
+                ]
+            }
+        ],
+        customerGroupName: '{{customer.customer_group_name}}',
+        graphQLToken: '{{settings.storefront_api.token}}',
+        debug: false
+    };
+&lt;/script&gt;
+</code></pre>
+<h2 id="example-3-hide-for-all-groups-except-specified-ones">Example 3: Hide for ALL Groups Except Specified Ones<a class="headerlink" href="#example-3-hide-for-all-groups-except-specified-ones" title="Permanent link">&para;</a></h2>
+<p><strong>Requirement</strong>: Hide "Five Point Star Embroidery? (+$15.00)" option and "Black" value in "Color" option for ALL customer groups, EXCEPT "Union County SO" and "Union County SO (FULL)"</p>
+<pre><code class="language-html">&lt;script&gt;
+    window.PapathemesHideProductOptionSettings = {
+        rules: [
+            {
+                hideOptions: [
+                    'Five Point Star Embroidery? (+$15.00)'
+                ],
+                options: [
+                    {
+                        name: 'Color',
+                        value: 'Black'
+                    }
+                ],
+                hideForAllExcept: [
+                    'Union County SO',
+                    'Union County SO (FULL)'
+                ]
+            }
+        ],
+        customerGroupName: '{{customer.customer_group_name}}',
+        graphQLToken: '{{settings.storefront_api.token}}',
+        debug: false
+    };
+&lt;/script&gt;
+</code></pre>
+<p><strong>Result</strong>:
+- Customers in "Union County SO" or "Union County SO (FULL)" → See all options
+- Customers in other groups (including guests) → Cannot see "Five Point Star Embroidery" and "Black" color</p>
+<h2 id="example-4-combine-multiple-rules">Example 4: Combine Multiple Rules<a class="headerlink" href="#example-4-combine-multiple-rules" title="Permanent link">&para;</a></h2>
+<p><strong>Requirement</strong>:
+- Hide size "Extra Small" for "Dealer" group
+- Hide entire "Gift Wrapping" option for ALL groups except "VIP Customer"</p>
+<pre><code class="language-html">&lt;script&gt;
+    window.PapathemesHideProductOptionSettings = {
+        rules: [
+            {
+                options: [
+                    {
+                        name: 'Size',
+                        value: 'Extra Small'
+                    }
+                ],
+                customerGroups: ['Dealer']
+            },
+            {
+                hideOptions: ['Gift Wrapping'],
+                hideForAllExcept: ['VIP Customer']
+            }
+        ],
+        customerGroupName: '{{customer.customer_group_name}}',
+        graphQLToken: '{{settings.storefront_api.token}}',
+        debug: false
+    };
+&lt;/script&gt;
+</code></pre>
+<h2 id="complete-structure">Complete Structure<a class="headerlink" href="#complete-structure" title="Permanent link">&para;</a></h2>
+<pre><code class="language-javascript">window.PapathemesHideProductOptionSettings = {
+    rules: [
+        {
+            // Hide entire options (can be empty if not used)
+            hideOptions: [
+                'Option Name 1',
+                'Option Name 2'
+            ],
+
+            // Hide specific values (can be empty if not used)
+            options: [
+                {
+                    name: 'Option Name',
+                    value: 'Option Value'
+                }
+            ],
+
+            // Choose ONE of the two methods below:
+
+            // Method 1: Hide only for these groups
+            customerGroups: [
+                'Group Name 1',
+                'Group Name 2'
+            ],
+
+            // Method 2: Hide for all EXCEPT these groups
+            hideForAllExcept: [
+                'Group Name 1',
+                'Group Name 2'
+            ]
+        }
+    ],
+    customerGroupName: '{{customer.customer_group_name}}',
+    graphQLToken: '{{settings.storefront_api.token}}',
+    debug: false  // Set to true to see debug logs in Console
+};
+</code></pre>
+<h2 id="important-notes">Important Notes<a class="headerlink" href="#important-notes" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Names must match exactly</strong>: Option and value names must match exactly as they appear in BigCommerce (case-sensitive)</li>
+<li><strong>Enable debug when testing</strong>: Set <code>debug: true</code> to see logs in Console (F12) during testing</li>
+<li><strong>Don't use both customerGroups and hideForAllExcept</strong>: Only choose one method</li>
+<li><strong>Guest customers</strong>: To hide for non-logged-in customers, add empty string <code>''</code> to customerGroups</li>
+</ol>
+<h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h2>
 <ul>
 <li>GitHub (new): https://github.com/tvlgiao/bigcommerce-api-app/tree/master/microapps/hide-product-option</li>
 <li>GitHub: https://github.com/tvlgiao/bc-zacataklures-chiara-hide-product-options</li>
 </ul>
-<h2 id="installation-for-strideanimalhealthcom">Installation for strideanimalhealth.com<a class="headerlink" href="#installation-for-strideanimalhealthcom" title="Permanent link">&para;</a></h2>
+<h2 id="installation-guide">Installation Guide<a class="headerlink" href="#installation-guide" title="Permanent link">&para;</a></h2>
+<h3 id="step-1-go-to-script-manager">Step 1: Go to Script Manager<a class="headerlink" href="#step-1-go-to-script-manager" title="Permanent link">&para;</a></h3>
 <p>Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong>, click <strong>Create a Script</strong>, choose:</p>
 <ul>
 <li><strong>Location on page</strong> = <code>Footer</code></li>
 <li><strong>Select pages where script will be added</strong> = <code>Store Pages</code></li>
 <li><strong>Script type</strong> = <code>Script</code></li>
 </ul>
-<p>Enter the script below to <strong>Scripts contents</strong>:</p>
+<h3 id="step-2-add-script-to-scripts-contents">Step 2: Add script to <strong>Scripts contents</strong><a class="headerlink" href="#step-2-add-script-to-scripts-contents" title="Permanent link">&para;</a></h3>
 <pre><code class="language-html">&lt;script&gt;
 window.PapathemesHideProductOptionSettings = {
-    rules = [
+    rules: [
+        {
+            // Example: Hide some option values
+            options: [
+                {
+                    name: 'Color',
+                    value: 'Black',
+                }
+            ],
+            // Hide for these groups
+            customerGroups: [
+                'Wholesale',
+            ]
+        },
+    ],
+    customerGroupName: '{{customer.customer_group_name}}',
+    graphQLToken: '{{settings.storefront_api.token}}',
+    debug: false
+};
+&lt;/script&gt;
+&lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/microapps/hide-product-option/main.js&quot; async defer&gt;&lt;/script&gt;
+</code></pre>
+<p><strong>Note</strong>: Modify the content in <code>rules</code> according to your requirements (see examples above)</p>
+<hr />
+<h2 id="installation-for-parrpsecom">Installation for parrpse.com<a class="headerlink" href="#installation-for-parrpsecom" title="Permanent link">&para;</a></h2>
+<h3 id="requirement">Requirement<a class="headerlink" href="#requirement" title="Permanent link">&para;</a></h3>
+<p>Hide the following options for ALL customer groups EXCEPT "Union County SO" and "Union County SO (FULL)":
+- The entire "Five Point Star Embroidery? (+$15.00)" option
+- The "Black" color value (other colors remain visible)</p>
+<h3 id="explanation">Explanation<a class="headerlink" href="#explanation" title="Permanent link">&para;</a></h3>
+<p>This configuration uses the <code>hideForAllExcept</code> method, which means:</p>
+<p><strong>For Union County SO and Union County SO (FULL) customers:</strong>
+- ✅ They can see the "Five Point Star Embroidery? (+$15.00)" option
+- ✅ They can select "Black" color
+- ✅ They can see all other colors
+- Result: Full access to all product options</p>
+<p><strong>For all other customers (including guests, retail customers, etc.):</strong>
+- ❌ The "Five Point Star Embroidery? (+$15.00)" option is completely hidden (both label and dropdown disappear)
+- ❌ The "Black" color is removed from the Color dropdown
+- ✅ Other colors are still visible in the dropdown
+- Result: Restricted access - cannot order these specific options</p>
+<h3 id="script-to-install">Script to Install<a class="headerlink" href="#script-to-install" title="Permanent link">&para;</a></h3>
+<pre><code class="language-html">&lt;script&gt;
+window.PapathemesHideProductOptionSettings = {
+    rules: [
+        {
+            hideOptions: [
+                'Five Point Star Embroidery? (+$15.00)',
+            ],
+            options: [
+                {
+                    name: 'Color',
+                    value: 'Black',
+                }
+            ],
+            hideForAllExcept: [
+                'Union County SO',
+                'Union County SO (FULL)',
+            ],
+        },
+    ],
+    customerGroupName: '{{customer.customer_group_name}}',
+    graphQLToken: '{{settings.storefront_api.token}}',
+    debug: true,
+};
+&lt;/script&gt;
+&lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/microapps/hide-product-option/main.parrpse.com.js&quot; async defer&gt;&lt;/script&gt;
+</code></pre>
+<h3 id="configuration-breakdown">Configuration Breakdown<a class="headerlink" href="#configuration-breakdown" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hideOptions</code></td>
+<td><code>['Five Point Star Embroidery? (+$15.00)']</code></td>
+<td>Completely hides this entire option (label + dropdown)</td>
+</tr>
+<tr>
+<td><code>options</code></td>
+<td><code>name: 'Color', value: 'Black'</code></td>
+<td>Hides only the "Black" value within the Color dropdown</td>
+</tr>
+<tr>
+<td><code>hideForAllExcept</code></td>
+<td><code>['Union County SO', 'Union County SO (FULL)']</code></td>
+<td>Apply hiding to ALL groups EXCEPT these two</td>
+</tr>
+<tr>
+<td><code>debug</code></td>
+<td><code>true</code></td>
+<td>Shows debug information in browser Console (F12) for troubleshooting</td>
+</tr>
+</tbody>
+</table>
+<h3 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Test as Union County SO customer</strong>: You should see the embroidery option and Black color</li>
+<li><strong>Test as guest or other group</strong>: The embroidery option should completely disappear, and Black color should not be in the dropdown</li>
+<li><strong>Enable debug mode</strong>: Press F12, go to Console tab to see detailed logs</li>
+</ol>
+<hr />
+<h2 id="installation-for-strideanimalhealthcom">Installation for strideanimalhealth.com<a class="headerlink" href="#installation-for-strideanimalhealthcom" title="Permanent link">&para;</a></h2>
+<pre><code class="language-html">&lt;script&gt;
+window.PapathemesHideProductOptionSettings = {
+    rules: [
         {
             options: [
                 {
@@ -425,6 +749,7 @@ window.PapathemesHideProductOptionSettings = {
     ],
     customerGroupName: '{{customer.customer_group_name}}',
     graphQLToken: '{{settings.storefront_api.token}}',
+    debug: false
 };
 &lt;/script&gt;
 &lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/microapps/hide-product-option/main.strideanimalhealth.com.js&quot; async defer&gt;&lt;/script&gt;
