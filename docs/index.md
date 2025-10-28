@@ -29,6 +29,7 @@
 - [Display Product Stock on Product Card](product-card-stock.md)
 - [Fractional Quantity & Unit Labels](fractional-quantity-purchase.md)
 - [Hide Price for Non-Logged In Customers](hide-price.md)
+- [Hide Product Option Values based on Customer Groups](hide-option-values-based-on-customer-groups.md)
 - [Hide product prices based on specific brands](hide-price-by-brand.md)
 - [HTML5 Video Image Gallery](html5-video-image-gallery.md)
 - [IGAT Variants Table](igat-variants-table.md)
