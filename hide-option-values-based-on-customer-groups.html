@@ -389,10 +389,12 @@
                 <h1 id="hide-product-optionsvalues-based-on-customer-groups">Hide Product Options/Values based on Customer Groups<a class="headerlink" href="#hide-product-optionsvalues-based-on-customer-groups" title="Permanent link">&para;</a></h1>
 <p>This script allows you to hide product options or option values based on customer groups.</p>
 <h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
-<p>✅ <strong>Hide entire options</strong> - Hide both dropdown/input and label of an option
-✅ <strong>Hide specific values</strong> - Only hide some values within a dropdown
-✅ <strong>Hide for specific customer groups</strong> - Hide options only for certain customer groups
-✅ <strong>Hide for all except</strong> - Hide options for all customer groups except specified ones</p>
+<ul>
+<li>✅ <strong>Hide entire options</strong> - Hide both dropdown/input and label of an option</li>
+<li>✅ <strong>Hide specific values</strong> - Only hide some values within a dropdown</li>
+<li>✅ <strong>Hide for specific customer groups</strong> - Hide options only for certain customer groups</li>
+<li>✅ <strong>Hide for all except</strong> - Hide options for all customer groups except specified ones</li>
+</ul>
 <h2 id="basic-concepts">Basic Concepts<a class="headerlink" href="#basic-concepts" title="Permanent link">&para;</a></h2>
 <h3 id="1-option-vs-option-value">1. Option vs Option Value<a class="headerlink" href="#1-option-vs-option-value" title="Permanent link">&para;</a></h3>
 <ul>
@@ -518,13 +520,17 @@
     };
 &lt;/script&gt;
 </code></pre>
-<p><strong>Result</strong>:
-- Customers in "Union County SO" or "Union County SO (FULL)" → See all options
-- Customers in other groups (including guests) → Cannot see "Five Point Star Embroidery" and "Black" color</p>
+<p><strong>Result</strong>:</p>
+<ul>
+<li>Customers in "Union County SO" or "Union County SO (FULL)" → See all options</li>
+<li>Customers in other groups (including guests) → Cannot see "Five Point Star Embroidery" and "Black" color</li>
+</ul>
 <h2 id="example-4-combine-multiple-rules">Example 4: Combine Multiple Rules<a class="headerlink" href="#example-4-combine-multiple-rules" title="Permanent link">&para;</a></h2>
-<p><strong>Requirement</strong>:
-- Hide size "Extra Small" for "Dealer" group
-- Hide entire "Gift Wrapping" option for ALL groups except "VIP Customer"</p>
+<p><strong>Requirement</strong>:</p>
+<ul>
+<li>Hide size "Extra Small" for "Dealer" group</li>
+<li>Hide entire "Gift Wrapping" option for ALL groups except "VIP Customer"</li>
+</ul>
 <pre><code class="language-html">&lt;script&gt;
     window.PapathemesHideProductOptionSettings = {
         rules: [
@@ -635,21 +641,27 @@ window.PapathemesHideProductOptionSettings = {
 <hr />
 <h2 id="installation-for-parrpsecom">Installation for parrpse.com<a class="headerlink" href="#installation-for-parrpsecom" title="Permanent link">&para;</a></h2>
 <h3 id="requirement">Requirement<a class="headerlink" href="#requirement" title="Permanent link">&para;</a></h3>
-<p>Hide the following options for ALL customer groups EXCEPT "Union County SO" and "Union County SO (FULL)":
-- The entire "Five Point Star Embroidery? (+$15.00)" option
-- The "Black" color value (other colors remain visible)</p>
+<p>Hide the following options for ALL customer groups EXCEPT "Union County SO" and "Union County SO (FULL)":</p>
+<ul>
+<li>The entire "Five Point Star Embroidery? (+$15.00)" option</li>
+<li>The "Black" color value (other colors remain visible)</li>
+</ul>
 <h3 id="explanation">Explanation<a class="headerlink" href="#explanation" title="Permanent link">&para;</a></h3>
 <p>This configuration uses the <code>hideForAllExcept</code> method, which means:</p>
-<p><strong>For Union County SO and Union County SO (FULL) customers:</strong>
-- ✅ They can see the "Five Point Star Embroidery? (+$15.00)" option
-- ✅ They can select "Black" color
-- ✅ They can see all other colors
-- Result: Full access to all product options</p>
-<p><strong>For all other customers (including guests, retail customers, etc.):</strong>
-- ❌ The "Five Point Star Embroidery? (+$15.00)" option is completely hidden (both label and dropdown disappear)
-- ❌ The "Black" color is removed from the Color dropdown
-- ✅ Other colors are still visible in the dropdown
-- Result: Restricted access - cannot order these specific options</p>
+<p><strong>For Union County SO and Union County SO (FULL) customers:</strong></p>
+<ul>
+<li>✅ They can see the "Five Point Star Embroidery? (+$15.00)" option</li>
+<li>✅ They can select "Black" color</li>
+<li>✅ They can see all other colors</li>
+<li>Result: Full access to all product options</li>
+</ul>
+<p><strong>For all other customers (including guests, retail customers, etc.):</strong></p>
+<ul>
+<li>❌ The "Five Point Star Embroidery? (+$15.00)" option is completely hidden (both label and dropdown disappear)</li>
+<li>❌ The "Black" color is removed from the Color dropdown</li>
+<li>✅ Other colors are still visible in the dropdown</li>
+<li>Result: Restricted access - cannot order these specific options</li>
+</ul>
 <h3 id="script-to-install">Script to Install<a class="headerlink" href="#script-to-install" title="Permanent link">&para;</a></h3>
 <pre><code class="language-html">&lt;script&gt;
 window.PapathemesHideProductOptionSettings = {
