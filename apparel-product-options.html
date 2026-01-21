@@ -78,6 +78,16 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">Apparel Product Options</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#custom-css-for-parts-warehouse-theme">Custom CSS for Parts Warehouse Theme</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#method-1-using-script-manager-recommended">Method 1: Using Script Manager (Recommended)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#method-2-using-theme-customizer-alternative">Method 2: Using Theme Customizer (Alternative)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#what-this-css-does">What This CSS Does</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -339,6 +349,112 @@
                 <h1 id="apparel-product-options">Apparel Product Options<a class="headerlink" href="#apparel-product-options" title="Permanent link">&para;</a></h1>
 <p>Demo: https://totalapparel.com/mens-zone-performance-polo/</p>
 <p>Git: https://github.com/tvlgiao/bc-bigcommerce-api-app/microapps/apparel-product-options</p>
+<h2 id="custom-css-for-parts-warehouse-theme">Custom CSS for Parts Warehouse Theme<a class="headerlink" href="#custom-css-for-parts-warehouse-theme" title="Permanent link">&para;</a></h2>
+<h3 id="method-1-using-script-manager-recommended">Method 1: Using Script Manager (Recommended)<a class="headerlink" href="#method-1-using-script-manager-recommended" title="Permanent link">&para;</a></h3>
+<p>To apply custom CSS styling to the Apparel Product Options, follow these steps:</p>
+<ol>
+<li>Go to <strong>Storefront</strong> &gt; <strong>Script Manager</strong></li>
+<li>Click <strong>Create a Script</strong></li>
+<li>
+<p>Configure the script settings:</p>
+<ul>
+<li><strong>Location on page</strong> = Footer</li>
+<li><strong>Select pages where script will be added</strong> = All Pages</li>
+<li><strong>Script type</strong> = Script</li>
+</ul>
+</li>
+<li>
+<p>Enter the following code into <strong>Scripts contents</strong>:</p>
+</li>
+</ol>
+<pre><code class="language-html">&lt;script&gt;
+(function() {
+    var style = document.createElement('style');
+    style.innerHTML = `
+        /* ===== HIDE UNNECESSARY ELEMENTS ===== */
+        .PAPATHEMES_APPARELPRODUCTOPTIONS__form-field ._prices,
+        .PAPATHEMES_APPARELPRODUCTOPTIONS__form-field .price-section,
+        .PAPATHEMES_APPARELPRODUCTOPTIONS__form-field .price-section-group,
+        .PAPATHEMES_APPARELPRODUCTOPTIONS__form-field ._stockLabel,
+        .PAPATHEMES_APPARELPRODUCTOPTIONS__form-field ._stock,
+        .PAPATHEMES_APPARELPRODUCTOPTIONS__form-field ._qtyLabel {
+            display: none !important;
+        }
+
+        /* ===== GRID LAYOUT ===== */
+        .PAPATHEMES_APPARELPRODUCTOPTIONS__form-field ._optionValues {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fit, minmax(65px, 1fr)) !important;
+            gap: 10px !important;
+            max-width: 400px !important;
+        }
+
+        /* ===== OPTION VALUE BOX ===== */
+        .PAPATHEMES_APPARELPRODUCTOPTIONS__form-field ._optionValue {
+            display: inline-flex !important;
+            flex-direction: column !important;
+            align-items: start !important;
+            width: auto !important;
+            max-width: none !important;
+            min-width: auto !important;
+        }
+
+        /* ===== LABEL ===== */
+        .PAPATHEMES_APPARELPRODUCTOPTIONS__form-field ._label {
+            font-size: 11px !important;
+            font-weight: 600 !important;
+            white-space: nowrap !important;
+        }
+
+        .PAPATHEMES_APPARELPRODUCTOPTIONS__form-field label.form-label {
+            float: none;
+        }
+
+        /* ===== INPUT STYLING ===== */
+        .PAPATHEMES_APPARELPRODUCTOPTIONS__form-field ._qty input {
+            width: 50px !important;
+            height: 30px !important;
+            text-align: center !important;
+            font-size: 12px !important;
+            border: 1px solid #ccc !important;
+            border-radius: 3px !important;
+            box-sizing: border-box !important;
+        }
+
+        /* ===== HIDE SPINNER ===== */
+        .PAPATHEMES_APPARELPRODUCTOPTIONS__form-field input[type='number'] {
+            -moz-appearance: textfield;
+        }
+
+        .PAPATHEMES_APPARELPRODUCTOPTIONS__form-field input::-webkit-outer-spin-button,
+        .PAPATHEMES_APPARELPRODUCTOPTIONS__form-field input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            display: none !important;
+        }
+    `;
+    document.head.appendChild(style);
+})();
+&lt;/script&gt;
+</code></pre>
+<ol start="5">
+<li>Click <strong>Save</strong></li>
+</ol>
+<h3 id="method-2-using-theme-customizer-alternative">Method 2: Using Theme Customizer (Alternative)<a class="headerlink" href="#method-2-using-theme-customizer-alternative" title="Permanent link">&para;</a></h3>
+<p>If your theme supports custom CSS in the Theme Customizer:</p>
+<ol>
+<li>Go to <strong>Storefront</strong> &gt; <strong>Themes</strong> &gt; Click <strong>Customize</strong> on your active theme</li>
+<li>Find the <strong>Custom CSS</strong> section</li>
+<li>Add the CSS code from the script above (without the <code>&lt;script&gt;</code> tags and <code>style.innerHTML</code>)</li>
+</ol>
+<h3 id="what-this-css-does">What This CSS Does<a class="headerlink" href="#what-this-css-does" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Hides</strong> unnecessary elements (prices, stock labels, quantity labels)</li>
+<li><strong>Creates a grid layout</strong> for option values with responsive columns</li>
+<li><strong>Styles option value boxes</strong> for better alignment and spacing</li>
+<li><strong>Formats labels</strong> with consistent sizing and weight</li>
+<li><strong>Styles quantity input fields</strong> with fixed dimensions and centered text</li>
+<li><strong>Removes spinner controls</strong> from number inputs for cleaner appearance</li>
+</ul>
               
             </div>
           </div><footer>
