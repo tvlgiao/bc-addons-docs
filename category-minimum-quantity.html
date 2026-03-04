@@ -208,6 +208,8 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#limit-minimum-order-amount-per-categories">Limit minimum order amount per categories</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#merge-variant-quantities-same-product-different-sizes">Merge variant quantities (same product, different sizes)</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#limit-minimum-order-amount-per-brands">Limit minimum order amount per brands</a>
     </li>
         </ul>
@@ -379,7 +381,8 @@
         watchingElementSelector: '#checkout-app, [data-cart-content] [data-cart-quantity], [data-cart-preview] [data-cart-quantity], .previewCart',
         cartStatusSelector: '[data-cart-status]',
         disableProcessOrderButtonOnly: false,
-        watchingPaymentFormSelector: '[data-test=&quot;payment-form&quot;]'
+        watchingPaymentFormSelector: '[data-test=&quot;payment-form&quot;]',
+        mergeVariantQuantity: false
     };
 &lt;/script&gt;
 &lt;script src=&quot;https://d3r059eq9mm6jz.cloudfront.net/microapps/category-minimum-quantity/main.YOURDOMAIN.js&quot; async defer&gt;&lt;/script&gt;
@@ -404,6 +407,11 @@
     112: 200
 },
 </code></pre>
+<h3 id="merge-variant-quantities-same-product-different-sizes">Merge variant quantities (same product, different sizes)<a class="headerlink" href="#merge-variant-quantities-same-product-different-sizes" title="Permanent link">&para;</a></h3>
+<p>By default, when the same product appears in the cart with different size variants (e.g., Polo XL qty 5 + Polo 2XL qty 5), each line item is counted separately. Enable <code>mergeVariantQuantity</code> to sum quantities across all variants of the same product:</p>
+<pre><code class="language-js">mergeVariantQuantity: true,
+</code></pre>
+<p>This is useful for wholesale stores where customers order the same product in multiple sizes and the minimum quantity should apply to the total across all sizes.</p>
 <h3 id="limit-minimum-order-amount-per-brands">Limit minimum order amount per brands<a class="headerlink" href="#limit-minimum-order-amount-per-brands" title="Permanent link">&para;</a></h3>
 <p>To limit minimum order amount per brands, set <code>minimumAmountByBrand</code> to the minimum amount you want to limit. For example, if you want to limit minimum order amount of products in brand <code>ashanks</code> to <code>$100</code> and brand <code>bluedio</code> to <code>$200</code>, set <code>minimumAmountByBrand</code> to:</p>
 <pre><code class="language-js">minimumAmountByBrand: {
