@@ -96,6 +96,10 @@ minimumAmountByBrand: {
 
 
 
+## Client Guides
+
+- [hornlegend.com](clients/hornlegend-category-minimum-quantity.md)
+
 <!--
 Source code: https://github.com/tvlgiao/bc-bigcommerce-api-app/microapps/minimum-category-quantity/
 -->
