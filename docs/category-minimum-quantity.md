@@ -31,7 +31,8 @@ Enter the script below in the **Script contents** section:
         watchingElementSelector: '#checkout-app, [data-cart-content] [data-cart-quantity], [data-cart-preview] [data-cart-quantity], .previewCart',
         cartStatusSelector: '[data-cart-status]',
         disableProcessOrderButtonOnly: false,
-        watchingPaymentFormSelector: '[data-test="payment-form"]'
+        watchingPaymentFormSelector: '[data-test="payment-form"]',
+        mergeVariantQuantity: false
     };
 </script>
 <script src="https://d3r059eq9mm6jz.cloudfront.net/microapps/category-minimum-quantity/main.YOURDOMAIN.js" async defer></script>
@@ -71,6 +72,16 @@ minimumAmountByCategory: {
     112: 200
 },
 ```
+
+### Merge variant quantities (same product, different sizes)
+
+By default, when the same product appears in the cart with different size variants (e.g., Polo XL qty 5 + Polo 2XL qty 5), each line item is counted separately. Enable `mergeVariantQuantity` to sum quantities across all variants of the same product:
+
+```js
+mergeVariantQuantity: true,
+```
+
+This is useful for wholesale stores where customers order the same product in multiple sizes and the minimum quantity should apply to the total across all sizes.
 
 ### Limit minimum order amount per brands
 
