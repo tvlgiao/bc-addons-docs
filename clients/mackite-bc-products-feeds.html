@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Setting Up Your Product Feeds - Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="../css/style.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Setting Up Your Product Feeds";
+        var mkdocs_page_input_path = "clients\\mackite-bc-products-feeds.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', "UA-241859-16", "bc-addons-docs.papathemes.com");
+        ga('send', 'pageview');
+      </script>
+    
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../index.html" class="icon icon-home"> Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../back-to-category.html">Add Back to Category button on the cart page</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../file-upload.html">Add File Upload Field on Registration Page</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../customer-account-shipping-option.html">Add Shipping Option Your Customer's Shipping Account</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../checkout-signature-delivery.html">Add Signature on Delivery on Checkout Page</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../add-child-products-picklist.html">Add to Cart Child Products from Product Pick List</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../apparel-product-options.html">Apparel Product Options</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../add-product-to-cart-automatically.html">Automatically Add Additional Product To Cart</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../add-product-to-cart-automatically-based-on-customer-group.html">Automatically Add Product to Cart Based on Customer Group</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../bundle-product-tabs.html">Bundle Product Tabs on a Product Detail Page</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../better-reorder.html">Better Product Reorder</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../bulk-pricing-option.html">Bulk Pricing Option</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../bulk-pricing-variants.html">Bulk Pricing Variants</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../checkout-file-upload.html">Checkout File Upload</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../checkout-shipping-and-payment-method-customizations.html">Checkout Shipping & Payment Method Customizations</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../conditional-product-options.html">Conditional Product Options</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../popups.html">Custom Popups</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../delete-cart.html">Delete Cart</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../disallow-different-billing-address.html">Disallow Different Billing Address</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../brand-logo-on-pdp.html">Display Brand Logo on PDP</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../product-card-brand-logo.html">Display Brand Logo on Product Cards</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../color-swatches.html">Display Color Swatches on Product Items</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../free-shipping-badges.html">Display Free Shipping Badges</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../wholesale-discount-price.html">Display product PriceList-based price vs. regular price</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../cart-weight.html">Display Product Weight on Cart Page</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../product-card-stock.html">Display Product Stock on Product Card</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../fractional-quantity-purchase.html">Fractional Quantity & Unit Labels</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../frequently-bought-together.html">Frequently Bought Together</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../hide-price.html">Hide Price for Non-Logged In Customers</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../hide-option-values-based-on-customer-groups.html">Hide Product Option Values based on Customer Groups</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../hide-price-by-brand.html">Hide product prices based on specific brands</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../html5-video-image-gallery.html">HTML5 Video Image Gallery</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../igat-variants-table.html">IGAT Variants Table</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../variant-image-gallery.html">Image Gallery for Product Options</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../limit-countries.html">Limit Countries / States</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../limit-shipping-options.html">Limit Shipping Options</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../category-minimum-quantity.html">Minimum Order Amount & Minimum Category Quantity</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../multi-storefronts-global-login.html">Multi Storefronts Global Login</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../msf-universal-login.html">Multi Storefronts Universal Login Automatically</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../multiple-category-dependent-dropdowns.html">Mutiple Category Dependent Dropdowns</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../multiple-quantity-product-options.html">Mutiple Quantity Product Options</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../order-multiple-skus.html">Order Multiple SKUs</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../papersushishop-expected-shipping-date.html">Papersushishop Expected Shipping Date</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../pc-builder-product-bundles.html">PC Builder Product Bundles</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../preselect-product-option-link.html">Pre-Select Product Options Sharing Link</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../prevent-purchase-low-stock.html">Prevent Purchase Low Stock Products</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../product-bundles.html">Product Bundles</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../product-card-badges.html">Product Card Badges</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../product-card-lowest-price.html">Product Card Lowest Price</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../product-card-unit-price.html">Product Card Unit Price</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../product-designer.html">Product Designer</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../product-pick-list-dropdown-and-price.html">Product Pick List Dropdown and Price</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../product-pick-list-price.html">Product Pick List Price</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../product-review-images.html">Product Review Images</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../display-sku-stock-price-variant-options.html">Display SKU, Stock & Price on Product Variant Options</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../quantity-in-cart.html">Quantity In Cart</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../restrict-shipping-countries-on-specific-products.html">Restrict Shipping Countries on Specific Products</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../rolls-calculator.html">Rolls Calculator</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../shop-by-child-sku.html">Select product variants by SKU</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../sell-by-pack.html">Sell By Pack</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../shipment-details.html">Shipment Details</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../shipping-countdown.html">Shipping Countdown</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../shipping-estimator.html">Shipping Estimator on Product Page</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../stock-filter.html">Stock Filter</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../product-option-tooltip.html">Tooltips for Product Options</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html" class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Setting Up Your Product Feeds</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="setting-up-your-product-feeds">Setting Up Your Product Feeds<a class="headerlink" href="#setting-up-your-product-feeds" title="Permanent link">&para;</a></h1>
+<p>These feed boxes show live products from your Mackite stores right on your
+page — new arrivals, sale items, and so on. Every time someone visits, they
+see a slightly different mix of products, so the page never feels stale.</p>
+<p>Setting it up is just copying and pasting a bit of code. No design work, no
+technical skills needed.</p>
+<h2 id="before-you-start">Before You Start<a class="headerlink" href="#before-you-start" title="Permanent link">&para;</a></h2>
+<p>We've already filled in your store details for you, so the code below is
+ready to paste as-is.</p>
+<h2 id="step-1-add-the-setup-code-once">Step 1 — Add the Setup Code Once<a class="headerlink" href="#step-1-add-the-setup-code-once" title="Permanent link">&para;</a></h2>
+<p>Paste this near the top of your page, inside the <code>&lt;head&gt;</code> section. You only
+do this once per page.</p>
+<pre><code class="language-html">&lt;!-- Paste this in your &lt;head&gt; --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/tvlgiao/papathemes-cdn/bc-products/bc-products.min.css&quot;&gt;
+&lt;script async src=&quot;https://cdn.jsdelivr.net/gh/tvlgiao/papathemes-cdn/bc-products/bc-products.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>If we send you an update and you don't see it, add <code>?v=2</code> to the end of both web addresses (change the number each time).</p>
+<h2 id="step-2-add-your-feed-boxes">Step 2 — Add Your Feed Boxes<a class="headerlink" href="#step-2-add-your-feed-boxes" title="Permanent link">&para;</a></h2>
+<p>Paste each feed box wherever you want those products to appear. You have
+<strong>two separate stores</strong>, so we've prepared feeds for both:</p>
+<table>
+<thead>
+<tr>
+<th>Store</th>
+<th>Website</th>
+<th>Feeds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Boardsports</td>
+<td>www.mackiteboarding.com</td>
+<td>New Arrivals + On Sale</td>
+</tr>
+<tr>
+<td>Toy</td>
+<td>shop.mackite.com</td>
+<td>New Arrivals + On Sale</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Important — each store has its own key.</strong> The long <code>data-storefront-key</code>
+code is what tells a box <em>which store</em> to pull products from. The
+Boardsports boxes use the Boardsports key; the Toy boxes use the Toy key.
+They are different — don't copy one store's key into the other store's box.
+Just paste each box below exactly as-is and you're set.</p>
+</blockquote>
+<h3 id="store-1-boardsports-wwwmackiteboardingcom">Store 1 — Boardsports (www.mackiteboarding.com)<a class="headerlink" href="#store-1-boardsports-wwwmackiteboardingcom" title="Permanent link">&para;</a></h3>
+<p><strong>New Arrivals:</strong></p>
+<pre><code class="language-html">&lt;bc-products
+  style=&quot;--bc-h-lg: 720px; --bc-h-sm: 520px&quot;
+  data-store-url=&quot;https://www.mackiteboarding.com&quot;
+  data-storefront-key=&quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJjaWQiOlsxXSwiY29ycyI6WyJodHRwczovL3d3dy5tYWNraXRlLmNvbSJdLCJlYXQiOjE5NDExNzQ5NjUsImlhdCI6MTc4MzQ5NDk2NywiaXNzIjoiQkMiLCJzaWQiOjMxMTU4Niwic3ViIjoianRrb2plMW9mdmNqbGhmZjcybXNlanVsbnNmZTdodCIsInN1Yl90eXBlIjoyLCJ0b2tlbl90eXBlIjoxfQ.mFcH6aViTiHlfAr7I1Rcv-VKZAv6VCztL2Sfic9v3C-GbCv33bqdpUlZJur2P_-0LqxLsKku0uySdsq2KLpfJw&quot;
+  data-type=&quot;new&quot;
+  data-store-label=&quot;Boardsports&quot;
+  data-title=&quot;New Arrivals&quot;
+  data-view-all=&quot;https://www.mackiteboarding.com/&quot;
+  data-accent=&quot;#8a6d00&quot;
+  data-accent-dark=&quot;#e6b400&quot;
+  data-description=&quot;true&quot;&gt;
+&lt;/bc-products&gt;
+</code></pre>
+<p><strong>On Sale:</strong></p>
+<pre><code class="language-html">&lt;bc-products
+  style=&quot;--bc-h-lg: 720px; --bc-h-sm: 520px&quot;
+  data-store-url=&quot;https://www.mackiteboarding.com&quot;
+  data-storefront-key=&quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJjaWQiOlsxXSwiY29ycyI6WyJodHRwczovL3d3dy5tYWNraXRlLmNvbSJdLCJlYXQiOjE5NDExNzQ5NjUsImlhdCI6MTc4MzQ5NDk2NywiaXNzIjoiQkMiLCJzaWQiOjMxMTU4Niwic3ViIjoianRrb2plMW9mdmNqbGhmZjcybXNlanVsbnNmZTdodCIsInN1Yl90eXBlIjoyLCJ0b2tlbl90eXBlIjoxfQ.mFcH6aViTiHlfAr7I1Rcv-VKZAv6VCztL2Sfic9v3C-GbCv33bqdpUlZJur2P_-0LqxLsKku0uySdsq2KLpfJw&quot;
+  data-type=&quot;sale&quot;
+  data-category-id=&quot;556,619,622,620,227&quot;
+  data-store-label=&quot;Boardsports&quot;
+  data-title=&quot;On Sale&quot;
+  data-view-all=&quot;https://www.mackiteboarding.com/sale-kiteboarding-gear/&quot;
+  data-accent=&quot;#8a6d00&quot;
+  data-accent-dark=&quot;#e6b400&quot;
+  data-description=&quot;true&quot;&gt;
+&lt;/bc-products&gt;
+</code></pre>
+<h3 id="store-2-toy-shopmackitecom">Store 2 — Toy (shop.mackite.com)<a class="headerlink" href="#store-2-toy-shopmackitecom" title="Permanent link">&para;</a></h3>
+<p><strong>New Arrivals:</strong></p>
+<pre><code class="language-html">&lt;bc-products
+  style=&quot;--bc-h-lg: 720px; --bc-h-sm: 520px&quot;
+  data-store-url=&quot;https://shop.mackite.com&quot;
+  data-storefront-key=&quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJjaWQiOlsxXSwiY29ycyI6WyJodHRwczovL3d3dy5tYWNraXRlLmNvbSJdLCJlYXQiOjE5NDExNzQ5NjUsImlhdCI6MTc4MzQ5NDk2NSwiaXNzIjoiQkMiLCJzaWQiOjMyNzU4MCwic3ViIjoiMWVyOW5xenB3NDk0a2g0N2xheTZnMHhwaTd6a2ZlcyIsInN1Yl90eXBlIjoyLCJ0b2tlbl90eXBlIjoxfQ.nGRESya-a5lCh2qGPRjzyO4NdhBsw9i2IsJQory-q9ijKzU-EIrBKOLeH_7sJZF89fYalxZoiIp4aCAeEuQILQ&quot;
+  data-type=&quot;new&quot;
+  data-store-label=&quot;Toy&quot;
+  data-title=&quot;New Arrivals&quot;
+  data-view-all=&quot;https://shop.mackite.com/&quot;
+  data-accent=&quot;#6d28d9&quot;
+  data-accent-dark=&quot;#b794f6&quot;
+  data-description=&quot;true&quot;&gt;
+&lt;/bc-products&gt;
+</code></pre>
+<p><strong>On Sale:</strong></p>
+<pre><code class="language-html">&lt;bc-products
+  style=&quot;--bc-h-lg: 720px; --bc-h-sm: 520px&quot;
+  data-store-url=&quot;https://shop.mackite.com&quot;
+  data-storefront-key=&quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJjaWQiOlsxXSwiY29ycyI6WyJodHRwczovL3d3dy5tYWNraXRlLmNvbSJdLCJlYXQiOjE5NDExNzQ5NjUsImlhdCI6MTc4MzQ5NDk2NSwiaXNzIjoiQkMiLCJzaWQiOjMyNzU4MCwic3ViIjoiMWVyOW5xenB3NDk0a2g0N2xheTZnMHhwaTd6a2ZlcyIsInN1Yl90eXBlIjoyLCJ0b2tlbl90eXBlIjoxfQ.nGRESya-a5lCh2qGPRjzyO4NdhBsw9i2IsJQory-q9ijKzU-EIrBKOLeH_7sJZF89fYalxZoiIp4aCAeEuQILQ&quot;
+  data-type=&quot;sale&quot;
+  data-category-id=&quot;42&quot;
+  data-store-label=&quot;Toy&quot;
+  data-title=&quot;On Sale&quot;
+  data-view-all=&quot;https://shop.mackite.com/sale/&quot;
+  data-accent=&quot;#6d28d9&quot;
+  data-accent-dark=&quot;#b794f6&quot;
+  data-description=&quot;true&quot;&gt;
+&lt;/bc-products&gt;
+</code></pre>
+<h2 id="step-3-save-and-check">Step 3 — Save and Check<a class="headerlink" href="#step-3-save-and-check" title="Permanent link">&para;</a></h2>
+<p>Save your page and open it on your live website. Your products appear in a
+few seconds.</p>
+<h2 id="simple-things-you-can-change-optional">Simple Things You Can Change (Optional)<a class="headerlink" href="#simple-things-you-can-change-optional" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Want to change...</th>
+<th>Edit this</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The heading text</td>
+<td><code>data-title="On Sale"</code> — swap in your own words</td>
+</tr>
+<tr>
+<td>How tall the box is</td>
+<td>The number in <code>style="--bc-h-lg: 720px"</code> — bigger number = taller. The default shows about 2 rows</td>
+</tr>
+<tr>
+<td>Which sale categories show</td>
+<td>The numbers in <code>data-category-id="..."</code> — each store's On Sale box has its own category ID numbers (Boardsports and Toy are different)</td>
+</tr>
+<tr>
+<td>Show/hide the short product description</td>
+<td><code>data-description="true"</code> shows a short description under each price. Change it to <code>"false"</code> (or remove the line) to hide descriptions</td>
+</tr>
+</tbody>
+</table>
+<h2 id="if-something-looks-wrong">If Something Looks Wrong<a class="headerlink" href="#if-something-looks-wrong" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>No products showing?</strong> Make sure you pasted BOTH the setup code (Step 1)
+  and at least one feed box (Step 2).</li>
+<li><strong>It only works on your live website</strong> (www.mackite.com), not when you open
+  the file on your own computer.</li>
+<li><strong>Still stuck?</strong> Send us a message and we'll check your settings.</li>
+</ul>
+<hr />
+<p>Questions? Reply to your PapaThemes email and we'll help. Developers can read
+the full technical guide in <code>docs/bc-products-guide.md</code>.</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://use.fontawesome.com/540034d990.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="../js/main.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
