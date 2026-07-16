@@ -54,6 +54,7 @@ Paste each feed box wherever you want those products to appear. You have
   data-store-label="Boardsports"
   data-title="New Arrivals"
   data-view-all="https://www.mackiteboarding.com/"
+  data-view-all-text="View more"
   data-accent="#8a6d00"
   data-accent-dark="#e6b400"
   data-description="true">
@@ -72,6 +73,7 @@ Paste each feed box wherever you want those products to appear. You have
   data-store-label="Boardsports"
   data-title="On Sale"
   data-view-all="https://www.mackiteboarding.com/sale-kiteboarding-gear/"
+  data-view-all-text="View more"
   data-accent="#8a6d00"
   data-accent-dark="#e6b400"
   data-description="true">
@@ -91,6 +93,7 @@ Paste each feed box wherever you want those products to appear. You have
   data-store-label="Toy"
   data-title="New Arrivals"
   data-view-all="https://shop.mackite.com/"
+  data-view-all-text="View more"
   data-accent="#6d28d9"
   data-accent-dark="#b794f6"
   data-description="true">
@@ -109,6 +112,7 @@ Paste each feed box wherever you want those products to appear. You have
   data-store-label="Toy"
   data-title="On Sale"
   data-view-all="https://shop.mackite.com/sale/"
+  data-view-all-text="View more"
   data-accent="#6d28d9"
   data-accent-dark="#b794f6"
   data-description="true">
