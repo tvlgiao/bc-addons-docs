@@ -23,7 +23,10 @@ do this once per page.
 <script async src="https://cdn.jsdelivr.net/gh/tvlgiao/papathemes-cdn/bc-products/bc-products.min.js"></script>
 ```
 
-If we send you an update and you don't see it, add `?v=2` to the end of both web addresses (change the number each time).
+When we send you an update, it can take up to about 12 hours to reach
+everyone — that's normal, and there's nothing you need to do. If you still
+see the old version after that, add `?v=2` to the end of both web addresses
+(change the number each time) to clear your own browser's saved copy.
 
 ## Step 2 — Add Your Feed Boxes
 
