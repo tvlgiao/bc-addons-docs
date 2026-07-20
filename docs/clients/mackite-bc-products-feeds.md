@@ -129,6 +129,93 @@ few seconds.
 | Which sale categories show | The numbers in `data-category-id="..."` — each store's On Sale box has its own category ID numbers (Boardsports and Toy are different) |
 | Show/hide the short product description | `data-description="true"` shows a short description under each price. Change it to `"false"` (or remove the line) to hide descriptions |
 
+## Backing Up the Code (and Hosting It Yourself)
+
+The two lines in Step 1 load a stylesheet and a script from jsDelivr — a free
+public service that hosts files like these for a very large number of
+websites.
+
+**Is that slower than hosting them yourself?** No. jsDelivr keeps copies in
+data centers around the world and serves each visitor from the one closest to
+them. And because so many sites already use it, a lot of visitors' browsers
+have already connected to jsDelivr before they ever reach your page. Your own
+server would not be faster. Hosting the files yourself is about control, not
+speed.
+
+**Can you keep your own copy?** Yes. Here's how, and what changes if you use
+it.
+
+### Making your backup
+
+There are two files:
+
+```
+https://cdn.jsdelivr.net/gh/tvlgiao/papathemes-cdn/bc-products/bc-products.min.css
+https://cdn.jsdelivr.net/gh/tvlgiao/papathemes-cdn/bc-products/bc-products.min.js
+```
+
+For each one:
+
+1. Paste the address into your browser and press Enter. You'll see a wall of
+   text — that is the file itself.
+2. Choose **File > Save As** from your browser's menu (Ctrl+S on Windows,
+   Cmd+S on a Mac). If you're clicking a link to the file instead,
+   right-click the link and choose **Save link as**.
+3. Keep the file names exactly as they are: `bc-products.min.css` and
+   `bc-products.min.js`.
+
+That's the whole backup — two files.
+
+There are also two optional files at the same addresses with `.map` on the end
+(`bc-products.min.css.map` and `bc-products.min.js.map`). They only help a
+developer trace a problem back to the original code — your feeds work fine
+without them. Save them the same way if you'd like the complete set.
+
+### Switching to your own copy
+
+You don't need to do this now — only if you ever want to. Upload the two files
+somewhere on your own site, then change **only the two web addresses** in the
+Step 1 code.
+
+Before:
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tvlgiao/papathemes-cdn/bc-products/bc-products.min.css">
+<script async src="https://cdn.jsdelivr.net/gh/tvlgiao/papathemes-cdn/bc-products/bc-products.min.js"></script>
+```
+
+After (if you uploaded them into a folder called `bc-products` on your site):
+
+```html
+<link rel="stylesheet" href="https://www.mackite.com/bc-products/bc-products.min.css">
+<script async src="https://www.mackite.com/bc-products/bc-products.min.js"></script>
+```
+
+Nothing else on the page changes. Every `<bc-products>` box stays exactly as
+it is — same keys, same settings, same everything. Your `data-storefront-key`
+codes belong to your BigCommerce stores, not to us, so they work the same no
+matter where the script is hosted.
+
+### The trade-off, honestly
+
+You stop getting updates automatically. Right now, if we fix or improve
+something, jsDelivr picks it up and your page gets it on its own. With your
+own copy, your page keeps running the version you downloaded until you
+download a newer one and upload it in its place. That's the real cost:
+control instead of automatic updates.
+
+Plenty of people keep the jsDelivr version running day to day and simply keep
+the backup on hand. That's a perfectly good middle ground.
+
+### Why a backup is genuinely enough
+
+These are plain, ordinary CSS and JavaScript files. There is no license check,
+nothing that phones home, no server of ours involved, and no key that expires.
+Once you have the two files saved, they keep working — regardless of what
+happens to PapaThemes, or to jsDelivr, or to anyone else. Point your page at
+your own copies and the feeds keep pulling products from your BigCommerce
+stores exactly as they do today.
+
 ## If Something Looks Wrong
 
 - **No products showing?** Make sure you pasted BOTH the setup code (Step 1)
@@ -136,6 +223,9 @@ few seconds.
 - **It only works on your live website** (www.mackite.com), not when you open
   the file on your own computer.
 - **Still stuck?** Send us a message and we'll check your settings.
+
+If you'd like your own copy of the setup files to keep on hand, see [Backing Up
+the Code (and Hosting It Yourself)](#backing-up-the-code-and-hosting-it-yourself).
 
 ---
 
